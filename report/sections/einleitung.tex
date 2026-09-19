@@ -1,13 +1,19 @@
 \section{Einleitung}
 
-\subsection{Hinführung}
-
-Immer mehr Menschen planen Fernreisen mit mehreren Reisezielen; gleichzeitig steigt der CO\textsubscript{2}-Ausstoß durch Tourismus und Reiseverkehr \parencite[Vgl.][S.~12]{unwtoTransportrelatedCO2Emissions2019}
-
 \subsection{Problemstellung}
 
-Die Kombinationsmöglichkeiten von Transportmitteln und Unterkünften übersteigen schnell die menschlichen Fähigkeiten zur manuellen Bewertung -- eine optimale Reiseroute ist ohne Hilfsmittel nicht bestimmbar
+Moderne Fernreisen umfassen häufig mehrere Ziele: Laut einer Studie der European Travel Commission besuchten 92\,\% der befragten Fernreisenden aus den USA, China, Japan und Indien bei ihrer letzten Europareise mehrere Städte, 60\,\% sogar mehr als ein Land. Multi-Destination-Trips sind damit die vorherrschende Reiseform und nicht die Ausnahme \parencite[Vgl.][S.~7, 11]{etcTrackingMultiDestinationTravel2018}.
+
+Mit jedem zusätzlichen Ziel wächst jedoch der Planungsaufwand, denn Reihenfolge der Städte, Aufenthaltsdauern, Transportmittel und Unterkünfte müssen gemeinsam festgelegt werden und beeinflussen sich gegenseitig. Bereits eine um einen Tag veränderte Aufenthaltsdauer verschiebt alle folgenden Etappen und damit auch deren Preise, die unter anderem vom Wochentag abhängen -- sowohl bei Flügen \parencite[Vgl.]{mantinKooWeekendEffect2010} als auch bei Hotelübernachtungen \parencite[Vgl.]{schamelWeekendMidweekHotel2012}.
+
+Neben Kosten und Komfort rückt dabei zunehmend eine dritte Zielgröße in den Fokus: die Klimawirkung der Reise. Reisebedingte Emissionen stiegen von 982 Millionen Tonnen CO\textsubscript{2} (2005, rund 5\,\% aller anthropogenen Emissionen) auf 1.597 Millionen Tonnen (2016) und sollen bis 2030 auf etwa 1.998 Millionen Tonnen weiter ansteigen \parencite[Vgl.][S.~49]{unwtoTransportrelatedCO2Emissions2019}. Entscheidend ist hier vor allem die Wahl des Transportmittels: Nur rund ein Drittel aller Reisen wurde 2016 mit dem Flugzeug zurückgelegt, auf sie entfiel jedoch die Hälfte der reisebedingten CO\textsubscript{2}-Emissionen \parencite[Vgl.][S.~46]{unwtoTransportrelatedCO2Emissions2019}.
+
+Eine gute Reiseplanung muss diese teilweise konfligierenden Ziele, Kosten, Komfort und CO\textsubscript{2}, folglich gleichzeitig berücksichtigen. Die Zahl möglicher Kombinationen aus Reihenfolge, Aufenthaltsdauern, Verbindungen und Unterkünften wächst jedoch so schnell, dass eine manuelle Bewertung aller Alternativen ausgeschlossen ist.
 
 \subsection{Lösungsansatz}
 
-Evolutionärer Algorithmus als Lösungsansatz zur Bestimmung einer optimalen Reiseroute
+Das beschriebene Problem vereint zwei klassische Optimierungsprobleme: Die Reihenfolge der Reiseziele entspricht einem Traveling-Salesman-Problem, die Verteilung der begrenzten Ressourcen Reisezeit, Geld und CO\textsubscript{2}-Kontingent auf die einzelnen Stopps einem Rucksackproblem. Beide sind NP-schwer \parencite[Vgl.]{gareyJohnsonComputersIntractability1979}, und der kombinierte Suchraum aus Reihenfolge, Aufenthaltsdauern, Verbindungen und Hotels wächst bereits bei wenigen Zielen so stark, dass eine vollständige Enumeration ausscheidet.
+
+Für solche Problemklassen eignen sich evolutionäre Verfahren, da sie ohne Ableitungsinformation auskommen, mit gemischten Datentypen umgehen können und in vertretbarer Rechenzeit gute Näherungslösungen liefern \parencite[Vgl.]{eibenSmithIntroductionEvolutionary2015}. In dieser Arbeit wird daher ein genetischer Algorithmus entworfen: Ein Reiseplan wird als Genstring aus Quadrupeln (Reiseziel, Aufenthaltsdauer, Verbindung und Hotel) kodiert und über eine gewichtete Fitnessfunktion aus Kosten, Diskomfort und CO\textsubscript{2} bewertet, deren Gewichte die Präferenzen der reisenden Person abbilden. Problemspezifische Mutations- und Crossover-Operatoren berücksichtigen dabei die unterschiedliche Struktur der Genabschnitte, insbesondere den Permutationscharakter der Reihenfolge.
+
+Der Schwerpunkt dieser Arbeit liegt auf der Modellierung des Problems. Die prototypische Umsetzung veranschaulicht ausgewählte Komponenten des Verfahrens.
