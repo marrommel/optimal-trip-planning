@@ -1,0 +1,35 @@
+\section{Grundlagen}
+
+[Theoretische Grundlagen, z. B. Genetic Algorithms, Multi-Objective-Optimierung]
+
+% Beispiel für ein Algorithmus-Listing (kann gelöscht/angepasst werden)
+\begin{algorithm}
+  \caption{Beispielhafter Ablauf eines genetischen Algorithmus}
+  \label{alg:ga-example}
+  \begin{algorithmic}[1]
+    \State Initialisiere Population $P$ zufällig
+    \While{Abbruchkriterium nicht erfüllt}
+      \State Bewerte Fitness aller Individuen in $P$
+      \State Wähle Elternindividuen aus $P$ (Selektion)
+      \State Erzeuge Nachkommen durch Rekombination
+      \State Wende Mutation auf Nachkommen an
+      \State Ersetze $P$ durch neue Population
+    \EndWhile
+    \State \Return bestes gefundenes Individuum
+  \end{algorithmic}
+\end{algorithm}
+
+% Beispiel für eine Tabelle (kann gelöscht/angepasst werden)
+\begin{table}[htbp]
+  \centering
+  \caption{Beispielhafte Parameter}
+  \label{tab:parameter-beispiel}
+  \begin{tabular}{ll}
+    \toprule
+    Parameter & Wert \\
+    \midrule
+    Populationsgröße & 100 \\
+    Mutationsrate & 0{,}05 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

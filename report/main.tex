@@ -1,0 +1,172 @@
+\documentclass[12pt, a4paper]{article}
+
+% ===== Encoding & Sprache =====
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+% ===== Typografie =====
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
+
+% ===== Seitenränder =====
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
+
+% ===== Literaturverzeichnis (Autor-Jahr-Stil) =====
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  sorting=nyt,
+  dashed=false,
+  maxcitenames=3,
+  maxbibnames=99,
+  uniquelist=false,
+  uniquename=false,
+  ibidtracker=false,
+  pagetracker=false,
+  natbib=true
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+% ===== Absatzformat =====
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ===== Hyperlinks =====
+\usepackage[hidelinks]{hyperref}
+
+% ===== Grafiken & Tabellen =====
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+
+% ===== Algorithmen (für die GA-Beschreibung) =====
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\floatname{algorithm}{Algorithmus}
+\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}
+
+% ===== Kopf-/Fußzeile =====
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ===== Titeldaten (hier anpassen) =====
+\newcommand{\ArbeitTitel}{Genetic Algorithm für\\[0.4cm]Multi-Objective Trip Planning}
+\newcommand{\ArbeitAutorEins}{Marcel Rommel ()}
+\newcommand{\ArbeitAutorZwei}{Jessica Noe (8595149)}
+\newcommand{\ArbeitModulEins}{Methoden der Künstlichen Intelligenz}
+\newcommand{\ArbeitModulZwei}{und Computational Intelligence}
+\newcommand{\ArbeitModulNr}{T3M40610}
+\newcommand{\ArbeitBetreuer}{Prof. Dr. Heinrich Braun}
+\newcommand{\ArbeitBearbeitungszeitraum}{15.10.2026}
+
+\hypersetup{pdftitle={\ArbeitTitel}, pdfauthor={\ArbeitAutorEins, \ArbeitAutorZwei}}
+
+% ---------------------------------------------------------
+
+\begin{document}
+
+% ===== TITELBLATT =====
+\begin{titlepage}
+  \raggedleft
+  \includegraphics[width=8cm]{img/dhbw-cas-logo}\par
+  \centering
+  \vspace*{1.5cm}
+
+  {\large Seminararbeit}\\[1cm]
+
+  \begin{singlespacing}
+  {\LARGE\bfseries \ArbeitTitel}
+  \end{singlespacing}
+  \vspace{1.5cm}
+
+  {\large am Center for Advanced Studies}\\[0.2cm]
+  {\large der Dualen Hochschule Baden-Württemberg}\\[2cm]
+
+  \begin{tabular}{ll}
+  	Modul: & \ArbeitModulEins \\
+  				& \ArbeitModulZwei \\
+  				& \ArbeitModulNr \\
+    Verfasser: & \ArbeitAutorEins \\
+               & \ArbeitAutorZwei \\
+    Abgabedatum: & \ArbeitBearbeitungszeitraum \\
+    Dozent: & \ArbeitBetreuer \\
+  \end{tabular}
+
+  \vfill
+
+\end{titlepage}
+
+% ===== EHRENWÖRTLICHE ERKLÄRUNG =====
+\newpage
+\thispagestyle{empty}
+
+{\large\bfseries Ehrenwörtliche Erklärung}\\[1em]
+
+Wir erklären hiermit, dass wir die vorliegende Seminararbeit selbstständig
+verfasst und keine anderen als die angegebenen Hilfsmittel benutzt haben.
+Alle Stellen, die wörtlich oder sinngemäß aus veröffentlichten oder nicht
+veröffentlichten Quellen entnommen wurden, sind als solche kenntlich
+gemacht. Die Arbeit wurde in gleicher oder ähnlicher Form noch keiner
+anderen Prüfungsbehörde vorgelegt.
+
+\vspace{3em}
+
+\begin{tabular}{@{}p{7cm}@{}}
+  \dotfill \\
+  Ort, Datum, Unterschrift \ArbeitAutorEins
+\end{tabular}
+
+\vspace{3em}
+
+\begin{tabular}{@{}p{7cm}@{}}
+  \dotfill \\
+  Ort, Datum, Unterschrift \ArbeitAutorZwei
+\end{tabular}
+
+% ===== ABSTRACT =====
+\newpage
+\thispagestyle{empty}
+
+{\large\bfseries Kurzfassung (Abstract)}\\[1em]
+
+\input{sections/abstract}
+
+% ===== VERZEICHNISSE =====
+\newpage
+\pagenumbering{Roman}
+
+\tableofcontents
+
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+
+\newpage
+\listoftables
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+
+\newpage
+\listofalgorithms
+\addcontentsline{toc}{section}{Algorithmenverzeichnis}
+
+% ===== HAUPTTEIL =====
+\newpage
+\pagenumbering{arabic}
+
+\input{sections/einleitung}
+\input{sections/modellierung}
+\input{sections/prototypische_umsetzung}
+\input{sections/fazit}
+
+% ===== LITERATURVERZEICHNIS =====
+\newpage
+\printbibliography[title={Literaturverzeichnis}, heading=bibintoc]
+
+\end{document}
