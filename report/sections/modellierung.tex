@@ -1,35 +1,110 @@
 \section{Modellierung}
+\label{sec:modellierung}
 
-% Beispiel für ein Algorithmus-Listing (kann gelöscht/angepasst werden)
-\begin{algorithm}
-  \caption{Beispielhafter Ablauf eines genetischen Algorithmus}
-  \label{alg:ga-example}
-  \begin{algorithmic}[1]
-    \State Initialisiere Population $P$ zufällig
-    \While{Abbruchkriterium nicht erfüllt}
-      \State Bewerte Fitness aller Individuen in $P$
-      \State Wähle Elternindividuen aus $P$ (Selektion)
-      \State Erzeuge Nachkommen durch Rekombination
-      \State Wende Mutation auf Nachkommen an
-      \State Ersetze $P$ durch neue Population
-    \EndWhile
-    \State \Return bestes gefundenes Individuum
-  \end{algorithmic}
-\end{algorithm}
+\subsection{Formalisierung des Planungsproblems}
+\label{subsec:formalisierung}
 
-% Beispiel für eine Tabelle (kann gelöscht/angepasst werden)
+Die Planung einer Mehrziel-Reise wird im Folgenden als kombinatorisches Optimierungsproblem aufgefasst. Gegeben ist eine Menge $Z = \{1, \dots, n\}$ von Reisezielen, die ausgehend von einem festen Startort $z_0$ jeweils genau einmal besucht werden sollen, bevor die Reise wieder an $z_0$ endet. Der Reisezeitraum umfasst $T$ Tage, innerhalb derer sich Aufenthalte und Ortswechsel verteilen.
+
+Tabelle~\ref{tab:eingangsgroessen} fasst die Größen zusammen, die als gegeben vorausgesetzt werden.
+
 \begin{table}[htbp]
   \centering
-  \caption{Beispielhafte Parameter}
-  \label{tab:parameter-beispiel}
-  \begin{tabular}{ll}
+  \caption{Eingangsgrößen des Planungsproblems}
+  \label{tab:eingangsgroessen}
+  \begin{tabular}{@{}lp{10.5cm}@{}}
     \toprule
-    Parameter & Wert \\
+    Symbol & Bedeutung \\
     \midrule
-    Populationsgröße & 100 \\
-    Mutationsrate & 0{,}05 \\
+    $Z = \{1,\dots,n\}$ & Menge der zu besuchenden Reiseziele \\
+    $z_0$ & Startort, an dem die Reise beginnt und endet \\
+    $T$ & Länge des Reisezeitraums in Tagen \\
+    $d_{\min}(z)$ & Mindestaufenthaltsdauer am Ziel $z$ \\
+    $V(a,b)$ & Verfügbare Verkehrsverbindungen für den Übergang von $a$ nach $b$ \\
+    $H(z)$ & Vorausgewählte Hotels am Ziel $z$ \\
+    $E$ & Distanzmatrix mit den Entfernungen zwischen den Orten \\
+    $B_{\max}$ & Budgetobergrenze für die gesamte Reise \\
+    $C_{\max}$ & CO\textsubscript{2}-Kontingent für die gesamte Reise \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-Eigene Modellierung/Umsetzung des Trip-Planning-GA -- siehe PowerPoint: Genstring (Route, Aufenthaltsdauer, Transportmittel, Hotelwahl), Fitnessfunktion (Kosten, Diskomfort, CO\textsubscript{2}), Constraints, genetische Operatoren
+Drei dieser Größen bedürfen einer Erläuterung. Die Mindestaufenthaltsdauer $d_{\min}(z)$ bildet ab, dass sich ein Ziel unterhalb einer gewissen Verweildauer nicht sinnvoll erschließen lässt. Eine Großstadt mit mehreren zentralen Sehenswürdigkeiten rechtfertigt den Anreiseaufwand erst ab zwei bis drei Übernachtungen, während für einen kleineren Ort eine Nacht genügen kann.
+
+Die Mengen $V(a,b)$ enthalten keine abstrakten Relationen zwischen Orten, sondern konkrete Verbindungen. Jede von ihnen ist durch Verkehrsmittel, Abfahrtszeitfenster, Fahrtdauer, Preis und CO\textsubscript{2}-Ausstoß beschrieben. Analog umfasst $H(z)$ eine begrenzte Vorauswahl von Hotels je Ziel, deren Übernachtungspreise tagesabhängig variieren und die über eine Komfortbewertung in Form einer Sterneklassifizierung verfügen.
+
+Gesucht ist ein vollständiger Reiseplan, der Besuchsreihenfolge, Aufenthaltsdauer je Stopp, Verbindung je Etappe und Hotel je Stopp gemeinsam festlegt und dabei die Zielgrößen Kosten, Komfort und CO\textsubscript{2}-Ausstoß bestmöglich ausbalanciert.
+
+Wesentlich für die Modellierung ist, dass die Optimierung ausschließlich innerhalb vorab bereitgestellter Optionen stattfindet. Sämtliche Preis-, Emissions- und Verbindungsdaten werden im Vorfeld erhoben und als Nachschlagetabellen vorgehalten. Während der Optimierung erfolgen keine externen Abfragen. Dies ist weniger eine technische Vereinfachung als eine Voraussetzung des Verfahrens: Ein evolutionärer Algorithmus bewertet im Verlauf eines Laufs mehrere zehntausend Lösungskandidaten, sodass die Bewertung eines einzelnen Kandidaten im Bereich weniger Millisekunden liegen muss. Gleichzeitig verlangt die Reproduzierbarkeit der Ergebnisse, dass alle Kandidaten gegen denselben, unveränderlichen Datenstand bewertet werden.
+
+Der Umfang des Entscheidungsspielraums lässt sich an einem kleinen Beispiel beziffern. Für $n = 4$ Ziele innerhalb eines Zeitraums von $T = 14$ Tagen ergeben sich $4! = 24$ mögliche Besuchsreihenfolgen. Die Verteilung der Übernachtungen auf die vier Stopps erlaubt bei einer Mindestdauer von einer Nacht $\binom{13}{3} = 286$ Kombinationen. Hinzu treten bei durchschnittlich zehn verfügbaren Verbindungen je Etappe und fünf Etappen einschließlich der Rückreise $10^5$ Transportkombinationen sowie bei fünf Hotels je Ziel $5^4 = 625$ Unterkunftskombinationen. Insgesamt umfasst der Lösungsraum damit rund $4 \cdot 10^{11}$ Reisepläne, und dies bei einer Problemgröße, die einer realistischen Urlaubsplanung eher am unteren Rand entspricht.
+
+Naheliegend wäre, dieses Problem in seine Bestandteile zu zerlegen und nacheinander zu lösen: zuerst die Route, dann die Aufenthaltsdauern, zuletzt Transport und Unterkunft. Eine solche sequenzielle Behandlung scheitert jedoch an der wechselseitigen Abhängigkeit der Teilentscheidungen. Die Besuchsreihenfolge bestimmt, welche Etappen überhaupt zu bedienen sind, und damit, welche Verbindungen mit welchen Preisen und Emissionen zur Verfügung stehen. Die Aufenthaltsdauern wiederum verschieben die Kalendertage aller nachfolgenden Etappen: Ein zusätzlicher Übernachtungstag am ersten Stopp verlegt jede weitere Fahrt und jede weitere Hotelnacht um einen Tag und verändert damit deren tagesabhängige Preise. Eine Route, die unter Annahme fester Aufenthaltsdauern optimal erscheint, kann bei veränderter Zeitaufteilung deutlich schlechter abschneiden. Die Entscheidungen müssen folglich gemeinsam optimiert werden, was die Größe des Lösungsraums erst wirksam werden lässt.
+
+\subsection{Entscheidungsvariablen und Repräsentation}
+\label{subsec:repraesentation}
+
+Die Repräsentation einer Lösung als Genstring legt fest, welche Entscheidungen der Algorithmus überhaupt variieren kann, und bestimmt damit zugleich, welche Mutations- und Rekombinationsoperatoren sinnvoll definierbar sind. Sie ist die zentrale Modellierungsentscheidung dieser Arbeit.
+
+Ein Reiseplan wird als Tripel $G = (\pi, d, t)$ dargestellt, dessen Komponenten die drei frei zu wählenden Entscheidungsdimensionen abbilden:
+
+Die \textbf{Besuchsreihenfolge} $\pi = (\pi_1, \dots, \pi_n)$ ist eine Permutation der Zielindizes $\{1, \dots, n\}$. $\pi_i$ bezeichnet dasjenige Reiseziel, das an Position $i$ der Route besucht wird. Die Permutationseigenschaft stellt sicher, dass jedes Ziel genau einmal vorkommt, und schließt damit doppelte Besuche und Auslassungen bereits auf Repräsentationsebene aus.
+
+Die \textbf{Aufenthaltsdauer} $d = (d_1, \dots, d_n)$ gibt mit $d_i \in \mathbb{N}$ die Anzahl der Übernachtungen am Stopp $\pi_i$ an. Die Wahl ganzer Zahlen bildet ab, dass Hotelübernachtungen und Fahrpläne nur tageweise disponierbar sind. Eine kontinuierliche Modellierung hätte hier keine Entsprechung in der Anwendung.
+
+Die \textbf{Transportwahl} $t = (t_1, \dots, t_{n+1})$ umfasst $n+1$ Einträge, da neben den $n$ Anreisen zu den Stopps auch die Rückreise von $\pi_n$ zum Startort $z_0$ zu treffen ist. Dabei bezeichnet $t_i$ für $i \leq n$ die Verbindung für den Übergang von $\pi_{i-1}$ nach $\pi_i$ (mit $\pi_0 = z_0$) und $t_{n+1}$ die Rückreise.
+
+Für die Transportwahl wird nicht eine konkrete Verbindung kodiert, sondern eine Kombination aus Verkehrsmittel und Abfahrtszeitfenster:
+\begin{equation}
+t_i \in M \times S, \qquad M = \{\text{Bahn}, \text{Bus}, \text{Flug}\}, \quad S = \{\text{Vormittag}, \text{Nachmittag}, \text{Nacht}\}
+\end{equation}
+
+Diese Diskretisierung folgt der Struktur der Entscheidung, wie sie eine reisende Person tatsächlich trifft. Zwischen zwei Zügen, die um 9:05 und um 9:40 Uhr abfahren, besteht aus Planungssicht kein wesentlicher Unterschied. Beide sind Vormittagsverbindungen mit nahezu identischen Eigenschaften. Zwischen einem Vormittagszug und einem Nachtbus besteht dagegen ein erheblicher Unterschied in Kosten, Komfort und Tagesnutzung. Ein Genstring, der jede einzelne Abfahrtszeit als eigenen Wert führte, würde diese beiden Fälle gleich behandeln und dem Algorithmus vorwiegend bedeutungslose Variation anbieten. Die Zeitfenster-Kodierung sorgt dafür, dass benachbarte Genwerte auch anwendungsseitig benachbarte Lösungen bezeichnen, was Voraussetzung für die in Abschnitt~\ref{subsec:mutation} beschriebene Nachbarschaftsheuristik ist. Welche konkrete Verbindung innerhalb des gewählten Fensters gebucht wird, entscheidet die Dekodierfunktion (Abschnitt~\ref{subsec:dekodierung}).
+
+Tabelle~\ref{tab:entscheidungsvariablen} fasst die Entscheidungsvariablen zusammen.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Entscheidungsvariablen des Genstrings}
+  \label{tab:entscheidungsvariablen}
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    Variable & Bedeutung & Wertebereich & Länge \\
+    \midrule
+    $\pi_i$ & Ziel an Routenposition $i$ & Permutation über $\{1,\dots,n\}$ & $n$ \\
+    $d_i$   & Übernachtungen am Stopp $\pi_i$ & $d_i \in \mathbb{N}$, $d_i \geq d_{\min}(\pi_i)$ & $n$ \\
+    $t_i$   & Verkehrsmittel und Zeitfenster & $M \times S$, $|M \times S| = 9$ & $n+1$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Der Genstring ist damit heterogen aufgebaut: Er vereint einen Permutationsabschnitt, einen ganzzahligen Abschnitt und einen kategorialen Abschnitt. Diese Mischung unterschiedlicher Datentypen ist der Grund, weshalb das Verfahren als genetischer Algorithmus und nicht als Evolutionsstrategie eingeordnet wird. Eine Evolutionsstrategie operiert auf reellwertigen Vektoren und stimmt ihre Schrittweitensteuerung darauf ab. Sie erzwingt zugleich, dass die Variationsoperatoren abschnittsweise definiert werden müssen: Eine Permutation lässt sich nicht sinnvoll mit demselben Operator verändern wie eine ganze Zahl.
+
+Als durchgängiges Beispiel dient die bereits in Abschnitt~\ref{subsec:formalisierung} betrachtete Reise mit $n = 4$ Zielen über $T = 14$ Tage. Die Ziele seien Paris (1), Berlin (2), Rom (3) und Barcelona (4). Der Genstring
+\begin{align*}
+G = \big(&(2,\, 1,\, 3,\, 4),\; (2,\, 3,\, 4,\, 5),\\
+         &(\text{Bahn/Vm},\, \text{Bahn/Nm},\, \text{Flug/Vm},\, \text{Flug/Nm},\, \text{Flug/Vm})\big)
+\end{align*}
+kodiert eine Reise, die am Vormittag mit der Bahn nach Berlin führt, wo zwei Nächte verbracht werden. Es folgen Paris mit drei Nächten, erreicht über eine Nachmittagsverbindung der Bahn, anschließend Rom mit vier Nächten über einen Vormittagsflug und schließlich Barcelona mit fünf Nächten über einen Nachmittagsflug. Die Rückreise zum Startort erfolgt mit einem Vormittagsflug. Die Abkürzungen Vm und Nm stehen dabei für die Zeitfenster Vormittag und Nachmittag.
+
+Der so aufgespannte Genotypraum umfasst für dieses Beispiel $4! \cdot \binom{13}{3} \cdot 9^5 \approx 4 \cdot 10^8$ Individuen. Der Vergleich mit dem in Abschnitt~\ref{subsec:formalisierung} bezifferten Lösungsraum zeigt, was die Repräsentation leistet. Die Hotelwahl ist im Genotyp überhaupt nicht mehr enthalten und verkleinert den Suchraum um den exakten Faktor $5^n$, im Beispiel also um 625. Diese Auslagerung geht nicht zulasten der Lösungsqualität, wie der folgende Abschnitt zeigt. Die Zusammenfassung konkreter Verbindungen zu Zeitfenstern wirkt in dieselbe Richtung. Ihr Umfang hängt allerdings davon ab, wie viele Verbindungen die Datengrundlage je Etappe bereitstellt, und lässt sich daher nicht allgemein beziffern.
+
+\subsection{Dekodierfunktion}
+\label{subsec:dekodierung}
+
+% TODO -- Genotyp/Phänotyp, Zeitplanberechnung, Hotelwahl (Separierbarkeit!), konkrete Verbindung im Zeitfenster
+
+\subsection{Zielfunktion}
+\label{subsec:zielfunktion}
+
+% TODO
+
+\subsection{Nebenbedingungen}
+\label{subsec:nebenbedingungen}
+
+% TODO
+
+\subsection{Begründung der Modellierung}
+\label{subsec:begruendung}
+
+% TODO
