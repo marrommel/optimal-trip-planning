@@ -4,29 +4,104 @@
 \subsection{Ablauf des genetischen Algorithmus}
 \label{subsec:ablauf}
 
-% TODO -- Algorithmus-Listing (Pseudocode) hier
+Das Verfahren folgt der generationsbasierten Grundform eines genetischen Algorithmus. Eine Population von Genstrings wird bewertet, aus ihr werden Eltern ausgewählt, und aus diesen entstehen durch Rekombination und Mutation Nachkommen, die die nächste Generation bilden. Übernommen werden ausschließlich die Nachkommen sowie eine kleine Zahl der besten Individuen der Vorgängergeneration. Alle übrigen Eltern entfallen, wodurch die Population stets dieselbe Größe behält.
 
-\subsection{Startpopulation}
-\label{subsec:startpopulation}
+Algorithmus~\ref{alg:ga} zeigt den Ablauf. Jede Bewertung schließt die Dekodierung nach Abschnitt~\ref{subsec:dekodierung} ein, denn ein Genstring lässt sich erst als vollständiger Reiseplan beurteilen. Bewertet wird dabei stets die um die Straftermen erweiterte Zielfunktion $F(G) + P(G)$.
 
-% TODO -- hybride Initialisierung: Zufall + Greedy (Nearest Neighbor, geringste Hotelkosten)
+\begin{algorithm}[htbp]
+  \caption{Genetischer Algorithmus zur Reiseplanung}
+  \label{alg:ga}
+  \begin{algorithmic}[1]
+    \Require Eingangsdaten, Gewichte $w_1, w_2, w_3$, Populationsgröße $\mu$, Elitenzahl $\kappa$
+    \State erzeuge Startpopulation $P$ aus $\mu$ Individuen
+    \State dekodiere und bewerte alle $G \in P$
+    \While{kein Abbruchkriterium erfüllt}
+      \State $P' \gets$ die $\kappa$ besten Individuen aus $P$
+      \While{$|P'| < \mu$}
+        \State wähle Eltern aus $P$ durch rangbasierte Selektion
+        \State erzeuge Nachkommen durch Rekombination
+        \State mutiere den Nachkommen
+        \State stelle die Zulässigkeit der veränderten Gene wieder her
+        \State dekodiere und bewerte den Nachkommen
+        \State füge den Nachkommen zu $P'$ hinzu
+      \EndWhile
+      \State $P \gets P'$
+    \EndWhile
+    \State \Return bestbewertetes gefundenes Individuum
+  \end{algorithmic}
+\end{algorithm}
 
-\subsection{Mutation}
+Die Startpopulation wird überwiegend zufällig erzeugt, um den Lösungsraum breit abzudecken. Ergänzend lassen sich einzelne Individuen greedy konstruieren, etwa über eine Nearest-Neighbor-Route oder über die jeweils günstigsten Hotels. Solche Startlösungen beschleunigen die frühen Generationen, erhöhen aber zugleich die Gefahr, dass sich die Population vorzeitig auf deren Umgebung zusammenzieht. Da Selektion und Mutation den Verlauf ohnehin dominieren, fällt der Einfluss der Startpopulation auf das Endergebnis gering aus, weshalb hier ein überwiegend zufälliger Start gewählt wird.
+
+Tabelle~\ref{tab:parameter} fasst die Parameter des Verfahrens zusammen. Ihre endgültigen Werte lassen sich nicht analytisch bestimmen, sondern nur experimentell ermitteln, weshalb Bereiche angegeben sind.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Parameter des Verfahrens}
+  \label{tab:parameter}
+  \begin{tabular}{@{}llp{6.5cm}@{}}
+    \toprule
+    Parameter & Bereich & Bemerkung \\
+    \midrule
+    Populationsgröße $\mu$ & 50 bis 500 & Kompromiss aus Rechenzeit und Vielfalt \\
+    Elitenanteil $\kappa/\mu$ & 5 bis 20\,\% & sichert das bisher Beste gegen Verlust \\
+    Mutationsrate & 10 bis 30\,\% & je Gen und Nachkomme \\
+    Max. Generationen & 200 & feste Obergrenze \\
+    Zeitbudget & 600 s & feste Obergrenze \\
+    Konvergenzschwelle & 1\,\% über 20 Generationen & adaptives Kriterium \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Mutation und Nachbarschaft}
 \label{subsec:mutation}
 
-% TODO -- Swap, Insert, Teilstring-Inversion; gerundete Gauß-Mutation; sortierte Nachbarschaft
+Die Mutation ist der Operator, der lokale Verbesserung überhaupt erst ermöglicht, und ihre Gestaltung entscheidet maßgeblich über die Güte des Verfahrens. Leitgedanke ist dabei der Begriff der Nachbarschaft: Eine Mutation soll einen Reiseplan erzeugen, der dem Elternplan ähnlich ist, sodass der Unterschied in der Zielfunktion auf wenige veränderte Bestandteile zurückgeht. Verändert eine Mutation zu viel auf einmal, verhält sich der Nachkomme wie eine zufällig neue Lösung, und die Bewertung trägt keine verwertbare Information mehr über die Richtung der Verbesserung. Da der Genstring aus drei strukturell verschiedenen Abschnitten besteht, benötigt jeder von ihnen eigene Operatoren. Tabelle~\ref{tab:mutationen} gibt einen Überblick.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Mutationsoperatoren je Genabschnitt}
+  \label{tab:mutationen}
+  \begin{tabular}{@{}llp{7cm}@{}}
+    \toprule
+    Abschnitt & Operator & Wirkung \\
+    \midrule
+    $\pi$ & Swap & vertauscht zwei Positionen, verändert bis zu vier Übergänge \\
+    $\pi$ & Insert & entnimmt ein Ziel und setzt es an anderer Stelle ein, verändert drei Übergänge \\
+    $\pi$ & Teilstring-Inversion & kehrt einen zusammenhängenden Abschnitt um, verändert zwei Übergänge \\
+    $d$ & Gauß-Mutation & verändert eine Aufenthaltsdauer um einen gerundet normalverteilten Betrag \\
+    $d$ & Tagestransfer & verschiebt eine Nacht von einem Stopp zu einem anderen \\
+    $t$ & Fensterwechsel & wechselt das Zeitfenster bei gleichem Verkehrsmittel \\
+    $t$ & Verkehrsmittelwechsel & wechselt das Verkehrsmittel bei gleichem Zeitfenster \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Die drei Operatoren auf $\pi$ unterscheiden sich darin, wie stark sie die bestehende Routenstruktur auflösen. Die Teilstring-Inversion ist der schonendste von ihnen, da sie die Reihenfolge innerhalb des umgekehrten Abschnitts erhält und lediglich zwei Übergänge neu bildet. Swap greift am stärksten ein, weil beide getauschten Ziele jeweils neue Vorgänger und Nachfolger erhalten. Diese Abstufung erlaubt es, die Eingriffstiefe zu steuern: In frühen Generationen sind stärkere Eingriffe sinnvoll, später überwiegen die schonenden. Zusätzlich lässt sich die Auswahl der Positionen steuern, statt sie gleichverteilt zu ziehen. Bevorzugt man Positionen, deren aktuelle Übergänge besonders lange Distanzen aufweisen, so greift die Mutation dort an, wo die Route am ehesten ungünstig ist. Das entspricht der aus dem Traveling-Salesman-Problem bekannten Nachbarschaftsheuristik und erhöht den Anteil aussichtsreicher Nachkommen.
+
+Auf $d$ wirkt eine gerundete Gauß-Mutation, die kleine Änderungen deutlich wahrscheinlicher macht als große und anschließend auf $d_{\min}(\pi_i)$ begrenzt wird. Die Standardabweichung $\sigma$ wird im Verlauf des Laufs verringert, sodass das Verfahren zunächst grob und später fein sucht. Der Tagestransfer ergänzt diesen Operator um eine Variante, die die Gesamtreisedauer unverändert lässt, indem sie einem Stopp eine Nacht nimmt und einem anderen eine gibt. Eine reine Gauß-Mutation verändert dagegen stets auch die Gesamtdauer und erzeugt dadurch leicht Individuen, die den Strafterm für den Reisezeitraum auslösen.
+
+Auf $t$ folgt die Nachbarschaft aus der in Abschnitt~\ref{subsec:repraesentation} gewählten Kodierung. Da ein Genwert aus Verkehrsmittel und Zeitfenster besteht, ist ein benachbarter Wert einer, der genau eine dieser beiden Eigenschaften ändert. Der Wechsel des Zeitfensters verschiebt die Etappe innerhalb des Tages und wirkt vor allem auf Preis und Komfort, während der Wechsel des Verkehrsmittels zusätzlich die Emissionen deutlich verändert. Ein Sprung auf einen beliebigen anderen Wert bleibt mit geringer Wahrscheinlichkeit möglich, damit auch entfernte Bereiche des Suchraums erreichbar bleiben.
+
+Die Stärke der Mutation lässt sich über die Erfolgsquote steuern. Führt nur ein kleiner Teil der Nachkommen zu einer Verbesserung, ist der Eingriff zu grob gewählt, führt ein sehr großer Teil zu Verbesserungen, ist er zu vorsichtig und der Fortschritt je Generation bleibt gering. Die bekannte Ein-Fünftel-Regel gibt hierfür einen Richtwert, nach dem der Fortschritt am größten ist, wenn etwa ein Fünftel der Mutationen eine Verbesserung erzielt \parencite[Vgl.][S.~133]{eibenSmithIntroductionEvolutionary2015}. Sie lässt sich unmittelbar zur Anpassung von $\sigma$ und der Eingriffstiefe auf $\pi$ verwenden. Nach jeder Mutation wird abschließend die Zulässigkeit wiederhergestellt, indem $d_i$ auf die Mindestdauer angehoben und $t_i$ auf eine belegte Klasse zurückgeführt wird.
+
 
 \subsection{Rekombination}
 \label{subsec:rekombination}
 
-% TODO -- Order Crossover, Trait Crossover, Edge Crossover
+Die Rekombination kann auf dem Permutationsabschnitt nicht in ihrer einfachen Form angewandt werden. Ein Ein-Punkt-Crossover, das die vordere Hälfte des einen und die hintere Hälfte des anderen Elternteils zusammensetzt, erzeugt Routen, in denen Ziele doppelt vorkommen und andere fehlen. Der Nachkomme wäre kein gültiger Reiseplan.
 
-\subsection{Selektion und Reproduktion}
+Verwendet wird daher ein Order Crossover. Dabei wird ein zusammenhängender Abschnitt der Route des ersten Elternteils unverändert übernommen, und die verbleibenden Positionen werden mit den noch fehlenden Zielen in der Reihenfolge aufgefüllt, in der sie beim zweiten Elternteil auftreten. Der Nachkomme ist so stets eine gültige Permutation und erbt von beiden Eltern einen Teil der Reihenfolgeinformation.
+
+Für die übrigen Genabschnitte stellt sich die Frage, woran sie gebunden sind. Die Aufenthaltsdauer gehört inhaltlich zum Reiseziel und nicht zur Routenposition, denn wie lange sich ein Aufenthalt lohnt, hängt vom Ort ab. Sie wird deshalb gemeinsam mit dem Ziel vererbt, das sie beschreibt. Die Transportwahl gehört dagegen zum Übergang zwischen zwei Zielen, und dieser Übergang entsteht beim Order Crossover teilweise neu. Für neu gebildete Übergänge wird $t_i$ daher nicht vererbt, sondern auf eine belegte Klasse gesetzt und der weiteren Optimierung durch Mutation überlassen.
+
+Ob die Rekombination in diesem Verfahren überhaupt einen Beitrag leistet, ist offen. Sie ist dann wirksam, wenn die Eltern komplementäre Stärken besitzen, etwa wenn einer eine günstige Route und der andere eine geschickte Zeitaufteilung gefunden hat. Bei stark lokal geprägten Problemen kann eine rein mutationsbasierte Suche jedoch ebenso gute Ergebnisse liefern, da die Rekombination bestehende gute Teilstrukturen auch zerstören kann. Der Entwurf hält die Rekombination deshalb abschaltbar, sodass ihr Beitrag experimentell durch den Vergleich von Läufen mit und ohne sie bestimmt werden kann.
+
+\subsection{Selektion und Abbruch}
 \label{subsec:selektion}
 
-% TODO -- Elitismus, Turnierselektion, Reparatur unzulässiger Individuen
+Die Auswahl der Eltern erfolgt rangbasiert. Dazu wird die Population nach ihrer Bewertung sortiert, und die Auswahlwahrscheinlichkeit eines Individuums ergibt sich allein aus seinem Rang in dieser Sortierung, nicht aus dem Zahlenwert seiner Bewertung. Der Grund liegt in der Zielfunktion selbst. Durch die Straftermen aus Abschnitt~\ref{subsec:nebenbedingungen} sind die Bewertungen nach oben unbeschränkt, denn ein Individuum mit stark überschrittenem Budget erreicht einen um Größenordnungen schlechteren Wert als alle übrigen. Eine fitnessproportionale Auswahl würde durch solche Ausreißer verzerrt, in frühen Generationen ebenso wie später, wenn sich die Bewertungen der guten Individuen einander annähern und kaum noch unterscheidbar sind. Die rangbasierte Auswahl ist gegenüber beiden Effekten unempfindlich, da sie nur die Ordnung der Individuen verwendet. Der Selektionsdruck lässt sich dabei über das Gefälle der Wahrscheinlichkeiten zwischen bestem und schlechtestem Rang einstellen.
 
-\subsection{Abbruchkriterien}
-\label{subsec:abbruch}
+Ergänzt wird die Selektion durch Elitismus. Die besten $\kappa$ Individuen einer Generation werden unverändert in die nächste übernommen, sodass die beste bisher gefundene Lösung nicht durch Mutation oder Rekombination verlorengehen kann. Der Wert der besten Lösung verbessert sich dadurch über die Generationen hinweg monoton.
 
-% TODO -- Generationen, Zeitbudget, Konvergenzkriterium
+Die Optimierung endet, sobald eines von drei Kriterien eintritt. Zwei davon begrenzen den Ressourcenverbrauch fest, nämlich eine Obergrenze von 200 Generationen und ein Zeitbudget von 600 Sekunden. Das dritte ist adaptiv und greift, wenn sich die beste Bewertung über 20 aufeinanderfolgende Generationen um weniger als ein Prozent verbessert hat. Die Kombination ist bewusst gewählt: Das adaptive Kriterium beendet den Lauf, sobald weitere Rechenzeit voraussichtlich keinen Gewinn mehr bringt, während die festen Grenzen sicherstellen, dass das Verfahren auch dann in vorgegebener Zeit ein Ergebnis liefert, wenn sich die Bewertung in kleinen Schritten immer weiter verbessert. Ein evolutionäres Verfahren liefert zu jedem Zeitpunkt eine gültige Lösung, sodass ein Abbruch nach Zeit stets ein verwertbares Ergebnis hinterlässt.

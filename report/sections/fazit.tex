@@ -1,3 +1,66 @@
 \section{Fazit und Reflexion}
+\label{sec:fazit}
 
-Zusammenfassung der Ergebnisse, Reflexion und Ausblick
+% (1) Übernachtungen ohne Emissionen
+%     In der Zielfunktion trägt nur der Transport zum CO2-Term bei. Die
+%     Dekodierfunktion für die Hotelwahl (Abschnitt 2.3) kennt deshalb nur
+%     w1 und w2, nicht w3. Real verursachen Übernachtungen sehr wohl
+%     Emissionen, und zwar je nach Hotelkategorie unterschiedlich hohe.
+%     Folge: Das Modell unterschätzt die Klimawirkung einer Reise
+%     systematisch und kann keinen Zielkonflikt zwischen Hotelkomfort und
+%     CO2 abbilden. Erweiterung wäre ein Emissionswert je Hotel und Nacht,
+%     der den Decoder um den w3-Term ergänzt.
+%
+% (2) Feste Rundreise über alle Ziele
+%     Pi ist eine Permutation, also wird jedes Ziel genau einmal besucht und
+%     die Reise endet am Startort. Weglassen einzelner Ziele oder Mehrfach-
+%     besuche sind nicht darstellbar.
+%
+% (3) Vollständige Ausschöpfung des Reisezeitraums
+%     Die Suchraumrechnung in Abschnitt 2.1 setzt voraus, dass alle T Tage
+%     verplant werden. Kürzere Reisen innerhalb des Zeitraums vergrößern den
+%     Raum zusätzlich.
+%
+% (4) Zeitfenster statt konkreter Abfahrtszeiten
+%     Die Diskretisierung in drei Fenster je Verkehrsmittel vereinfacht die
+%     Nachbarschaftsstruktur, verwischt aber Unterschiede innerhalb eines
+%     Fensters.
+%
+% (5) Statische Datenbasis
+%     Alle Preise und Verbindungen stammen aus Nachschlagetabellen. Reale
+%     Verfügbarkeiten und Preise ändern sich während der Planung.
+
+% (6) Grenze der gewichteten Summe gegenueber Pareto
+%     Die gewichtete Summe (Skalarisierung) findet je Gewichtung genau eine
+%     Loesung, und zwar immer eine auf der konvexen Huelle der erreichbaren
+%     Punktmenge. Pareto-optimale Plaene in einer Delle der Front sind fuer
+%     KEIN Gewicht w optimal; beim Verschieben von w springt das Ergebnis
+%     von einem Randpunkt zum anderen.
+%     Gleiche Gewichte helfen NICHT. Gleiche Gewichte heissen "addiere beide Ziele gleich
+%     stark", nicht "bevorzuge Ausgewogenheit". Eine Summe bewertet nur
+%     den Gesamtwert, nicht die Verteilung auf die Teilziele. 
+%
+%     Abhilfe: Archiv:
+%     Selektion bleibt bei der gewichteten Summe, zusaetzlich fuehrt der
+%     Lauf eine Nebenliste, in die jedes bewertete Individuum aufgenommen
+%     wird, das von keinem Eintrag dominiert wird. Entscheidend: Die Aufnahme entscheidet sich ueber Dominanz, nicht
+%     ueber die gewichtete Summe, und Dominanz kennt keine Konvexitaet.
+%     B landet also im Archiv, sobald es einmal erzeugt wurde.
+%     Formulierung deshalb abschwaechen: nicht "grundsaetzlich
+%     unerreichbar", sondern "wird nicht gezielt gesucht, aber festgehalten".
+%     Grenze: Der Suchdruck kommt weiter allein von der gewichteten Summe,
+%     das Archiv ist also nahe der Gewichtung dicht und anderswo duenn.
+%     Eine gleichmaessig abgedeckte Front braucht dominanzbasierte
+%     Selektion, z.B. NSGA-II (Eiben/Smith Kap. 12).
+%     Nutzen fuer die Anwendung: Die reisende Person bekommt nicht nur
+%     einen Plan, sondern Alternativen mit anderen Trade-offs. Genau das
+%     nennen Eiben/Smith S. 196 als Vorteil gegenueber der Skalarisierung.
+%
+%     ANKNUEPFUNG: Die Abschlussbemerkung stellt die Frage, warum der
+%     mittlere Bereich der Paretofront die hoechste Attraktivitaet besitzt.
+%     Genau diesen Bereich verfehlt die gewichtete Summe systematisch.
+%     QUELLE: Eiben/Smith S. 196 (Skalarisierung und ihre Nachteile) sowie
+%     S. 197 (Nichtkonvexitaet und Diskontinuitaeten der Paretofront machen
+%     Skalarisierungsverfahren Probleme). 
+
+% TODO Reflexion und Ausblick

@@ -33,16 +33,14 @@ Drei dieser Größen bedürfen einer Erläuterung. Die Mindestaufenthaltsdauer $
 
 Gesucht ist ein vollständiger Reiseplan, der Besuchsreihenfolge, Aufenthaltsdauer je Stopp, Verbindung je Etappe und Hotel je Stopp gemeinsam festlegt und dabei die Zielgrößen Kosten, Komfort und CO\textsubscript{2}-Ausstoß bestmöglich ausbalanciert.
 
-Die Optimierung findet ausschließlich innerhalb vorab bereitgestellter Optionen statt. Sämtliche Preis-, Emissions- und Verbindungsdaten werden im Vorfeld erhoben und als Nachschlagetabellen vorgehalten, denn ein evolutionärer Algorithmus bewertet je Lauf mehrere zehntausend Kandidaten gegen einen unveränderlichen Datenstand.
-
-Der Umfang des Entscheidungsspielraums lässt sich an einem kleinen Beispiel beziffern. Für $n = 4$ Ziele innerhalb eines Zeitraums von $T = 14$ Tagen ergeben sich $4! = 24$ mögliche Besuchsreihenfolgen. Die Verteilung der Übernachtungen auf die vier Stopps erlaubt bei einer Mindestdauer von einer Nacht $\binom{13}{3} = 286$ Kombinationen. Hinzu treten bei durchschnittlich zehn verfügbaren Verbindungen je Etappe und fünf Etappen einschließlich der Rückreise $10^5$ Transportkombinationen sowie bei fünf Hotels je Ziel $5^4 = 625$ Unterkunftskombinationen. Insgesamt umfasst der Lösungsraum damit rund $4 \cdot 10^{11}$ Reisepläne, und dies bei einer Problemgröße, die einer realistischen Urlaubsplanung eher am unteren Rand entspricht.
+Die Optimierung findet ausschließlich innerhalb vorab bereitgestellter Optionen statt. Sämtliche Preis-, Emissions- und Verbindungsdaten werden im Vorfeld erhoben und als Nachschlagetabellen vorgehalten, denn ein evolutionärer Algorithmus bewertet je Lauf mehrere tausende Kandidaten gegen einen unveränderlichen Datenstand.
 
 Naheliegend wäre, dieses Problem zu zerlegen und nacheinander zu lösen: zuerst die Route, dann die Aufenthaltsdauern, zuletzt Transport und Unterkunft. Eine solche sequenzielle Behandlung scheitert jedoch an der wechselseitigen Abhängigkeit der Teilentscheidungen. Ein zusätzlicher Übernachtungstag am ersten Stopp verlegt jede weitere Fahrt und jede weitere Hotelnacht um einen Tag und verändert damit deren tagesabhängige Preise. Eine Route, die unter festen Aufenthaltsdauern optimal erscheint, kann bei veränderter Zeitaufteilung deutlich schlechter abschneiden. Die Entscheidungen müssen daher gemeinsam optimiert werden.
 
 \subsection{Entscheidungsvariablen und Repräsentation}
 \label{subsec:repraesentation}
 
-Die Repräsentation einer Lösung als Genstring legt fest, welche Entscheidungen der Algorithmus überhaupt variieren kann, und bestimmt damit zugleich, welche Mutations- und Rekombinationsoperatoren sinnvoll definierbar sind. Sie ist die zentrale Modellierungsentscheidung dieser Arbeit.
+Die Repräsentation einer Lösung als Genstring legt fest, welche Entscheidungen der Algorithmus überhaupt variieren kann, und bestimmt damit zugleich, welche Mutations- und Rekombinationsoperatoren sinnvoll definierbar sind. Sie gilt zugleich als einer der schwierigsten Teile beim Entwurf eines evolutionären Algorithmus \parencite[Vgl.][S.~49]{eibenSmithIntroductionEvolutionary2015} und ist damit die zentrale Modellierungsentscheidung dieser Arbeit.
 
 Ein Reiseplan wird als Tripel $G = (\pi, d, t)$ dargestellt, dessen Komponenten die drei frei zu wählenden Entscheidungsdimensionen abbilden:
 
@@ -76,16 +74,14 @@ Tabelle~\ref{tab:entscheidungsvariablen} fasst die Entscheidungsvariablen zusamm
   \end{tabular}
 \end{table}
 
-Der Genstring ist damit heterogen aufgebaut und vereint einen Permutationsabschnitt, einen ganzzahligen Abschnitt und einen kategorialen Abschnitt. Diese Mischung ist der Grund, weshalb das Verfahren als genetischer Algorithmus und nicht als Evolutionsstrategie eingeordnet wird, denn Letztere operiert auf reellwertigen Vektoren. Sie erzwingt zugleich abschnittsweise definierte Variationsoperatoren, da sich eine Permutation nicht mit demselben Operator verändern lässt wie eine ganze Zahl.
+Der Genstring ist damit heterogen aufgebaut und vereint einen Permutationsabschnitt, einen ganzzahligen Abschnitt und einen kategorialen Abschnitt. Solche gemischten Repräsentationen gelten als die natürlichere Wahl, sobald sich die Bestandteile eines Problems nicht sinnvoll in eine einheitliche Form bringen lassen \parencite[Vgl.][S.~49]{eibenSmithIntroductionEvolutionary2015}.
 
-Als durchgängiges Beispiel dient die bereits in Abschnitt~\ref{subsec:formalisierung} betrachtete Reise mit $n = 4$ Zielen über $T = 14$ Tage. Die Ziele seien Paris (1), Berlin (2), Rom (3) und Barcelona (4). Der Genstring
+Als durchgängiges Beispiel dient eine Reise mit $n = 4$ Zielen über $T = 14$ Tage. Die Ziele seien Paris (1), Berlin (2), Rom (3) und Barcelona (4). Der Genstring
 \begin{align*}
 G = \big(&(2,\, 1,\, 3,\, 4),\; (2,\, 3,\, 4,\, 5),\\
          &(\text{Bahn/Vm},\, \text{Bahn/Nm},\, \text{Flug/Vm},\, \text{Flug/Nm},\, \text{Flug/Vm})\big)
 \end{align*}
-kodiert eine Reise, die am Vormittag mit der Bahn nach Berlin führt, wo zwei Nächte verbracht werden. Es folgen Paris mit drei Nächten, erreicht über eine Nachmittagsverbindung der Bahn, anschließend Rom mit vier Nächten über einen Vormittagsflug und schließlich Barcelona mit fünf Nächten über einen Nachmittagsflug. Die Rückreise zum Startort erfolgt mit einem Vormittagsflug. Die Abkürzungen Vm und Nm stehen dabei für die Zeitfenster Vormittag und Nachmittag. Die Komponenten werden positionsweise und nicht zielweise gelesen: $d_2 = 3$ bezeichnet die Aufenthaltsdauer an der zweiten Routenposition und damit in Paris, nicht die Dauer am Ziel mit der Nummer 2.
-
-Der so aufgespannte Genotypraum umfasst für dieses Beispiel $4! \cdot \binom{13}{3} \cdot 9^5 \approx 4 \cdot 10^8$ Individuen. Der Vergleich mit dem in Abschnitt~\ref{subsec:formalisierung} bezifferten Lösungsraum zeigt, was die Repräsentation leistet. Die Hotelwahl ist im Genotyp überhaupt nicht mehr enthalten und verkleinert den Suchraum um den exakten Faktor $5^n$, im Beispiel also um 625. Diese Auslagerung geht nicht zulasten der Lösungsqualität, wie der folgende Abschnitt zeigt. Die Zusammenfassung konkreter Verbindungen zu Zeitfenstern wirkt in dieselbe Richtung. Ihr Umfang hängt allerdings davon ab, wie viele Verbindungen die Datengrundlage je Etappe bereitstellt, und lässt sich daher nicht allgemein beziffern.
+kodiert eine Reise, die am Vormittag mit der Bahn nach Berlin führt, wo zwei Nächte verbracht werden. Es folgen Paris mit drei Nächten, erreicht über eine Nachmittagsverbindung der Bahn, anschließend Rom mit vier Nächten über einen Vormittagsflug und schließlich Barcelona mit fünf Nächten über einen Nachmittagsflug. Die Rückreise zum Startort erfolgt mit einem Vormittagsflug. Die Abkürzungen Vm und Nm stehen dabei für die Zeitfenster Vormittag und Nachmittag. 
 
 \subsection{Dekodierfunktion}
 \label{subsec:dekodierung}
@@ -109,12 +105,12 @@ Dabei bezeichnet $p_h(\tau)$ den Übernachtungspreis von Hotel $h$ am Tag $\tau$
 
 Diese Auslagerung ist verlustfrei, und zwar aus einem strukturellen Grund. Die Zielfunktion setzt sich, wie Abschnitt~\ref{subsec:zielfunktion} zeigt, additiv aus den Beiträgen der einzelnen Stopps und Etappen zusammen. Die Wahl des Hotels am Stopp $\pi_i$ beeinflusst ausschließlich den Beitrag dieses Stopps. Sie verändert weder den Zeitplan noch die Emissionen noch die an anderen Stopps verfügbaren Optionen. Bei gegebenem Genstring zerfällt die Hotelwahl damit in $n$ voneinander unabhängige Teilprobleme, deren jeweiliges Minimum unmittelbar ablesbar ist. Das stopweise Minimum ist folglich zugleich das globale Minimum, und ein evolutionärer Suchprozess über die Hotelindizes könnte kein besseres Ergebnis finden, sondern nur langsamer zum selben gelangen.
 
-Für die Verbindungen gilt dasselbe Argument innerhalb einer Klasse, da das Zeitfenster den Ankunftstag bereits festlegt. Es gilt jedoch nicht für die Klasse selbst, denn Verkehrsmittel und Zeitfenster bestimmen über $\delta(t_i)$ den weiteren Zeitplan und über die Emissionen einen wesentlichen Teil der Zielfunktion. Genau deshalb bleibt $t$ im Genstring, während $h$ ihn verlässt.
+Für die Verbindungen gilt dasselbe Argument innerhalb einer Klasse, da das Zeitfenster den Ankunftstag bereits festlegt. Es gilt jedoch nicht für die Klasse selbst, denn Verkehrsmittel und Zeitfenster bestimmen über $\delta(t_i)$ den weiteren Zeitplan. Genau deshalb bleibt $t$ im Genstring, während $h$ ihn verlässt.
 
 \subsection{Zielfunktion}
 \label{subsec:zielfunktion}
 
-Die Zielfunktion bewertet einen dekodierten Reiseplan und macht damit Lösungen vergleichbar. Sie ist der Punkt, an dem die Planungsqualität objektiviert wird, und zugleich die Grundlage jeder Verbesserung durch Mutation oder Rekombination. Sie wird im Folgenden als Zielfunktion $F(G)$ geführt und minimiert, ein kleinerer Wert entspricht also einem besseren Reiseplan. Die Bezeichnungen Fitnessfunktion und Quality Function meinen dasselbe Konstrukt.
+Die Zielfunktion bewertet einen dekodierten Reiseplan und macht damit Lösungen vergleichbar. Sie ist der Punkt, an dem die Planungsqualität objektiviert wird, und zugleich die Grundlage jeder Verbesserung durch Mutation oder Rekombination. Sie wird im Folgenden als Zielfunktion $F(G)$ geführt und minimiert, ein kleinerer Wert entspricht also einem besseren Reiseplan.
 
 Die drei Teilziele werden zunächst getrennt berechnet. Sei $v_i$ die vom Decoder gewählte Verbindung der Etappe $i$ und $h_i$ das Hotel am Stopp $\pi_i$. Mit $c(v)$, $e(v)$ und $u(v)$ für Preis, Emissionen und Diskomfort einer Verbindung gilt:
 \begin{align}
@@ -134,11 +130,9 @@ F(G) = w_1 \frac{K(G)}{K_{\text{ref}}} + w_2 \frac{D(G)}{D_{\text{ref}}} + w_3 \
 \qquad w_1 + w_2 + w_3 = 1,\; w_j \geq 0
 \end{equation}
 
-Erst dadurch sind die Gewichte als Präferenzaussage lesbar. Ein Wert von $w_3 = 0{,}5$ bedeutet nun, dass der reisenden Person die Klimawirkung so viel wert ist wie Kosten und Komfort zusammen. Eine verbreitete Variante bezieht zusätzlich den Nadirpunkt ein und bildet jedes Teilziel auf das Intervall $[0,1]$ ab, setzt dafür aber eine Schätzung der jeweils schlechtesten sinnvollen Ausprägung voraus.
+Die gewichtete Summe überführt das Mehrzielproblem in ein Einzielproblem. Dieses Vorgehen wird als Skalarisierung bezeichnet. Der Preis dafür ist, dass je Gewichtung nur eine einzelne Lösung entsteht und dass die Gewichte bereits festgelegt werden müssen, bevor bekannt ist, welche Lösungen überhaupt erreichbar sind \parencite[Vgl.][S.~196]{eibenSmithIntroductionEvolutionary2015}. Für die vorliegende Anwendung ist das vertretbar, denn die reisende Person benötigt am Ende genau einen Reiseplan und kann ihre Präferenz über die Gewichte ausdrücken. Alternativ ließe sich eine Paretofront bestimmen und der Person zur Auswahl vorlegen, was den Rechenaufwand erhöht und die Entscheidung verlagert statt sie zu treffen.
 
-Die gewichtete Summe überführt das Mehrzielproblem in ein Einzielproblem. Der Preis dafür ist, dass jeweils nur eine Lösung entsteht und dass Punkte in nicht konvexen Bereichen der Paretofront grundsätzlich unerreichbar bleiben. Für die vorliegende Anwendung ist das vertretbar, denn die reisende Person benötigt am Ende genau einen Reiseplan und kann ihre Präferenz über die Gewichte ausdrücken. Alternativ ließe sich eine Paretofront bestimmen und der Person zur Auswahl vorlegen, was den Rechenaufwand erhöht und die Entscheidung verlagert statt sie zu treffen.
-
-Bemerkenswert an der obigen Form ist die additive Struktur. $F$ zerfällt in Beiträge einzelner Etappen und Stopps, was die in Abschnitt~\ref{subsec:dekodierung} gezeigte Separierbarkeit der Hotelwahl überhaupt erst ermöglicht. Für die Bewertung mutierter Individuen bedeutet sie zudem, dass nicht immer der gesamte Plan neu berechnet werden muss. Eine Mutation auf $t_i$ innerhalb desselben Zeitfensters verändert nur den Beitrag einer einzigen Etappe. Eine Mutation auf $d_i$ verschiebt dagegen alle nachfolgenden Kalendertage und erzwingt damit die Neuberechnung des restlichen Plans.
+Bemerkenswert an der obigen Form ist die additive Struktur. $F$ zerfällt in Beiträge einzelner Etappen und Stopps. Für die Bewertung mutierter Individuen bedeutet sie zudem, dass nicht immer der gesamte Plan neu berechnet werden muss. Eine Mutation auf $t_i$ innerhalb desselben Zeitfensters verändert nur den Beitrag einer einzigen Etappe. Eine Mutation auf $d_i$ verschiebt dagegen alle nachfolgenden Kalendertage und erzwingt damit die Neuberechnung des restlichen Plans.
 
 \subsection{Nebenbedingungen}
 \label{subsec:nebenbedingungen}

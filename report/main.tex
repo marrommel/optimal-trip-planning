@@ -41,6 +41,7 @@
 % ===== Mathematik =====
 \usepackage{amsmath}
 \usepackage{amssymb}
+\DeclareMathOperator*{\argmin}{arg\,min}
 
 % ===== Grafiken & Tabellen =====
 \usepackage{graphicx}
@@ -51,7 +52,6 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \floatname{algorithm}{Algorithmus}
-\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}
 
 % ===== Kopf-/Fußzeile =====
 \usepackage{fancyhdr}
@@ -134,13 +134,21 @@ anderen Prüfungsbehörde vorgelegt.
   Ort, Datum, Unterschrift \ArbeitAutorZwei
 \end{tabular}
 
-% ===== ABSTRACT =====
-\newpage
-\thispagestyle{empty}
+\vspace{2em}
 
-{\large\bfseries Kurzfassung (Abstract)}\\[1em]
+{\large\bfseries Erklärung zur Nutzung generativer KI}\\[1em]
 
-\input{sections/abstract}
+Bei der Erstellung dieser Arbeit wurden generative KI-Systeme eingesetzt, namentlich
+Claude (Anthropic). Die Nutzung erfolgte in folgendem Umfang: Strukturierung der
+Kapitel~\ref{sec:modellierung} und~\ref{sec:loesungsverfahren}, Unterstützung bei der
+mathematischen Formalisierung und Notation, Überarbeitung des
+LaTeX-Quelltextes, Quellensuche sowie sprachliche Überarbeitung.
+
+Die inhaltlichen Entscheidungen der Modellierung und des Lösungsverfahrens wurden von
+den Verfassern getroffen. Sämtliche mithilfe von KI erzeugten Inhalte wurden geprüft,
+überarbeitet und inhaltlich verantwortet. Die Verantwortung für die Richtigkeit und
+Vollständigkeit der Arbeit einschließlich aller Quellenangaben liegt bei den
+Verfassern.
 
 % ===== VERZEICHNISSE =====
 \newpage
@@ -149,18 +157,15 @@ anderen Prüfungsbehörde vorgelegt.
 \tableofcontents
 
 \newpage
-\listoffigures
-\addcontentsline{toc}{section}{Abbildungsverzeichnis}
-
-\newpage
 \listoftables
 \addcontentsline{toc}{section}{Tabellenverzeichnis}
 
-\newpage
-\listofalgorithms
-\addcontentsline{toc}{section}{Algorithmenverzeichnis}
-
 % ===== HAUPTTEIL =====
+% Seitenzahl der Verzeichnisse merken, damit das Literaturverzeichnis
+% die roemische Zaehlung fortsetzen kann.
+\newcounter{romanpages}
+\setcounter{romanpages}{\value{page}}
+
 \newpage
 \pagenumbering{arabic}
 
@@ -172,6 +177,9 @@ anderen Prüfungsbehörde vorgelegt.
 
 % ===== LITERATURVERZEICHNIS =====
 \newpage
+\pagenumbering{Roman}
+\setcounter{page}{\value{romanpages}}
+\stepcounter{page}
 \printbibliography[title={Literaturverzeichnis}, heading=bibintoc]
 
 \end{document}
