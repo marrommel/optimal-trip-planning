@@ -1,0 +1,99 @@
+# ============================ SEARCH ============================
+[search]
+POPULATION_SIZE = 300             # Plans retained for breeding; larger is not always better
+MAX_GENERATIONS = 500            # Stop at this limit OR the runtime limit, whichever comes first
+MAX_RUNTIME_SECONDS = 600         # Search only; excludes loading and pre-search normalization
+RANDOM_SEED = 753 # 76                  # Repeatable runs; compare several seeds when tuning
+CROSSOVER_RATE = 0.8
+MUTATION_RATE = 0.15              # Applied independently to genes/operators, not once per plan
+MUTATION_RATE_MIN = 0.02          # Lower clamp of the adaptive mutation rate
+MUTATION_RATE_MAX = 0.4           # Upper clamp; set both to MUTATION_RATE to disable adaptation
+STEP_GROWTH = 1.25               # Multiplicative step adjustment of the 1/5 success rule; > 1
+SUCCESS_TARGET = 0.02            # Share of offspring that must Pareto-dominate their parent
+                                 # for the step to grow; in (0, 1). Calibrated on this problem:
+                                 # the measured ratio is ~0.04 while exploring and ~0.005 once
+                                 # converged, so a target above that range would only ever shrink
+                                 # the step. Re-measure before changing the trip or objectives.
+
+# ======================= OBJECTIVE BALANCING ====================
+[objective_balancing]
+BALANCED_SOLUTION_WEIGHTS = [0.5, 0.10, 0.40]  # Cost, discomfort, CO2
+
+# ====================== ADVANCED: PERFORMANCE ===================
+# Leave unchanged unless measuring performance. No alternate evaluation mode:
+# each chromosome selects exactly one transport itinerary and one hotel per city.
+[performance]
+PRUNE_EQUIVALENT_TRANSPORT = true  # Remove dominated offers only when timing is equivalent
+TRANSPORT_CACHE_SIZE = 4096       # LRU query entries; 0 also disables option-table reuse
+TRANSPORT_RESULT_CACHE_SIZE = 1024 # LRU successful decodes; 0 disables reuse
+
+[advanced_operators]
+COORDINATED_MUTATION_RATE = 0.2    # Optional extra mutation of neighboring travel legs; [0, 1]
+TRANSPORT_GROUP_SELECTION = true # Phenotypic niching: select by decoded itinerary, not by hotel variant
+COMPLEMENTARY_PAIRING = false     # Choose the second parent to maximise objective-space distance.
+
+# ====================== ADVANCED: DIAGNOSTICS ===================
+# Fixed scales/reference make benchmark runs comparable. These do not affect
+# search unless BOTH optional early-stopping thresholds are explicitly enabled.
+[quality_monitoring]
+QUALITY_WINDOW_GENERATIONS = 40
+QUALITY_SCALES = [2000.0, 1000.0, 2000.0]
+HYPERVOLUME_REFERENCE = [2100.0, 10000.0, 2100.0] # Must exceed every feasible objective value
+FRONT_PROGRESS_RESOLUTION = 0.01  # Grid in QUALITY_SCALES units; not a stopping threshold
+
+# ======================== MODEL: TIME WINDOWS ==================
+[time_windows]
+DAYTIME_START_HOUR = 9
+DAYTIME_END_HOUR = 20
+SLEEP_START_HOUR = 23
+SLEEP_END_HOUR = 7
+MIN_REST_HOURS = 6.0              # Required rest within each destination night's sleep window
+NIGHT_START_HOUR = 1              # Extra discomfort during this local travel window
+NIGHT_END_HOUR = 5
+
+# ====================== MODEL: TRAVEL DISCOMFORT ================
+[travel_discomfort]
+FLIGHT_DISCOMFORT = 20.0
+TRANSFER_DISCOMFORT = 10.0
+SLEEP_DISRUPTION_PER_HOUR = 12.0
+LONG_JOURNEY_THRESHOLD_HOURS = 6.0
+LONG_JOURNEY_DISCOMFORT_PER_HOUR = 2.0
+
+[TRAVEL_DISCOMFORT_PER_HOUR]
+train = 3.0
+bus = 5.0
+"train+bus" = 4.5
+flight = 3.0
+
+[DAYTIME_TRAVEL_DISCOMFORT_PER_HOUR]
+train = 0.5
+bus = 1.0
+"train+bus" = 1.0
+flight = 0.5
+
+[NIGHT_TRAVEL_DISCOMFORT_PER_HOUR]
+train = 5.0
+bus = 10.0
+"train+bus" = 10.0
+flight = 5.0
+
+# ======================= MODEL: HOTEL DISCOMFORT ================
+[hotel_discomfort]
+CHECK_IN_FREE_HOURS = 3.0         # Grace period before check-in
+CHECK_IN_WAIT_DISCOMFORT_PER_HOUR = 2.0
+CHECK_OUT_FREE_HOURS = 1.0        # Grace period after check-out
+CHECK_OUT_WAIT_DISCOMFORT = 3.0   # One-time penalty beyond the grace period
+HOTEL_HOSTEL_DISCOMFORT_PER_NIGHT = 12.0
+
+[HOTEL_DISCOMFORT_PER_NIGHT_BY_STARS]
+0 = 8.0
+1 = 12.0
+2 = 8.0
+3 = 3.0
+4 = 1.0
+5 = 0.0
+
+# Search  212/500  05:11        267.35      +0.00      110.1      +0.0        143.5      -7.2
+# Search  357/500  08:34        263.93      -2.00      108.7      +0.0        146.7      +0.0
+
+# seed31 Search  335/500  09:49        246.36      -7.01      108.7      +0.0        152.6      +0.0

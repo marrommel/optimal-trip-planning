@@ -1,0 +1,903 @@
+city,name,property_token,hex_id,category,check_in_date,check_out_date,price_per_night,base_stay_price,taxes_and_fees,total_price,currency,stars,rating,reviews_count,co2_kg_per_night,total_co2_kg,check_in_time,check_out_time,quoted_at
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-01,2027-02-02,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:13:53.415607Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-01,2027-02-02,18.44,15.35,3.08,18.44,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:53.415607Z
+London,Wombat's City Hostel London,Wombat's City Hostel London,,gcid:hotel,2027-02-01,2027-02-02,20.4,16.76,3.64,20.4,EUR,2,4.4,3846,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:53.415607Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-01,2027-02-02,20.42,17.02,3.4,20.42,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:53.415607Z
+London,Travelodge London Wembley,Travelodge London Wembley,,gcid:hotel,2027-02-01,2027-02-02,35.96,29.97,6.0,35.96,EUR,3,3.6,2036,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:53.415607Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-01,2027-02-02,44.85,37.38,7.47,44.85,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:13:53.415607Z
+London,Travelodge London Docklands Central,Travelodge London Docklands Central,,gcid:hotel,2027-02-01,2027-02-02,45.55,45.55,0.0,45.55,EUR,3,3.7,3638,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:53.415607Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-01,2027-02-02,45.57,37.98,7.59,45.57,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:53.415607Z
+London,"hub by Premier Inn London Spitalfields, Brick Lane hotel","hub by Premier Inn London Spitalfields, Brick Lane hotel",,gcid:hotel,2027-02-01,2027-02-02,53.96,44.97,8.99,53.96,EUR,3,4.5,1887,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:53.415607Z
+London,hub by Premier Inn London Shoreditch,hub by Premier Inn London Shoreditch,,gcid:hotel,2027-02-01,2027-02-02,53.96,44.97,8.99,53.96,EUR,3,4.4,1107,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:53.415607Z
+London,hub by Premier Inn London West Brompton hotel,hub by Premier Inn London West Brompton hotel,,gcid:hotel,2027-02-01,2027-02-02,53.96,44.97,8.99,53.96,EUR,3,4.4,610,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:53.415607Z
+London,Premier Inn London Canary Wharf (Westferry) hotel,Premier Inn London Canary Wharf (Westferry) hotel,,gcid:hotel,2027-02-01,2027-02-02,55.16,45.96,9.2,55.16,EUR,3,4.3,1430,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:53.415607Z
+London,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,,gcid:hotel,2027-02-01,2027-02-02,56.36,46.97,9.39,56.36,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:53.415607Z
+London,Rushmore Hotel,Rushmore Hotel,,gcid:hotel,2027-02-01,2027-02-02,60.03,50.12,9.91,60.03,EUR,3,3.7,411,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:13:53.415607Z
+London,easyHotel London City Shoreditch,easyHotel London City Shoreditch,,gcid:hotel,2027-02-01,2027-02-02,60.17,50.15,10.03,60.17,EUR,2,4.2,4690,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:13:53.415607Z
+London,Holiday Inn Express London - Ealing by IHG,Holiday Inn Express London - Ealing by IHG,,gcid:hotel,2027-02-01,2027-02-02,60.42,50.35,10.07,60.42,EUR,3,4.4,677,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:13:53.415607Z
+London,Holiday Inn Express London - Wandsworth by IHG,Holiday Inn Express London - Wandsworth by IHG,,gcid:hotel,2027-02-01,2027-02-02,63.82,53.18,10.64,63.82,EUR,3,4.1,1635,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:13:53.415607Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-02,2027-02-03,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:13:56.891818Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-02,2027-02-03,18.78,18.78,0.0,18.78,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:56.891818Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-02,2027-02-03,20.0,16.67,3.33,20.0,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:56.891818Z
+London,Wombat's City Hostel London,Wombat's City Hostel London,,gcid:hotel,2027-02-02,2027-02-03,21.93,18.01,3.92,21.93,EUR,2,4.4,3846,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:56.891818Z
+London,Travelodge London Excel,Travelodge London Excel,,gcid:hotel,2027-02-02,2027-02-03,45.55,37.96,7.59,45.55,EUR,3,3.7,1550,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:13:56.891818Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-02,2027-02-03,47.97,39.97,8.0,47.97,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:56.891818Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-02,2027-02-03,48.11,40.09,8.02,48.11,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:13:56.891818Z
+London,Best Western Greater London Hotel,Best Western Greater London Hotel,,gcid:hotel,2027-02-02,2027-02-03,49.34,41.11,8.22,49.34,EUR,3,3.9,569,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:13:56.891818Z
+London,Travelodge London Docklands Central,Travelodge London Docklands Central,,gcid:hotel,2027-02-02,2027-02-03,50.35,50.35,0.0,50.35,EUR,3,3.7,3638,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:56.891818Z
+London,London Stay Apartments,London Stay Apartments,,gcid:hotel,2027-02-02,2027-02-03,50.36,50.36,0.0,50.36,EUR,3,3.8,326,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:13:56.891818Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-02,2027-02-03,56.1,55.82,0.28,56.1,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:13:56.891818Z
+London,Premier Inn London Docklands (Canning Town) hotel,Premier Inn London Docklands (Canning Town) hotel,,gcid:hotel,2027-02-02,2027-02-03,61.16,50.96,10.19,61.16,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:56.891818Z
+London,The Lansbury Heritage A Sunday Hotel - Canary Wharf,The Lansbury Heritage A Sunday Hotel - Canary Wharf,,gcid:hotel,2027-02-02,2027-02-03,62.0,62.0,0.0,62.0,EUR,4,4.4,772,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:13:56.891818Z
+London,Best Western London Highbury,Best Western London Highbury,,gcid:hotel,2027-02-02,2027-02-03,65.4,55.22,10.18,65.4,EUR,3,4.0,846,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:13:56.891818Z
+London,Garden Court Hotel Notting Hill,Garden Court Hotel Notting Hill,,gcid:hotel,2027-02-02,2027-02-03,65.42,53.74,11.68,65.42,EUR,3,3.9,590,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:13:56.891818Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-03,2027-02-04,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:13:59.999199Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-03,2027-02-04,17.56,14.42,3.14,17.56,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:59.999199Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-03,2027-02-04,20.29,16.91,3.38,20.29,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:59.999199Z
+London,Wombat's City Hostel London,Wombat's City Hostel London,,gcid:hotel,2027-02-03,2027-02-04,21.42,17.59,3.82,21.42,EUR,2,4.4,3846,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:13:59.999199Z
+London,Premier Inn London Chiswick hotel,Premier Inn London Chiswick hotel,,gcid:hotel,2027-02-03,2027-02-04,46.77,38.97,7.79,46.77,EUR,3,4.2,1699,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:59.999199Z
+London,Premier Inn London Hendon (The Hyde) hotel,Premier Inn London Hendon (The Hyde) hotel,,gcid:hotel,2027-02-03,2027-02-04,46.77,38.97,7.79,46.77,EUR,3,4.0,1329,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:59.999199Z
+London,Travelodge London Excel,Travelodge London Excel,,gcid:hotel,2027-02-03,2027-02-04,47.97,39.97,8.0,47.97,EUR,3,3.7,1550,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:13:59.999199Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-03,2027-02-04,48.11,40.09,8.02,48.11,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:13:59.999199Z
+London,Travelodge London Docklands Central,Travelodge London Docklands Central,,gcid:hotel,2027-02-03,2027-02-04,50.35,50.35,0.0,50.35,EUR,3,3.7,3638,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:59.999199Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-03,2027-02-04,50.36,41.97,8.39,50.36,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:59.999199Z
+London,Premier Inn London Docklands (Canning Town) hotel,Premier Inn London Docklands (Canning Town) hotel,,gcid:hotel,2027-02-03,2027-02-04,56.36,46.97,9.39,56.36,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:59.999199Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-03,2027-02-04,57.22,56.93,0.29,57.22,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:13:59.999199Z
+London,The Lansbury Heritage A Sunday Hotel - Canary Wharf,The Lansbury Heritage A Sunday Hotel - Canary Wharf,,gcid:hotel,2027-02-03,2027-02-04,62.0,62.0,0.0,62.0,EUR,4,4.4,772,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:13:59.999199Z
+London,Best Western London Highbury,Best Western London Highbury,,gcid:hotel,2027-02-03,2027-02-04,62.69,52.24,10.45,62.69,EUR,3,4.0,846,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:13:59.999199Z
+London,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,,gcid:hotel,2027-02-03,2027-02-04,64.75,53.96,10.79,64.75,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:13:59.999199Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-04,2027-02-05,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:14:03.463989Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-04,2027-02-05,17.57,14.43,3.14,17.57,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:03.463989Z
+London,Travelodge London Brent Cross,Travelodge London Brent Cross,,gcid:hotel,2027-02-04,2027-02-05,34.76,28.97,5.79,34.76,EUR,0,4.0,1248,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,Travelodge London Wembley,Travelodge London Wembley,,gcid:hotel,2027-02-04,2027-02-05,35.96,29.97,6.0,35.96,EUR,3,3.6,2036,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-04,2027-02-05,37.13,30.94,6.19,37.13,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:03.463989Z
+London,Travelodge London Docklands Central,Travelodge London Docklands Central,,gcid:hotel,2027-02-04,2027-02-05,45.55,45.55,0.0,45.55,EUR,3,3.7,3638,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-04,2027-02-05,45.57,37.98,7.59,45.57,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-04,2027-02-05,48.11,40.09,8.02,48.11,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:03.463989Z
+London,Premier Inn London Docklands (Canning Town) hotel,Premier Inn London Docklands (Canning Town) hotel,,gcid:hotel,2027-02-04,2027-02-05,49.17,40.98,8.19,49.17,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,Holiday Inn Express London - Limehouse by IHG,Holiday Inn Express London - Limehouse by IHG,,gcid:hotel,2027-02-04,2027-02-05,52.57,43.81,8.76,52.57,EUR,3,4.3,4482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:03.463989Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-04,2027-02-05,53.92,53.65,0.28,53.92,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,The Lansbury Heritage A Sunday Hotel - Canary Wharf,The Lansbury Heritage A Sunday Hotel - Canary Wharf,,gcid:hotel,2027-02-04,2027-02-05,54.0,54.0,0.0,54.0,EUR,4,4.4,772,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:14:03.463989Z
+London,hub by Premier Inn London West Brompton hotel,hub by Premier Inn London West Brompton hotel,,gcid:hotel,2027-02-04,2027-02-05,54.78,45.64,9.14,54.78,EUR,3,4.4,610,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,Premier Inn London Canary Wharf (Westferry) hotel,Premier Inn London Canary Wharf (Westferry) hotel,,gcid:hotel,2027-02-04,2027-02-05,55.16,45.96,9.2,55.16,EUR,3,4.3,1430,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,,gcid:hotel,2027-02-04,2027-02-05,57.56,47.97,9.59,57.56,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:03.463989Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-05,2027-02-06,17.71,14.55,3.16,17.71,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:06.976898Z
+London,Travelodge London Brent Cross,Travelodge London Brent Cross,,gcid:hotel,2027-02-05,2027-02-06,34.76,28.97,5.79,34.76,EUR,0,4.0,1248,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,Travelodge London Wembley,Travelodge London Wembley,,gcid:hotel,2027-02-05,2027-02-06,35.96,29.97,6.0,35.96,EUR,3,3.6,2036,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,Travelodge London Excel,Travelodge London Excel,,gcid:hotel,2027-02-05,2027-02-06,44.37,36.97,7.4,44.37,EUR,3,3.7,1550,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:06.976898Z
+London,The Lansbury Heritage A Sunday Hotel - Canary Wharf,The Lansbury Heritage A Sunday Hotel - Canary Wharf,,gcid:hotel,2027-02-05,2027-02-06,49.0,49.0,0.0,49.0,EUR,4,4.4,772,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:14:06.976898Z
+London,Travelodge London Docklands Central,Travelodge London Docklands Central,,gcid:hotel,2027-02-05,2027-02-06,49.15,49.15,0.0,49.15,EUR,3,3.7,3638,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,Premier Inn London New Southgate hotel,Premier Inn London New Southgate hotel,,gcid:hotel,2027-02-05,2027-02-06,51.56,42.96,8.6,51.56,EUR,3,4.3,558,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,Travelodge London Central Elephant and Castle,Travelodge London Central Elephant and Castle,,gcid:hotel,2027-02-05,2027-02-06,53.95,44.95,8.99,53.95,EUR,0,3.8,793,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-05,2027-02-06,55.45,46.2,9.24,55.45,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:06.976898Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-05,2027-02-06,56.1,55.82,0.28,56.1,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,"hub by Premier Inn London Spitalfields, Brick Lane hotel","hub by Premier Inn London Spitalfields, Brick Lane hotel",,gcid:hotel,2027-02-05,2027-02-06,58.76,48.96,9.8,58.76,EUR,3,4.5,1887,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-05,2027-02-06,61.16,50.96,10.19,61.16,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,Premier Inn London Canary Wharf (Westferry) hotel,Premier Inn London Canary Wharf (Westferry) hotel,,gcid:hotel,2027-02-05,2027-02-06,64.75,53.96,10.79,64.75,EUR,3,4.3,1430,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:06.976898Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-06,2027-02-07,17.66,14.51,3.15,17.66,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:10.140341Z
+London,Travelodge London Brent Cross,Travelodge London Brent Cross,,gcid:hotel,2027-02-06,2027-02-07,46.75,38.96,7.79,46.75,EUR,0,4.0,1248,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:10.140341Z
+London,Travelodge London Excel,Travelodge London Excel,,gcid:hotel,2027-02-06,2027-02-07,47.97,39.97,8.0,47.97,EUR,3,3.7,1550,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:10.140341Z
+London,Best Western Greater London Hotel,Best Western Greater London Hotel,,gcid:hotel,2027-02-06,2027-02-07,49.34,41.11,8.22,49.34,EUR,3,3.9,569,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:10.140341Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-06,2027-02-07,50.36,41.97,8.39,50.36,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:10.140341Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-06,2027-02-07,51.37,42.81,8.56,51.37,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:10.140341Z
+London,Travelodge London Docklands Central,Travelodge London Docklands Central,,gcid:hotel,2027-02-06,2027-02-07,55.15,55.15,0.0,55.15,EUR,3,3.7,3638,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:10.140341Z
+London,Premier Inn London Chiswick hotel,Premier Inn London Chiswick hotel,,gcid:hotel,2027-02-06,2027-02-07,55.16,45.96,9.2,55.16,EUR,3,4.2,1699,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:10.140341Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-06,2027-02-07,55.45,46.2,9.24,55.45,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:10.140341Z
+London,The Lansbury Heritage A Sunday Hotel - Canary Wharf,The Lansbury Heritage A Sunday Hotel - Canary Wharf,,gcid:hotel,2027-02-06,2027-02-07,62.0,62.0,0.0,62.0,EUR,4,4.4,772,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:14:10.140341Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-06,2027-02-07,66.01,65.68,0.33,66.01,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:10.140341Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-07,2027-02-08,18.69,15.57,3.12,18.69,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:13.043574Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-07,2027-02-08,22.48,18.73,3.75,22.48,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:13.043574Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-07,2027-02-08,44.03,36.69,7.34,44.03,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:13.043574Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-07,2027-02-08,45.57,37.98,7.59,45.57,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,Travelodge London Central Elephant and Castle,Travelodge London Central Elephant and Castle,,gcid:hotel,2027-02-07,2027-02-08,47.97,39.97,8.0,47.97,EUR,0,3.8,793,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,easyHotel London City Shoreditch,easyHotel London City Shoreditch,,gcid:hotel,2027-02-07,2027-02-08,48.32,40.27,8.06,48.32,EUR,2,4.2,4690,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:14:13.043574Z
+London,Travelodge London Central Southwark,Travelodge London Central Southwark,,gcid:hotel,2027-02-07,2027-02-08,49.15,40.96,8.19,49.15,EUR,3,3.5,2550,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,Travelodge London Central City Road,Travelodge London Central City Road,,gcid:hotel,2027-02-07,2027-02-08,51.56,42.96,8.6,51.56,EUR,2,3.8,5083,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,Travelodge London City,Travelodge London City,,gcid:hotel,2027-02-07,2027-02-08,53.95,44.95,8.99,53.95,EUR,3,4.1,2939,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,"hub by Premier Inn London Spitalfields, Brick Lane hotel","hub by Premier Inn London Spitalfields, Brick Lane hotel",,gcid:hotel,2027-02-07,2027-02-08,53.96,44.97,8.99,53.96,EUR,3,4.5,1887,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,hub by Premier Inn London Shoreditch,hub by Premier Inn London Shoreditch,,gcid:hotel,2027-02-07,2027-02-08,53.96,44.97,8.99,53.96,EUR,3,4.4,1107,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,,gcid:hotel,2027-02-07,2027-02-08,56.36,46.97,9.39,56.36,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,Travelodge London Central Tower Bridge,Travelodge London Central Tower Bridge,,gcid:hotel,2027-02-07,2027-02-08,59.94,49.96,9.99,59.94,EUR,3,3.6,2527,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,Travelodge London Covent Garden,Travelodge London Covent Garden,,gcid:hotel,2027-02-07,2027-02-08,61.14,50.95,10.19,61.14,EUR,3,3.8,6231,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:13.043574Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-08,2027-02-09,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:14:16.216009Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-08,2027-02-09,18.57,15.48,3.09,18.57,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:16.216009Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-08,2027-02-09,19.43,16.19,3.24,19.43,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:16.216009Z
+London,Wombat's City Hostel London,Wombat's City Hostel London,,gcid:hotel,2027-02-08,2027-02-09,20.4,16.76,3.64,20.4,EUR,2,4.4,3846,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:16.216009Z
+London,Travelodge London Wembley,Travelodge London Wembley,,gcid:hotel,2027-02-08,2027-02-09,35.96,29.97,6.0,35.96,EUR,3,3.6,2036,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:16.216009Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-08,2027-02-09,50.52,50.52,0.0,50.52,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:16.216009Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-08,2027-02-09,51.56,42.96,8.6,51.56,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:16.216009Z
+London,hub by Premier Inn London West Brompton hotel,hub by Premier Inn London West Brompton hotel,,gcid:hotel,2027-02-08,2027-02-09,56.36,46.97,9.39,56.36,EUR,3,4.4,610,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:16.216009Z
+London,hub by Premier Inn London Shoreditch,hub by Premier Inn London Shoreditch,,gcid:hotel,2027-02-08,2027-02-09,57.56,47.97,9.59,57.56,EUR,3,4.4,1107,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:16.216009Z
+London,"hub by Premier Inn London Spitalfields, Brick Lane hotel","hub by Premier Inn London Spitalfields, Brick Lane hotel",,gcid:hotel,2027-02-08,2027-02-09,58.76,48.96,9.8,58.76,EUR,3,4.5,1887,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:16.216009Z
+London,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,,gcid:hotel,2027-02-08,2027-02-09,58.76,48.96,9.8,58.76,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:16.216009Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-09,2027-02-10,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:14:19.539331Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-09,2027-02-10,18.62,15.52,3.1,18.62,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:19.539331Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-09,2027-02-10,19.43,16.19,3.24,19.43,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:19.539331Z
+London,Wombat's City Hostel London,Wombat's City Hostel London,,gcid:hotel,2027-02-09,2027-02-10,22.65,18.61,4.04,22.65,EUR,2,4.4,3846,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:19.539331Z
+London,Premier Inn London Hendon (The Hyde) hotel,Premier Inn London Hendon (The Hyde) hotel,,gcid:hotel,2027-02-09,2027-02-10,49.17,40.98,8.19,49.17,EUR,3,4.0,1329,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:19.539331Z
+London,Best Western Greater London Hotel,Best Western Greater London Hotel,,gcid:hotel,2027-02-09,2027-02-10,49.34,41.11,8.22,49.34,EUR,3,3.9,569,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:19.539331Z
+London,London Stay Apartments,London Stay Apartments,,gcid:hotel,2027-02-09,2027-02-10,50.36,50.36,0.0,50.36,EUR,3,3.8,326,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:19.539331Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-09,2027-02-10,51.56,42.96,8.6,51.56,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:19.539331Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-09,2027-02-10,55.45,46.2,9.24,55.45,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:19.539331Z
+London,Best Western London Highbury,Best Western London Highbury,,gcid:hotel,2027-02-09,2027-02-10,62.69,52.24,10.45,62.69,EUR,3,4.0,846,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:19.539331Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-09,2027-02-10,68.41,68.06,0.35,68.41,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:19.539331Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-10,2027-02-11,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:14:22.689341Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-10,2027-02-11,17.63,14.48,3.15,17.63,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:22.689341Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-10,2027-02-11,20.2,16.83,3.37,20.2,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:22.689341Z
+London,Wombat's City Hostel London,Wombat's City Hostel London,,gcid:hotel,2027-02-10,2027-02-11,25.23,20.73,4.5,25.23,EUR,2,4.4,3846,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:22.689341Z
+London,Travelodge London Wembley,Travelodge London Wembley,,gcid:hotel,2027-02-10,2027-02-11,43.53,36.61,6.92,43.53,EUR,3,3.6,2036,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:22.689341Z
+London,Premier Inn London Chiswick hotel,Premier Inn London Chiswick hotel,,gcid:hotel,2027-02-10,2027-02-11,46.77,38.97,7.79,46.77,EUR,3,4.2,1699,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:22.689341Z
+London,Premier Inn London Hendon (The Hyde) hotel,Premier Inn London Hendon (The Hyde) hotel,,gcid:hotel,2027-02-10,2027-02-11,46.77,38.97,7.79,46.77,EUR,3,4.0,1329,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:22.689341Z
+London,Best Western Greater London Hotel,Best Western Greater London Hotel,,gcid:hotel,2027-02-10,2027-02-11,49.34,41.11,8.22,49.34,EUR,3,3.9,569,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:22.689341Z
+London,London Stay Apartments,London Stay Apartments,,gcid:hotel,2027-02-10,2027-02-11,50.36,50.36,0.0,50.36,EUR,3,3.8,326,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:22.689341Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-10,2027-02-11,53.0,44.16,8.84,53.0,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:22.689341Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-10,2027-02-11,53.96,44.97,8.99,53.96,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:22.689341Z
+London,Best Western London Highbury,Best Western London Highbury,,gcid:hotel,2027-02-10,2027-02-11,62.69,52.24,10.45,62.69,EUR,3,4.0,846,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:22.689341Z
+London,Garden Court Hotel Notting Hill,Garden Court Hotel Notting Hill,,gcid:hotel,2027-02-10,2027-02-11,64.29,52.81,11.48,64.29,EUR,3,3.9,590,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:22.689341Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-10,2027-02-11,64.47,64.14,0.33,64.47,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:22.689341Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-11,2027-02-12,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:14:26.146576Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-11,2027-02-12,17.64,14.49,3.15,17.64,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:26.146576Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-11,2027-02-12,22.88,19.07,3.81,22.88,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:26.146576Z
+London,Travelodge London Brent Cross,Travelodge London Brent Cross,,gcid:hotel,2027-02-11,2027-02-12,34.76,28.97,5.79,34.76,EUR,0,4.0,1248,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,Travelodge London Wembley,Travelodge London Wembley,,gcid:hotel,2027-02-11,2027-02-12,35.96,29.97,6.0,35.96,EUR,3,3.6,2036,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-11,2027-02-12,41.97,34.98,6.99,41.97,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,Premier Inn London Hendon (The Hyde) hotel,Premier Inn London Hendon (The Hyde) hotel,,gcid:hotel,2027-02-11,2027-02-12,41.97,34.98,6.99,41.97,EUR,3,4.0,1329,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,Travelodge London Central Elephant and Castle,Travelodge London Central Elephant and Castle,,gcid:hotel,2027-02-11,2027-02-12,53.95,44.95,8.99,53.95,EUR,0,3.8,793,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-11,2027-02-12,55.0,54.73,0.28,55.0,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,hub by Premier Inn London West Brompton hotel,hub by Premier Inn London West Brompton hotel,,gcid:hotel,2027-02-11,2027-02-12,55.16,45.96,9.2,55.16,EUR,3,4.4,610,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,Garden Court Hotel Notting Hill,Garden Court Hotel Notting Hill,,gcid:hotel,2027-02-11,2027-02-12,57.81,48.18,9.63,57.81,EUR,3,3.9,590,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:26.146576Z
+London,"hub by Premier Inn London Spitalfields, Brick Lane hotel","hub by Premier Inn London Spitalfields, Brick Lane hotel",,gcid:hotel,2027-02-11,2027-02-12,61.16,50.96,10.19,61.16,EUR,3,4.5,1887,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,hub by Premier Inn London Shoreditch,hub by Premier Inn London Shoreditch,,gcid:hotel,2027-02-11,2027-02-12,62.36,51.96,10.4,62.36,EUR,3,4.4,1107,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,,gcid:hotel,2027-02-11,2027-02-12,62.36,51.96,10.4,62.36,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:26.146576Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-12,2027-02-13,17.78,14.61,3.18,17.78,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:29.830212Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-12,2027-02-13,18.87,18.87,0.0,18.87,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:14:29.830212Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-12,2027-02-13,25.58,21.31,4.26,25.58,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:29.830212Z
+London,Travelodge London Wembley,Travelodge London Wembley,,gcid:hotel,2027-02-12,2027-02-13,35.96,29.97,6.0,35.96,EUR,3,3.6,2036,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:29.830212Z
+London,Travelodge London Brent Cross,Travelodge London Brent Cross,,gcid:hotel,2027-02-12,2027-02-13,40.77,33.97,6.8,40.77,EUR,0,4.0,1248,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:29.830212Z
+London,The Lansbury Heritage A Sunday Hotel - Canary Wharf,The Lansbury Heritage A Sunday Hotel - Canary Wharf,,gcid:hotel,2027-02-12,2027-02-13,53.0,53.0,0.0,53.0,EUR,4,4.4,772,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:14:29.830212Z
+London,Travelodge London Central Elephant and Castle,Travelodge London Central Elephant and Castle,,gcid:hotel,2027-02-12,2027-02-13,53.95,44.95,8.99,53.95,EUR,0,3.8,793,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:29.830212Z
+London,Travelodge London Central Southwark,Travelodge London Central Southwark,,gcid:hotel,2027-02-12,2027-02-13,59.94,49.96,9.99,59.94,EUR,3,3.5,2550,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:29.830212Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-12,2027-02-13,59.96,49.97,9.99,59.96,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:29.830212Z
+London,ibis budget London Whitechapel - Brick Lane,ibis budget London Whitechapel - Brick Lane,,gcid:hotel,2027-02-12,2027-02-13,60.28,59.98,0.3,60.28,EUR,2,4.0,4294,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:29.830212Z
+London,hub by Premier Inn London Shoreditch,hub by Premier Inn London Shoreditch,,gcid:hotel,2027-02-12,2027-02-13,65.95,54.96,11.0,65.95,EUR,3,4.4,1107,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:29.830212Z
+London,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,,gcid:hotel,2027-02-12,2027-02-13,68.35,56.96,11.39,68.35,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:29.830212Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-13,2027-02-14,17.72,14.56,3.17,17.72,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:33.083026Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-13,2027-02-14,22.39,22.39,0.0,22.39,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:14:33.083026Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-13,2027-02-14,26.29,21.92,4.38,26.29,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:33.083026Z
+London,Green Rooms,Green Rooms,,gcid:hotel,2027-02-13,2027-02-14,29.9,24.92,4.99,29.9,EUR,2,4.0,877,11.5,11.5,2:00 PM,11:00 AM,2026-11-03T10:14:33.083026Z
+London,The Lansbury Heritage A Sunday Hotel - Canary Wharf,The Lansbury Heritage A Sunday Hotel - Canary Wharf,,gcid:hotel,2027-02-13,2027-02-14,50.0,50.0,0.0,50.0,EUR,4,4.4,772,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:14:33.083026Z
+London,Best Western Greater London Hotel,Best Western Greater London Hotel,,gcid:hotel,2027-02-13,2027-02-14,50.98,42.49,8.49,50.98,EUR,3,3.9,569,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:33.083026Z
+London,Travelodge London Excel,Travelodge London Excel,,gcid:hotel,2027-02-13,2027-02-14,51.56,42.96,8.6,51.56,EUR,3,3.7,1550,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:33.083026Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-13,2027-02-14,58.71,48.92,9.79,58.71,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:33.083026Z
+London,Travelodge London Docklands Central,Travelodge London Docklands Central,,gcid:hotel,2027-02-13,2027-02-14,61.14,61.14,0.0,61.14,EUR,3,3.7,3638,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:33.083026Z
+London,"The Rose & Crown, London Bridge (PUBLOVE)","The Rose & Crown, London Bridge (PUBLOVE)",,gcid:hotel,2027-02-14,2027-02-15,11.7,11.7,0.0,11.7,EUR,3,4.2,1193,15.5,15.5,2:00 PM,10:00 AM,2026-11-03T10:14:36.239558Z
+London,London Kensington Holland Park,London Kensington Holland Park,,gcid:hotel,2027-02-14,2027-02-15,18.91,18.91,0.0,18.91,EUR,4,3.5,2394,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:36.239558Z
+London,Smart Hyde Park View,Smart Hyde Park View,,gcid:hotel,2027-02-14,2027-02-15,19.4,16.17,3.24,19.4,EUR,3,3.7,2043,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:36.239558Z
+London,Travelodge London Docklands Central,Travelodge London Docklands Central,,gcid:hotel,2027-02-14,2027-02-15,43.16,43.16,0.0,43.16,EUR,3,3.7,3638,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,The Lansbury Heritage A Sunday Hotel - Canary Wharf,The Lansbury Heritage A Sunday Hotel - Canary Wharf,,gcid:hotel,2027-02-14,2027-02-15,44.0,44.0,0.0,44.0,EUR,4,4.4,772,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:14:36.239558Z
+London,Dolphin Hotel,Dolphin Hotel,,gcid:hotel,2027-02-14,2027-02-15,44.03,36.69,7.34,44.03,EUR,3,3.7,852,15.5,15.5,2:30 PM,11:00 AM,2026-11-03T10:14:36.239558Z
+London,Premier Inn London Wembley Stadium hotel,Premier Inn London Wembley Stadium hotel,,gcid:hotel,2027-02-14,2027-02-15,49.17,40.98,8.19,49.17,EUR,3,4.4,1964,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,Travelodge London Central City Road,Travelodge London Central City Road,,gcid:hotel,2027-02-14,2027-02-15,51.56,42.96,8.6,51.56,EUR,2,3.8,5083,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,Travelodge London City,Travelodge London City,,gcid:hotel,2027-02-14,2027-02-15,53.95,44.95,8.99,53.95,EUR,3,4.1,2939,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,hub by Premier Inn London West Brompton hotel,hub by Premier Inn London West Brompton hotel,,gcid:hotel,2027-02-14,2027-02-15,53.96,44.97,8.99,53.96,EUR,3,4.4,610,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,Premier Inn London Canary Wharf (Westferry) hotel,Premier Inn London Canary Wharf (Westferry) hotel,,gcid:hotel,2027-02-14,2027-02-15,56.36,46.97,9.39,56.36,EUR,3,4.3,1430,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,hub by Premier Inn London Shoreditch,hub by Premier Inn London Shoreditch,,gcid:hotel,2027-02-14,2027-02-15,57.55,47.95,9.59,57.55,EUR,3,4.4,1107,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,Travelodge London Covent Garden,Travelodge London Covent Garden,,gcid:hotel,2027-02-14,2027-02-15,59.94,49.96,9.99,59.94,EUR,3,3.8,6231,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,Travelodge London Central Tower Bridge,Travelodge London Central Tower Bridge,,gcid:hotel,2027-02-14,2027-02-15,59.94,49.96,9.99,59.94,EUR,3,3.6,2527,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+London,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,Premier Inn London Hammersmith (Shepherds Bush Road) hotel,,gcid:hotel,2027-02-14,2027-02-15,61.16,50.96,10.19,61.16,EUR,3,4.2,741,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:36.239558Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-01,2027-02-02,22.71,20.65,2.06,22.71,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-01,2027-02-02,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-01,2027-02-02,24.14,21.55,2.59,24.14,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:14:39.835816Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-01,2027-02-02,24.61,22.37,2.24,24.61,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-01,2027-02-02,25.6,23.0,2.6,25.6,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-01,2027-02-02,26.02,20.84,5.18,26.02,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:39.835816Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-01,2027-02-02,27.2,24.73,2.47,27.2,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:14:39.835816Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-01,2027-02-02,29.11,23.74,5.37,29.11,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:39.835816Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-01,2027-02-02,29.75,27.16,2.59,29.75,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-01,2027-02-02,34.51,30.83,3.68,34.51,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:39.835816Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-01,2027-02-02,35.1,29.54,5.55,35.1,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,Eklo Hotels Paris Porte de Versailles,Eklo Hotels Paris Porte de Versailles,,gcid:hotel,2027-02-01,2027-02-02,36.08,30.44,5.64,36.08,EUR,0,4.0,1830,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-01,2027-02-02,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,The People,The People,,gcid:hotel,2027-02-01,2027-02-02,38.25,34.77,3.48,38.25,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:39.835816Z
+Paris,Hotel Madrigal,Hotel Madrigal,,gcid:hotel,2027-02-01,2027-02-02,47.41,41.9,5.51,47.41,EUR,3,4.3,834,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:39.835816Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-01,2027-02-02,60.2,48.79,11.41,60.2,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:14:39.835816Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-02,2027-02-03,22.71,20.65,2.06,22.71,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-02,2027-02-03,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-02,2027-02-03,25.6,23.0,2.6,25.6,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-02,2027-02-03,27.15,24.13,3.02,27.15,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-02,2027-02-03,27.75,22.27,5.48,27.75,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-02,2027-02-03,28.11,23.19,4.92,28.11,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-02,2027-02-03,28.28,25.19,3.09,28.28,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:42.887348Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-02,2027-02-03,28.9,26.27,2.63,28.9,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:14:42.887348Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-02,2027-02-03,29.43,26.84,2.59,29.43,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:14:42.887348Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-02,2027-02-03,30.88,25.34,5.54,30.88,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:42.887348Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-02,2027-02-03,30.91,27.55,3.35,30.91,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:42.887348Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-02,2027-02-03,31.44,28.85,2.59,31.44,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-02,2027-02-03,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,The People,The People,,gcid:hotel,2027-02-02,2027-02-03,41.65,37.86,3.79,41.65,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:42.887348Z
+Paris,Hotel Madrigal,Hotel Madrigal,,gcid:hotel,2027-02-02,2027-02-03,49.93,44.42,5.51,49.93,EUR,3,4.3,834,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:42.887348Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-02,2027-02-03,62.33,50.73,11.6,62.33,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:14:42.887348Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-03,2027-02-04,22.71,20.65,2.06,22.71,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-03,2027-02-04,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-03,2027-02-04,27.15,24.13,3.02,27.15,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-03,2027-02-04,27.6,25.0,2.6,27.6,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-03,2027-02-04,27.85,24.76,3.09,27.85,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:46.092880Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-03,2027-02-04,28.75,23.18,5.57,28.75,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-03,2027-02-04,28.9,26.27,2.63,28.9,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:14:46.092880Z
+Paris,Young & Happy,Young & Happy,,gcid:hotel,2027-02-03,2027-02-04,29.31,24.27,5.03,29.31,EUR,0,3.7,608,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-03,2027-02-04,30.91,27.55,3.35,30.91,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:46.092880Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-03,2027-02-04,31.44,28.85,2.59,31.44,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-03,2027-02-04,31.83,29.23,2.59,31.83,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:14:46.092880Z
+Paris,Le Village Montmartre,Le Village Montmartre,,gcid:hotel,2027-02-03,2027-02-04,35.0,29.45,5.55,35.0,EUR,0,4.3,1014,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-03,2027-02-04,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,The People,The People,,gcid:hotel,2027-02-03,2027-02-04,39.1,35.55,3.55,39.1,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:46.092880Z
+Paris,The People - Paris Bercy,The People - Paris Bercy,,gcid:hotel,2027-02-03,2027-02-04,39.87,33.88,5.99,39.87,EUR,0,4.6,1352,7.5,7.5,3:30 PM,10:30 AM,2026-11-03T10:14:46.092880Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-03,2027-02-04,63.5,51.79,11.71,63.5,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:14:46.092880Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-04,2027-02-05,22.71,20.65,2.06,22.71,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:14:49.506668Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-04,2027-02-05,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:49.506668Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-04,2027-02-05,25.6,23.0,2.6,25.6,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:49.506668Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-04,2027-02-05,27.34,24.25,3.09,27.34,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:49.506668Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-04,2027-02-05,28.9,26.27,2.63,28.9,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:14:49.506668Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-04,2027-02-05,30.13,27.54,2.59,30.13,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:14:49.506668Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-04,2027-02-05,30.25,24.54,5.71,30.25,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:14:49.506668Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-04,2027-02-05,31.44,28.85,2.59,31.44,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:49.506668Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-04,2027-02-05,34.1,28.64,5.46,34.1,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:49.506668Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-04,2027-02-05,35.1,29.54,5.55,35.1,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:49.506668Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-04,2027-02-05,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:49.506668Z
+Paris,The People,The People,,gcid:hotel,2027-02-04,2027-02-05,38.25,34.77,3.48,38.25,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:49.506668Z
+Paris,The People - Paris Bercy,The People - Paris Bercy,,gcid:hotel,2027-02-04,2027-02-05,38.42,32.56,5.86,38.42,EUR,0,4.6,1352,7.5,7.5,3:30 PM,10:30 AM,2026-11-03T10:14:49.506668Z
+Paris,Moulin Vert Hotel - Paris,Moulin Vert Hotel - Paris,,gcid:hotel,2027-02-04,2027-02-05,55.53,50.0,5.53,55.53,EUR,3,3.5,596,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:49.506668Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-04,2027-02-05,60.13,48.73,11.4,60.13,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:14:49.506668Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-05,2027-02-06,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-05,2027-02-06,26.34,23.75,2.59,26.34,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:14:52.526416Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-05,2027-02-06,26.51,24.1,2.41,26.51,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-05,2027-02-06,28.36,21.12,7.24,28.36,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:52.526416Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-05,2027-02-06,29.32,26.11,3.21,29.32,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-05,2027-02-06,31.66,26.05,5.6,31.66,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:52.526416Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-05,2027-02-06,32.04,26.77,5.27,32.04,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-05,2027-02-06,32.25,26.36,5.89,32.25,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-05,2027-02-06,33.15,30.14,3.01,33.15,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:14:52.526416Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-05,2027-02-06,34.12,28.64,5.47,34.12,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-05,2027-02-06,35.52,32.93,2.59,35.52,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-05,2027-02-06,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-05,2027-02-06,39.72,35.56,4.16,39.72,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:52.526416Z
+Paris,The People,The People,,gcid:hotel,2027-02-05,2027-02-06,46.75,42.5,4.25,46.75,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:52.526416Z
+Paris,Appart'hôtel Odalys City Paris Levallois,Appart'hôtel Odalys City Paris Levallois,,gcid:hotel,2027-02-05,2027-02-06,59.18,53.8,5.38,59.18,EUR,0,3.5,561,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:14:52.526416Z
+Paris,ibis Paris Levallois-Perret,ibis Paris Levallois-Perret,,gcid:hotel,2027-02-05,2027-02-06,67.97,62.18,5.79,67.97,EUR,3,4.1,756,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:14:52.526416Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-05,2027-02-06,68.45,56.29,12.16,68.45,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:14:52.526416Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-06,2027-02-07,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:55.923599Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-06,2027-02-07,26.51,24.1,2.41,26.51,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:14:55.923599Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-06,2027-02-07,28.41,25.83,2.58,28.41,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:55.923599Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-06,2027-02-07,30.4,27.09,3.31,30.4,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:55.923599Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-06,2027-02-07,31.83,29.23,2.59,31.83,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:14:55.923599Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-06,2027-02-07,32.25,26.36,5.89,32.25,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:14:55.923599Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-06,2027-02-07,35.32,26.92,8.4,35.32,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:55.923599Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-06,2027-02-07,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:55.923599Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-06,2027-02-07,40.5,37.91,2.59,40.5,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:55.923599Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-06,2027-02-07,47.6,40.91,6.69,47.6,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:14:55.923599Z
+Paris,ibis Paris Levallois-Perret,ibis Paris Levallois-Perret,,gcid:hotel,2027-02-06,2027-02-07,67.97,62.18,5.79,67.97,EUR,3,4.1,756,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:14:55.923599Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-06,2027-02-07,69.57,57.31,12.26,69.57,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:14:55.923599Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-07,2027-02-08,17.96,16.33,1.63,17.96,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-07,2027-02-08,18.81,17.1,1.71,18.81,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-07,2027-02-08,19.96,17.37,2.59,19.96,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:14:59.097862Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-07,2027-02-08,20.61,14.67,5.94,20.61,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:59.097862Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-07,2027-02-08,25.5,23.18,2.32,25.5,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:14:59.097862Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-07,2027-02-08,25.6,23.0,2.6,25.6,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-07,2027-02-08,26.07,23.15,2.92,26.07,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-07,2027-02-08,27.0,21.82,5.18,27.0,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:14:59.097862Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-07,2027-02-08,29.23,26.64,2.59,29.23,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,The People,The People,,gcid:hotel,2027-02-07,2027-02-08,35.7,32.45,3.25,35.7,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,Eklo Hotels Paris Porte de Versailles,Eklo Hotels Paris Porte de Versailles,,gcid:hotel,2027-02-07,2027-02-08,36.08,30.44,5.64,36.08,EUR,0,4.0,1830,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,Hôtel Le Richemont - Paris,Hôtel Le Richemont - Paris,,gcid:hotel,2027-02-07,2027-02-08,50.53,45.0,5.53,50.53,EUR,3,4.1,903,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:14:59.097862Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-07,2027-02-08,51.07,40.49,10.58,51.07,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:14:59.097862Z
+Paris,Terminus Lyon Hotel - Paris,Terminus Lyon Hotel - Paris,,gcid:hotel,2027-02-07,2027-02-08,55.53,50.0,5.53,55.53,EUR,3,4.2,2537,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,Le 55 Montparnasse Hôtel,Le 55 Montparnasse Hôtel,,gcid:hotel,2027-02-07,2027-02-08,63.81,58.01,5.8,63.81,EUR,3,3.9,971,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,Hôtel Le Montmartre Saint-Pierre,Hôtel Le Montmartre Saint-Pierre,,gcid:hotel,2027-02-07,2027-02-08,65.99,59.99,6.0,65.99,EUR,3,4.0,957,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:14:59.097862Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-08,2027-02-09,23.66,21.51,2.15,23.66,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-08,2027-02-09,24.61,22.37,2.24,24.61,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,Le Village Montmartre,Le Village Montmartre,,gcid:hotel,2027-02-08,2027-02-09,24.74,20.13,4.61,24.74,EUR,0,4.3,1014,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-08,2027-02-09,25.6,23.0,2.6,25.6,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-08,2027-02-09,26.84,24.25,2.59,26.84,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:02.184177Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-08,2027-02-09,27.13,20.09,7.04,27.13,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:02.184177Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-08,2027-02-09,27.15,24.13,3.02,27.15,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-08,2027-02-09,29.11,23.74,5.37,29.11,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:02.184177Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-08,2027-02-09,29.86,26.6,3.26,29.86,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:15:02.184177Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-08,2027-02-09,32.37,29.78,2.59,32.37,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-08,2027-02-09,33.7,31.11,2.59,33.7,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:15:02.184177Z
+Paris,Eklo Hotels Paris Porte de Versailles,Eklo Hotels Paris Porte de Versailles,,gcid:hotel,2027-02-08,2027-02-09,36.08,30.44,5.64,36.08,EUR,0,4.0,1830,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-08,2027-02-09,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,The People,The People,,gcid:hotel,2027-02-08,2027-02-09,39.1,35.55,3.55,39.1,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:02.184177Z
+Paris,Hotel Madrigal,Hotel Madrigal,,gcid:hotel,2027-02-08,2027-02-09,47.41,41.9,5.51,47.41,EUR,3,4.3,834,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:02.184177Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-08,2027-02-09,61.17,49.68,11.49,61.17,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:15:02.184177Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-09,2027-02-10,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-09,2027-02-10,23.66,21.51,2.15,23.66,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-09,2027-02-10,24.61,22.37,2.24,24.61,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-09,2027-02-10,26.83,23.74,3.09,26.83,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:05.870043Z
+Paris,Le Village Montmartre,Le Village Montmartre,,gcid:hotel,2027-02-09,2027-02-10,26.84,22.03,4.81,26.84,EUR,0,4.3,1014,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-09,2027-02-10,29.75,24.09,5.66,29.75,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-09,2027-02-10,30.91,27.55,3.35,30.91,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:15:05.870043Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-09,2027-02-10,31.02,28.43,2.59,31.02,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:05.870043Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-09,2027-02-10,32.3,29.36,2.94,32.3,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:15:05.870043Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-09,2027-02-10,32.45,26.77,5.68,32.45,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:05.870043Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-09,2027-02-10,32.52,29.93,2.59,32.52,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-09,2027-02-10,34.33,31.74,2.59,34.33,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,Eklo Hotels Paris Porte de Versailles,Eklo Hotels Paris Porte de Versailles,,gcid:hotel,2027-02-09,2027-02-10,36.08,30.44,5.64,36.08,EUR,0,4.0,1830,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-09,2027-02-10,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,The People,The People,,gcid:hotel,2027-02-09,2027-02-10,42.5,38.64,3.86,42.5,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:05.870043Z
+Paris,Hotel Madrigal,Hotel Madrigal,,gcid:hotel,2027-02-09,2027-02-10,49.93,44.42,5.51,49.93,EUR,3,4.3,834,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:05.870043Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-09,2027-02-10,61.24,49.74,11.5,61.24,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:15:05.870043Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-10,2027-02-11,23.66,21.51,2.15,23.66,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-10,2027-02-11,24.61,22.37,2.24,24.61,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-10,2027-02-11,24.9,22.31,2.59,24.9,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-10,2027-02-11,25.29,22.2,3.09,25.29,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:09.357195Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-10,2027-02-11,25.6,23.0,2.6,25.6,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-10,2027-02-11,27.75,22.27,5.48,27.75,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-10,2027-02-11,29.32,26.11,3.21,29.32,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-10,2027-02-11,30.91,27.55,3.35,30.91,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:15:09.357195Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-10,2027-02-11,31.67,26.05,5.61,31.67,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:09.357195Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-10,2027-02-11,32.3,29.36,2.94,32.3,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:15:09.357195Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-10,2027-02-11,33.92,31.33,2.59,33.92,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:09.357195Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-10,2027-02-11,34.33,31.74,2.59,34.33,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,Eklo Hotels Paris Porte de Versailles,Eklo Hotels Paris Porte de Versailles,,gcid:hotel,2027-02-10,2027-02-11,36.08,30.44,5.64,36.08,EUR,0,4.0,1830,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-10,2027-02-11,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,The People,The People,,gcid:hotel,2027-02-10,2027-02-11,42.5,38.64,3.86,42.5,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:09.357195Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-10,2027-02-11,60.13,48.73,11.4,60.13,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:15:09.357195Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-11,2027-02-12,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-11,2027-02-12,23.66,21.51,2.15,23.66,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-11,2027-02-12,28.11,23.19,4.92,28.11,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-11,2027-02-12,28.72,21.42,7.3,28.72,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:12.680712Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-11,2027-02-12,29.32,26.11,3.21,29.32,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-11,2027-02-12,32.3,29.36,2.94,32.3,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:15:12.680712Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-11,2027-02-12,32.52,29.93,2.59,32.52,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-11,2027-02-12,33.02,30.43,2.59,33.02,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:12.680712Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-11,2027-02-12,35.01,32.42,2.59,35.01,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,Eklo Hotels Paris Porte de Versailles,Eklo Hotels Paris Porte de Versailles,,gcid:hotel,2027-02-11,2027-02-12,36.08,30.44,5.64,36.08,EUR,0,4.0,1830,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-11,2027-02-12,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-11,2027-02-12,37.51,34.92,2.59,37.51,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:15:12.680712Z
+Paris,The People,The People,,gcid:hotel,2027-02-11,2027-02-12,43.35,39.41,3.94,43.35,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-11,2027-02-12,61.24,49.74,11.5,61.24,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:15:12.680712Z
+Paris,Le 55 Montparnasse Hôtel,Le 55 Montparnasse Hôtel,,gcid:hotel,2027-02-11,2027-02-12,65.53,54.55,10.98,65.53,EUR,3,3.9,971,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:12.680712Z
+Paris,Atelier Montparnasse Hôtel,Atelier Montparnasse Hôtel,,gcid:hotel,2027-02-11,2027-02-12,65.53,54.55,10.98,65.53,EUR,3,3.6,587,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:12.680712Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-12,2027-02-13,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-12,2027-02-13,25.64,23.05,2.59,25.64,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:16.411608Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-12,2027-02-13,25.8,22.71,3.09,25.8,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:16.411608Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-12,2027-02-13,28.6,26.0,2.6,28.6,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-12,2027-02-13,29.32,26.11,3.21,29.32,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-12,2027-02-13,29.36,26.69,2.67,29.36,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-12,2027-02-13,29.75,24.09,5.66,29.75,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-12,2027-02-13,33.15,30.14,3.01,33.15,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:15:16.411608Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-12,2027-02-13,34.6,28.73,5.86,34.6,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:16.411608Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-12,2027-02-13,35.0,29.45,5.55,35.0,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-12,2027-02-13,35.69,33.1,2.59,35.69,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,Eklo Hotels Paris Porte de Versailles,Eklo Hotels Paris Porte de Versailles,,gcid:hotel,2027-02-12,2027-02-13,36.08,30.44,5.64,36.08,EUR,0,4.0,1830,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-12,2027-02-13,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-12,2027-02-13,51.89,41.23,10.66,51.89,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:15:16.411608Z
+Paris,The People,The People,,gcid:hotel,2027-02-12,2027-02-13,52.7,47.91,4.79,52.7,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:16.411608Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-13,2027-02-14,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:19.670472Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-13,2027-02-14,29.05,25.95,3.09,29.05,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:19.670472Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-13,2027-02-14,29.36,26.69,2.67,29.36,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:19.670472Z
+Paris,MEININGER Hotel Paris Porte de Vincennes,MEININGER Hotel Paris Porte de Vincennes,,gcid:hotel,2027-02-13,2027-02-14,29.75,24.09,5.66,29.75,EUR,2,4.3,5993,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:19.670472Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-13,2027-02-14,30.53,27.94,2.59,30.53,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:19.670472Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-13,2027-02-14,31.49,28.08,3.41,31.49,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:19.670472Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-13,2027-02-14,35.38,32.79,2.59,35.38,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:19.670472Z
+Paris,Eklo Hotels Paris Porte de Versailles,Eklo Hotels Paris Porte de Versailles,,gcid:hotel,2027-02-13,2027-02-14,36.08,30.44,5.64,36.08,EUR,0,4.0,1830,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:19.670472Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-13,2027-02-14,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:19.670472Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-13,2027-02-14,37.23,31.13,6.1,37.23,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:19.670472Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-13,2027-02-14,40.5,37.91,2.59,40.5,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:19.670472Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-13,2027-02-14,44.37,39.79,4.58,44.37,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:15:19.670472Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-13,2027-02-14,51.95,41.29,10.66,51.95,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:15:19.670472Z
+Paris,Appart'hôtel Odalys City Paris Levallois,Appart'hôtel Odalys City Paris Levallois,,gcid:hotel,2027-02-13,2027-02-14,64.31,59.71,4.6,64.31,EUR,0,3.5,561,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:19.670472Z
+Paris,St Christopher's Paris - Canal,St Christopher's Paris - Canal,,gcid:hotel,2027-02-14,2027-02-15,19.0,17.27,1.73,19.0,EUR,0,3.9,4054,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Paris,St Christopher's Paris - Gare du Nord,St Christopher's Paris - Gare du Nord,,gcid:hotel,2027-02-14,2027-02-15,19.95,18.14,1.81,19.95,EUR,0,3.9,6359,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Paris,JO&JOE Paris Gentilly,JO&JOE Paris Gentilly,,gcid:hotel,2027-02-14,2027-02-15,21.79,18.7,3.09,21.79,EUR,0,4.4,5361,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:24.345629Z
+Paris,Paris Hostel,Paris Hostel,,gcid:hotel,2027-02-14,2027-02-15,22.85,20.22,2.63,22.85,EUR,0,4.5,52,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Paris,Enjoy Hostel,Enjoy Hostel,,gcid:hotel,2027-02-14,2027-02-15,26.07,23.15,2.92,26.07,EUR,0,3.5,1252,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Paris,The People Belleville,The People Belleville,,gcid:hotel,2027-02-14,2027-02-15,27.2,24.73,2.47,27.2,EUR,0,4.3,2344,7.5,7.5,3:00 PM,12:00 PM,2026-11-03T10:15:24.345629Z
+Paris,JO&JOE Paris - Nation,JO&JOE Paris - Nation,,gcid:hotel,2027-02-14,2027-02-15,29.33,23.94,5.39,29.33,EUR,0,4.4,1424,15.5,15.5,3:00 PM,10:00 AM,2026-11-03T10:15:24.345629Z
+Paris,The People Paris Nation,The People Paris Nation,,gcid:hotel,2027-02-14,2027-02-15,29.75,27.16,2.59,29.75,EUR,0,4.0,1851,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Paris,Beau M Hostel,Beau M Hostel,,gcid:hotel,2027-02-14,2027-02-15,31.55,28.14,3.41,31.55,EUR,0,4.4,353,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:15:24.345629Z
+Paris,Glint Paris,Glint Paris,,gcid:hotel,2027-02-14,2027-02-15,32.52,29.93,2.59,32.52,EUR,0,4.5,3316,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Paris,The People,The People,,gcid:hotel,2027-02-14,2027-02-15,34.0,30.91,3.09,34.0,EUR,0,4.0,1950,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Paris,Le Regent Montmartre,Le Regent Montmartre,,gcid:hotel,2027-02-14,2027-02-15,36.51,33.92,2.59,36.51,EUR,0,3.9,1482,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Paris,hotelF1 Paris Porte de Châtillon,hotelF1 Paris Porte de Châtillon,,gcid:hotel,2027-02-14,2027-02-15,38.97,33.06,5.91,38.97,EUR,1,3.8,7389,9.0,9.0,2:00 PM,12:00 PM,2026-11-03T10:15:24.345629Z
+Paris,Generator Paris,Generator Paris,,gcid:hotel,2027-02-14,2027-02-15,42.4,39.81,2.59,42.4,EUR,0,4.1,9530,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:24.345629Z
+Paris,Hôtel Le Richemont - Paris,Hôtel Le Richemont - Paris,,gcid:hotel,2027-02-14,2027-02-15,50.53,45.0,5.53,50.53,EUR,3,4.1,903,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:24.345629Z
+Paris,ibis budget Paris Porte de Bercy,ibis budget Paris Porte de Bercy,,gcid:hotel,2027-02-14,2027-02-15,51.89,41.23,10.66,51.89,EUR,2,3.6,2743,11.5,11.5,1:00 PM,12:00 PM,2026-11-03T10:15:24.345629Z
+Paris,Hôtel du Cygne Paris,Hôtel du Cygne Paris,,gcid:hotel,2027-02-14,2027-02-15,65.6,63.0,2.6,65.6,EUR,1,3.9,285,9.0,9.0,2:00 PM,11:00 AM,2026-11-03T10:15:24.345629Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-01,2027-02-02,18.37,18.37,0.0,18.37,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:27.598568Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-01,2027-02-02,18.63,16.94,1.69,18.63,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:27.598568Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-01,2027-02-02,20.92,19.02,1.9,20.92,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:27.598568Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-01,2027-02-02,21.0,19.09,1.91,21.0,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:27.598568Z
+Madrid,Rox Madrid,Rox Madrid,,gcid:hotel,2027-02-01,2027-02-02,43.06,39.15,3.92,43.06,EUR,0,4.6,722,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:27.598568Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-01,2027-02-02,52.79,47.99,4.8,52.79,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:27.598568Z
+Madrid,Colectia Stays Gran Vía,Colectia Stays Gran Vía,,gcid:hotel,2027-02-01,2027-02-02,56.64,51.49,5.15,56.64,EUR,3,4.7,88,15.5,15.5,,11:00 AM,2026-11-03T10:15:27.598568Z
+Madrid,Hotel Mirador Puerta del Sol,Hotel Mirador Puerta del Sol,,gcid:hotel,2027-02-01,2027-02-02,57.47,52.25,5.22,57.47,EUR,2,4.2,275,11.5,11.5,2:00 PM,12:00 PM,2026-11-03T10:15:27.598568Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-01,2027-02-02,58.77,53.43,5.34,58.77,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:27.598568Z
+Madrid,ibis Madrid Calle Alcalá,ibis Madrid Calle Alcalá,,gcid:hotel,2027-02-01,2027-02-02,62.97,62.97,0.0,62.97,EUR,2,4.2,3753,11.5,11.5,12:00 PM,12:00 PM,2026-11-03T10:15:27.598568Z
+Madrid,ibis budget Madrid Calle 30,ibis budget Madrid Calle 30,,gcid:hotel,2027-02-01,2027-02-02,68.17,62.36,5.81,68.17,EUR,1,4.1,3939,9.0,9.0,12:00 PM,12:00 PM,2026-11-03T10:15:27.598568Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-01,2027-02-02,69.82,63.48,6.34,69.82,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:27.598568Z
+Madrid,Hostal Chueca,Hostal Chueca,,gcid:hotel,2027-02-02,2027-02-03,13.39,12.17,1.22,13.39,EUR,2,4.1,1723,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:30.408361Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-02,2027-02-03,18.16,18.16,0.0,18.16,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:30.408361Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-02,2027-02-03,18.83,17.12,1.71,18.83,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:30.408361Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-02,2027-02-03,20.07,18.26,1.81,20.07,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:30.408361Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-02,2027-02-03,20.09,18.26,1.83,20.09,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:30.408361Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-02,2027-02-03,23.54,21.4,2.14,23.54,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:30.408361Z
+Madrid,Rox Madrid,Rox Madrid,,gcid:hotel,2027-02-02,2027-02-03,42.3,38.46,3.84,42.3,EUR,0,4.6,722,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:30.408361Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-02,2027-02-03,51.78,47.07,4.71,51.78,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:30.408361Z
+Madrid,Hotel Mirador Puerta del Sol,Hotel Mirador Puerta del Sol,,gcid:hotel,2027-02-02,2027-02-03,57.47,52.25,5.22,57.47,EUR,2,4.2,275,11.5,11.5,2:00 PM,12:00 PM,2026-11-03T10:15:30.408361Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-02,2027-02-03,63.01,57.28,5.73,63.01,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:30.408361Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-02,2027-02-03,63.45,57.69,5.76,63.45,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:30.408361Z
+Madrid,Hotel Atipico Madrid,Hotel Atipico Madrid,,gcid:hotel,2027-02-02,2027-02-03,66.35,60.32,6.03,66.35,EUR,0,4.3,459,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:30.408361Z
+Madrid,Hostal Chueca,Hostal Chueca,,gcid:hotel,2027-02-03,2027-02-04,14.87,13.52,1.35,14.87,EUR,2,4.1,1723,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:33.651438Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-03,2027-02-04,18.89,18.89,0.0,18.89,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:33.651438Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-03,2027-02-04,19.52,17.75,1.77,19.52,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:33.651438Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-03,2027-02-04,19.73,17.94,1.8,19.73,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:33.651438Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-03,2027-02-04,21.69,19.72,1.97,21.69,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:33.651438Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-03,2027-02-04,22.45,20.41,2.04,22.45,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:33.651438Z
+Madrid,Rox Madrid,Rox Madrid,,gcid:hotel,2027-02-03,2027-02-04,39.5,39.5,0.0,39.5,EUR,0,4.6,722,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:33.651438Z
+Madrid,Hostal Alonso,Hostal Alonso,,gcid:hotel,2027-02-03,2027-02-04,44.55,40.5,4.05,44.55,EUR,1,3.9,416,9.0,9.0,2:00 PM,11:00 AM,2026-11-03T10:15:33.651438Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-03,2027-02-04,52.94,48.13,4.81,52.94,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:33.651438Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-04,2027-02-05,18.34,18.34,0.0,18.34,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:36.700547Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-04,2027-02-05,21.07,19.15,1.92,21.07,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:36.700547Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-04,2027-02-05,22.45,20.41,2.04,22.45,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:36.700547Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-04,2027-02-05,23.09,20.99,2.1,23.09,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:36.700547Z
+Madrid,Rox Madrid,Rox Madrid,,gcid:hotel,2027-02-04,2027-02-05,39.5,39.5,0.0,39.5,EUR,0,4.6,722,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:36.700547Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-04,2027-02-05,52.94,48.13,4.81,52.94,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:36.700547Z
+Madrid,Hotel boutique Negresco Plaza Mayor,Hotel boutique Negresco Plaza Mayor,,gcid:hotel,2027-02-04,2027-02-05,59.85,54.41,5.44,59.85,EUR,2,4.4,162,11.5,11.5,2:00 PM,12:00 PM,2026-11-03T10:15:36.700547Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-04,2027-02-05,67.04,60.95,6.09,67.04,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:36.700547Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-04,2027-02-05,67.21,61.1,6.11,67.21,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:36.700547Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-05,2027-02-06,22.73,22.73,0.0,22.73,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:39.670453Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-05,2027-02-06,26.39,26.39,0.0,26.39,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:39.670453Z
+Madrid,Room Gran Vía,Room Gran Vía,,gcid:hotel,2027-02-05,2027-02-06,27.88,25.35,2.53,27.88,EUR,2,4.1,1316,11.5,11.5,3:00 PM,11:30 AM,2026-11-03T10:15:39.670453Z
+Madrid,2060 The Newton Hostel,2060 The Newton Hostel,,gcid:hotel,2027-02-05,2027-02-06,30.35,27.59,2.76,30.35,EUR,2,4.7,3146,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:39.670453Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-05,2027-02-06,30.44,27.67,2.77,30.44,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:39.670453Z
+Madrid,Generator Madrid,Generator Madrid,,gcid:hotel,2027-02-05,2027-02-06,31.23,31.23,0.0,31.23,EUR,1,4.4,6098,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:39.670453Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-05,2027-02-06,31.6,28.73,2.87,31.6,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:39.670453Z
+Madrid,Sabia Natura - Boutique Hostel,Sabia Natura - Boutique Hostel,,gcid:hotel,2027-02-05,2027-02-06,40.0,36.36,3.64,40.0,EUR,0,3.5,152,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:39.670453Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-05,2027-02-06,58.84,53.49,5.35,58.84,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:39.670453Z
+Madrid,Exe Pozuelo,Exe Pozuelo,,gcid:hotel,2027-02-05,2027-02-06,59.59,54.17,5.42,59.59,EUR,3,4.2,1426,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:39.670453Z
+Madrid,Eurostars I-hotel,Eurostars I-hotel,,gcid:hotel,2027-02-05,2027-02-06,61.96,56.33,5.63,61.96,EUR,4,4.1,2242,24.0,24.0,2:00 PM,12:00 PM,2026-11-03T10:15:39.670453Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-05,2027-02-06,65.93,59.94,5.99,65.93,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:39.670453Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-06,2027-02-07,22.49,22.49,0.0,22.49,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:43.042862Z
+Madrid,Room Gran Vía,Room Gran Vía,,gcid:hotel,2027-02-06,2027-02-07,27.88,25.35,2.53,27.88,EUR,2,4.1,1316,11.5,11.5,3:00 PM,11:30 AM,2026-11-03T10:15:43.042862Z
+Madrid,Far Home Bernabeu,Far Home Bernabeu,,gcid:hotel,2027-02-06,2027-02-07,27.98,25.44,2.54,27.98,EUR,2,4.4,1951,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:43.042862Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-06,2027-02-07,31.6,28.73,2.87,31.6,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:43.042862Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-06,2027-02-07,33.67,33.67,0.0,33.67,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:43.042862Z
+Madrid,2060 The Newton Hostel,2060 The Newton Hostel,,gcid:hotel,2027-02-06,2027-02-07,35.55,32.32,3.23,35.55,EUR,2,4.7,3146,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:43.042862Z
+Madrid,Generator Madrid,Generator Madrid,,gcid:hotel,2027-02-06,2027-02-07,36.31,36.31,0.0,36.31,EUR,1,4.4,6098,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:43.042862Z
+Madrid,Sabia Natura - Boutique Hostel,Sabia Natura - Boutique Hostel,,gcid:hotel,2027-02-06,2027-02-07,44.44,40.4,4.04,44.44,EUR,0,3.5,152,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:43.042862Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-06,2027-02-07,59.78,54.35,5.43,59.78,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:43.042862Z
+Madrid,Eurostars I-hotel,Eurostars I-hotel,,gcid:hotel,2027-02-06,2027-02-07,61.39,55.81,5.58,61.39,EUR,4,4.1,2242,24.0,24.0,2:00 PM,12:00 PM,2026-11-03T10:15:43.042862Z
+Madrid,Hostal Alonso,Hostal Alonso,,gcid:hotel,2027-02-06,2027-02-07,65.04,59.13,5.91,65.04,EUR,1,3.9,416,9.0,9.0,2:00 PM,11:00 AM,2026-11-03T10:15:43.042862Z
+Madrid,B&B HOTEL MADRID Carabanchel,B&B HOTEL MADRID Carabanchel,,gcid:hotel,2027-02-06,2027-02-07,66.69,66.69,0.0,66.69,EUR,2,4.7,955,11.5,11.5,2:00 PM,12:00 PM,2026-11-03T10:15:43.042862Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-07,2027-02-08,17.06,17.06,0.0,17.06,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:46.293598Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-07,2027-02-08,18.59,16.9,1.69,18.59,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:46.293598Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-07,2027-02-08,19.04,17.31,1.73,19.04,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:46.293598Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-07,2027-02-08,19.76,17.96,1.8,19.76,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:46.293598Z
+Madrid,Travelodge Madrid Metropolitano,Travelodge Madrid Metropolitano,,gcid:hotel,2027-02-07,2027-02-08,48.23,46.79,1.44,48.23,EUR,1,4.0,2994,9.0,9.0,3:00 PM,12:00 PM,2026-11-03T10:15:46.293598Z
+Madrid,"Habitaciones en Luisa - Single Room, Shared Bathroom","Habitaciones en Luisa - Single Room, Shared Bathroom",,gcid:hotel,2027-02-07,2027-02-08,48.57,44.15,4.42,48.57,EUR,0,3.6,36,15.5,15.5,4:00 PM,11:00 AM,2026-11-03T10:15:46.293598Z
+Madrid,Eurostars I-hotel,Eurostars I-hotel,,gcid:hotel,2027-02-07,2027-02-08,48.75,44.32,4.42,48.75,EUR,4,4.1,2242,24.0,24.0,2:00 PM,12:00 PM,2026-11-03T10:15:46.293598Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-07,2027-02-08,55.1,50.09,5.01,55.1,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:46.293598Z
+Madrid,Exe Madrid Norte,Exe Madrid Norte,,gcid:hotel,2027-02-07,2027-02-08,56.16,51.06,5.1,56.16,EUR,4,4.1,3096,24.0,24.0,2:00 PM,12:00 PM,2026-11-03T10:15:46.293598Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-07,2027-02-08,60.91,55.38,5.53,60.91,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:46.293598Z
+Madrid,ibis budget Madrid Calle 30,ibis budget Madrid Calle 30,,gcid:hotel,2027-02-07,2027-02-08,62.93,57.57,5.36,62.93,EUR,1,4.1,3939,9.0,9.0,12:00 PM,12:00 PM,2026-11-03T10:15:46.293598Z
+Madrid,ibis budget Madrid Centro las Ventas,ibis budget Madrid Centro las Ventas,,gcid:hotel,2027-02-07,2027-02-08,68.0,68.0,0.0,68.0,EUR,1,4.0,3032,9.0,9.0,12:00 PM,12:00 PM,2026-11-03T10:15:46.293598Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-08,2027-02-09,12.1,11.0,1.1,12.1,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:49.586835Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-08,2027-02-09,15.25,13.86,1.39,15.25,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:49.586835Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-08,2027-02-09,16.47,16.47,0.0,16.47,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:49.586835Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-08,2027-02-09,19.12,17.38,1.74,19.12,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:49.586835Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-08,2027-02-09,19.21,17.46,1.75,19.21,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:49.586835Z
+Madrid,Travelodge Madrid Metropolitano,Travelodge Madrid Metropolitano,,gcid:hotel,2027-02-08,2027-02-09,52.54,50.97,1.57,52.54,EUR,1,4.0,2994,9.0,9.0,3:00 PM,12:00 PM,2026-11-03T10:15:49.586835Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-08,2027-02-09,52.75,47.96,4.79,52.75,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:49.586835Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-08,2027-02-09,57.61,52.38,5.23,57.61,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:49.586835Z
+Madrid,ibis Madrid Calle Alcalá,ibis Madrid Calle Alcalá,,gcid:hotel,2027-02-08,2027-02-09,58.0,52.73,5.27,58.0,EUR,2,4.2,3753,11.5,11.5,12:00 PM,12:00 PM,2026-11-03T10:15:49.586835Z
+Madrid,Hotel Atipico Madrid,Hotel Atipico Madrid,,gcid:hotel,2027-02-08,2027-02-09,63.33,57.58,5.76,63.33,EUR,0,4.3,459,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:49.586835Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-08,2027-02-09,64.96,59.06,5.9,64.96,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:49.586835Z
+Madrid,Hostal Chueca,Hostal Chueca,,gcid:hotel,2027-02-09,2027-02-10,12.55,11.41,1.14,12.55,EUR,2,4.1,1723,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:52.713869Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-09,2027-02-10,16.16,16.16,0.0,16.16,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:52.713869Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-09,2027-02-10,17.04,15.49,1.56,17.04,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:52.713869Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-09,2027-02-10,19.21,17.46,1.75,19.21,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:52.713869Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-09,2027-02-10,20.09,18.26,1.83,20.09,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:52.713869Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-09,2027-02-10,20.66,18.79,1.88,20.66,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:52.713869Z
+Madrid,Generator Madrid,Generator Madrid,,gcid:hotel,2027-02-09,2027-02-10,25.45,25.45,0.0,25.45,EUR,1,4.4,6098,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:52.713869Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-09,2027-02-10,51.92,47.2,4.72,51.92,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:52.713869Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-09,2027-02-10,61.81,56.2,5.61,61.81,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:52.713869Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-09,2027-02-10,65.07,59.16,5.91,65.07,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:52.713869Z
+Madrid,Hotel Atipico Madrid,Hotel Atipico Madrid,,gcid:hotel,2027-02-09,2027-02-10,66.35,60.32,6.03,66.35,EUR,0,4.3,459,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:15:52.713869Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-10,2027-02-11,16.14,14.68,1.47,16.14,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:56.140355Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-10,2027-02-11,16.27,16.27,0.0,16.27,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:56.140355Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-10,2027-02-11,19.83,18.03,1.8,19.83,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:56.140355Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-10,2027-02-11,19.85,18.05,1.8,19.85,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:56.140355Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-10,2027-02-11,20.66,18.79,1.88,20.66,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:56.140355Z
+Madrid,Vértice Roomspace Madrid,Vértice Roomspace Madrid,,gcid:hotel,2027-02-10,2027-02-11,53.95,49.05,4.9,53.95,EUR,3,4.0,5187,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:15:56.140355Z
+Madrid,Hotel Mirador Puerta del Sol,Hotel Mirador Puerta del Sol,,gcid:hotel,2027-02-10,2027-02-11,57.47,52.25,5.22,57.47,EUR,2,4.2,275,11.5,11.5,2:00 PM,12:00 PM,2026-11-03T10:15:56.140355Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-10,2027-02-11,64.9,59.0,5.9,64.9,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:56.140355Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-10,2027-02-11,65.04,59.13,5.91,65.04,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:56.140355Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-11,2027-02-12,16.7,16.7,0.0,16.7,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:15:59.405034Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-11,2027-02-12,19.11,19.11,0.0,19.11,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:59.405034Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-11,2027-02-12,19.83,18.03,1.8,19.83,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:15:59.405034Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-11,2027-02-12,22.68,20.62,2.06,22.68,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:15:59.405034Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-11,2027-02-12,22.82,20.75,2.07,22.82,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:15:59.405034Z
+Madrid,Generator Madrid,Generator Madrid,,gcid:hotel,2027-02-11,2027-02-12,26.64,26.64,0.0,26.64,EUR,1,4.4,6098,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:15:59.405034Z
+Madrid,B&B HOTEL MADRID Carabanchel,B&B HOTEL MADRID Carabanchel,,gcid:hotel,2027-02-11,2027-02-12,56.43,56.43,0.0,56.43,EUR,2,4.7,955,11.5,11.5,2:00 PM,12:00 PM,2026-11-03T10:15:59.405034Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-11,2027-02-12,59.18,53.8,5.38,59.18,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:15:59.405034Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-11,2027-02-12,60.32,54.84,5.48,60.32,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:15:59.405034Z
+Madrid,Hostal Chueca,Hostal Chueca,,gcid:hotel,2027-02-12,2027-02-13,14.71,13.37,1.34,14.71,EUR,2,4.1,1723,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:02.461976Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-12,2027-02-13,20.93,20.93,0.0,20.93,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:02.461976Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-12,2027-02-13,26.39,26.39,0.0,26.39,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:02.461976Z
+Madrid,Room Gran Vía,Room Gran Vía,,gcid:hotel,2027-02-12,2027-02-13,27.88,25.35,2.53,27.88,EUR,2,4.1,1316,11.5,11.5,3:00 PM,11:30 AM,2026-11-03T10:16:02.461976Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-12,2027-02-13,33.16,30.15,3.01,33.16,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:02.461976Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-12,2027-02-13,38.34,38.34,0.0,38.34,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:02.461976Z
+Madrid,Generator Madrid,Generator Madrid,,gcid:hotel,2027-02-12,2027-02-13,41.51,41.51,0.0,41.51,EUR,1,4.4,6098,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:02.461976Z
+Madrid,Exe Pozuelo,Exe Pozuelo,,gcid:hotel,2027-02-12,2027-02-13,61.37,55.79,5.58,61.37,EUR,3,4.2,1426,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:16:02.461976Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-12,2027-02-13,63.57,57.79,5.78,63.57,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:16:02.461976Z
+Madrid,B&B HOTEL MADRID Carabanchel,B&B HOTEL MADRID Carabanchel,,gcid:hotel,2027-02-12,2027-02-13,66.69,66.69,0.0,66.69,EUR,2,4.7,955,11.5,11.5,2:00 PM,12:00 PM,2026-11-03T10:16:02.461976Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-13,2027-02-14,21.88,21.88,0.0,21.88,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:05.715109Z
+Madrid,Hostal Chueca,Hostal Chueca,,gcid:hotel,2027-02-13,2027-02-14,26.48,24.07,2.41,26.48,EUR,2,4.1,1723,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:05.715109Z
+Madrid,Siesta & Go (Atocha),Siesta & Go (Atocha),,gcid:hotel,2027-02-13,2027-02-14,28.8,28.8,0.0,28.8,EUR,0,4.7,2128,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:05.715109Z
+Madrid,Room Gran Vía,Room Gran Vía,,gcid:hotel,2027-02-13,2027-02-14,29.56,26.87,2.69,29.56,EUR,2,4.1,1316,11.5,11.5,3:00 PM,11:30 AM,2026-11-03T10:16:05.715109Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-13,2027-02-14,30.99,28.17,2.82,30.99,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:05.715109Z
+Madrid,FAR HOME ATOCHA,FAR HOME ATOCHA,,gcid:hotel,2027-02-13,2027-02-14,32.76,32.76,0.0,32.76,EUR,2,4.4,1381,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:05.715109Z
+Madrid,Petit Hostel La Latina,Petit Hostel La Latina,,gcid:hotel,2027-02-13,2027-02-14,44.1,40.09,4.01,44.1,EUR,2,4.2,1104,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:05.715109Z
+Madrid,2060 The Newton Hostel,2060 The Newton Hostel,,gcid:hotel,2027-02-13,2027-02-14,44.73,44.73,0.0,44.73,EUR,2,4.7,3146,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:05.715109Z
+Madrid,Sabia Natura - Boutique Hostel,Sabia Natura - Boutique Hostel,,gcid:hotel,2027-02-13,2027-02-14,51.11,46.46,4.65,51.11,EUR,0,3.5,152,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:05.715109Z
+Madrid,B&B HOTEL MADRID Carabanchel,B&B HOTEL MADRID Carabanchel,,gcid:hotel,2027-02-13,2027-02-14,66.69,66.69,0.0,66.69,EUR,2,4.7,955,11.5,11.5,2:00 PM,12:00 PM,2026-11-03T10:16:05.715109Z
+Madrid,Safestay Madrid Central,Safestay Madrid Central,,gcid:hotel,2027-02-14,2027-02-15,18.59,18.59,0.0,18.59,EUR,2,3.8,2467,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:09.085808Z
+Madrid,LATROUPE Prado Hostel Madrid,LATROUPE Prado Hostel Madrid,,gcid:hotel,2027-02-14,2027-02-15,19.04,17.31,1.73,19.04,EUR,3,4.2,970,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:09.085808Z
+Madrid,The Hat Madrid,The Hat Madrid,,gcid:hotel,2027-02-14,2027-02-15,19.18,17.43,1.75,19.18,EUR,2,4.3,4849,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:09.085808Z
+Madrid,TOC Hostel Madrid,TOC Hostel Madrid,,gcid:hotel,2027-02-14,2027-02-15,20.45,18.59,1.86,20.45,EUR,2,4.3,2244,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:09.085808Z
+Madrid,Travelodge Madrid Metropolitano,Travelodge Madrid Metropolitano,,gcid:hotel,2027-02-14,2027-02-15,48.23,46.79,1.44,48.23,EUR,1,4.0,2994,9.0,9.0,3:00 PM,12:00 PM,2026-11-03T10:16:09.085808Z
+Madrid,Eurostars I-hotel,Eurostars I-hotel,,gcid:hotel,2027-02-14,2027-02-15,48.67,44.25,4.42,48.67,EUR,4,4.1,2242,24.0,24.0,2:00 PM,12:00 PM,2026-11-03T10:16:09.085808Z
+Madrid,ibis budget Madrid Calle Alcalá,ibis budget Madrid Calle Alcalá,,gcid:hotel,2027-02-14,2027-02-15,55.78,50.71,5.07,55.78,EUR,0,4.0,3320,15.5,15.5,12:00 PM,12:00 PM,2026-11-03T10:16:09.085808Z
+Madrid,ibis budget Madrid Calle 30,ibis budget Madrid Calle 30,,gcid:hotel,2027-02-14,2027-02-15,62.43,56.76,5.67,62.43,EUR,1,4.1,3939,9.0,9.0,12:00 PM,12:00 PM,2026-11-03T10:16:09.085808Z
+Madrid,Zleep Madrid Airport,Zleep Madrid Airport,,gcid:hotel,2027-02-14,2027-02-15,65.59,59.63,5.96,65.59,EUR,3,4.4,4291,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:16:09.085808Z
+Barcelona,Safestay Barcelona Gothic,Safestay Barcelona Gothic,,gcid:hotel,2027-02-01,2027-02-02,20.4,14.4,6.0,20.4,EUR,2,3.6,744,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-01,2027-02-02,21.42,19.47,1.95,21.42,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-01,2027-02-02,22.35,14.32,8.04,22.35,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,AMISTAT City Hostel Barcelona,AMISTAT City Hostel Barcelona,,gcid:hotel,2027-02-01,2027-02-02,22.54,20.49,2.06,22.54,EUR,2,4.4,679,11.5,11.5,2:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-01,2027-02-02,23.34,23.34,0.0,23.34,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-01,2027-02-02,26.13,26.13,0.0,26.13,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:12.331352Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-01,2027-02-02,27.74,21.16,6.59,27.74,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-01,2027-02-02,28.31,19.75,8.56,28.31,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-01,2027-02-02,28.76,19.99,8.77,28.76,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,Fabrizzio's Petit,Fabrizzio's Petit,,gcid:hotel,2027-02-01,2027-02-02,29.73,21.03,8.7,29.73,EUR,0,4.7,842,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-01,2027-02-02,33.21,23.21,10.0,33.21,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-01,2027-02-02,48.74,38.31,10.43,48.74,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,Spacious double room with balcony,Spacious double room with balcony,,gcid:hotel,2027-02-01,2027-02-02,58.58,23.59,34.99,58.58,EUR,0,3.85,244,15.5,15.5,4:00 PM,10:00 AM,2026-11-03T10:16:12.331352Z
+Barcelona,Safestay Barcelona Gothic,Safestay Barcelona Gothic,,gcid:hotel,2027-02-02,2027-02-03,20.4,14.4,6.0,20.4,EUR,2,3.6,744,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Onefam Batlló,Onefam Batlló,,gcid:hotel,2027-02-02,2027-02-03,23.16,16.56,6.6,23.16,EUR,3,4.8,586,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-02,2027-02-03,23.34,23.34,0.0,23.34,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-02,2027-02-03,25.87,17.52,8.36,25.87,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-02,2027-02-03,26.13,26.13,0.0,26.13,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:15.353500Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-02,2027-02-03,28.76,19.99,8.77,28.76,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-02,2027-02-03,29.04,22.45,6.59,29.04,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Fabrizzio's Petit,Fabrizzio's Petit,,gcid:hotel,2027-02-02,2027-02-03,29.73,21.03,8.7,29.73,EUR,0,4.7,842,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-02,2027-02-03,29.84,27.13,2.71,29.84,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,AMISTAT City Hostel Barcelona,AMISTAT City Hostel Barcelona,,gcid:hotel,2027-02-02,2027-02-03,30.92,21.11,9.81,30.92,EUR,2,4.4,679,11.5,11.5,2:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-02,2027-02-03,33.33,24.3,9.03,33.33,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-02,2027-02-03,35.55,25.95,9.6,35.55,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-02,2027-02-03,48.12,37.75,10.37,48.12,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Double room with bunk bed,Double room with bunk bed,,gcid:hotel,2027-02-02,2027-02-03,51.0,31.0,20.0,51.0,EUR,0,3.98,177,15.5,15.5,4:00 PM,11:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Spacious double room with balcony,Spacious double room with balcony,,gcid:hotel,2027-02-02,2027-02-03,58.58,23.59,34.99,58.58,EUR,0,3.85,244,15.5,15.5,4:00 PM,10:00 AM,2026-11-03T10:16:15.353500Z
+Barcelona,Hostal Portugal,Hostal Portugal,,gcid:hotel,2027-02-02,2027-02-03,62.7,50.0,12.7,62.7,EUR,1,4.0,787,9.0,9.0,2:00 PM,12:00 PM,2026-11-03T10:16:15.353500Z
+Barcelona,Inout Hostel,Inout Hostel,,gcid:hotel,2027-02-03,2027-02-04,21.29,13.37,7.92,21.29,EUR,2,3.9,1790,11.5,11.5,12:00 PM,10:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Safestay Barcelona Gothic,Safestay Barcelona Gothic,,gcid:hotel,2027-02-03,2027-02-04,21.75,15.17,6.59,21.75,EUR,2,3.6,744,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-03,2027-02-04,23.34,23.34,0.0,23.34,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Onefam Batlló,Onefam Batlló,,gcid:hotel,2027-02-03,2027-02-04,24.08,17.48,6.6,24.08,EUR,3,4.8,586,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-03,2027-02-04,25.16,25.16,0.0,25.16,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:18.475959Z
+Barcelona,Hey Lola! Hostel,Hey Lola! Hostel,,gcid:hotel,2027-02-03,2027-02-04,27.9,19.36,8.54,27.9,EUR,0,4.3,301,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-03,2027-02-04,28.52,19.92,8.6,28.52,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-03,2027-02-04,29.04,22.45,6.59,29.04,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Fabrizzio's Petit,Fabrizzio's Petit,,gcid:hotel,2027-02-03,2027-02-04,29.73,21.03,8.7,29.73,EUR,0,4.7,842,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-03,2027-02-04,29.84,27.13,2.71,29.84,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-03,2027-02-04,33.33,24.3,9.03,33.33,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,AMISTAT City Hostel Barcelona,AMISTAT City Hostel Barcelona,,gcid:hotel,2027-02-03,2027-02-04,34.72,24.57,10.15,34.72,EUR,2,4.4,679,11.5,11.5,2:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Urbany Hostel BCN GO!,Urbany Hostel BCN GO!,,gcid:hotel,2027-02-03,2027-02-04,35.5,28.91,6.59,35.5,EUR,2,4.3,4658,7.5,7.5,3:00 PM,10:30 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-03,2027-02-04,35.55,25.95,9.6,35.55,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-03,2027-02-04,42.67,32.53,10.14,42.67,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-03,2027-02-04,48.12,37.75,10.37,48.12,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:18.475959Z
+Barcelona,Hostal Portugal,Hostal Portugal,,gcid:hotel,2027-02-03,2027-02-04,63.7,50.91,12.79,63.7,EUR,1,4.0,787,9.0,9.0,2:00 PM,12:00 PM,2026-11-03T10:16:18.475959Z
+Barcelona,Safestay Barcelona Gothic,Safestay Barcelona Gothic,,gcid:hotel,2027-02-04,2027-02-05,20.4,14.4,6.0,20.4,EUR,2,3.6,744,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Inout Hostel,Inout Hostel,,gcid:hotel,2027-02-04,2027-02-05,21.28,13.36,7.92,21.28,EUR,2,3.9,1790,11.5,11.5,12:00 PM,10:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,LATROUPE Poblenou Beach Hostel Barcelona,LATROUPE Poblenou Beach Hostel Barcelona,,gcid:hotel,2027-02-04,2027-02-05,23.33,14.21,9.12,23.33,EUR,2,4.2,743,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-04,2027-02-05,23.34,23.34,0.0,23.34,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-04,2027-02-05,26.13,26.13,0.0,26.13,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:22.484027Z
+Barcelona,AMISTAT City Hostel Barcelona,AMISTAT City Hostel Barcelona,,gcid:hotel,2027-02-04,2027-02-05,27.76,18.24,9.52,27.76,EUR,2,4.4,679,11.5,11.5,2:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-04,2027-02-05,28.52,19.92,8.6,28.52,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-04,2027-02-05,29.04,22.45,6.59,29.04,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-04,2027-02-05,30.6,27.82,2.78,30.6,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Fabrizzio's Petit,Fabrizzio's Petit,,gcid:hotel,2027-02-04,2027-02-05,32.5,23.55,8.95,32.5,EUR,0,4.7,842,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-04,2027-02-05,33.33,24.3,9.03,33.33,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-04,2027-02-05,35.55,25.95,9.6,35.55,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-04,2027-02-05,42.67,32.53,10.14,42.67,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-04,2027-02-05,46.88,36.62,10.26,46.88,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Spacious double room with balcony,Spacious double room with balcony,,gcid:hotel,2027-02-04,2027-02-05,51.0,31.0,20.0,51.0,EUR,0,3.85,244,15.5,15.5,4:00 PM,10:00 AM,2026-11-03T10:16:22.484027Z
+Barcelona,Inout Hostel,Inout Hostel,,gcid:hotel,2027-02-05,2027-02-06,21.29,13.37,7.92,21.29,EUR,2,3.9,1790,11.5,11.5,12:00 PM,10:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,Safestay Barcelona Gothic,Safestay Barcelona Gothic,,gcid:hotel,2027-02-05,2027-02-06,22.2,16.2,6.0,22.2,EUR,2,3.6,744,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-05,2027-02-06,26.04,26.04,0.0,26.04,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-05,2027-02-06,30.0,30.0,0.0,30.0,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:25.547353Z
+Barcelona,AMISTAT City Hostel Barcelona,AMISTAT City Hostel Barcelona,,gcid:hotel,2027-02-05,2027-02-06,30.85,21.05,9.8,30.85,EUR,2,4.4,679,11.5,11.5,2:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-05,2027-02-06,31.39,22.54,8.85,31.39,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,Urbany Hostel BCN GO!,Urbany Hostel BCN GO!,,gcid:hotel,2027-02-05,2027-02-06,35.5,28.91,6.59,35.5,EUR,2,4.3,4658,7.5,7.5,3:00 PM,10:30 AM,2026-11-03T10:16:25.547353Z
+Barcelona,Fabrizzio's Petit,Fabrizzio's Petit,,gcid:hotel,2027-02-05,2027-02-06,36.2,26.91,9.29,36.2,EUR,0,4.7,842,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-05,2027-02-06,37.02,30.43,6.59,37.02,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-05,2027-02-06,38.72,28.82,9.89,38.72,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-05,2027-02-06,38.96,29.19,9.77,38.96,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-05,2027-02-06,39.07,29.52,9.55,39.07,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-05,2027-02-06,39.78,36.16,3.62,39.78,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-05,2027-02-06,41.25,31.5,9.75,41.25,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:25.547353Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-06,2027-02-07,26.78,24.35,2.43,26.78,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:28.821215Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-06,2027-02-07,29.63,29.63,0.0,29.63,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:28.821215Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-06,2027-02-07,30.0,30.0,0.0,30.0,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:28.821215Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-06,2027-02-07,31.39,22.54,8.85,31.39,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:28.821215Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-06,2027-02-07,36.91,27.55,9.36,36.91,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:28.821215Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-06,2027-02-07,38.72,28.82,9.89,38.72,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:28.821215Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-06,2027-02-07,38.96,29.19,9.77,38.96,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:28.821215Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-06,2027-02-07,41.25,31.5,9.75,41.25,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:28.821215Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-06,2027-02-07,41.3,31.55,9.75,41.3,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:28.821215Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-07,2027-02-08,22.19,20.17,2.02,22.19,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:32.125107Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-07,2027-02-08,22.35,14.32,8.04,22.35,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:32.125107Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-07,2027-02-08,25.16,25.16,0.0,25.16,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:32.125107Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-07,2027-02-08,26.04,17.29,8.74,26.04,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:32.125107Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-07,2027-02-08,26.94,20.35,6.59,26.94,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:32.125107Z
+Barcelona,Spacious double room with balcony,Spacious double room with balcony,,gcid:hotel,2027-02-07,2027-02-08,58.58,23.59,34.99,58.58,EUR,0,3.85,244,15.5,15.5,4:00 PM,10:00 AM,2026-11-03T10:16:32.125107Z
+Barcelona,Travelodge Barcelona Fira,Travelodge Barcelona Fira,,gcid:hotel,2027-02-07,2027-02-08,60.71,55.43,5.28,60.71,EUR,3,3.6,1852,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:16:32.125107Z
+Barcelona,Travelodge Barcelona Poblenou,Travelodge Barcelona Poblenou,,gcid:hotel,2027-02-07,2027-02-08,66.28,59.2,7.08,66.28,EUR,1,3.8,4833,9.0,9.0,3:00 PM,12:00 PM,2026-11-03T10:16:32.125107Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-08,2027-02-09,22.35,14.32,8.04,22.35,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:35.447582Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-08,2027-02-09,22.95,20.86,2.09,22.95,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:35.447582Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-08,2027-02-09,25.16,25.16,0.0,25.16,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:35.447582Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-08,2027-02-09,26.04,17.29,8.74,26.04,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:35.447582Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-08,2027-02-09,27.74,21.16,6.59,27.74,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:35.447582Z
+Barcelona,Hotel Ingles Barcelona,Hotel Ingles Barcelona,,gcid:hotel,2027-02-08,2027-02-09,35.83,32.72,3.11,35.83,EUR,1,3.9,648,9.0,9.0,1:00 PM,12:00 PM,2026-11-03T10:16:35.447582Z
+Barcelona,Spacious double room with balcony,Spacious double room with balcony,,gcid:hotel,2027-02-08,2027-02-09,58.58,23.59,34.99,58.58,EUR,0,3.85,244,15.5,15.5,4:00 PM,10:00 AM,2026-11-03T10:16:35.447582Z
+Barcelona,Travelodge Barcelona Poblenou,Travelodge Barcelona Poblenou,,gcid:hotel,2027-02-08,2027-02-09,63.19,50.44,12.75,63.19,EUR,1,3.8,4833,9.0,9.0,3:00 PM,12:00 PM,2026-11-03T10:16:35.447582Z
+Barcelona,Travelodge Barcelona Fira,Travelodge Barcelona Fira,,gcid:hotel,2027-02-08,2027-02-09,68.59,64.89,3.7,68.59,EUR,3,3.6,1852,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:16:35.447582Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-09,2027-02-10,22.35,14.32,8.04,22.35,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:38.558484Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-09,2027-02-10,23.34,23.34,0.0,23.34,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:38.558484Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-09,2027-02-10,25.16,25.16,0.0,25.16,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:38.558484Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-09,2027-02-10,26.04,17.29,8.74,26.04,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:38.558484Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-09,2027-02-10,27.74,21.16,6.59,27.74,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:38.558484Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-09,2027-02-10,35.95,28.27,7.68,35.95,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:38.558484Z
+Barcelona,Travelodge Barcelona Poblenou,Travelodge Barcelona Poblenou,,gcid:hotel,2027-02-09,2027-02-10,53.21,47.53,5.68,53.21,EUR,1,3.8,4833,9.0,9.0,3:00 PM,12:00 PM,2026-11-03T10:16:38.558484Z
+Barcelona,Travelodge Barcelona Fira,Travelodge Barcelona Fira,,gcid:hotel,2027-02-09,2027-02-10,68.59,64.89,3.7,68.59,EUR,3,3.6,1852,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:16:38.558484Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-10,2027-02-11,21.42,19.47,1.95,21.42,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:41.935092Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-10,2027-02-11,22.35,14.32,8.04,22.35,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:41.935092Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-10,2027-02-11,23.34,23.34,0.0,23.34,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:41.935092Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-10,2027-02-11,25.16,25.16,0.0,25.16,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:41.935092Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-10,2027-02-11,26.04,17.29,8.74,26.04,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:41.935092Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-10,2027-02-11,27.74,21.16,6.59,27.74,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:41.935092Z
+Barcelona,Spacious double room with balcony,Spacious double room with balcony,,gcid:hotel,2027-02-10,2027-02-11,51.0,31.0,20.0,51.0,EUR,0,3.85,244,15.5,15.5,4:00 PM,10:00 AM,2026-11-03T10:16:41.935092Z
+Barcelona,Travelodge Barcelona Poblenou,Travelodge Barcelona Poblenou,,gcid:hotel,2027-02-10,2027-02-11,53.21,47.53,5.68,53.21,EUR,1,3.8,4833,9.0,9.0,3:00 PM,12:00 PM,2026-11-03T10:16:41.935092Z
+Barcelona,Aparthotel Silver Barcelona,Aparthotel Silver Barcelona,,gcid:hotel,2027-02-10,2027-02-11,66.9,54.07,12.83,66.9,EUR,3,4.5,879,15.5,15.5,1:00 PM,11:00 AM,2026-11-03T10:16:41.935092Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-11,2027-02-12,21.42,19.47,1.95,21.42,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:45.228622Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-11,2027-02-12,23.61,15.46,8.15,23.61,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:45.228622Z
+Barcelona,The Loft Hostel Barcelona,The Loft Hostel Barcelona,,gcid:hotel,2027-02-11,2027-02-12,26.04,26.04,0.0,26.04,EUR,2,4.1,955,11.5,11.5,3:00 PM,11:00 AM,2026-11-03T10:16:45.228622Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-11,2027-02-12,26.13,26.13,0.0,26.13,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:45.228622Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-11,2027-02-12,26.53,17.11,9.42,26.53,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:45.228622Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-11,2027-02-12,27.74,21.16,6.59,27.74,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:45.228622Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-11,2027-02-12,28.31,19.75,8.56,28.31,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:45.228622Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-11,2027-02-12,34.02,23.95,10.07,34.02,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:45.228622Z
+Barcelona,Spacious double room with balcony,Spacious double room with balcony,,gcid:hotel,2027-02-11,2027-02-12,51.0,31.0,20.0,51.0,EUR,0,3.85,244,15.5,15.5,4:00 PM,10:00 AM,2026-11-03T10:16:45.228622Z
+Barcelona,Travelodge Barcelona Poblenou,Travelodge Barcelona Poblenou,,gcid:hotel,2027-02-11,2027-02-12,60.29,53.85,6.44,60.29,EUR,1,3.8,4833,9.0,9.0,3:00 PM,12:00 PM,2026-11-03T10:16:45.228622Z
+Barcelona,Inout Hostel,Inout Hostel,,gcid:hotel,2027-02-12,2027-02-13,21.29,13.37,7.92,21.29,EUR,2,3.9,1790,11.5,11.5,12:00 PM,10:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-12,2027-02-13,26.01,23.65,2.36,26.01,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-12,2027-02-13,30.0,30.0,0.0,30.0,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:48.620268Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-12,2027-02-13,34.92,28.33,6.59,34.92,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-12,2027-02-13,35.01,25.83,9.18,35.01,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-12,2027-02-13,36.3,27.0,9.3,36.3,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-12,2027-02-13,37.59,28.17,9.42,37.59,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,AMISTAT City Hostel Barcelona,AMISTAT City Hostel Barcelona,,gcid:hotel,2027-02-12,2027-02-13,37.89,27.45,10.44,37.89,EUR,2,4.4,679,11.5,11.5,2:00 PM,11:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-12,2027-02-13,38.96,29.19,9.77,38.96,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-12,2027-02-13,42.49,31.66,10.83,42.49,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:48.620268Z
+Barcelona,Inout Hostel,Inout Hostel,,gcid:hotel,2027-02-13,2027-02-14,21.29,13.37,7.92,21.29,EUR,2,3.9,1790,11.5,11.5,12:00 PM,10:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-13,2027-02-14,30.0,30.0,0.0,30.0,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:52.564412Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-13,2027-02-14,35.01,25.83,9.18,35.01,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,Urbany Hostel BCN GO!,Urbany Hostel BCN GO!,,gcid:hotel,2027-02-13,2027-02-14,35.5,28.91,6.59,35.5,EUR,2,4.3,4658,7.5,7.5,3:00 PM,10:30 AM,2026-11-03T10:16:52.564412Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-13,2027-02-14,36.3,27.0,9.3,36.3,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-13,2027-02-14,37.59,28.17,9.42,37.59,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-13,2027-02-14,38.96,29.19,9.77,38.96,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,AMISTAT City Hostel Barcelona,AMISTAT City Hostel Barcelona,,gcid:hotel,2027-02-13,2027-02-14,39.44,28.86,10.58,39.44,EUR,2,4.4,679,11.5,11.5,2:00 PM,11:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-13,2027-02-14,40.41,33.82,6.59,40.41,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-13,2027-02-14,42.44,32.22,10.22,42.44,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-13,2027-02-14,42.84,38.95,3.89,42.84,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:52.564412Z
+Barcelona,The Central House Barcelona Gracia,The Central House Barcelona Gracia,,gcid:hotel,2027-02-14,2027-02-15,21.42,19.47,1.95,21.42,EUR,2,4.4,863,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:55.583276Z
+Barcelona,St Christopher's Barcelona,St Christopher's Barcelona,,gcid:hotel,2027-02-14,2027-02-15,23.61,15.46,8.15,23.61,EUR,0,4.2,5179,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:55.583276Z
+Barcelona,Yeah Hostel,Yeah Hostel,,gcid:hotel,2027-02-14,2027-02-15,25.16,25.16,0.0,25.16,EUR,2,4.6,2046,11.5,11.5,3:00 PM,12:00 PM,2026-11-03T10:16:55.583276Z
+Barcelona,Sant Jordi Hostels Rock Palace,Sant Jordi Hostels Rock Palace,,gcid:hotel,2027-02-14,2027-02-15,26.53,17.11,9.42,26.53,EUR,2,4.5,1924,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:55.583276Z
+Barcelona,Generator Barcelona,Generator Barcelona,,gcid:hotel,2027-02-14,2027-02-15,27.34,20.75,6.59,27.34,EUR,1,4.5,9371,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:55.583276Z
+Barcelona,Casa Gràcia,Casa Gràcia,,gcid:hotel,2027-02-14,2027-02-15,28.27,19.33,8.94,28.27,EUR,4,3.9,3866,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:55.583276Z
+Barcelona,TOC Barcelona,TOC Barcelona,,gcid:hotel,2027-02-14,2027-02-15,28.29,19.72,8.57,28.29,EUR,1,4.1,2160,9.0,9.0,3:00 PM,11:00 AM,2026-11-03T10:16:55.583276Z
+Barcelona,Casa Jam Barcelona,Casa Jam Barcelona,,gcid:hotel,2027-02-14,2027-02-15,28.38,19.8,8.58,28.38,EUR,2,4.7,501,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:16:55.583276Z
+Barcelona,Spacious double room with balcony,Spacious double room with balcony,,gcid:hotel,2027-02-14,2027-02-15,51.0,31.0,20.0,51.0,EUR,0,3.85,244,15.5,15.5,4:00 PM,10:00 AM,2026-11-03T10:16:55.583276Z
+Barcelona,Travelodge Barcelona Fira,Travelodge Barcelona Fira,,gcid:hotel,2027-02-14,2027-02-15,66.07,60.32,5.75,66.07,EUR,3,3.6,1852,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:16:55.583276Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-01,2027-02-02,25.59,22.09,3.49,25.59,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:59.332551Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-01,2027-02-02,26.34,22.84,3.49,26.34,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:16:59.332551Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-01,2027-02-02,26.84,18.04,8.8,26.84,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:16:59.332551Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-01,2027-02-02,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:16:59.332551Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-01,2027-02-02,30.5,24.54,5.96,30.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:16:59.332551Z
+Rome,Hostel Trastevere,Hostel Trastevere,,gcid:hotel,2027-02-01,2027-02-02,30.56,30.56,0.0,30.56,EUR,3,4.0,1775,7.5,7.5,2:00 PM,10:00 AM,2026-11-03T10:16:59.332551Z
+Rome,Free Hostels Roma,Free Hostels Roma,,gcid:hotel,2027-02-01,2027-02-02,32.43,28.93,3.49,32.43,EUR,3,4.5,716,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:16:59.332551Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-01,2027-02-02,51.0,45.0,6.0,51.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:16:59.332551Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-01,2027-02-02,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:59.332551Z
+Rome,Room Santa Maria Maggiore,Room Santa Maria Maggiore,,gcid:hotel,2027-02-01,2027-02-02,57.45,52.23,5.22,57.45,EUR,3,4.0,355,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:16:59.332551Z
+Rome,Hotel Des Epoques,Hotel Des Epoques,,gcid:hotel,2027-02-01,2027-02-02,57.83,52.58,5.25,57.83,EUR,3,3.8,423,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:16:59.332551Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-01,2027-02-02,60.09,48.26,11.83,60.09,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:16:59.332551Z
+Rome,iRooms Central Station,iRooms Central Station,,gcid:hotel,2027-02-01,2027-02-02,64.15,64.15,0.0,64.15,EUR,4,4.2,135,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:16:59.332551Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-02,2027-02-03,26.37,22.87,3.49,26.37,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:02.768058Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-02,2027-02-03,26.84,18.04,8.8,26.84,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:02.768058Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-02,2027-02-03,27.16,23.67,3.49,27.16,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:02.768058Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-02,2027-02-03,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:02.768058Z
+Rome,Free Hostels Roma,Free Hostels Roma,,gcid:hotel,2027-02-02,2027-02-03,33.43,29.93,3.49,33.43,EUR,3,4.5,716,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:17:02.768058Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-02,2027-02-03,35.5,29.09,6.41,35.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:02.768058Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-02,2027-02-03,46.22,42.02,4.2,46.22,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:02.768058Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-02,2027-02-03,51.0,45.0,6.0,51.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:02.768058Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-02,2027-02-03,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:02.768058Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-02,2027-02-03,59.95,48.16,11.8,59.95,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:02.768058Z
+Rome,Room Santa Maria Maggiore,Room Santa Maria Maggiore,,gcid:hotel,2027-02-02,2027-02-03,61.34,55.76,5.58,61.34,EUR,3,4.0,355,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:02.768058Z
+Rome,Hotel Roma Tor Vergata,Hotel Roma Tor Vergata,,gcid:hotel,2027-02-02,2027-02-03,63.0,63.0,0.0,63.0,EUR,4,3.7,3036,24.0,24.0,2:00 PM,10:00 AM,2026-11-03T10:17:02.768058Z
+Rome,Hotel Novecento Roma,Hotel Novecento Roma,,gcid:hotel,2027-02-02,2027-02-03,64.78,58.89,5.89,64.78,EUR,3,3.8,347,15.5,15.5,1:00 PM,12:00 PM,2026-11-03T10:17:02.768058Z
+Rome,Relais Orso,Relais Orso,,gcid:hotel,2027-02-02,2027-02-03,65.04,59.46,5.58,65.04,EUR,3,4.3,390,15.5,15.5,3:00 PM,12:00 PM,2026-11-03T10:17:02.768058Z
+Rome,iRooms Central Station,iRooms Central Station,,gcid:hotel,2027-02-02,2027-02-03,67.36,67.36,0.0,67.36,EUR,4,4.2,135,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:02.768058Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-03,2027-02-04,26.4,22.91,3.49,26.4,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:05.881244Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-03,2027-02-04,26.84,18.04,8.8,26.84,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:05.881244Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-03,2027-02-04,27.88,24.38,3.49,27.88,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:05.881244Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-03,2027-02-04,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:05.881244Z
+Rome,Free Hostels Roma,Free Hostels Roma,,gcid:hotel,2027-02-03,2027-02-04,29.37,26.7,2.67,29.37,EUR,3,4.5,716,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:17:05.881244Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-03,2027-02-04,37.5,30.9,6.6,37.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:05.881244Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-03,2027-02-04,38.64,35.12,3.51,38.64,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:05.881244Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-03,2027-02-04,51.0,45.0,6.0,51.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:05.881244Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-03,2027-02-04,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:05.881244Z
+Rome,Everest Inn Rome,Everest Inn Rome,,gcid:hotel,2027-02-03,2027-02-04,59.27,49.58,9.69,59.27,EUR,3,4.0,305,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:05.881244Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-03,2027-02-04,60.09,48.26,11.83,60.09,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:05.881244Z
+Rome,Hotel Roma Tor Vergata,Hotel Roma Tor Vergata,,gcid:hotel,2027-02-03,2027-02-04,63.0,63.0,0.0,63.0,EUR,4,3.7,3036,24.0,24.0,2:00 PM,10:00 AM,2026-11-03T10:17:05.881244Z
+Rome,iRooms Central Station,iRooms Central Station,,gcid:hotel,2027-02-03,2027-02-04,67.36,67.36,0.0,67.36,EUR,4,4.2,135,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:05.881244Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-04,2027-02-05,26.66,23.17,3.49,26.66,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:09.101228Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-04,2027-02-05,26.84,18.04,8.8,26.84,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:09.101228Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-04,2027-02-05,28.6,25.11,3.49,28.6,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:09.101228Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-04,2027-02-05,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:09.101228Z
+Rome,Free Hostels Roma,Free Hostels Roma,,gcid:hotel,2027-02-04,2027-02-05,30.96,28.14,2.81,30.96,EUR,3,4.5,716,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:17:09.101228Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-04,2027-02-05,31.0,25.0,6.0,31.0,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:09.101228Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-04,2027-02-05,32.05,29.14,2.91,32.05,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:09.101228Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-04,2027-02-05,43.59,39.63,3.96,43.59,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:09.101228Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-04,2027-02-05,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:09.101228Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-04,2027-02-05,54.0,48.0,6.0,54.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:09.101228Z
+Rome,Everest Inn Rome,Everest Inn Rome,,gcid:hotel,2027-02-04,2027-02-05,59.27,49.58,9.69,59.27,EUR,3,4.0,305,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:09.101228Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-04,2027-02-05,60.09,48.26,11.83,60.09,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:09.101228Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-05,2027-02-06,26.84,18.04,8.8,26.84,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-05,2027-02-06,30.22,26.72,3.49,30.22,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:12.072490Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-05,2027-02-06,32.18,28.68,3.49,32.18,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:12.072490Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-05,2027-02-06,34.73,29.74,4.99,34.73,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:12.072490Z
+Rome,Ostello Bello Roma Colosseo - Hostel and Bar,Ostello Bello Roma Colosseo - Hostel and Bar,,gcid:hotel,2027-02-05,2027-02-06,38.98,32.25,6.73,38.98,EUR,3,4.6,762,7.5,7.5,2:30 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-05,2027-02-06,40.49,36.82,3.67,40.49,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-05,2027-02-06,43.59,39.63,3.96,43.59,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-05,2027-02-06,44.5,37.27,7.23,44.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-05,2027-02-06,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-05,2027-02-06,54.0,48.0,6.0,54.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:12.072490Z
+Rome,Caravel Hotel - 4 stars,Caravel Hotel - 4 stars,,gcid:hotel,2027-02-05,2027-02-06,56.6,44.85,11.75,56.6,EUR,4,4.1,2032,24.0,24.0,2:00 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,Everest Inn Rome,Everest Inn Rome,,gcid:hotel,2027-02-05,2027-02-06,59.27,49.58,9.69,59.27,EUR,3,4.0,305,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,Hotel Des Epoques,Hotel Des Epoques,,gcid:hotel,2027-02-05,2027-02-06,62.94,55.44,7.5,62.94,EUR,3,3.8,423,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:12.072490Z
+Rome,Hotel Roma Tor Vergata,Hotel Roma Tor Vergata,,gcid:hotel,2027-02-05,2027-02-06,63.0,63.0,0.0,63.0,EUR,4,3.7,3036,24.0,24.0,2:00 PM,10:00 AM,2026-11-03T10:17:12.072490Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-06,2027-02-07,30.5,27.01,3.49,30.5,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:15.760205Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-06,2027-02-07,32.01,22.74,9.27,32.01,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-06,2027-02-07,34.73,29.74,4.99,34.73,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:15.760205Z
+Rome,The Beehive Hostel,The Beehive Hostel,,gcid:hotel,2027-02-06,2027-02-07,36.74,28.85,7.88,36.74,EUR,1,4.7,404,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-06,2027-02-07,39.35,35.86,3.49,39.35,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:15.760205Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-06,2027-02-07,40.96,37.23,3.73,40.96,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-06,2027-02-07,46.5,39.09,7.41,46.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,Caravel Hotel - 4 stars,Caravel Hotel - 4 stars,,gcid:hotel,2027-02-06,2027-02-07,56.6,44.85,11.75,56.6,EUR,4,4.1,2032,24.0,24.0,2:00 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,Novotel Roma Est,Novotel Roma Est,,gcid:hotel,2027-02-06,2027-02-07,57.6,45.55,12.06,57.6,EUR,4,4.1,2749,24.0,24.0,2:00 PM,12:00 PM,2026-11-03T10:17:15.760205Z
+Rome,Hotel Villa delle Rose,Hotel Villa delle Rose,,gcid:hotel,2027-02-06,2027-02-07,60.65,55.14,5.51,60.65,EUR,3,3.8,631,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,Everest Inn Rome,Everest Inn Rome,,gcid:hotel,2027-02-06,2027-02-07,62.66,52.67,9.99,62.66,EUR,3,4.0,305,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,Hotel Roma Tor Vergata,Hotel Roma Tor Vergata,,gcid:hotel,2027-02-06,2027-02-07,63.0,63.0,0.0,63.0,EUR,4,3.7,3036,24.0,24.0,2:00 PM,10:00 AM,2026-11-03T10:17:15.760205Z
+Rome,Hotel Milo Rome,Hotel Milo Rome,,gcid:hotel,2027-02-06,2027-02-07,63.0,51.82,11.18,63.0,EUR,3,3.5,478,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,Hotel Des Epoques,Hotel Des Epoques,,gcid:hotel,2027-02-06,2027-02-07,64.66,57.16,7.5,64.66,EUR,3,3.8,423,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:15.760205Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-06,2027-02-07,70.0,64.0,6.0,70.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:15.760205Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-07,2027-02-08,26.54,23.05,3.49,26.54,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:20.176057Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-07,2027-02-08,26.84,18.04,8.8,26.84,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-07,2027-02-08,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:20.176057Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-07,2027-02-08,31.0,25.0,6.0,31.0,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-07,2027-02-08,32.7,29.73,2.98,32.7,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-07,2027-02-08,33.61,30.12,3.49,33.61,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:20.176057Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-07,2027-02-08,40.96,37.23,3.73,40.96,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,Little Aurelius,Little Aurelius,,gcid:hotel,2027-02-07,2027-02-08,44.5,36.82,7.68,44.5,EUR,4,4.2,92,24.0,24.0,2:00 PM,10:00 AM,2026-11-03T10:17:20.176057Z
+Rome,Domus Sessoriana,Domus Sessoriana,,gcid:hotel,2027-02-07,2027-02-08,44.56,40.51,4.05,44.56,EUR,3,4.0,1387,15.5,15.5,1:00 PM,10:30 AM,2026-11-03T10:17:20.176057Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-07,2027-02-08,51.0,45.0,6.0,51.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:20.176057Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-07,2027-02-08,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,Caravel Hotel - 4 stars,Caravel Hotel - 4 stars,,gcid:hotel,2027-02-07,2027-02-08,53.85,42.33,11.52,53.85,EUR,4,4.1,2032,24.0,24.0,2:00 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-07,2027-02-08,59.95,48.16,11.8,59.95,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,iRooms Central Station,iRooms Central Station,,gcid:hotel,2027-02-07,2027-02-08,64.15,64.15,0.0,64.15,EUR,4,4.2,135,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,Hotel Villafranca Rome,Hotel Villafranca Rome,,gcid:hotel,2027-02-07,2027-02-08,66.85,66.85,0.0,66.85,EUR,4,3.9,942,24.0,24.0,2:00 PM,12:00 PM,2026-11-03T10:17:20.176057Z
+Rome,Adesso Hotel,Adesso Hotel,,gcid:hotel,2027-02-07,2027-02-08,69.42,63.42,6.0,69.42,EUR,4,4.6,806,24.0,24.0,2:00 PM,11:00 AM,2026-11-03T10:17:20.176057Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-08,2027-02-09,26.56,23.07,3.49,26.56,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:23.466715Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-08,2027-02-09,26.84,18.04,8.8,26.84,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-08,2027-02-09,27.16,23.67,3.49,27.16,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:23.466715Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-08,2027-02-09,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:23.466715Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-08,2027-02-09,30.5,24.54,5.96,30.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,Free Hostels Roma,Free Hostels Roma,,gcid:hotel,2027-02-08,2027-02-09,31.2,28.37,2.83,31.2,EUR,3,4.5,716,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-08,2027-02-09,32.7,29.73,2.98,32.7,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-08,2027-02-09,43.59,39.63,3.96,43.59,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-08,2027-02-09,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-08,2027-02-09,54.0,48.0,6.0,54.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:23.466715Z
+Rome,Little Aurelius,Little Aurelius,,gcid:hotel,2027-02-08,2027-02-09,55.75,47.04,8.71,55.75,EUR,4,4.2,92,24.0,24.0,2:00 PM,10:00 AM,2026-11-03T10:17:23.466715Z
+Rome,Hotel Villa Riari Casa,Hotel Villa Riari Casa,,gcid:hotel,2027-02-08,2027-02-09,56.56,45.96,10.6,56.56,EUR,5,4.4,360,42.0,42.0,3:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,Everest Inn Rome,Everest Inn Rome,,gcid:hotel,2027-02-08,2027-02-09,59.27,49.58,9.69,59.27,EUR,3,4.0,305,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-08,2027-02-09,59.95,48.16,11.8,59.95,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,iRooms Central Station,iRooms Central Station,,gcid:hotel,2027-02-08,2027-02-09,64.15,64.15,0.0,64.15,EUR,4,4.2,135,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:23.466715Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-09,2027-02-10,26.83,23.34,3.49,26.83,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:27.591155Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-09,2027-02-10,27.16,23.67,3.49,27.16,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:27.591155Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-09,2027-02-10,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:27.591155Z
+Rome,Free Hostels Roma,Free Hostels Roma,,gcid:hotel,2027-02-09,2027-02-10,28.95,26.31,2.64,28.95,EUR,3,4.5,716,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:17:27.591155Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-09,2027-02-10,30.5,24.54,5.96,30.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:27.591155Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-09,2027-02-10,31.08,28.25,2.82,31.08,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:27.591155Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-09,2027-02-10,32.01,22.74,9.27,32.01,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:27.591155Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-09,2027-02-10,46.22,42.02,4.2,46.22,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:27.591155Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-09,2027-02-10,47.0,41.0,6.0,47.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:27.591155Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-09,2027-02-10,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:27.591155Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-09,2027-02-10,59.95,48.16,11.8,59.95,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:27.591155Z
+Rome,iRooms Central Station,iRooms Central Station,,gcid:hotel,2027-02-09,2027-02-10,64.15,64.15,0.0,64.15,EUR,4,4.2,135,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:27.591155Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-10,2027-02-11,26.88,23.38,3.49,26.88,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:31.185711Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-10,2027-02-11,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:31.185711Z
+Rome,Free Hostels Roma,Free Hostels Roma,,gcid:hotel,2027-02-10,2027-02-11,29.05,26.41,2.64,29.05,EUR,3,4.5,716,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:17:31.185711Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-10,2027-02-11,30.02,26.53,3.49,30.02,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:31.185711Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-10,2027-02-11,32.01,22.74,9.27,32.01,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:31.185711Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-10,2027-02-11,35.5,29.09,6.41,35.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:31.185711Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-10,2027-02-11,38.64,35.12,3.51,38.64,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:31.185711Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-10,2027-02-11,46.22,42.02,4.2,46.22,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:31.185711Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-10,2027-02-11,47.0,41.0,6.0,47.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:31.185711Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-10,2027-02-11,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:31.185711Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-10,2027-02-11,60.09,48.26,11.83,60.09,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:31.185711Z
+Rome,iRooms Central Station,iRooms Central Station,,gcid:hotel,2027-02-10,2027-02-11,64.15,64.15,0.0,64.15,EUR,4,4.2,135,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:31.185711Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-11,2027-02-12,26.77,17.99,8.78,26.77,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-11,2027-02-12,27.14,23.65,3.49,27.14,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:34.858712Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-11,2027-02-12,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:34.858712Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-11,2027-02-12,31.46,27.97,3.49,31.46,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:34.858712Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-11,2027-02-12,35.5,29.09,6.41,35.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,Free Hostels Roma,Free Hostels Roma,,gcid:hotel,2027-02-11,2027-02-12,36.42,32.93,3.49,36.42,EUR,3,4.5,716,7.5,7.5,3:00 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-11,2027-02-12,37.2,33.81,3.39,37.2,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-11,2027-02-12,48.12,43.95,4.17,48.12,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-11,2027-02-12,52.5,45.0,7.5,52.5,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-11,2027-02-12,54.0,48.0,6.0,54.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:34.858712Z
+Rome,Little Aurelius,Little Aurelius,,gcid:hotel,2027-02-11,2027-02-12,55.75,47.04,8.71,55.75,EUR,4,4.2,92,24.0,24.0,2:00 PM,10:00 AM,2026-11-03T10:17:34.858712Z
+Rome,Hotel Villa Riari Casa,Hotel Villa Riari Casa,,gcid:hotel,2027-02-11,2027-02-12,56.4,45.82,10.57,56.4,EUR,5,4.4,360,42.0,42.0,3:00 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-11,2027-02-12,60.09,48.26,11.83,60.09,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,iRooms Central Station,iRooms Central Station,,gcid:hotel,2027-02-11,2027-02-12,67.36,67.36,0.0,67.36,EUR,4,4.2,135,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:34.858712Z
+Rome,Budget Rooms Des Arts Roma,Budget Rooms Des Arts Roma,,gcid:hotel,2027-02-12,2027-02-13,27.5,20.46,7.04,27.5,EUR,0,4.6,360,7.5,7.5,3:00 PM,10:30 AM,2026-11-03T10:17:38.270640Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-12,2027-02-13,32.01,22.74,9.27,32.01,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:38.270640Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-12,2027-02-13,34.73,29.74,4.99,34.73,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:38.270640Z
+Rome,Roma Scout Center,Roma Scout Center,,gcid:hotel,2027-02-12,2027-02-13,35.0,35.0,0.0,35.0,EUR,3,4.2,1350,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:38.270640Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-12,2027-02-13,35.6,32.1,3.49,35.6,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:38.270640Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-12,2027-02-13,35.77,32.27,3.49,35.77,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:38.270640Z
+Rome,Ostello Bello Roma Colosseo - Hostel and Bar,Ostello Bello Roma Colosseo - Hostel and Bar,,gcid:hotel,2027-02-12,2027-02-13,38.98,32.25,6.73,38.98,EUR,3,4.6,762,7.5,7.5,2:30 PM,11:00 AM,2026-11-03T10:17:38.270640Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-12,2027-02-13,48.13,43.96,4.17,48.13,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:38.270640Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-12,2027-02-13,53.0,45.0,8.0,53.0,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:38.270640Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-12,2027-02-13,54.0,48.0,6.0,54.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:38.270640Z
+Rome,Caravel Hotel - 4 stars,Caravel Hotel - 4 stars,,gcid:hotel,2027-02-12,2027-02-13,56.6,44.85,11.75,56.6,EUR,4,4.1,2032,24.0,24.0,2:00 PM,11:00 AM,2026-11-03T10:17:38.270640Z
+Rome,Hotel Villa Riari Casa,Hotel Villa Riari Casa,,gcid:hotel,2027-02-12,2027-02-13,63.79,52.53,11.26,63.79,EUR,5,4.4,360,42.0,42.0,3:00 PM,11:00 AM,2026-11-03T10:17:38.270640Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-12,2027-02-13,67.29,54.81,12.48,67.29,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:38.270640Z
+Rome,Roma Talenti Fucini,Roma Talenti Fucini,,gcid:hotel,2027-02-12,2027-02-13,69.84,69.84,0.0,69.84,EUR,4,4.6,69,24.0,24.0,12:00 PM,10:00 AM,2026-11-03T10:17:38.270640Z
+Rome,Budget Rooms Des Arts Roma,Budget Rooms Des Arts Roma,,gcid:hotel,2027-02-13,2027-02-14,27.5,20.46,7.04,27.5,EUR,0,4.6,360,7.5,7.5,3:00 PM,10:30 AM,2026-11-03T10:17:41.736890Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-13,2027-02-14,32.01,22.74,9.27,32.01,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:41.736890Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-13,2027-02-14,34.73,29.74,4.99,34.73,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:41.736890Z
+Rome,Roma Scout Center,Roma Scout Center,,gcid:hotel,2027-02-13,2027-02-14,35.0,35.0,0.0,35.0,EUR,3,4.2,1350,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:41.736890Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-13,2027-02-14,35.64,32.15,3.49,35.64,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:41.736890Z
+Rome,The Beehive Hostel,The Beehive Hostel,,gcid:hotel,2027-02-13,2027-02-14,39.93,34.95,4.99,39.93,EUR,1,4.7,404,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:41.736890Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-13,2027-02-14,42.21,38.72,3.49,42.21,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:41.736890Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-13,2027-02-14,45.61,41.66,3.95,45.61,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:41.736890Z
+Rome,BV Oly Hotel,BV Oly Hotel,,gcid:hotel,2027-02-13,2027-02-14,59.08,53.95,5.13,59.08,EUR,4,3.8,1671,24.0,24.0,3:00 PM,12:00 PM,2026-11-03T10:17:41.736890Z
+Rome,Caravel Hotel - 4 stars,Caravel Hotel - 4 stars,,gcid:hotel,2027-02-13,2027-02-14,59.36,47.37,11.99,59.36,EUR,4,4.1,2032,24.0,24.0,2:00 PM,11:00 AM,2026-11-03T10:17:41.736890Z
+Rome,Roma Talenti Fucini,Roma Talenti Fucini,,gcid:hotel,2027-02-13,2027-02-14,69.84,69.84,0.0,69.84,EUR,4,4.6,69,24.0,24.0,12:00 PM,10:00 AM,2026-11-03T10:17:41.736890Z
+Rome,Budget Rooms Des Arts Roma,Budget Rooms Des Arts Roma,,gcid:hotel,2027-02-14,2027-02-15,27.5,20.46,7.04,27.5,EUR,0,4.6,360,7.5,7.5,3:00 PM,10:30 AM,2026-11-03T10:17:45.133228Z
+Rome,Legend R.G,Legend R.G,,gcid:hotel,2027-02-14,2027-02-15,28.78,23.79,4.99,28.78,EUR,1,3.7,741,9.0,9.0,3:00 PM,10:00 AM,2026-11-03T10:17:45.133228Z
+Rome,Alessandro Palace & Bar,Alessandro Palace & Bar,,gcid:hotel,2027-02-14,2027-02-15,29.83,26.34,3.49,29.83,EUR,2,3.8,1281,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:45.133228Z
+Rome,MEININGER Roma Termini,MEININGER Roma Termini,,gcid:hotel,2027-02-14,2027-02-15,30.5,24.54,5.96,30.5,EUR,3,4.4,2402,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:45.133228Z
+Rome,COMFORT INN ROME TERMINI (Guesthouse),COMFORT INN ROME TERMINI (Guesthouse),,gcid:hotel,2027-02-14,2027-02-15,32.01,22.74,9.27,32.01,EUR,0,3.8,140,15.5,15.5,1:30 PM,11:00 AM,2026-11-03T10:17:45.133228Z
+Rome,YellowSquare Rome,YellowSquare Rome,,gcid:hotel,2027-02-14,2027-02-15,32.18,28.68,3.49,32.18,EUR,0,4.3,4517,7.5,7.5,3:00 PM,10:00 AM,2026-11-03T10:17:45.133228Z
+Rome,The RomeHello,The RomeHello,,gcid:hotel,2027-02-14,2027-02-15,32.7,29.73,2.98,32.7,EUR,0,4.8,2164,7.5,7.5,2:00 PM,11:00 AM,2026-11-03T10:17:45.133228Z
+Rome,Ostello Bello Roma Colosseo - Hostel and Bar,Ostello Bello Roma Colosseo - Hostel and Bar,,gcid:hotel,2027-02-14,2027-02-15,37.18,30.62,6.56,37.18,EUR,3,4.6,762,7.5,7.5,2:30 PM,11:00 AM,2026-11-03T10:17:45.133228Z
+Rome,GP Hotel,GP Hotel,,gcid:hotel,2027-02-14,2027-02-15,45.61,41.66,3.95,45.61,EUR,4,3.6,458,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:45.133228Z
+Rome,B&B HOTEL Roma Tuscolana San Giovanni,B&B HOTEL Roma Tuscolana San Giovanni,,gcid:hotel,2027-02-14,2027-02-15,54.0,48.0,6.0,54.0,EUR,3,4.3,2531,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:45.133228Z
+Rome,Club House Hotel Rome,Club House Hotel Rome,,gcid:hotel,2027-02-14,2027-02-15,57.0,49.5,7.5,57.0,EUR,4,4.4,3178,24.0,24.0,3:00 PM,11:00 AM,2026-11-03T10:17:45.133228Z
+Rome,Star Hotel Roma,Star Hotel Roma,,gcid:hotel,2027-02-14,2027-02-15,60.09,48.26,11.83,60.09,EUR,0,4.0,63,15.5,15.5,3:00 PM,11:00 AM,2026-11-03T10:17:45.133228Z
+Rome,Hotel Milani | BZAR hotels,Hotel Milani | BZAR hotels,,gcid:hotel,2027-02-14,2027-02-15,66.0,66.0,0.0,66.0,EUR,3,4.0,1457,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:45.133228Z
+Rome,B&B HOTEL Roma Pietralata Tiburtina,B&B HOTEL Roma Pietralata Tiburtina,,gcid:hotel,2027-02-14,2027-02-15,67.0,61.0,6.0,67.0,EUR,3,4.5,1437,15.5,15.5,2:00 PM,12:00 PM,2026-11-03T10:17:45.133228Z
+Rome,Everest Inn Rome,Everest Inn Rome,,gcid:hotel,2027-02-14,2027-02-15,69.0,58.18,10.82,69.0,EUR,3,4.0,305,15.5,15.5,2:00 PM,11:00 AM,2026-11-03T10:17:45.133228Z

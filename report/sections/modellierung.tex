@@ -29,18 +29,20 @@ Tabelle~\ref{tab:eingangsgroessen} fasst die Größen zusammen, die als gegeben 
   \end{tabular}
 \end{table}
 
-Drei dieser Größen bedürfen einer Erläuterung. Die Mindestaufenthaltsdauer $d_{\min}(z)$ bildet ab, dass sich ein Ziel unterhalb einer gewissen Verweildauer nicht sinnvoll erschließen lässt. Eine Großstadt mit mehreren zentralen Sehenswürdigkeiten rechtfertigt den Anreiseaufwand erst ab zwei bis drei Übernachtungen, während für einen kleineren Ort eine Nacht genügen kann. Die Mengen $V(a,b)$ enthalten keine abstrakten Relationen zwischen Orten, sondern konkrete Verbindungen mit Verkehrsmittel, Abfahrtszeitfenster, Fahrtdauer, Preis und CO\textsubscript{2}-Ausstoß. Analog umfasst $H(z)$ eine Vorauswahl von Hotels je Ziel mit tagesabhängigen Übernachtungspreisen und einer Komfortbewertung.
+Drei dieser Größen bedürfen einer Erläuterung. Die Mindestaufenthaltsdauer $d_{\min}(z)$ bildet ab, dass sich ein Ziel unterhalb einer gewissen Verweildauer nicht sinnvoll erschließen lässt. Unter Berücksichtigung des Anreiseaufwands rechtfertigt sich ein Reiseziel daher erst ab beispeilsweise zwei Tagen Aufenthalt.
 
-Gesucht ist ein vollständiger Reiseplan, der Besuchsreihenfolge, Aufenthaltsdauer je Stopp, Verbindung je Etappe und Hotel je Stopp gemeinsam festlegt und dabei die Zielgrößen Kosten, Komfort und CO\textsubscript{2}-Ausstoß bestmöglich ausbalanciert.
+Die Menge $V(a,b)$ beschreibt konkrete Verbindungen zwsichen zwei Zeiel a und b. Dabei werden Verkehrsmittel, Abfahrtszeitfenster, Fahrtdauer, Preis und CO\textsubscript{2}-Ausstoß pro Verbindung angegeben. Analog umfasst $H(z)$ eine Vorauswahl von Hotels je Ziel mit tagesabhängigen Übernachtungspreisen und einer Komfortbewertung.
 
-Die Optimierung findet ausschließlich innerhalb vorab bereitgestellter Optionen statt. Sämtliche Preis-, Emissions- und Verbindungsdaten werden im Vorfeld erhoben und als Nachschlagetabellen vorgehalten, denn ein evolutionärer Algorithmus bewertet je Lauf mehrere tausende Kandidaten gegen einen unveränderlichen Datenstand.
+Gesucht ist ein vollständiger Reiseplan, der Besuchsreihenfolge, Aufenthaltsdauer je Stopp, Transfer zwischen Stops und Hotel je Stopp festlegt und dabei die Zielgrößen Kosten, Komfort und CO\textsubscript{2}-Ausstoß bestmöglich ausbalanciert.
 
-Naheliegend wäre, dieses Problem zu zerlegen und nacheinander zu lösen: zuerst die Route, dann die Aufenthaltsdauern, zuletzt Transport und Unterkunft. Eine solche sequenzielle Behandlung scheitert jedoch an der wechselseitigen Abhängigkeit der Teilentscheidungen. Ein zusätzlicher Übernachtungstag am ersten Stopp verlegt jede weitere Fahrt und jede weitere Hotelnacht um einen Tag und verändert damit deren tagesabhängige Preise. Eine Route, die unter festen Aufenthaltsdauern optimal erscheint, kann bei veränderter Zeitaufteilung deutlich schlechter abschneiden. Die Entscheidungen müssen daher gemeinsam optimiert werden.
+Die Optimierung erfolgt mittles eines evolutionären Algorithmus innerhalb vorab bereitgestellter Optionen. Sämtliche Preis-, Emissions- und Verbindungsdaten werden daher im Vorfeld erhoben und als Nachschlagetabellen bereitgestellt.
+
+Naheliegend wäre, dieses Problem zu zerlegen und nacheinander zu lösen. Zuerst die Route, dann die Aufenthaltsdauern, zuletzt Transport und Unterkunft. Eine solche sequenzielle Behandlung scheitert jedoch an der wechselseitigen Abhängigkeit der Teilentscheidungen. Ein zusätzlicher Übernachtungstag am ersten Stopp verlegt jede weitere Fahrt und jede weitere Hotelnacht um einen Tag und verändert damit deren tagesabhängige Preise. Eine Route, die unter festen Aufenthaltsdauern optimal erscheint, kann bei veränderter Zeitaufteilung deutlich schlechter abschneiden. Die Entscheidungen müssen daher gemeinsam optimiert werden.
 
 \subsection{Entscheidungsvariablen und Repräsentation}
 \label{subsec:repraesentation}
 
-Die Repräsentation einer Lösung als Genstring legt fest, welche Entscheidungen der Algorithmus überhaupt variieren kann, und bestimmt damit zugleich, welche Mutations- und Rekombinationsoperatoren sinnvoll definierbar sind. Sie gilt zugleich als einer der schwierigsten Teile beim Entwurf eines evolutionären Algorithmus \parencite[Vgl.][S.~49]{eibenSmithIntroductionEvolutionary2015} und ist damit die zentrale Modellierungsentscheidung dieser Arbeit.
+Die Wahl der Repräsentationsform (Genstring) legt fest, welche Mutations- und Rekombinationsoperatoren definierbar sind. Sie gilt als einer der wichtigsten Schritte beim Entwurf eines evolutionären Algorithmus \parencite[Vgl.][S.~49]{eibenSmithIntroductionEvolutionary2015} und ist damit die zentrale Modellierungsentscheidung dieser Arbeit.
 
 Ein Reiseplan wird als Tripel $G = (\pi, d, t)$ dargestellt, dessen Komponenten die drei frei zu wählenden Entscheidungsdimensionen abbilden:
 
@@ -50,7 +52,7 @@ Die \textbf{Aufenthaltsdauer} $d = (d_1, \dots, d_n)$ gibt mit $d_i \in \mathbb{
 
 Die \textbf{Transportwahl} $t = (t_1, \dots, t_{n+1})$ umfasst $n+1$ Einträge, da neben den $n$ Anreisen zu den Stopps auch die Rückreise von $\pi_n$ zum Startort $z_0$ zu treffen ist. Dabei bezeichnet $t_i$ für $i \leq n$ die Verbindung für den Übergang von $\pi_{i-1}$ nach $\pi_i$ (mit $\pi_0 = z_0$) und $t_{n+1}$ die Rückreise.
 
-Für die Transportwahl wird nicht eine konkrete Verbindung kodiert, sondern eine Kombination aus Verkehrsmittel und Abfahrtszeitfenster:
+Die Transportwahl wird als Kombination aus Verkehrsmittel und Abfahrtszeitfenster dargestellt:
 \begin{equation}
 t_i \in M \times S, \qquad M = \{\text{Bahn}, \text{Bus}, \text{Flug}\}, \quad S = \{\text{Vormittag}, \text{Nachmittag}, \text{Nacht}\}
 \end{equation}
@@ -81,7 +83,7 @@ Als durchgängiges Beispiel dient eine Reise mit $n = 4$ Zielen über $T = 14$ T
 G = \big(&(2,\, 1,\, 3,\, 4),\; (2,\, 3,\, 4,\, 5),\\
          &(\text{Bahn/Vm},\, \text{Bahn/Nm},\, \text{Flug/Vm},\, \text{Flug/Nm},\, \text{Flug/Vm})\big)
 \end{align*}
-kodiert eine Reise, die am Vormittag mit der Bahn nach Berlin führt, wo zwei Nächte verbracht werden. Es folgen Paris mit drei Nächten, erreicht über eine Nachmittagsverbindung der Bahn, anschließend Rom mit vier Nächten über einen Vormittagsflug und schließlich Barcelona mit fünf Nächten über einen Nachmittagsflug. Die Rückreise zum Startort erfolgt mit einem Vormittagsflug. Die Abkürzungen Vm und Nm stehen dabei für die Zeitfenster Vormittag und Nachmittag. 
+kodiert eine Reise, die am Vormittag mit der Bahn nach Berlin führt, wo zwei Nächte verbracht werden. Es folgen Paris mit drei Nächten, erreicht über eine Nachmittagsverbindung der Bahn, anschließend Rom mit vier Nächten über einen Vormittagsflug und schließlich Barcelona mit fünf Nächten über einen Nachmittagsflug. Die Rückreise zum Startort erfolgt mit einem Vormittagsflug. Die Abkürzungen Vm und Nm stehen dabei für die Zeitfenster Vormittag und Nachmittag.
 
 \subsection{Dekodierfunktion}
 \label{subsec:dekodierung}
@@ -96,7 +98,7 @@ a_i = a_{i-1} + d_{i-1} + \delta(t_i), \qquad
 
 Nachtverbindungen kommen demnach am Folgetag an und ersetzen dabei eine Übernachtung. Das bildet einen realen Zielkonflikt ab, denn ein Nachttransfer spart Hotelkosten und einen Reisetag, geht aber zulasten des Komforts.
 
-Anschließend werden die beiden ausgeklammerten Entscheidungen ergänzt. Für die Unterkunft wählt der Decoder unter den Hotels des Ziels dasjenige mit dem geringsten gewichteten Beitrag aus Übernachtungspreis und Diskomfort:
+Anschließend werden die beiden ausgeklammerten Entscheidungen ergänzt. Für die Unterkunft wählt der Decoder unter den Hotels des Ziels dasjenige mit dem geringsten gewichteten Beitrag aus Übernachtungspreis, CO2-Ausstoß und Diskomfort (TODO: formel anpassen, co2 nicht berücksichtigt):
 \begin{equation}
 h_i = \argmin_{h \in H(\pi_i)} \Big( w_1 \sum_{\tau = a_i}^{a_i + d_i - 1} p_h(\tau) \;+\; w_2 \, u(h) \, d_i \Big)
 \end{equation}
@@ -105,12 +107,12 @@ Dabei bezeichnet $p_h(\tau)$ den Übernachtungspreis von Hotel $h$ am Tag $\tau$
 
 Diese Auslagerung ist verlustfrei, und zwar aus einem strukturellen Grund. Die Zielfunktion setzt sich, wie Abschnitt~\ref{subsec:zielfunktion} zeigt, additiv aus den Beiträgen der einzelnen Stopps und Etappen zusammen. Die Wahl des Hotels am Stopp $\pi_i$ beeinflusst ausschließlich den Beitrag dieses Stopps. Sie verändert weder den Zeitplan noch die Emissionen noch die an anderen Stopps verfügbaren Optionen. Bei gegebenem Genstring zerfällt die Hotelwahl damit in $n$ voneinander unabhängige Teilprobleme, deren jeweiliges Minimum unmittelbar ablesbar ist. Das stopweise Minimum ist folglich zugleich das globale Minimum, und ein evolutionärer Suchprozess über die Hotelindizes könnte kein besseres Ergebnis finden, sondern nur langsamer zum selben gelangen.
 
-Für die Verbindungen gilt dasselbe Argument innerhalb einer Klasse, da das Zeitfenster den Ankunftstag bereits festlegt. Es gilt jedoch nicht für die Klasse selbst, denn Verkehrsmittel und Zeitfenster bestimmen über $\delta(t_i)$ den weiteren Zeitplan. Genau deshalb bleibt $t$ im Genstring, während $h$ ihn verlässt.
+Für die Verbindungen gilt dasselbe Argument innerhalb einer Klasse, da das Zeitfenster den Ankunftstag bereits festlegt. Es gilt jedoch nicht für die Klasse selbst, denn Verkehrsmittel und Zeitfenster bestimmen über $\delta(t_i)$ den weiteren Zeitplan. Daher wird $t$ im Genstring berücksichtigt, während $h$ in der Dekodierung festgelegt wird.
 
 \subsection{Zielfunktion}
 \label{subsec:zielfunktion}
 
-Die Zielfunktion bewertet einen dekodierten Reiseplan und macht damit Lösungen vergleichbar. Sie ist der Punkt, an dem die Planungsqualität objektiviert wird, und zugleich die Grundlage jeder Verbesserung durch Mutation oder Rekombination. Sie wird im Folgenden als Zielfunktion $F(G)$ geführt und minimiert, ein kleinerer Wert entspricht also einem besseren Reiseplan.
+Die Zielfunktion objektiviert einen dekodierten Reiseplan, um Veränderungen durch Mutation oder Rekombination zu bewerten. Sie wird im Folgenden als Zielfunktion $F(G)$ geführt und minimiert, ein kleinerer Wert entspricht also einem besseren Reiseplan.
 
 Die drei Teilziele werden zunächst getrennt berechnet. Sei $v_i$ die vom Decoder gewählte Verbindung der Etappe $i$ und $h_i$ das Hotel am Stopp $\pi_i$. Mit $c(v)$, $e(v)$ und $u(v)$ für Preis, Emissionen und Diskomfort einer Verbindung gilt:
 \begin{align}

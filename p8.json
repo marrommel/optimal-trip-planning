@@ -1,0 +1,7351 @@
+{
+  "search_seconds_per_run": 60.0,
+  "population_size": 300,
+  "generation_cap": 1000000000,
+  "quality_stopping": false,
+  "climate_target": null,
+  "loading_seconds": 22.85226119996514,
+  "normalization_seconds": 5.656789000029676,
+  "balanced_solution_scales": [
+    1089.6100000000001,
+    467.9166666666667,
+    737.5
+  ],
+  "balanced_solution_weights": [
+    0.5,
+    0.1,
+    0.4
+  ],
+  "flight_emissions": "Google Flights itinerary grams / 1000; no extra aviation multiplier",
+  "configuration": {
+    "NUM_TRAVELLERS": 1,
+    "START_CITY": "Stuttgart",
+    "HOME_AIRPORTS": [
+      "STR",
+      "FRA",
+      "FKB"
+    ],
+    "TRAVEL_RANGE": [
+      "2027-02-01",
+      "2027-02-15"
+    ],
+    "TOTAL_DAYS": 10,
+    "DESTINATIONS": [
+      "London",
+      "Paris",
+      "Madrid",
+      "Barcelona",
+      "Rome"
+    ],
+    "NUM_DESTINATIONS": 3,
+    "MUST_VISIT_DESTINATIONS": [],
+    "MIN_DAYS_PER_CITY": 2,
+    "MIN_NIGHTS_BY_CITY": {},
+    "MIN_USABLE_HOURS_PER_CITY": 9.0,
+    "MAX_BUDGET": 800.0,
+    "MAX_CO2": 800.0,
+    "MAX_TRANSFER_HOURS": 20.0,
+    "OPTIMIZE_HOTELS": true,
+    "HOTEL_MIN_STARS": 1,
+    "HOTEL_MIN_GUEST_RATING": 3.5,
+    "HOTEL_MIN_REVIEWS_COUNT": 30,
+    "HOTEL_MAX_PRICE_PER_NIGHT": 70.0,
+    "HOTEL_INCLUDE_UNSTARRED": true,
+    "QUALITY_HV_MIN_GAIN": null,
+    "QUALITY_COMPROMISE_MIN_GAIN": null,
+    "POPULATION_SIZE": 300,
+    "MAX_GENERATIONS": 500,
+    "MAX_RUNTIME_SECONDS": 600,
+    "RANDOM_SEED": 76,
+    "CROSSOVER_RATE": 0.8,
+    "MUTATION_RATE": 0.1,
+    "BALANCED_SOLUTION_WEIGHTS": [
+      0.5,
+      0.1,
+      0.4
+    ],
+    "PRUNE_EQUIVALENT_TRANSPORT": true,
+    "TRANSPORT_CACHE_SIZE": 4096,
+    "TRANSPORT_RESULT_CACHE_SIZE": 1024,
+    "COORDINATED_MUTATION_RATE": 0.2,
+    "TRANSPORT_GROUP_SELECTION": true,
+    "COMPLEMENTARY_PAIRING": false,
+    "QUALITY_WINDOW_GENERATIONS": 40,
+    "QUALITY_SCALES": [
+      2000.0,
+      1000.0,
+      2000.0
+    ],
+    "HYPERVOLUME_REFERENCE": [
+      2100.0,
+      10000.0,
+      2100.0
+    ],
+    "FRONT_PROGRESS_RESOLUTION": 0.01,
+    "DAYTIME_START_HOUR": 9,
+    "DAYTIME_END_HOUR": 20,
+    "SLEEP_START_HOUR": 23,
+    "SLEEP_END_HOUR": 7,
+    "MIN_REST_HOURS": 6.0,
+    "NIGHT_START_HOUR": 1,
+    "NIGHT_END_HOUR": 5,
+    "FLIGHT_DISCOMFORT": 20.0,
+    "TRANSFER_DISCOMFORT": 10.0,
+    "SLEEP_DISRUPTION_PER_HOUR": 12.0,
+    "LONG_JOURNEY_THRESHOLD_HOURS": 6.0,
+    "LONG_JOURNEY_DISCOMFORT_PER_HOUR": 2.0,
+    "TRAVEL_DISCOMFORT_PER_HOUR": {
+      "train": 3.0,
+      "bus": 5.0,
+      "train+bus": 4.5,
+      "flight": 3.0
+    },
+    "DAYTIME_TRAVEL_DISCOMFORT_PER_HOUR": {
+      "train": 0.5,
+      "bus": 1.0,
+      "train+bus": 1.0,
+      "flight": 0.5
+    },
+    "NIGHT_TRAVEL_DISCOMFORT_PER_HOUR": {
+      "train": 5.0,
+      "bus": 10.0,
+      "train+bus": 10.0,
+      "flight": 5.0
+    },
+    "CHECK_IN_FREE_HOURS": 3.0,
+    "CHECK_IN_WAIT_DISCOMFORT_PER_HOUR": 2.0,
+    "CHECK_OUT_FREE_HOURS": 1.0,
+    "CHECK_OUT_WAIT_DISCOMFORT": 3.0,
+    "HOTEL_HOSTEL_DISCOMFORT_PER_NIGHT": 12.0,
+    "HOTEL_DISCOMFORT_PER_NIGHT_BY_STARS": {
+      "0": 8.0,
+      "1": 12.0,
+      "2": 8.0,
+      "3": 3.0,
+      "4": 1.0,
+      "5": 0.0
+    },
+    "CHECK_IN_HOUR": 14.0,
+    "CHECK_OUT_HOUR": 12.0,
+    "HOTEL_REQUEST_DELAY_SECONDS": 1.0,
+    "ALLOW_SYNTHETIC_HOTELS": false,
+    "FLIGHT_CHECK_IN_HOURS": 2.0,
+    "FLIGHT_EXIT_HOURS": 1.0,
+    "STATION_ACCESS_HOURS": 0.5,
+    "STATION_EXIT_HOURS": 0.5,
+    "AIRPORT_ACCESS_HOURS": {
+      "STR": 1.0,
+      "FKB": 2.0,
+      "FRA": 2.0,
+      "MUC": 3.0,
+      "CGN": 3.0,
+      "HHN": 4.0,
+      "LHR": 1.0,
+      "LGW": 1.0,
+      "STN": 2.0,
+      "LTN": 2.0,
+      "CDG": 1.5,
+      "ORY": 1.0,
+      "BVA": 2.0,
+      "MAD": 1.0,
+      "BCN": 1.0,
+      "FCO": 1.5,
+      "CIA": 1.0
+    },
+    "CITY_TIMEZONES": {
+      "Stuttgart": "Europe/Berlin",
+      "Frankfurt": "Europe/Berlin",
+      "Munich": "Europe/Berlin",
+      "Cologne": "Europe/Berlin",
+      "Berlin": "Europe/Berlin",
+      "Hamburg": "Europe/Berlin",
+      "London": "Europe/London",
+      "Paris": "Europe/Paris",
+      "Madrid": "Europe/Madrid",
+      "Barcelona": "Europe/Madrid",
+      "Rome": "Europe/Rome"
+    }
+  },
+  "cache_sha256": {
+    "flight_quotes.json": "ac7378ae77c25a81e7fd148b6a66a557a4817d32ea348441b216fa0cd5bdf4ef",
+    "transit_quotes.json": "d58e754f296b2d70922c1af5f173ed6c58f4e58a93918ba231eeeff8d4f3bcc9",
+    "hotel_quotes.csv": "ecbcfab44a4b18dd142208d124cd2df0c4805861c45bd565b598e3315fd90f80",
+    "hotel_quotes.json": "6dce58a84d932094717b569d243174cad2b22aa7583b2ffdcf5562e145cc8be6"
+  },
+  "source_sha256": {
+    "benchmark.py": "e870480c6446d59403442a7727c86c081242c04712decc3a105bc016aacc445c",
+    "config.py": "36be4e1839244b3e7ff7313a511f671ce79e9e5f90a008b056bff42a6c0121d8",
+    "main.py": "afc88b0224694c75dd4fa9581a7393e1c80c32f474d44323f9a8e21e4086c812",
+    "api\\flights_api.py": "1d880a8cbfb94e5ade8d697ad8671564a8c540dbd50cb0bed7f78f0c68c8ce29",
+    "api\\hotels_api.py": "872b8f8f8871126fbcd97cf0fe822131351abb100dc6e149d7359f5732ea392e",
+    "api\\train_api.py": "f4cde74d94b312142eecfc35b3ab167fe693869db070f3cd37680c3297df8419",
+    "helpers\\data_loader.py": "edc785830ee88af1eccea1e23bfb36740ef37a9f1d915b8c0aef18286c431e63",
+    "helpers\\models.py": "c5da7d7cbdb90610ca72fb843070ce4e0dac6957fbe2867a83085e95efe55629",
+    "helpers\\settings_loader.py": "b1e9556d70a572fe4c57fbd3ff1825b1dd883eeb9f7e7b5a3903ff7ebd6a0bc6",
+    "helpers\\timing.py": "fc28175d89b9cc6cac2fcc4732c02bede8e843f26708d542497cc981d3ce8243",
+    "optimizer\\accommodation.py": "b14028ae50af839faec57eae99c22f9336c7e7fd477432aa664990da93d5dbae",
+    "optimizer\\decoder.py": "086fbe398f9bf6a8b284d81ba5a4bb728063b5294add0b519f89796d64473bed",
+    "optimizer\\nsga2.py": "7cde9a6d7c2e94132f01ec268c520c8ee1c5ea34aa8ec923f149c8f50f3c6364",
+    "optimizer\\objectives.py": "5f6bbf20dccd070f6a1804500e02e798bfa16e3fea5ec860728e870f1335259e",
+    "optimizer\\progress.py": "a347c7d6b022559a35e7a5cee17cb12af45a5e9959c0c3347b0983b3837d2512",
+    "api\\api_helpers\\db_provider.py": "18647760384b3d052ee7da3556a975d264f7eac9f305c8fc81c35d333e94cc62",
+    "api\\api_helpers\\flix_provider.py": "d92455c3d213c02b976a7f71d83b15e2989bbc2f7865f36d22c76b39ee9c0c88",
+    "api\\api_helpers\\progress.py": "84ee4721a22a37ca32793e837586d9e641c57873ae50842a0f6e8d315e8a2f6a",
+    "api\\api_helpers\\train_models.py": "4643d28f287b389f558ddcd69d3bfadd22abe5ab4225d2c7e917373b9092a8c3"
+  },
+  "method": "Genetic optimizer with unchanged trip/model; serial runs; loading and shared normalization excluded, search setup included; quality stopping disabled; independent final verification may extend the budget.",
+  "runs": [
+    {
+      "variant": "genetic",
+      "seed": 11,
+      "settings": {
+        "COORDINATED_MUTATION_RATE": 0.2,
+        "TRANSPORT_GROUP_SELECTION": true,
+        "COMPLEMENTARY_PAIRING": false,
+        "PRUNE_EQUIVALENT_TRANSPORT": true,
+        "TRANSPORT_CACHE_SIZE": 4096,
+        "TRANSPORT_RESULT_CACHE_SIZE": 1024
+      },
+      "elapsed_seconds": 66.49335849995259,
+      "generations": 10,
+      "setup_seconds": 1.507950299885124,
+      "initialization_seconds": 14.1781345999334,
+      "initialization_candidates": 300,
+      "offspring_candidates": 2944,
+      "first_feasible_seconds": 4.089121999917552,
+      "final_verification_seconds": 0.47317540005315095,
+      "hypervolume": 8.345395676145346,
+      "compromise": 0.2117600033574889,
+      "balanced_solution_scales": [
+        1089.6100000000001,
+        467.9166666666667,
+        737.5
+      ],
+      "balanced_solution_weights": [
+        0.5,
+        0.1,
+        0.4
+      ],
+      "objective_minima": [
+        370.45,
+        201.26666666666665,
+        110.59
+      ],
+      "generated_transport": 3244,
+      "feasible_transport": 1058,
+      "distinct_genotypes": 3238,
+      "complete_transport": 1993,
+      "distinct_transport": 1817,
+      "cache_hits": 20505,
+      "cache_misses": 7314,
+      "dominated_option_removals": 25,
+      "option_build_seconds": 10.711601998773403,
+      "candidate_scans": 858925,
+      "decoder_invocations": 3240,
+      "complete_result_reuse": 4,
+      "result_cache_entries": 1024,
+      "result_cache_evictions": 30,
+      "cache_entries": 4096,
+      "cache_evictions": 2809,
+      "static_option_entries": 304,
+      "static_option_count": 27390,
+      "duration_rejections": 4711,
+      "daytime_rejections": 0,
+      "runtime_cutoffs": 1,
+      "distinct_feasible_transports": 913,
+      "feasible_transports_per_second": 13.829101439737563,
+      "parent_group_count": 300,
+      "largest_parent_group_share": 0.0033333333333333335,
+      "history": [
+        [
+          0,
+          14.180741099989973,
+          7.60109288157939,
+          0.29926268717407095
+        ],
+        [
+          1,
+          17.956437599961646,
+          7.710747307828967,
+          0.25195405758440836
+        ],
+        [
+          2,
+          22.00930629996583,
+          7.732024926701372,
+          0.25135709627740543
+        ],
+        [
+          3,
+          26.35140369995497,
+          7.810890335312883,
+          0.24264572623324066
+        ],
+        [
+          4,
+          30.528774199890904,
+          8.001690123185828,
+          0.24264572623324066
+        ],
+        [
+          5,
+          34.39821089990437,
+          8.02109479110198,
+          0.24264572623324066
+        ],
+        [
+          6,
+          38.03395729989279,
+          8.03147870509072,
+          0.22800954390290804
+        ],
+        [
+          7,
+          43.066271699965,
+          8.03528844520545,
+          0.22800954390290804
+        ],
+        [
+          8,
+          47.167525699944235,
+          8.066214099259525,
+          0.21732188325229632
+        ],
+        [
+          9,
+          52.233229799894616,
+          8.34369120338729,
+          0.2117600033574889
+        ],
+        [
+          10,
+          66.01165629993193,
+          8.345395676145346,
+          0.2117600033574889
+        ]
+      ],
+      "observations": [
+        {
+          "generation": 0,
+          "seconds": 14.180513399885967,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 40,
+          "feasible_dates": 6,
+          "feasible_routes": 30,
+          "objective_minima": [
+            466.29999999999995,
+            269.81666666666666,
+            166.62
+          ],
+          "hypervolume": 7.60109288157939,
+          "compromise": 0.29926268717407095
+        },
+        {
+          "generation": 1,
+          "seconds": 17.956172499922104,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 84,
+          "feasible_dates": 6,
+          "feasible_routes": 41,
+          "objective_minima": [
+            466.29999999999995,
+            268.18333333333334,
+            144.12
+          ],
+          "hypervolume": 7.710747307828967,
+          "compromise": 0.25195405758440836
+        },
+        {
+          "generation": 2,
+          "seconds": 22.008812499931082,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 140,
+          "feasible_dates": 6,
+          "feasible_routes": 51,
+          "objective_minima": [
+            466.29999999999995,
+            247.2,
+            144.12
+          ],
+          "hypervolume": 7.732024926701372,
+          "compromise": 0.25135709627740543
+        },
+        {
+          "generation": 3,
+          "seconds": 26.350520799984224,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 217,
+          "feasible_dates": 6,
+          "feasible_routes": 56,
+          "objective_minima": [
+            450.30999999999995,
+            247.2,
+            144.12
+          ],
+          "hypervolume": 7.810890335312883,
+          "compromise": 0.24264572623324066
+        },
+        {
+          "generation": 4,
+          "seconds": 30.52832269994542,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 297,
+          "feasible_dates": 6,
+          "feasible_routes": 58,
+          "objective_minima": [
+            432.23,
+            247.2,
+            110.59
+          ],
+          "hypervolume": 8.001690123185828,
+          "compromise": 0.24264572623324066
+        },
+        {
+          "generation": 5,
+          "seconds": 34.397777699981816,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 385,
+          "feasible_dates": 6,
+          "feasible_routes": 54,
+          "objective_minima": [
+            432.23,
+            233.325,
+            110.59
+          ],
+          "hypervolume": 8.02109479110198,
+          "compromise": 0.24264572623324066
+        },
+        {
+          "generation": 6,
+          "seconds": 38.03265209996607,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 493,
+          "feasible_dates": 6,
+          "feasible_routes": 50,
+          "objective_minima": [
+            432.23,
+            233.325,
+            110.59
+          ],
+          "hypervolume": 8.03147870509072,
+          "compromise": 0.22800954390290804
+        },
+        {
+          "generation": 7,
+          "seconds": 43.06575789989438,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 592,
+          "feasible_dates": 6,
+          "feasible_routes": 48,
+          "objective_minima": [
+            432.23,
+            233.325,
+            110.59
+          ],
+          "hypervolume": 8.03528844520545,
+          "compromise": 0.22800954390290804
+        },
+        {
+          "generation": 8,
+          "seconds": 47.167010799981654,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 704,
+          "feasible_dates": 6,
+          "feasible_routes": 46,
+          "objective_minima": [
+            430.96999999999997,
+            212.41666666666666,
+            110.59
+          ],
+          "hypervolume": 8.066214099259525,
+          "compromise": 0.21732188325229632
+        },
+        {
+          "generation": 9,
+          "seconds": 52.23258289997466,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 824,
+          "feasible_dates": 6,
+          "feasible_routes": 42,
+          "objective_minima": [
+            370.45,
+            201.26666666666665,
+            110.59
+          ],
+          "hypervolume": 8.34369120338729,
+          "compromise": 0.2117600033574889
+        },
+        {
+          "generation": 10,
+          "seconds": 66.01076029997785,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 913,
+          "feasible_dates": 6,
+          "feasible_routes": 38,
+          "objective_minima": [
+            370.45,
+            201.26666666666665,
+            110.59
+          ],
+          "hypervolume": 8.345395676145346,
+          "compromise": 0.2117600033574889
+        }
+      ],
+      "archive_by_start": {
+        "0": 11,
+        "1": 20,
+        "2": 7,
+        "3": 1,
+        "5": 3
+      },
+      "reached_climate_target": null,
+      "archive_transport_count": 42,
+      "archive": [
+        {
+          "start_day": 2,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            370.45,
+            503.12499999999994,
+            261.68
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T21:15:00+01:00",
+            "2027-02-06T10:25:00+01:00",
+            "2027-02-08T11:10:00+01:00",
+            "2027-02-11T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            430.96999999999997,
+            554.125,
+            251.28
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T12:15:00+01:00",
+            "2027-02-07T10:35:00+01:00",
+            "2027-02-10T07:30:00+00:00",
+            "2027-02-12T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            433.74,
+            484.97499999999997,
+            204.21
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T21:15:00+01:00",
+            "2027-02-06T10:25:00+01:00",
+            "2027-02-08T09:26:00+01:00",
+            "2027-02-11T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            453.62,
+            483.3666666666666,
+            292.27
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-06T14:25:00+01:00",
+            "2027-02-09T20:50:00+00:00",
+            "2027-02-12T20:05:00+01:00",
+            "2027-02-15T11:26:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            3
+          ],
+          "objectives": [
+            461.04999999999995,
+            436.0416666666667,
+            233.7
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T06:00:00+01:00",
+            "2027-02-04T19:50:00+01:00",
+            "2027-02-07T09:30:00+01:00",
+            "2027-02-10T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            4,
+            5
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            479.57000000000005,
+            575.2416666666667,
+            179.20999999999998
+          ],
+          "modes": [
+            "bus",
+            "train",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T11:40:00+01:00",
+            "2027-02-05T12:34:00+01:00",
+            "2027-02-07T22:00:00+01:00",
+            "2027-02-10T13:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            480.71000000000004,
+            418.97499999999997,
+            268.28
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T06:00:00+01:00",
+            "2027-02-03T19:15:00+01:00",
+            "2027-02-07T11:18:00+01:00",
+            "2027-02-10T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            4,
+            3
+          ],
+          "nights": [
+            4,
+            2,
+            2
+          ],
+          "objectives": [
+            499.53999999999996,
+            293.175,
+            302.76
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T08:26:00+01:00",
+            "2027-02-05T21:45:00+00:00",
+            "2027-02-08T12:34:00+01:00",
+            "2027-02-10T15:10:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            511.25,
+            445.00833333333327,
+            208.55
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T12:28:00+01:00",
+            "2027-02-03T19:15:00+01:00",
+            "2027-02-06T09:01:00+01:00",
+            "2027-02-09T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            515.88,
+            876.9166666666667,
+            162.28
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T15:45:00+01:00",
+            "2027-02-04T18:27:00+01:00",
+            "2027-02-07T09:30:00+01:00",
+            "2027-02-09T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            535.8,
+            344.625,
+            246.63
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T09:10:00+01:00",
+            "2027-02-04T19:10:00+00:00",
+            "2027-02-08T09:30:00+01:00",
+            "2027-02-11T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            536.4200000000001,
+            877.2916666666666,
+            146.28
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T19:50:00+01:00",
+            "2027-02-05T12:20:00+01:00",
+            "2027-02-08T09:30:00+01:00",
+            "2027-02-10T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            538.24,
+            286.64166666666665,
+            366.35
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-03T12:49:00+01:00",
+            "2027-02-06T13:15:00+01:00",
+            "2027-02-09T20:50:00+00:00",
+            "2027-02-12T18:20:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            542.3299999999999,
+            441.74999999999994,
+            225.55
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T12:28:00+01:00",
+            "2027-02-03T19:15:00+01:00",
+            "2027-02-06T11:31:00+01:00",
+            "2027-02-09T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            2,
+            3,
+            4
+          ],
+          "objectives": [
+            573.3100000000001,
+            290.7166666666667,
+            319.84000000000003
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T10:26:00+01:00",
+            "2027-02-04T07:30:00+00:00",
+            "2027-02-07T17:40:00+01:00",
+            "2027-02-11T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            581.97,
+            801.1416666666667,
+            164.79
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T21:15:00+01:00",
+            "2027-02-05T11:57:00+01:00",
+            "2027-02-08T09:26:00+01:00",
+            "2027-02-10T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            3,
+            4,
+            1
+          ],
+          "nights": [
+            2,
+            2,
+            4
+          ],
+          "objectives": [
+            585.41,
+            278.70833333333337,
+            505.0
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T12:10:00+01:00",
+            "2027-02-04T14:55:00+01:00",
+            "2027-02-06T09:50:00+01:00",
+            "2027-02-10T17:50:00+00:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            591.03,
+            404.3583333333333,
+            245.77
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T10:52:00+01:00",
+            "2027-02-05T20:55:00+01:00",
+            "2027-02-09T07:30:00+00:00",
+            "2027-02-12T08:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            3,
+            2,
+            4
+          ],
+          "objectives": [
+            592.58,
+            249.94166666666666,
+            376.27
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T12:49:00+01:00",
+            "2027-02-05T08:29:00+01:00",
+            "2027-02-07T17:00:00+00:00",
+            "2027-02-11T12:20:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            596.45,
+            607.8,
+            164.57999999999998
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T10:26:00+01:00",
+            "2027-02-05T10:31:00+01:00",
+            "2027-02-07T17:15:00+01:00",
+            "2027-02-10T09:32:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            599.7500000000001,
+            324.93333333333334,
+            244.51
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T10:52:00+01:00",
+            "2027-02-05T21:45:00+00:00",
+            "2027-02-09T09:30:00+01:00",
+            "2027-02-11T11:26:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            5
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            605.19,
+            269.18333333333334,
+            344.77
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T09:10:00+01:00",
+            "2027-02-05T10:06:00+01:00",
+            "2027-02-08T14:45:00+00:00",
+            "2027-02-11T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            4,
+            2
+          ],
+          "objectives": [
+            607.46,
+            369.19166666666666,
+            226.07
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T12:49:00+01:00",
+            "2027-02-04T10:00:00+01:00",
+            "2027-02-08T09:55:00+00:00",
+            "2027-02-10T09:32:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            5
+          ],
+          "nights": [
+            3,
+            3,
+            3
+          ],
+          "objectives": [
+            611.52,
+            298.80833333333334,
+            235.7
+          ],
+          "modes": [
+            "bus",
+            "train",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-02T11:40:00+01:00",
+            "2027-02-05T08:29:00+01:00",
+            "2027-02-08T10:50:00+00:00",
+            "2027-02-11T11:39:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            616.5500000000001,
+            646.1333333333333,
+            154.16
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T09:10:00+01:00",
+            "2027-02-04T07:30:00+00:00",
+            "2027-02-06T17:15:00+01:00",
+            "2027-02-10T09:32:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            2,
+            3,
+            4
+          ],
+          "objectives": [
+            620.49,
+            282.60833333333335,
+            335.84000000000003
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T10:52:00+01:00",
+            "2027-02-04T07:30:00+00:00",
+            "2027-02-07T17:40:00+01:00",
+            "2027-02-11T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            4
+          ],
+          "objectives": [
+            620.65,
+            265.475,
+            223.07
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T09:10:00+01:00",
+            "2027-02-03T10:06:00+01:00",
+            "2027-02-05T21:45:00+00:00",
+            "2027-02-10T09:26:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            4,
+            2
+          ],
+          "objectives": [
+            642.68,
+            430.6583333333333,
+            120.12
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T10:52:00+01:00",
+            "2027-02-03T09:32:00+01:00",
+            "2027-02-07T11:31:00+01:00",
+            "2027-02-09T21:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            657.5900000000001,
+            378.96666666666664,
+            144.12
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T10:52:00+01:00",
+            "2027-02-08T09:26:00+01:00",
+            "2027-02-11T08:31:00+01:00",
+            "2027-02-14T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            662.53,
+            363.97499999999997,
+            221.63
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-01T11:17:00+01:00",
+            "2027-02-04T19:15:00+01:00",
+            "2027-02-07T11:18:00+01:00",
+            "2027-02-10T12:46:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            669.1000000000001,
+            324.64166666666665,
+            144.12
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T10:52:00+01:00",
+            "2027-02-08T09:26:00+01:00",
+            "2027-02-11T10:01:00+01:00",
+            "2027-02-14T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            2,
+            3,
+            4
+          ],
+          "objectives": [
+            679.92,
+            247.2,
+            311.26
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T09:10:00+01:00",
+            "2027-02-03T10:01:00+01:00",
+            "2027-02-06T16:40:00+01:00",
+            "2027-02-10T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            5
+          ],
+          "nights": [
+            2,
+            4,
+            3
+          ],
+          "objectives": [
+            685.9399999999999,
+            248.0083333333333,
+            227.57999999999998
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-02T12:49:00+01:00",
+            "2027-02-04T08:13:00+01:00",
+            "2027-02-08T10:50:00+00:00",
+            "2027-02-11T11:39:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            5
+          ],
+          "nights": [
+            3,
+            3,
+            3
+          ],
+          "objectives": [
+            705.27,
+            253.56666666666666,
+            221.57999999999998
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-02T12:49:00+01:00",
+            "2027-02-05T12:00:00+01:00",
+            "2027-02-08T10:30:00+00:00",
+            "2027-02-11T11:39:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            3
+          ],
+          "objectives": [
+            710.66,
+            237.55,
+            218.92000000000002
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T10:26:00+01:00",
+            "2027-02-05T11:31:00+01:00",
+            "2027-02-08T10:05:00+01:00",
+            "2027-02-11T09:06:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            712.6800000000001,
+            343.025,
+            137.56
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T09:10:00+01:00",
+            "2027-02-05T09:01:00+01:00",
+            "2027-02-08T09:30:00+01:00",
+            "2027-02-11T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            4,
+            3,
+            2
+          ],
+          "objectives": [
+            718.12,
+            312.625,
+            134.16
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-03T10:52:00+01:00",
+            "2027-02-07T09:16:00+01:00",
+            "2027-02-10T12:34:00+01:00",
+            "2027-02-12T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            4,
+            3,
+            2
+          ],
+          "objectives": [
+            738.12,
+            299.7583333333333,
+            134.16
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-03T09:10:00+01:00",
+            "2027-02-07T09:16:00+01:00",
+            "2027-02-10T12:34:00+01:00",
+            "2027-02-12T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            4,
+            2,
+            2
+          ],
+          "objectives": [
+            740.2900000000001,
+            381.96666666666664,
+            110.59
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T10:26:00+01:00",
+            "2027-02-06T09:01:00+01:00",
+            "2027-02-08T09:00:00+01:00",
+            "2027-02-10T09:32:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            3
+          ],
+          "objectives": [
+            747.4899999999999,
+            223.125,
+            224.92
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T09:10:00+01:00",
+            "2027-02-04T11:31:00+01:00",
+            "2027-02-07T10:05:00+01:00",
+            "2027-02-10T09:06:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            5
+          ],
+          "nights": [
+            2,
+            4,
+            3
+          ],
+          "objectives": [
+            753.67,
+            201.26666666666665,
+            238.43
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T12:49:00+01:00",
+            "2027-02-04T08:13:00+01:00",
+            "2027-02-08T10:50:00+00:00",
+            "2027-02-11T12:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            4,
+            2,
+            3
+          ],
+          "objectives": [
+            753.71,
+            254.5333333333333,
+            167.59
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T10:26:00+01:00",
+            "2027-02-06T09:01:00+01:00",
+            "2027-02-08T09:00:00+01:00",
+            "2027-02-11T09:26:00+01:00"
+          ]
+        }
+      ]
+    },
+    {
+      "variant": "complementary",
+      "seed": 11,
+      "settings": {
+        "COORDINATED_MUTATION_RATE": 0.2,
+        "TRANSPORT_GROUP_SELECTION": true,
+        "COMPLEMENTARY_PAIRING": true,
+        "PRUNE_EQUIVALENT_TRANSPORT": true,
+        "TRANSPORT_CACHE_SIZE": 4096,
+        "TRANSPORT_RESULT_CACHE_SIZE": 1024
+      },
+      "elapsed_seconds": 60.60593560000416,
+      "generations": 2,
+      "setup_seconds": 5.157644800026901,
+      "initialization_seconds": 42.23908610001672,
+      "initialization_candidates": 300,
+      "offspring_candidates": 331,
+      "first_feasible_seconds": 10.845531600061804,
+      "final_verification_seconds": 0.1529081000480801,
+      "hypervolume": 7.805828739712629,
+      "compromise": 0.24362044761404622,
+      "balanced_solution_scales": [
+        1089.6100000000001,
+        467.9166666666667,
+        737.5
+      ],
+      "balanced_solution_weights": [
+        0.5,
+        0.1,
+        0.4
+      ],
+      "objective_minima": [
+        428.31000000000006,
+        263.75,
+        166.62
+      ],
+      "generated_transport": 631,
+      "feasible_transport": 115,
+      "distinct_genotypes": 631,
+      "complete_transport": 321,
+      "distinct_transport": 304,
+      "cache_hits": 3474,
+      "cache_misses": 2037,
+      "dominated_option_removals": 23,
+      "option_build_seconds": 28.33198139979504,
+      "candidate_scans": 162038,
+      "decoder_invocations": 631,
+      "complete_result_reuse": 0,
+      "result_cache_entries": 115,
+      "result_cache_evictions": 0,
+      "cache_entries": 1707,
+      "cache_evictions": 0,
+      "static_option_entries": 291,
+      "static_option_count": 26384,
+      "duration_rejections": 4711,
+      "daytime_rejections": 0,
+      "runtime_cutoffs": 0,
+      "distinct_feasible_transports": 101,
+      "feasible_transports_per_second": 1.6707181526736838,
+      "parent_group_count": 300,
+      "largest_parent_group_share": 0.0033333333333333335,
+      "history": [
+        [
+          0,
+          42.24367740005255,
+          7.60109288157939,
+          0.29926268717407095
+        ],
+        [
+          1,
+          58.87483880005311,
+          7.674177916726908,
+          0.24362044761404622
+        ],
+        [
+          2,
+          60.45213730004616,
+          7.805828739712629,
+          0.24362044761404622
+        ]
+      ],
+      "observations": [
+        {
+          "generation": 0,
+          "seconds": 42.243331099976785,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 40,
+          "feasible_dates": 6,
+          "feasible_routes": 30,
+          "objective_minima": [
+            466.29999999999995,
+            269.81666666666666,
+            166.62
+          ],
+          "hypervolume": 7.60109288157939,
+          "compromise": 0.29926268717407095
+        },
+        {
+          "generation": 1,
+          "seconds": 58.874499800032936,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 94,
+          "feasible_dates": 6,
+          "feasible_routes": 43,
+          "objective_minima": [
+            453.46000000000004,
+            263.75,
+            166.62
+          ],
+          "hypervolume": 7.674177916726908,
+          "compromise": 0.24362044761404622
+        },
+        {
+          "generation": 2,
+          "seconds": 60.45166550006252,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 101,
+          "feasible_dates": 6,
+          "feasible_routes": 45,
+          "objective_minima": [
+            428.31000000000006,
+            263.75,
+            166.62
+          ],
+          "hypervolume": 7.805828739712629,
+          "compromise": 0.24362044761404622
+        }
+      ],
+      "archive_by_start": {
+        "0": 4,
+        "1": 3,
+        "2": 3,
+        "3": 5,
+        "4": 1
+      },
+      "reached_climate_target": null,
+      "archive_transport_count": 16,
+      "archive": [
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            428.31000000000006,
+            585.2083333333333,
+            223.7
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T15:45:00+01:00",
+            "2027-02-04T11:45:00+01:00",
+            "2027-02-06T09:45:00+01:00",
+            "2027-02-10T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            3,
+            4,
+            5
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            453.46000000000004,
+            548.2083333333334,
+            449.81
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T18:25:00+01:00",
+            "2027-02-06T12:30:00+01:00",
+            "2027-02-08T10:45:00+01:00",
+            "2027-02-10T13:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            4,
+            5
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            466.29999999999995,
+            548.9166666666666,
+            308.68
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T11:40:00+01:00",
+            "2027-02-03T21:00:00+01:00",
+            "2027-02-07T19:10:00+01:00",
+            "2027-02-09T13:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            542.08,
+            412.7833333333333,
+            428.89
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T20:25:00+01:00",
+            "2027-02-05T17:55:00+01:00",
+            "2027-02-08T11:31:00+01:00",
+            "2027-02-10T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            2,
+            4,
+            5
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            543.73,
+            524.5916666666666,
+            285.39
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-03T20:10:00+01:00",
+            "2027-02-06T12:24:00+01:00",
+            "2027-02-08T20:25:00+01:00",
+            "2027-02-12T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            547.78,
+            674.15,
+            208.49
+          ],
+          "modes": [
+            "flight",
+            "bus",
+            "bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-02T18:35:00+01:00",
+            "2027-02-05T23:00:00+00:00",
+            "2027-02-08T17:15:00+01:00",
+            "2027-02-11T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            3,
+            4,
+            5
+          ],
+          "nights": [
+            2,
+            2,
+            4
+          ],
+          "objectives": [
+            560.16,
+            412.4583333333333,
+            392.16
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T18:55:00+01:00",
+            "2027-02-03T10:15:00+01:00",
+            "2027-02-05T22:00:00+01:00",
+            "2027-02-10T09:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            2,
+            4,
+            1
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            602.0300000000001,
+            330.9166666666667,
+            236.02
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-03T12:49:00+01:00",
+            "2027-02-06T07:41:00+01:00",
+            "2027-02-08T20:55:00+01:00",
+            "2027-02-12T08:31:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            4,
+            1,
+            3
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            650.56,
+            309.0833333333333,
+            719.0
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-03T13:25:00+01:00",
+            "2027-02-05T18:45:00+01:00",
+            "2027-02-08T16:30:00+00:00",
+            "2027-02-11T19:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            3,
+            5
+          ],
+          "nights": [
+            2,
+            2,
+            4
+          ],
+          "objectives": [
+            666.5,
+            320.16666666666663,
+            579.0
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-04T07:20:00+01:00",
+            "2027-02-06T19:05:00+00:00",
+            "2027-02-09T18:00:00+01:00",
+            "2027-02-13T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            3,
+            5
+          ],
+          "nights": [
+            2,
+            2,
+            4
+          ],
+          "objectives": [
+            684.1400000000001,
+            263.75,
+            594.0
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-04T18:35:00+01:00",
+            "2027-02-06T19:05:00+00:00",
+            "2027-02-09T18:00:00+01:00",
+            "2027-02-13T09:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            685.43,
+            451.875,
+            166.62
+          ],
+          "modes": [
+            "bus",
+            "train",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-04T20:10:00+01:00",
+            "2027-02-08T09:02:00+01:00",
+            "2027-02-10T08:04:00+01:00",
+            "2027-02-13T09:26:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            2,
+            3,
+            4
+          ],
+          "objectives": [
+            709.9,
+            292.0333333333333,
+            349.84
+          ],
+          "modes": [
+            "train",
+            "train+bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-04T10:26:00+01:00",
+            "2027-02-06T09:47:00+01:00",
+            "2027-02-09T14:30:00+01:00",
+            "2027-02-13T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            2,
+            1,
+            5
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            743.3199999999999,
+            273.1,
+            413.35
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-04T12:49:00+01:00",
+            "2027-02-07T13:15:00+01:00",
+            "2027-02-10T18:20:00+00:00",
+            "2027-02-13T13:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            3
+          ],
+          "nights": [
+            4,
+            3,
+            2
+          ],
+          "objectives": [
+            763.1899999999999,
+            269.81666666666666,
+            500.18
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T12:28:00+01:00",
+            "2027-02-06T14:05:00+01:00",
+            "2027-02-09T08:12:00+01:00",
+            "2027-02-11T11:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            1,
+            4,
+            3
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            798.8799999999999,
+            291.05833333333334,
+            277.49
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-05T08:26:00+01:00",
+            "2027-02-08T08:04:00+01:00",
+            "2027-02-11T12:44:00+01:00",
+            "2027-02-13T19:50:00+01:00"
+          ]
+        }
+      ]
+    },
+    {
+      "variant": "complementary",
+      "seed": 42,
+      "settings": {
+        "COORDINATED_MUTATION_RATE": 0.2,
+        "TRANSPORT_GROUP_SELECTION": true,
+        "COMPLEMENTARY_PAIRING": true,
+        "PRUNE_EQUIVALENT_TRANSPORT": true,
+        "TRANSPORT_CACHE_SIZE": 4096,
+        "TRANSPORT_RESULT_CACHE_SIZE": 1024
+      },
+      "elapsed_seconds": 62.6509350000415,
+      "generations": 3,
+      "setup_seconds": 4.749711300013587,
+      "initialization_seconds": 28.978943799971603,
+      "initialization_candidates": 300,
+      "offspring_candidates": 775,
+      "first_feasible_seconds": 7.679500799975358,
+      "final_verification_seconds": 0.5868396000005305,
+      "hypervolume": 7.556747225829053,
+      "compromise": 0.24640620279599573,
+      "balanced_solution_scales": [
+        1089.6100000000001,
+        467.9166666666667,
+        737.5
+      ],
+      "balanced_solution_weights": [
+        0.5,
+        0.1,
+        0.4
+      ],
+      "objective_minima": [
+        496.32000000000005,
+        273.84166666666664,
+        150.07999999999998
+      ],
+      "generated_transport": 1075,
+      "feasible_transport": 266,
+      "distinct_genotypes": 1072,
+      "complete_transport": 611,
+      "distinct_transport": 565,
+      "cache_hits": 6377,
+      "cache_misses": 3022,
+      "dominated_option_removals": 23,
+      "option_build_seconds": 19.413002100773156,
+      "candidate_scans": 285805,
+      "decoder_invocations": 1073,
+      "complete_result_reuse": 2,
+      "result_cache_entries": 264,
+      "result_cache_evictions": 0,
+      "cache_entries": 2672,
+      "cache_evictions": 0,
+      "static_option_entries": 300,
+      "static_option_count": 26841,
+      "duration_rejections": 4711,
+      "daytime_rejections": 0,
+      "runtime_cutoffs": 1,
+      "distinct_feasible_transports": 231,
+      "feasible_transports_per_second": 3.7219580310524183,
+      "parent_group_count": 300,
+      "largest_parent_group_share": 0.0033333333333333335,
+      "history": [
+        [
+          0,
+          28.98148630000651,
+          7.391301591270739,
+          0.3120707415512062
+        ],
+        [
+          1,
+          40.682727799983695,
+          7.4629015792132165,
+          0.27677311714222724
+        ],
+        [
+          2,
+          53.088836499955505,
+          7.514534755668206,
+          0.24640620279599573
+        ],
+        [
+          3,
+          62.05822630005423,
+          7.556747225829053,
+          0.24640620279599573
+        ]
+      ],
+      "observations": [
+        {
+          "generation": 0,
+          "seconds": 28.98127630003728,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 45,
+          "feasible_dates": 6,
+          "feasible_routes": 32,
+          "objective_minima": [
+            515.65,
+            300.26666666666665,
+            162.07999999999998
+          ],
+          "hypervolume": 7.391301591270739,
+          "compromise": 0.3120707415512062
+        },
+        {
+          "generation": 1,
+          "seconds": 40.68229330005124,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 114,
+          "feasible_dates": 6,
+          "feasible_routes": 47,
+          "objective_minima": [
+            502.18,
+            295.575,
+            162.07999999999998
+          ],
+          "hypervolume": 7.4629015792132165,
+          "compromise": 0.27677311714222724
+        },
+        {
+          "generation": 2,
+          "seconds": 53.08850990002975,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 185,
+          "feasible_dates": 6,
+          "feasible_routes": 55,
+          "objective_minima": [
+            496.32000000000005,
+            273.84166666666664,
+            162.07999999999998
+          ],
+          "hypervolume": 7.514534755668206,
+          "compromise": 0.24640620279599573
+        },
+        {
+          "generation": 3,
+          "seconds": 62.05756190000102,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 231,
+          "feasible_dates": 6,
+          "feasible_routes": 56,
+          "objective_minima": [
+            496.32000000000005,
+            273.84166666666664,
+            150.07999999999998
+          ],
+          "hypervolume": 7.556747225829053,
+          "compromise": 0.24640620279599573
+        }
+      ],
+      "archive_by_start": {
+        "0": 8,
+        "1": 5,
+        "2": 7,
+        "3": 3,
+        "4": 6,
+        "5": 1
+      },
+      "reached_climate_target": null,
+      "archive_transport_count": 30,
+      "archive": [
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            4,
+            3
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            496.32000000000005,
+            576.4166666666666,
+            311.89
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T20:10:00+01:00",
+            "2027-02-05T14:56:00+01:00",
+            "2027-02-08T08:50:00+01:00",
+            "2027-02-10T12:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            3,
+            5,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            502.18,
+            486.37499999999994,
+            515.37
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T13:15:00+01:00",
+            "2027-02-09T18:00:00+01:00",
+            "2027-02-12T09:05:00+01:00",
+            "2027-02-14T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            4,
+            3
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            515.65,
+            568.6666666666666,
+            266.90999999999997
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train+bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T20:10:00+01:00",
+            "2027-02-05T14:56:00+01:00",
+            "2027-02-08T09:44:00+01:00",
+            "2027-02-10T12:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            525.43,
+            626.2166666666667,
+            243.34
+          ],
+          "modes": [
+            "train+bus",
+            "flight",
+            "bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-05T12:49:00+01:00",
+            "2027-02-09T18:45:00+01:00",
+            "2027-02-11T23:00:00+00:00",
+            "2027-02-14T09:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            2,
+            4,
+            2
+          ],
+          "objectives": [
+            531.22,
+            482.475,
+            264.90999999999997
+          ],
+          "modes": [
+            "flight",
+            "bus",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-05T14:05:00+01:00",
+            "2027-02-07T23:00:00+00:00",
+            "2027-02-12T11:45:00+01:00",
+            "2027-02-14T09:18:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            5,
+            3
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            547.2900000000001,
+            456.0833333333333,
+            534.37
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T14:30:00+01:00",
+            "2027-02-04T11:35:00+01:00",
+            "2027-02-06T14:45:00+01:00",
+            "2027-02-09T19:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            4,
+            3
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            570.38,
+            457.75,
+            323.39
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T23:30:00+01:00",
+            "2027-02-04T09:42:00+01:00",
+            "2027-02-06T11:50:00+01:00",
+            "2027-02-09T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            2,
+            1
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            572.6800000000001,
+            418.23333333333335,
+            196.5
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T11:17:00+01:00",
+            "2027-02-04T13:15:00+01:00",
+            "2027-02-06T23:00:00+01:00",
+            "2027-02-10T08:01:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            4,
+            2,
+            1
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            596.3299999999999,
+            777.8333333333333,
+            163.73
+          ],
+          "modes": [
+            "train+bus",
+            "bus",
+            "bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-05T12:49:00+01:00",
+            "2027-02-08T19:30:00+01:00",
+            "2027-02-11T21:00:00+01:00",
+            "2027-02-14T14:31:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            1,
+            5,
+            4
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            598.5200000000001,
+            338.375,
+            685.0
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-03T16:10:00+01:00",
+            "2027-02-06T12:20:00+00:00",
+            "2027-02-09T14:50:00+01:00",
+            "2027-02-11T11:20:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            610.9199999999998,
+            679.6333333333333,
+            195.28
+          ],
+          "modes": [
+            "train+bus",
+            "train+bus",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-05T12:49:00+01:00",
+            "2027-02-08T09:44:00+01:00",
+            "2027-02-10T20:15:00+01:00",
+            "2027-02-14T09:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            629.6099999999999,
+            791.975,
+            161.78
+          ],
+          "modes": [
+            "train+bus",
+            "train+bus",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T13:17:00+01:00",
+            "2027-02-04T10:50:00+01:00",
+            "2027-02-07T09:30:00+01:00",
+            "2027-02-10T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            4,
+            5,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            630.21,
+            365.44166666666666,
+            410.17
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-05T10:52:00+01:00",
+            "2027-02-08T13:35:00+01:00",
+            "2027-02-10T12:30:00+01:00",
+            "2027-02-13T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            3,
+            4
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            660.56,
+            644.3166666666667,
+            150.07999999999998
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-02T23:30:00+01:00",
+            "2027-02-05T08:01:00+01:00",
+            "2027-02-08T07:47:00+01:00",
+            "2027-02-10T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            3,
+            4,
+            5
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            663.5799999999999,
+            357.60833333333335,
+            513.02
+          ],
+          "modes": [
+            "flight",
+            "train+bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-04T16:15:00+01:00",
+            "2027-02-07T13:50:00+01:00",
+            "2027-02-10T20:25:00+01:00",
+            "2027-02-13T09:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            4,
+            3,
+            1
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            665.76,
+            346.7583333333333,
+            357.12
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T10:52:00+01:00",
+            "2027-02-03T12:44:00+01:00",
+            "2027-02-06T14:55:00+01:00",
+            "2027-02-10T09:45:00+00:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            671.26,
+            489.17499999999995,
+            178.51
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-05T10:52:00+01:00",
+            "2027-02-08T11:00:00+01:00",
+            "2027-02-11T08:35:00+01:00",
+            "2027-02-13T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            3,
+            4
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            671.29,
+            326.15000000000003,
+            518.8199999999999
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T16:10:00+01:00",
+            "2027-02-04T18:10:00+00:00",
+            "2027-02-07T10:20:00+01:00",
+            "2027-02-09T08:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            675.86,
+            399.60833333333335,
+            332.82
+          ],
+          "modes": [
+            "flight",
+            "train+bus",
+            "train+bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-03T15:00:00+01:00",
+            "2027-02-05T13:31:00+01:00",
+            "2027-02-09T09:14:00+01:00",
+            "2027-02-12T08:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            5,
+            2
+          ],
+          "objectives": [
+            701.1800000000001,
+            398.8833333333333,
+            197.07
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-03T10:52:00+01:00",
+            "2027-02-05T09:15:00+01:00",
+            "2027-02-10T10:21:00+01:00",
+            "2027-02-12T07:58:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            3,
+            4
+          ],
+          "nights": [
+            2,
+            4,
+            2
+          ],
+          "objectives": [
+            709.6899999999999,
+            344.4333333333334,
+            360.13
+          ],
+          "modes": [
+            "train+bus",
+            "flight",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T13:17:00+01:00",
+            "2027-02-05T15:25:00+01:00",
+            "2027-02-09T09:18:00+01:00",
+            "2027-02-11T18:20:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            720.1700000000001,
+            393.5833333333333,
+            333.89
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T18:15:00+01:00",
+            "2027-02-05T08:35:00+01:00",
+            "2027-02-07T09:45:00+01:00",
+            "2027-02-11T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            2,
+            1,
+            5
+          ],
+          "nights": [
+            3,
+            3,
+            3
+          ],
+          "objectives": [
+            720.33,
+            339.70833333333337,
+            462.1
+          ],
+          "modes": [
+            "flight",
+            "bus",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-04T15:05:00+01:00",
+            "2027-02-07T13:15:00+01:00",
+            "2027-02-10T09:55:00+00:00",
+            "2027-02-13T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            3,
+            4,
+            1
+          ],
+          "nights": [
+            2,
+            2,
+            4
+          ],
+          "objectives": [
+            730.8299999999999,
+            327.85,
+            483.58
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-03T19:35:00+01:00",
+            "2027-02-06T13:00:00+01:00",
+            "2027-02-08T10:25:00+01:00",
+            "2027-02-12T10:01:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            741.2099999999999,
+            547.4083333333333,
+            174.71
+          ],
+          "modes": [
+            "train",
+            "train+bus",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T10:52:00+01:00",
+            "2027-02-07T11:47:00+01:00",
+            "2027-02-09T15:13:00+01:00",
+            "2027-02-13T09:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            3
+          ],
+          "objectives": [
+            741.59,
+            358.44166666666666,
+            166.21
+          ],
+          "modes": [
+            "train",
+            "train+bus",
+            "train+bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-03T10:52:00+01:00",
+            "2027-02-06T08:10:00+01:00",
+            "2027-02-09T08:35:00+01:00",
+            "2027-02-12T11:07:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            3,
+            4,
+            2
+          ],
+          "nights": [
+            5,
+            2,
+            2
+          ],
+          "objectives": [
+            757.0200000000001,
+            345.30833333333334,
+            324.09
+          ],
+          "modes": [
+            "flight",
+            "train",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-03T07:20:00+01:00",
+            "2027-02-08T08:50:00+01:00",
+            "2027-02-10T09:14:00+01:00",
+            "2027-02-12T07:58:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            4,
+            3
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            767.64,
+            273.84166666666664,
+            331.72
+          ],
+          "modes": [
+            "bus",
+            "train",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T05:30:00+01:00",
+            "2027-02-04T14:42:00+01:00",
+            "2027-02-07T14:00:00+01:00",
+            "2027-02-09T18:35:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            3,
+            4,
+            2
+          ],
+          "nights": [
+            5,
+            2,
+            2
+          ],
+          "objectives": [
+            779.44,
+            300.26666666666665,
+            279.6
+          ],
+          "modes": [
+            "flight",
+            "train",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-03T10:15:00+01:00",
+            "2027-02-08T08:50:00+01:00",
+            "2027-02-10T08:14:00+01:00",
+            "2027-02-12T07:58:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            4,
+            3,
+            1
+          ],
+          "nights": [
+            3,
+            4,
+            2
+          ],
+          "objectives": [
+            786.5699999999999,
+            295.575,
+            302.36
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T10:52:00+01:00",
+            "2027-02-04T11:00:00+01:00",
+            "2027-02-08T09:30:00+01:00",
+            "2027-02-10T09:16:00+01:00"
+          ]
+        }
+      ]
+    },
+    {
+      "variant": "genetic",
+      "seed": 42,
+      "settings": {
+        "COORDINATED_MUTATION_RATE": 0.2,
+        "TRANSPORT_GROUP_SELECTION": true,
+        "COMPLEMENTARY_PAIRING": false,
+        "PRUNE_EQUIVALENT_TRANSPORT": true,
+        "TRANSPORT_CACHE_SIZE": 4096,
+        "TRANSPORT_RESULT_CACHE_SIZE": 1024
+      },
+      "elapsed_seconds": 60.408501100027934,
+      "generations": 1,
+      "setup_seconds": 7.232029400067404,
+      "initialization_seconds": 53.739950800081715,
+      "initialization_candidates": 300,
+      "offspring_candidates": 85,
+      "first_feasible_seconds": 9.125122600002214,
+      "final_verification_seconds": 0.11074919998645782,
+      "hypervolume": 7.691354896887622,
+      "compromise": 0.29072443332421233,
+      "balanced_solution_scales": [
+        1089.6100000000001,
+        467.9166666666667,
+        737.5
+      ],
+      "balanced_solution_weights": [
+        0.5,
+        0.1,
+        0.4
+      ],
+      "objective_minima": [
+        461.69999999999993,
+        300.26666666666665,
+        155.28
+      ],
+      "generated_transport": 385,
+      "feasible_transport": 60,
+      "distinct_genotypes": 385,
+      "complete_transport": 192,
+      "distinct_transport": 188,
+      "cache_hits": 2014,
+      "cache_misses": 1416,
+      "dominated_option_removals": 20,
+      "option_build_seconds": 34.536956399912015,
+      "candidate_scans": 99676,
+      "decoder_invocations": 385,
+      "complete_result_reuse": 0,
+      "result_cache_entries": 60,
+      "result_cache_evictions": 0,
+      "cache_entries": 1123,
+      "cache_evictions": 0,
+      "static_option_entries": 273,
+      "static_option_count": 24272,
+      "duration_rejections": 4711,
+      "daytime_rejections": 0,
+      "runtime_cutoffs": 1,
+      "distinct_feasible_transports": 60,
+      "feasible_transports_per_second": 0.9950618298751323,
+      "parent_group_count": 300,
+      "largest_parent_group_share": 0.0033333333333333335,
+      "history": [
+        [
+          0,
+          53.74460370000452,
+          7.391301591270739,
+          0.3120707415512062
+        ],
+        [
+          1,
+          60.295315800001845,
+          7.691354896887622,
+          0.29072443332421233
+        ]
+      ],
+      "observations": [
+        {
+          "generation": 0,
+          "seconds": 53.74426790000871,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 45,
+          "feasible_dates": 6,
+          "feasible_routes": 32,
+          "objective_minima": [
+            515.65,
+            300.26666666666665,
+            162.07999999999998
+          ],
+          "hypervolume": 7.391301591270739,
+          "compromise": 0.3120707415512062
+        },
+        {
+          "generation": 1,
+          "seconds": 60.28553069999907,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 60,
+          "feasible_dates": 6,
+          "feasible_routes": 36,
+          "objective_minima": [
+            461.69999999999993,
+            300.26666666666665,
+            155.28
+          ],
+          "hypervolume": 7.691354896887622,
+          "compromise": 0.29072443332421233
+        }
+      ],
+      "archive_by_start": {
+        "0": 3,
+        "1": 5,
+        "2": 1,
+        "4": 1
+      },
+      "reached_climate_target": null,
+      "archive_transport_count": 10,
+      "archive": [
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            3,
+            4
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            461.69999999999993,
+            669.5166666666667,
+            155.28
+          ],
+          "modes": [
+            "bus",
+            "bus",
+            "train+bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-01T05:30:00+01:00",
+            "2027-02-03T16:25:00+01:00",
+            "2027-02-07T16:20:00+01:00",
+            "2027-02-09T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            4,
+            3
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            515.65,
+            568.6666666666666,
+            266.90999999999997
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train+bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T20:10:00+01:00",
+            "2027-02-05T14:56:00+01:00",
+            "2027-02-08T09:44:00+01:00",
+            "2027-02-10T12:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            4,
+            5,
+            1
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            597.88,
+            546.4166666666666,
+            560.0
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T21:00:00+01:00",
+            "2027-02-05T22:00:00+01:00",
+            "2027-02-08T12:45:00+01:00",
+            "2027-02-10T17:50:00+00:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            5,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            609.0699999999999,
+            568.25,
+            506.37
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-01T18:05:00+01:00",
+            "2027-02-03T20:50:00+00:00",
+            "2027-02-06T15:30:00+01:00",
+            "2027-02-09T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            4,
+            5
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            623.7,
+            398.7416666666667,
+            271.68
+          ],
+          "modes": [
+            "flight",
+            "train+bus",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T20:10:00+01:00",
+            "2027-02-06T07:41:00+01:00",
+            "2027-02-08T22:00:00+01:00",
+            "2027-02-11T07:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            4,
+            3
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            644.2599999999999,
+            311.41666666666663,
+            362.34000000000003
+          ],
+          "modes": [
+            "flight",
+            "train+bus",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T20:10:00+01:00",
+            "2027-02-06T07:41:00+01:00",
+            "2027-02-09T09:55:00+01:00",
+            "2027-02-11T17:15:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            2,
+            3,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            686.3299999999999,
+            633.6416666666667,
+            213.64
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-05T12:49:00+01:00",
+            "2027-02-07T16:25:00+01:00",
+            "2027-02-10T20:40:00+01:00",
+            "2027-02-13T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            1,
+            5
+          ],
+          "nights": [
+            4,
+            2,
+            2
+          ],
+          "objectives": [
+            700.63,
+            440.375,
+            238.51
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T11:32:00+01:00",
+            "2027-02-05T21:00:00+01:00",
+            "2027-02-08T10:30:00+00:00",
+            "2027-02-10T12:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            758.1999999999999,
+            473.84166666666664,
+            168.2
+          ],
+          "modes": [
+            "train",
+            "train+bus",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T10:52:00+01:00",
+            "2027-02-04T09:14:00+01:00",
+            "2027-02-07T09:12:00+01:00",
+            "2027-02-10T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            3,
+            4,
+            2
+          ],
+          "nights": [
+            5,
+            2,
+            2
+          ],
+          "objectives": [
+            779.44,
+            300.26666666666665,
+            279.6
+          ],
+          "modes": [
+            "flight",
+            "train",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-03T10:15:00+01:00",
+            "2027-02-08T08:50:00+01:00",
+            "2027-02-10T08:14:00+01:00",
+            "2027-02-12T07:58:00+01:00"
+          ]
+        }
+      ]
+    },
+    {
+      "variant": "complementary",
+      "seed": 97,
+      "settings": {
+        "COORDINATED_MUTATION_RATE": 0.2,
+        "TRANSPORT_GROUP_SELECTION": true,
+        "COMPLEMENTARY_PAIRING": true,
+        "PRUNE_EQUIVALENT_TRANSPORT": true,
+        "TRANSPORT_CACHE_SIZE": 4096,
+        "TRANSPORT_RESULT_CACHE_SIZE": 1024
+      },
+      "elapsed_seconds": 61.20266740000807,
+      "generations": 5,
+      "setup_seconds": 3.441894800052978,
+      "initialization_seconds": 39.379468800034374,
+      "initialization_candidates": 300,
+      "offspring_candidates": 1453,
+      "first_feasible_seconds": 3.969513399992138,
+      "final_verification_seconds": 0.21261599997524172,
+      "hypervolume": 8.345417295530321,
+      "compromise": 0.22729825239335844,
+      "balanced_solution_scales": [
+        1089.6100000000001,
+        467.9166666666667,
+        737.5
+      ],
+      "balanced_solution_weights": [
+        0.5,
+        0.1,
+        0.4
+      ],
+      "objective_minima": [
+        335.77,
+        245.15833333333336,
+        139.21
+      ],
+      "generated_transport": 1753,
+      "feasible_transport": 561,
+      "distinct_genotypes": 1747,
+      "complete_transport": 1063,
+      "distinct_transport": 969,
+      "cache_hits": 10860,
+      "cache_misses": 4403,
+      "dominated_option_removals": 23,
+      "option_build_seconds": 30.459493200061843,
+      "candidate_scans": 468878,
+      "decoder_invocations": 1749,
+      "complete_result_reuse": 4,
+      "result_cache_entries": 557,
+      "result_cache_evictions": 0,
+      "cache_entries": 4032,
+      "cache_evictions": 0,
+      "static_option_entries": 299,
+      "static_option_count": 26880,
+      "duration_rejections": 4711,
+      "daytime_rejections": 0,
+      "runtime_cutoffs": 1,
+      "distinct_feasible_transports": 476,
+      "feasible_transports_per_second": 7.804550344047104,
+      "parent_group_count": 300,
+      "largest_parent_group_share": 0.0033333333333333335,
+      "history": [
+        [
+          0,
+          39.381977100041695,
+          7.464990153641957,
+          0.2671765934342524
+        ],
+        [
+          1,
+          43.20426280004904,
+          7.782930197772005,
+          0.2671765934342524
+        ],
+        [
+          2,
+          47.16950580000412,
+          7.956955243773173,
+          0.2671765934342524
+        ],
+        [
+          3,
+          52.29922060004901,
+          8.236752938953224,
+          0.24265441433548365
+        ],
+        [
+          4,
+          56.683194900047965,
+          8.343210448711263,
+          0.24265441433548365
+        ],
+        [
+          5,
+          60.98911930003669,
+          8.345417295530321,
+          0.22729825239335844
+        ]
+      ],
+      "observations": [
+        {
+          "generation": 0,
+          "seconds": 39.38175619998947,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 44,
+          "feasible_dates": 6,
+          "feasible_routes": 32,
+          "objective_minima": [
+            495.2699999999999,
+            291.9666666666667,
+            171.19
+          ],
+          "hypervolume": 7.464990153641957,
+          "compromise": 0.2671765934342524
+        },
+        {
+          "generation": 1,
+          "seconds": 43.20400170003995,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 106,
+          "feasible_dates": 6,
+          "feasible_routes": 45,
+          "objective_minima": [
+            422.28999999999996,
+            291.9666666666667,
+            163.21
+          ],
+          "hypervolume": 7.782930197772005,
+          "compromise": 0.2671765934342524
+        },
+        {
+          "generation": 2,
+          "seconds": 47.168938099988736,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 188,
+          "feasible_dates": 6,
+          "feasible_routes": 49,
+          "objective_minima": [
+            408.89,
+            272.42499999999995,
+            139.21
+          ],
+          "hypervolume": 7.956955243773173,
+          "compromise": 0.2671765934342524
+        },
+        {
+          "generation": 3,
+          "seconds": 52.29815889999736,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 280,
+          "feasible_dates": 6,
+          "feasible_routes": 54,
+          "objective_minima": [
+            357.2,
+            245.15833333333336,
+            139.21
+          ],
+          "hypervolume": 8.236752938953224,
+          "compromise": 0.24265441433548365
+        },
+        {
+          "generation": 4,
+          "seconds": 56.68234629998915,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 386,
+          "feasible_dates": 6,
+          "feasible_routes": 54,
+          "objective_minima": [
+            335.77,
+            245.15833333333336,
+            139.21
+          ],
+          "hypervolume": 8.343210448711263,
+          "compromise": 0.24265441433548365
+        },
+        {
+          "generation": 5,
+          "seconds": 60.987975700059906,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 476,
+          "feasible_dates": 6,
+          "feasible_routes": 49,
+          "objective_minima": [
+            335.77,
+            245.15833333333336,
+            139.21
+          ],
+          "hypervolume": 8.345417295530321,
+          "compromise": 0.22729825239335844
+        }
+      ],
+      "archive_by_start": {
+        "0": 6,
+        "1": 4,
+        "2": 4,
+        "3": 7,
+        "4": 5,
+        "5": 7
+      },
+      "reached_climate_target": null,
+      "archive_transport_count": 33,
+      "archive": [
+        {
+          "start_day": 2,
+          "route": [
+            5,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            335.77,
+            687.4583333333334,
+            266.2
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T21:15:00+01:00",
+            "2027-02-06T09:40:00+01:00",
+            "2027-02-08T20:15:00+01:00",
+            "2027-02-12T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            357.2,
+            651.4583333333334,
+            251.28
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-05T19:50:00+01:00",
+            "2027-02-08T10:05:00+01:00",
+            "2027-02-10T23:00:00+00:00",
+            "2027-02-14T09:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            371.02,
+            673.4583333333334,
+            227.28
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-05T19:50:00+01:00",
+            "2027-02-08T10:05:00+01:00",
+            "2027-02-10T23:00:00+00:00",
+            "2027-02-14T09:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            408.89,
+            543.0,
+            385.87
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T08:05:00+01:00",
+            "2027-02-06T21:45:00+00:00",
+            "2027-02-09T20:20:00+01:00",
+            "2027-02-12T21:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            4,
+            5
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            422.28999999999996,
+            531.0416666666666,
+            436.81
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T14:35:00+01:00",
+            "2027-02-03T15:05:00+00:00",
+            "2027-02-06T20:50:00+01:00",
+            "2027-02-09T13:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            425.99,
+            489.2416666666666,
+            237.7
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-05T12:15:00+01:00",
+            "2027-02-08T10:05:00+01:00",
+            "2027-02-11T09:01:00+01:00",
+            "2027-02-13T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            3,
+            1,
+            2
+          ],
+          "nights": [
+            4,
+            3,
+            2
+          ],
+          "objectives": [
+            465.06,
+            300.35833333333335,
+            387.39
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T18:55:00+01:00",
+            "2027-02-10T09:30:00+01:00",
+            "2027-02-13T11:31:00+01:00",
+            "2027-02-15T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            5,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            477.52,
+            793.075,
+            226.2
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T12:15:00+01:00",
+            "2027-02-07T09:30:00+01:00",
+            "2027-02-10T15:16:00+01:00",
+            "2027-02-13T09:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            4
+          ],
+          "objectives": [
+            503.9,
+            464.51666666666665,
+            266.05
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-05T12:28:00+01:00",
+            "2027-02-07T12:35:00+01:00",
+            "2027-02-09T20:30:00+01:00",
+            "2027-02-14T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            3,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            512.5799999999999,
+            669.3499999999999,
+            232.91
+          ],
+          "modes": [
+            "flight",
+            "train+bus",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T21:15:00+01:00",
+            "2027-02-09T08:19:00+01:00",
+            "2027-02-11T16:25:00+01:00",
+            "2027-02-14T21:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            529.05,
+            681.375,
+            155.57999999999998
+          ],
+          "modes": [
+            "train+bus",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T13:59:00+01:00",
+            "2027-02-09T13:27:00+01:00",
+            "2027-02-11T20:15:00+01:00",
+            "2027-02-14T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            536.89,
+            659.8333333333334,
+            183.07999999999998
+          ],
+          "modes": [
+            "train+bus",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T12:49:00+01:00",
+            "2027-02-09T13:27:00+01:00",
+            "2027-02-12T20:15:00+01:00",
+            "2027-02-15T08:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            3,
+            2,
+            1
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            537.8199999999999,
+            484.4916666666667,
+            265.62
+          ],
+          "modes": [
+            "flight",
+            "bus",
+            "train",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-06T21:15:00+01:00",
+            "2027-02-09T20:15:00+01:00",
+            "2027-02-12T11:00:00+01:00",
+            "2027-02-15T07:48:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            538.0699999999999,
+            481.59166666666664,
+            231.22
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-06T12:32:00+01:00",
+            "2027-02-08T13:15:00+01:00",
+            "2027-02-10T20:50:00+00:00",
+            "2027-02-14T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            3,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            539.5,
+            406.99999999999994,
+            383.87
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T18:30:00+01:00",
+            "2027-02-07T18:00:00+01:00",
+            "2027-02-09T20:30:00+01:00",
+            "2027-02-12T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            1
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            581.33,
+            346.51666666666665,
+            355.16
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T12:28:00+01:00",
+            "2027-02-05T09:45:00+01:00",
+            "2027-02-07T09:50:00+01:00",
+            "2027-02-10T11:45:00+00:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            581.33,
+            703.775,
+            150.57999999999998
+          ],
+          "modes": [
+            "train+bus",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T13:59:00+01:00",
+            "2027-02-07T14:53:00+01:00",
+            "2027-02-09T20:15:00+01:00",
+            "2027-02-12T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            592.6,
+            470.3666666666667,
+            221.14000000000001
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T10:52:00+01:00",
+            "2027-02-03T12:50:00+01:00",
+            "2027-02-06T20:15:00+01:00",
+            "2027-02-09T20:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            2,
+            1,
+            3
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            604.26,
+            461.55833333333334,
+            208.46
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-06T12:49:00+01:00",
+            "2027-02-09T21:00:00+01:00",
+            "2027-02-12T09:01:00+01:00",
+            "2027-02-15T15:10:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            605.5600000000001,
+            393.95,
+            175.09
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T10:52:00+01:00",
+            "2027-02-05T21:15:00+01:00",
+            "2027-02-09T12:41:00+01:00",
+            "2027-02-11T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            1
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            606.33,
+            334.09999999999997,
+            363.16
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-02T12:28:00+01:00",
+            "2027-02-05T17:00:00+01:00",
+            "2027-02-07T11:00:00+01:00",
+            "2027-02-10T11:45:00+00:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            613.01,
+            389.6333333333333,
+            228.72
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-04T12:49:00+01:00",
+            "2027-02-06T13:15:00+01:00",
+            "2027-02-09T20:50:00+00:00",
+            "2027-02-13T09:16:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            2,
+            3,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            640.6699999999998,
+            597.3000000000001,
+            139.21
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-03T16:05:00+01:00",
+            "2027-02-06T15:11:00+01:00",
+            "2027-02-09T08:19:00+01:00",
+            "2027-02-12T09:26:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            3,
+            4,
+            2
+          ],
+          "objectives": [
+            643.6300000000001,
+            322.75,
+            272.55
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T12:28:00+01:00",
+            "2027-02-07T09:35:00+01:00",
+            "2027-02-11T08:31:00+01:00",
+            "2027-02-13T09:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            4,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            669.22,
+            545.9,
+            173.18
+          ],
+          "modes": [
+            "train+bus",
+            "train+bus",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T13:59:00+01:00",
+            "2027-02-07T08:47:00+01:00",
+            "2027-02-09T12:41:00+01:00",
+            "2027-02-12T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            4,
+            2,
+            1
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            689.4499999999999,
+            307.92499999999995,
+            363.32
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T10:52:00+01:00",
+            "2027-02-04T09:55:00+01:00",
+            "2027-02-07T17:06:00+01:00",
+            "2027-02-09T20:15:00+00:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            2,
+            3
+          ],
+          "nights": [
+            4,
+            2,
+            3
+          ],
+          "objectives": [
+            689.6099999999999,
+            286.20000000000005,
+            559.52
+          ],
+          "modes": [
+            "flight",
+            "train",
+            "flight",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T18:50:00+01:00",
+            "2027-02-05T12:31:00+01:00",
+            "2027-02-07T11:30:00+01:00",
+            "2027-02-10T08:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            3,
+            4,
+            1
+          ],
+          "nights": [
+            2,
+            4,
+            2
+          ],
+          "objectives": [
+            701.5799999999999,
+            289.825,
+            414.95
+          ],
+          "modes": [
+            "flight",
+            "train+bus",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-01T19:35:00+01:00",
+            "2027-02-04T11:12:00+01:00",
+            "2027-02-08T09:26:00+01:00",
+            "2027-02-10T17:30:00+00:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            4,
+            2,
+            3
+          ],
+          "objectives": [
+            702.9100000000001,
+            296.2,
+            267.03999999999996
+          ],
+          "modes": [
+            "flight",
+            "train",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T20:10:00+01:00",
+            "2027-02-05T12:31:00+01:00",
+            "2027-02-07T09:35:00+01:00",
+            "2027-02-10T07:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            736.11,
+            536.05,
+            166.2
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T20:10:00+01:00",
+            "2027-02-06T09:54:00+01:00",
+            "2027-02-08T11:31:00+01:00",
+            "2027-02-10T09:32:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            745.4,
+            350.4583333333333,
+            260.63
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T09:10:00+01:00",
+            "2027-02-05T16:45:00+00:00",
+            "2027-02-09T09:30:00+01:00",
+            "2027-02-11T08:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            4,
+            3,
+            2
+          ],
+          "objectives": [
+            774.65,
+            272.42499999999995,
+            360.68
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-05T12:28:00+01:00",
+            "2027-02-09T10:15:00+01:00",
+            "2027-02-12T09:01:00+01:00",
+            "2027-02-14T15:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            5,
+            3,
+            4
+          ],
+          "nights": [
+            3,
+            2,
+            4
+          ],
+          "objectives": [
+            797.56,
+            245.15833333333336,
+            504.62
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-03T14:35:00+01:00",
+            "2027-02-06T09:40:00+01:00",
+            "2027-02-08T12:12:00+01:00",
+            "2027-02-12T09:26:00+01:00"
+          ]
+        }
+      ]
+    },
+    {
+      "variant": "genetic",
+      "seed": 97,
+      "settings": {
+        "COORDINATED_MUTATION_RATE": 0.2,
+        "TRANSPORT_GROUP_SELECTION": true,
+        "COMPLEMENTARY_PAIRING": false,
+        "PRUNE_EQUIVALENT_TRANSPORT": true,
+        "TRANSPORT_CACHE_SIZE": 4096,
+        "TRANSPORT_RESULT_CACHE_SIZE": 1024
+      },
+      "elapsed_seconds": 61.39842930005398,
+      "generations": 9,
+      "setup_seconds": 1.809393500094302,
+      "initialization_seconds": 16.23987410007976,
+      "initialization_candidates": 300,
+      "offspring_candidates": 2600,
+      "first_feasible_seconds": 2.0439220000989735,
+      "final_verification_seconds": 0.3626345999073237,
+      "hypervolume": 8.371858392635465,
+      "compromise": 0.18149785390810247,
+      "balanced_solution_scales": [
+        1089.6100000000001,
+        467.9166666666667,
+        737.5
+      ],
+      "balanced_solution_weights": [
+        0.5,
+        0.1,
+        0.4
+      ],
+      "objective_minima": [
+        352.03,
+        230.91666666666666,
+        125.7
+      ],
+      "generated_transport": 2900,
+      "feasible_transport": 958,
+      "distinct_genotypes": 2892,
+      "complete_transport": 1757,
+      "distinct_transport": 1600,
+      "cache_hits": 18164,
+      "cache_misses": 6741,
+      "dominated_option_removals": 25,
+      "option_build_seconds": 11.573921999894083,
+      "candidate_scans": 767213,
+      "decoder_invocations": 2895,
+      "complete_result_reuse": 5,
+      "result_cache_entries": 953,
+      "result_cache_evictions": 0,
+      "cache_entries": 4096,
+      "cache_evictions": 2221,
+      "static_option_entries": 306,
+      "static_option_count": 27698,
+      "duration_rejections": 4711,
+      "daytime_rejections": 0,
+      "runtime_cutoffs": 0,
+      "distinct_feasible_transports": 829,
+      "feasible_transports_per_second": 13.582192011532022,
+      "parent_group_count": 300,
+      "largest_parent_group_share": 0.0033333333333333335,
+      "history": [
+        [
+          0,
+          16.245689400006086,
+          7.464990153641957,
+          0.2671765934342524
+        ],
+        [
+          1,
+          21.201058600097895,
+          7.545684095262141,
+          0.2671765934342524
+        ],
+        [
+          2,
+          25.903996400069445,
+          7.555618112796282,
+          0.2671765934342524
+        ],
+        [
+          3,
+          31.088696900056675,
+          7.708002660046471,
+          0.24554619877904343
+        ],
+        [
+          4,
+          35.5442725000903,
+          7.782640970080252,
+          0.20521693053698364
+        ],
+        [
+          5,
+          40.32731990003958,
+          8.103644869273467,
+          0.20521693053698364
+        ],
+        [
+          6,
+          44.839416600065306,
+          8.108157624421482,
+          0.18149785390810247
+        ],
+        [
+          7,
+          52.88748030003626,
+          8.114625901050243,
+          0.18149785390810247
+        ],
+        [
+          8,
+          57.14908220001962,
+          8.118867017470544,
+          0.18149785390810247
+        ],
+        [
+          9,
+          61.034085100051016,
+          8.371858392635465,
+          0.18149785390810247
+        ]
+      ],
+      "observations": [
+        {
+          "generation": 0,
+          "seconds": 16.245433500036597,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 44,
+          "feasible_dates": 6,
+          "feasible_routes": 32,
+          "objective_minima": [
+            495.2699999999999,
+            291.9666666666667,
+            171.19
+          ],
+          "hypervolume": 7.464990153641957,
+          "compromise": 0.2671765934342524
+        },
+        {
+          "generation": 1,
+          "seconds": 21.200762500055134,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 90,
+          "feasible_dates": 6,
+          "feasible_routes": 44,
+          "objective_minima": [
+            495.2699999999999,
+            291.9666666666667,
+            148.7
+          ],
+          "hypervolume": 7.545684095262141,
+          "compromise": 0.2671765934342524
+        },
+        {
+          "generation": 2,
+          "seconds": 25.903686900041066,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 160,
+          "feasible_dates": 6,
+          "feasible_routes": 52,
+          "objective_minima": [
+            495.2699999999999,
+            291.9666666666667,
+            148.7
+          ],
+          "hypervolume": 7.555618112796282,
+          "compromise": 0.2671765934342524
+        },
+        {
+          "generation": 3,
+          "seconds": 31.08807010005694,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 243,
+          "feasible_dates": 6,
+          "feasible_routes": 55,
+          "objective_minima": [
+            469.74,
+            281.6583333333333,
+            141.13
+          ],
+          "hypervolume": 7.708002660046471,
+          "compromise": 0.24554619877904343
+        },
+        {
+          "generation": 4,
+          "seconds": 35.543840300058946,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 341,
+          "feasible_dates": 6,
+          "feasible_routes": 53,
+          "objective_minima": [
+            469.74,
+            281.6583333333333,
+            125.7
+          ],
+          "hypervolume": 7.782640970080252,
+          "compromise": 0.20521693053698364
+        },
+        {
+          "generation": 5,
+          "seconds": 40.32615970005281,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 458,
+          "feasible_dates": 6,
+          "feasible_routes": 53,
+          "objective_minima": [
+            409.25999999999993,
+            230.91666666666666,
+            125.7
+          ],
+          "hypervolume": 8.103644869273467,
+          "compromise": 0.20521693053698364
+        },
+        {
+          "generation": 6,
+          "seconds": 44.836942200083286,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 566,
+          "feasible_dates": 6,
+          "feasible_routes": 47,
+          "objective_minima": [
+            409.25999999999993,
+            230.91666666666666,
+            125.7
+          ],
+          "hypervolume": 8.108157624421482,
+          "compromise": 0.18149785390810247
+        },
+        {
+          "generation": 7,
+          "seconds": 52.88687300006859,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 675,
+          "feasible_dates": 6,
+          "feasible_routes": 44,
+          "objective_minima": [
+            409.25999999999993,
+            230.91666666666666,
+            125.7
+          ],
+          "hypervolume": 8.114625901050243,
+          "compromise": 0.18149785390810247
+        },
+        {
+          "generation": 8,
+          "seconds": 57.148579800035805,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 766,
+          "feasible_dates": 6,
+          "feasible_routes": 42,
+          "objective_minima": [
+            409.25999999999993,
+            230.91666666666666,
+            125.7
+          ],
+          "hypervolume": 8.118867017470544,
+          "compromise": 0.18149785390810247
+        },
+        {
+          "generation": 9,
+          "seconds": 61.03291460010223,
+          "parent_groups": 300,
+          "largest_group_share": 0.0033333333333333335,
+          "distinct_feasible_transports": 829,
+          "feasible_dates": 6,
+          "feasible_routes": 42,
+          "objective_minima": [
+            352.03,
+            230.91666666666666,
+            125.7
+          ],
+          "hypervolume": 8.371858392635465,
+          "compromise": 0.18149785390810247
+        }
+      ],
+      "archive_by_start": {
+        "0": 16,
+        "1": 12,
+        "2": 5,
+        "3": 10,
+        "4": 1,
+        "5": 14
+      },
+      "reached_climate_target": null,
+      "archive_transport_count": 57,
+      "archive": [
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            352.03,
+            662.9583333333333,
+            225.7
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T21:15:00+01:00",
+            "2027-02-06T10:25:00+01:00",
+            "2027-02-08T20:30:00+01:00",
+            "2027-02-11T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            4,
+            3,
+            2
+          ],
+          "objectives": [
+            409.25999999999993,
+            262.875,
+            415.37
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T18:50:00+01:00",
+            "2027-02-05T16:25:00+00:00",
+            "2027-02-08T15:10:00+01:00",
+            "2027-02-10T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            3,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            414.21,
+            551.9166666666667,
+            245.63
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T09:10:00+01:00",
+            "2027-02-07T15:30:00+00:00",
+            "2027-02-09T20:15:00+01:00",
+            "2027-02-12T21:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            421.27000000000004,
+            770.0416666666666,
+            204.26
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T19:50:00+01:00",
+            "2027-02-05T12:20:00+01:00",
+            "2027-02-08T20:45:00+01:00",
+            "2027-02-11T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            442.19999999999993,
+            533.6416666666667,
+            264.28
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T12:15:00+01:00",
+            "2027-02-08T18:45:00+01:00",
+            "2027-02-10T07:48:00+01:00",
+            "2027-02-12T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            444.21999999999997,
+            487.66666666666663,
+            279.18
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T21:15:00+01:00",
+            "2027-02-06T10:25:00+01:00",
+            "2027-02-08T10:05:00+01:00",
+            "2027-02-11T08:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            3,
+            1,
+            2
+          ],
+          "nights": [
+            4,
+            3,
+            2
+          ],
+          "objectives": [
+            449.39,
+            275.28333333333336,
+            289.97
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T18:55:00+01:00",
+            "2027-02-05T10:05:00+01:00",
+            "2027-02-08T10:16:00+01:00",
+            "2027-02-10T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            4,
+            3,
+            2
+          ],
+          "objectives": [
+            462.87,
+            255.875,
+            419.37
+          ],
+          "modes": [
+            "flight",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T18:50:00+01:00",
+            "2027-02-05T16:25:00+00:00",
+            "2027-02-08T15:10:00+01:00",
+            "2027-02-10T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            5,
+            2,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            464.31000000000006,
+            940.7333333333333,
+            171.06
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T19:50:00+01:00",
+            "2027-02-07T09:18:00+01:00",
+            "2027-02-09T22:30:00+01:00",
+            "2027-02-12T19:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            469.14,
+            907.5416666666666,
+            162.28
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T19:50:00+01:00",
+            "2027-02-04T16:50:00+01:00",
+            "2027-02-07T15:45:00+01:00",
+            "2027-02-10T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            470.48,
+            737.4583333333334,
+            208.26
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T19:50:00+01:00",
+            "2027-02-04T16:50:00+01:00",
+            "2027-02-07T20:50:00+01:00",
+            "2027-02-10T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            472.40000000000003,
+            547.5583333333334,
+            212.21
+          ],
+          "modes": [
+            "bus",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T21:15:00+01:00",
+            "2027-02-06T10:25:00+01:00",
+            "2027-02-08T09:26:00+01:00",
+            "2027-02-10T21:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            472.57,
+            763.2083333333334,
+            192.26
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T06:00:00+01:00",
+            "2027-02-04T16:50:00+01:00",
+            "2027-02-07T20:50:00+01:00",
+            "2027-02-10T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            4,
+            5
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            486.59000000000003,
+            545.2916666666667,
+            257.7
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T11:40:00+01:00",
+            "2027-02-03T09:42:00+01:00",
+            "2027-02-06T20:50:00+01:00",
+            "2027-02-09T13:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            487.81,
+            528.5,
+            260.34000000000003
+          ],
+          "modes": [
+            "bus",
+            "bus",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-01T11:40:00+01:00",
+            "2027-02-03T21:00:00+01:00",
+            "2027-02-06T21:00:00+00:00",
+            "2027-02-10T09:14:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            494.47,
+            355.5083333333333,
+            246.05
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T12:28:00+01:00",
+            "2027-02-09T10:15:00+01:00",
+            "2027-02-11T09:01:00+01:00",
+            "2027-02-14T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            4,
+            2,
+            3
+          ],
+          "objectives": [
+            499.99000000000007,
+            272.79166666666663,
+            277.11
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "flight",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T09:10:00+01:00",
+            "2027-02-06T09:25:00+00:00",
+            "2027-02-08T10:05:00+01:00",
+            "2027-02-11T08:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            5,
+            2,
+            1
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            521.2800000000001,
+            292.39166666666665,
+            253.76
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-06T12:28:00+01:00",
+            "2027-02-09T10:00:00+01:00",
+            "2027-02-11T13:15:00+01:00",
+            "2027-02-14T18:30:00+00:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            524.8499999999999,
+            834.675,
+            187.28
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T15:45:00+01:00",
+            "2027-02-05T10:50:00+01:00",
+            "2027-02-08T09:45:00+01:00",
+            "2027-02-11T08:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            3,
+            2
+          ],
+          "nights": [
+            2,
+            4,
+            2
+          ],
+          "objectives": [
+            529.0,
+            471.2583333333333,
+            244.01
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-04T10:26:00+01:00",
+            "2027-02-06T15:15:00+00:00",
+            "2027-02-10T20:15:00+01:00",
+            "2027-02-13T11:25:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            531.5,
+            510.14166666666665,
+            242.05
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T10:28:00+01:00",
+            "2027-02-08T20:55:00+01:00",
+            "2027-02-11T09:45:00+01:00",
+            "2027-02-14T21:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            2
+          ],
+          "objectives": [
+            534.28,
+            858.3166666666667,
+            162.28
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T21:15:00+01:00",
+            "2027-02-06T12:10:00+01:00",
+            "2027-02-09T09:14:00+01:00",
+            "2027-02-11T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            534.34,
+            570.3,
+            140.64999999999998
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-06T11:12:00+01:00",
+            "2027-02-08T12:31:00+01:00",
+            "2027-02-11T22:30:00+01:00",
+            "2027-02-14T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            538.0699999999999,
+            481.59166666666664,
+            231.22
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-06T12:32:00+01:00",
+            "2027-02-08T13:15:00+01:00",
+            "2027-02-10T20:50:00+00:00",
+            "2027-02-14T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            5,
+            1,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            3
+          ],
+          "objectives": [
+            548.3,
+            353.5083333333333,
+            245.05
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T12:28:00+01:00",
+            "2027-02-09T11:20:00+01:00",
+            "2027-02-11T09:01:00+01:00",
+            "2027-02-14T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            563.42,
+            701.225,
+            140.29
+          ],
+          "modes": [
+            "bus",
+            "train+bus",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T21:15:00+01:00",
+            "2027-02-04T13:50:00+01:00",
+            "2027-02-08T09:26:00+01:00",
+            "2027-02-10T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            563.87,
+            589.2916666666666,
+            130.06
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-02T10:52:00+01:00",
+            "2027-02-04T08:04:00+01:00",
+            "2027-02-06T21:05:00+01:00",
+            "2027-02-10T23:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            582.36,
+            430.5083333333333,
+            225.64
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-06T12:32:00+01:00",
+            "2027-02-08T10:00:00+01:00",
+            "2027-02-10T20:50:00+00:00",
+            "2027-02-14T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            2,
+            3,
+            4
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            583.83,
+            523.225,
+            207.18
+          ],
+          "modes": [
+            "train+bus",
+            "train",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T13:28:00+01:00",
+            "2027-02-08T12:34:00+01:00",
+            "2027-02-11T09:18:00+01:00",
+            "2027-02-14T19:55:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            584.0600000000001,
+            565.2499999999999,
+            142.06
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T10:26:00+01:00",
+            "2027-02-06T11:31:00+01:00",
+            "2027-02-09T20:30:00+01:00",
+            "2027-02-12T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            4
+          ],
+          "objectives": [
+            591.6700000000001,
+            412.2083333333333,
+            208.36
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "train+bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-06T10:52:00+01:00",
+            "2027-02-08T23:00:00+00:00",
+            "2027-02-11T09:42:00+01:00",
+            "2027-02-15T19:25:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            592.3399999999999,
+            389.71666666666664,
+            201.57
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T11:12:00+01:00",
+            "2027-02-04T08:29:00+01:00",
+            "2027-02-06T21:45:00+00:00",
+            "2027-02-10T09:32:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            5,
+            4,
+            2
+          ],
+          "nights": [
+            3,
+            2,
+            2
+          ],
+          "objectives": [
+            595.87,
+            455.97499999999997,
+            201.55
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T12:28:00+01:00",
+            "2027-02-06T21:25:00+01:00",
+            "2027-02-09T09:45:00+01:00",
+            "2027-02-12T08:45:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            597.76,
+            574.15,
+            138.06
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T10:26:00+01:00",
+            "2027-02-05T08:04:00+01:00",
+            "2027-02-07T21:05:00+01:00",
+            "2027-02-11T21:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            600.74,
+            549.2416666666667,
+            193.7
+          ],
+          "modes": [
+            "train",
+            "train+bus",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-06T10:52:00+01:00",
+            "2027-02-08T13:35:00+01:00",
+            "2027-02-11T10:16:00+01:00",
+            "2027-02-14T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            2,
+            1,
+            4
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            602.3199999999999,
+            376.1333333333333,
+            185.57
+          ],
+          "modes": [
+            "train",
+            "train",
+            "flight",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T11:12:00+01:00",
+            "2027-02-04T08:29:00+01:00",
+            "2027-02-06T19:45:00+00:00",
+            "2027-02-10T09:32:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            4,
+            2
+          ],
+          "objectives": [
+            610.11,
+            487.0833333333333,
+            169.56
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T10:26:00+01:00",
+            "2027-02-06T11:31:00+01:00",
+            "2027-02-10T20:05:00+01:00",
+            "2027-02-13T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            620.7,
+            565.1666666666666,
+            158.06
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T10:26:00+01:00",
+            "2027-02-06T11:31:00+01:00",
+            "2027-02-09T21:05:00+01:00",
+            "2027-02-12T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            4,
+            2
+          ],
+          "objectives": [
+            621.47,
+            370.3333333333333,
+            219.56
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T10:26:00+01:00",
+            "2027-02-06T11:31:00+01:00",
+            "2027-02-10T09:45:00+01:00",
+            "2027-02-13T10:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            3,
+            3,
+            3
+          ],
+          "objectives": [
+            623.04,
+            309.65,
+            248.27
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T10:52:00+01:00",
+            "2027-02-04T17:05:00+01:00",
+            "2027-02-07T09:12:00+01:00",
+            "2027-02-10T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            4,
+            3
+          ],
+          "objectives": [
+            627.29,
+            285.55833333333334,
+            240.64
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T10:26:00+01:00",
+            "2027-02-03T16:35:00+00:00",
+            "2027-02-07T16:31:00+01:00",
+            "2027-02-10T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            2,
+            3,
+            3
+          ],
+          "objectives": [
+            632.1499999999999,
+            531.9166666666667,
+            164.14999999999998
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-01T10:26:00+01:00",
+            "2027-02-03T12:04:00+01:00",
+            "2027-02-06T21:00:00+01:00",
+            "2027-02-10T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            641.3600000000001,
+            524.9166666666667,
+            164.14999999999998
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-01T10:26:00+01:00",
+            "2027-02-04T12:04:00+01:00",
+            "2027-02-07T21:00:00+01:00",
+            "2027-02-10T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            658.3100000000001,
+            513.6666666666666,
+            150.06
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T10:26:00+01:00",
+            "2027-02-06T11:31:00+01:00",
+            "2027-02-09T20:30:00+01:00",
+            "2027-02-12T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            2,
+            3
+          ],
+          "objectives": [
+            665.85,
+            497.04166666666663,
+            154.06
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-03T10:52:00+01:00",
+            "2027-02-05T08:04:00+01:00",
+            "2027-02-07T23:40:00+01:00",
+            "2027-02-11T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 4,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            2,
+            3,
+            2
+          ],
+          "objectives": [
+            675.0400000000001,
+            437.19166666666666,
+            145.62
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-05T10:52:00+01:00",
+            "2027-02-07T16:24:00+01:00",
+            "2027-02-11T10:01:00+01:00",
+            "2027-02-13T16:40:00+01:00"
+          ]
+        },
+        {
+          "start_day": 3,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            4,
+            2,
+            2
+          ],
+          "objectives": [
+            688.62,
+            405.26666666666665,
+            125.7
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-04T10:52:00+01:00",
+            "2027-02-08T09:26:00+01:00",
+            "2027-02-10T10:16:00+01:00",
+            "2027-02-12T21:00:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            5,
+            2,
+            1
+          ],
+          "nights": [
+            3,
+            3,
+            2
+          ],
+          "objectives": [
+            691.22,
+            337.45833333333337,
+            223.13
+          ],
+          "modes": [
+            "train",
+            "train",
+            "bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-06T09:17:00+01:00",
+            "2027-02-09T10:50:00+01:00",
+            "2027-02-12T13:15:00+01:00",
+            "2027-02-14T18:30:00+00:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            5,
+            2
+          ],
+          "objectives": [
+            696.1899999999999,
+            266.2,
+            240.64
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T10:26:00+01:00",
+            "2027-02-03T16:35:00+00:00",
+            "2027-02-08T16:24:00+01:00",
+            "2027-02-10T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            4
+          ],
+          "nights": [
+            2,
+            4,
+            3
+          ],
+          "objectives": [
+            702.2900000000001,
+            400.9333333333334,
+            169.23
+          ],
+          "modes": [
+            "train",
+            "bus",
+            "train+bus",
+            "train+bus"
+          ],
+          "departures": [
+            "2027-02-02T10:52:00+01:00",
+            "2027-02-04T07:30:00+00:00",
+            "2027-02-08T09:42:00+01:00",
+            "2027-02-11T09:30:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            1,
+            3,
+            4
+          ],
+          "nights": [
+            2,
+            3,
+            4
+          ],
+          "objectives": [
+            705.46,
+            230.91666666666666,
+            356.26
+          ],
+          "modes": [
+            "train",
+            "flight",
+            "train+bus",
+            "flight"
+          ],
+          "departures": [
+            "2027-02-06T10:52:00+01:00",
+            "2027-02-08T08:45:00+00:00",
+            "2027-02-11T09:18:00+01:00",
+            "2027-02-15T19:25:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            4,
+            2
+          ],
+          "nights": [
+            2,
+            4,
+            3
+          ],
+          "objectives": [
+            719.85,
+            367.9,
+            195.56
+          ],
+          "modes": [
+            "train",
+            "train+bus",
+            "train+bus",
+            "bus"
+          ],
+          "departures": [
+            "2027-02-01T10:26:00+01:00",
+            "2027-02-03T09:01:00+01:00",
+            "2027-02-07T08:25:00+01:00",
+            "2027-02-10T09:05:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            4,
+            2,
+            3
+          ],
+          "objectives": [
+            737.99,
+            253.19166666666666,
+            303.55
+          ],
+          "modes": [
+            "flight",
+            "train",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T18:50:00+01:00",
+            "2027-02-05T12:31:00+01:00",
+            "2027-02-07T09:36:00+01:00",
+            "2027-02-10T09:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 0,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            4,
+            2,
+            3
+          ],
+          "objectives": [
+            747.99,
+            247.6583333333333,
+            303.55
+          ],
+          "modes": [
+            "flight",
+            "train",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-01T18:50:00+01:00",
+            "2027-02-05T12:31:00+01:00",
+            "2027-02-07T10:22:00+01:00",
+            "2027-02-10T07:50:00+01:00"
+          ]
+        },
+        {
+          "start_day": 1,
+          "route": [
+            1,
+            2,
+            5
+          ],
+          "nights": [
+            4,
+            2,
+            3
+          ],
+          "objectives": [
+            750.6700000000001,
+            318.675,
+            217.04
+          ],
+          "modes": [
+            "flight",
+            "train",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-02T19:05:00+01:00",
+            "2027-02-06T12:31:00+01:00",
+            "2027-02-08T08:18:00+01:00",
+            "2027-02-11T10:20:00+01:00"
+          ]
+        },
+        {
+          "start_day": 2,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            4,
+            2,
+            2
+          ],
+          "objectives": [
+            756.3100000000001,
+            391.68333333333334,
+            128.0
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train",
+            "train"
+          ],
+          "departures": [
+            "2027-02-03T10:52:00+01:00",
+            "2027-02-07T16:31:00+01:00",
+            "2027-02-10T10:31:00+01:00",
+            "2027-02-12T10:56:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            5,
+            2,
+            2
+          ],
+          "objectives": [
+            766.07,
+            280.51666666666665,
+            157.07999999999998
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-06T10:52:00+01:00",
+            "2027-02-11T09:26:00+01:00",
+            "2027-02-13T09:47:00+01:00",
+            "2027-02-15T11:07:00+01:00"
+          ]
+        },
+        {
+          "start_day": 5,
+          "route": [
+            4,
+            1,
+            2
+          ],
+          "nights": [
+            4,
+            2,
+            3
+          ],
+          "objectives": [
+            772.2,
+            339.5333333333333,
+            149.07999999999998
+          ],
+          "modes": [
+            "train",
+            "train",
+            "train+bus",
+            "train"
+          ],
+          "departures": [
+            "2027-02-06T10:52:00+01:00",
+            "2027-02-10T09:32:00+01:00",
+            "2027-02-12T07:48:00+01:00",
+            "2027-02-15T11:07:00+01:00"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "genetic": {
+      "hypervolume": {
+        "median": 8.345395676145346,
+        "minimum": 7.691354896887622,
+        "maximum": 8.371858392635465,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0.0,
+          "42": 0.0,
+          "97": 0.0
+        }
+      },
+      "compromise": {
+        "median": 0.2117600033574889,
+        "minimum": 0.18149785390810247,
+        "maximum": 0.29072443332421233,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0.0,
+          "42": 0.0,
+          "97": 0.0
+        }
+      },
+      "initialization_seconds": {
+        "median": 16.23987410007976,
+        "minimum": 14.1781345999334,
+        "maximum": 53.739950800081715,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0.0,
+          "42": 0.0,
+          "97": 0.0
+        }
+      },
+      "first_feasible_seconds": {
+        "median": 4.089121999917552,
+        "minimum": 2.0439220000989735,
+        "maximum": 9.125122600002214,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0.0,
+          "42": 0.0,
+          "97": 0.0
+        }
+      },
+      "feasible_transports_per_second": {
+        "median": 13.582192011532022,
+        "minimum": 0.9950618298751323,
+        "maximum": 13.829101439737563,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0.0,
+          "42": 0.0,
+          "97": 0.0
+        }
+      },
+      "parent_group_count": {
+        "median": 300,
+        "minimum": 300,
+        "maximum": 300,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0,
+          "42": 0,
+          "97": 0
+        }
+      },
+      "largest_parent_group_share": {
+        "median": 0.0033333333333333335,
+        "minimum": 0.0033333333333333335,
+        "maximum": 0.0033333333333333335,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0.0,
+          "42": 0.0,
+          "97": 0.0
+        }
+      },
+      "candidate_scans": {
+        "median": 767213,
+        "minimum": 99676,
+        "maximum": 858925,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0,
+          "42": 0,
+          "97": 0
+        }
+      },
+      "complete_result_reuse": {
+        "median": 4,
+        "minimum": 0,
+        "maximum": 5,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0,
+          "42": 0,
+          "97": 0
+        }
+      },
+      "runtime_cutoffs": {
+        "median": 1,
+        "minimum": 0,
+        "maximum": 1,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0,
+          "42": 0,
+          "97": 0
+        }
+      }
+    },
+    "complementary": {
+      "hypervolume": {
+        "median": 7.805828739712629,
+        "minimum": 7.556747225829053,
+        "maximum": 8.345417295530321,
+        "observed": 3,
+        "paired_differences": {
+          "11": -0.5395669364327169,
+          "42": -0.13460767105856952,
+          "97": -0.02644109710514364
+        }
+      },
+      "compromise": {
+        "median": 0.24362044761404622,
+        "minimum": 0.22729825239335844,
+        "maximum": 0.24640620279599573,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0.03186044425655732,
+          "42": -0.044318230528216596,
+          "97": 0.045800398485255966
+        }
+      },
+      "initialization_seconds": {
+        "median": 39.379468800034374,
+        "minimum": 28.978943799971603,
+        "maximum": 42.23908610001672,
+        "observed": 3,
+        "paired_differences": {
+          "11": 28.06095150008332,
+          "42": -24.761007000110112,
+          "97": 23.139594699954614
+        }
+      },
+      "first_feasible_seconds": {
+        "median": 7.679500799975358,
+        "minimum": 3.969513399992138,
+        "maximum": 10.845531600061804,
+        "observed": 3,
+        "paired_differences": {
+          "11": 6.756409600144252,
+          "42": -1.4456218000268564,
+          "97": 1.9255913998931646
+        }
+      },
+      "feasible_transports_per_second": {
+        "median": 3.7219580310524183,
+        "minimum": 1.6707181526736838,
+        "maximum": 7.804550344047104,
+        "observed": 3,
+        "paired_differences": {
+          "11": -12.158383287063879,
+          "42": 2.726896201177286,
+          "97": -5.777641667484919
+        }
+      },
+      "parent_group_count": {
+        "median": 300,
+        "minimum": 300,
+        "maximum": 300,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0,
+          "42": 0,
+          "97": 0
+        }
+      },
+      "largest_parent_group_share": {
+        "median": 0.0033333333333333335,
+        "minimum": 0.0033333333333333335,
+        "maximum": 0.0033333333333333335,
+        "observed": 3,
+        "paired_differences": {
+          "11": 0.0,
+          "42": 0.0,
+          "97": 0.0
+        }
+      },
+      "candidate_scans": {
+        "median": 285805,
+        "minimum": 162038,
+        "maximum": 468878,
+        "observed": 3,
+        "paired_differences": {
+          "11": -696887,
+          "42": 186129,
+          "97": -298335
+        }
+      },
+      "complete_result_reuse": {
+        "median": 2,
+        "minimum": 0,
+        "maximum": 4,
+        "observed": 3,
+        "paired_differences": {
+          "11": -4,
+          "42": 2,
+          "97": -1
+        }
+      },
+      "runtime_cutoffs": {
+        "median": 1,
+        "minimum": 0,
+        "maximum": 1,
+        "observed": 3,
+        "paired_differences": {
+          "11": -1,
+          "42": 0,
+          "97": 1
+        }
+      }
+    }
+  }
+}

@@ -3,4 +3,15 @@ name = "optimaltripplanning"
 version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "curl-cffi>=0.17.0",
+    "fast-flights>=3.1.0",
+    "numpy>=2.5.4",
+    "pandas>=3.1.0",
+    "patchright>=1.64.3",
+    "pydantic>=2.14.1",
+    "requests>=2.34.2",
+    "scipy>=1.18.1",
+    "typing-extensions>=4.16.0",
+    "tzdata>=2025.2",
+]

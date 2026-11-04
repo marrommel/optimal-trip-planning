@@ -1,3 +1,415 @@
 \section{Prototypische Umsetzung}
 
-Kurzer Überblick über die prototypische Implementierung
+Der Python-Prototyp setzt die gemeinsame Wahl von Zielen, Aufenthalten und
+Verbindungen um, weicht jedoch bewusst vom skalaren Verfahren aus
+Kapitel~\ref{sec:loesungsverfahren} ab. NSGA-II bewertet Kosten, Diskomfort und
+geschätzte Klimawirkung getrennt und approximiert eine Paretofront. Die
+abschließende Empfehlung verwendet datenabhängige, vor der Suche festgelegte
+Skalen und konfigurierbare Präferenzgewichte.
+
+Die Skalierung schätzt typische Gesamtreisebeiträge aus den geladenen Angeboten,
+ohne dafür eine zusätzliche Optimierung auszuführen. Pro gerichteter Strecke
+wird für jedes Ziel der Median der zeitlich zulässigen Transportangebote
+gebildet. Der Median dieser Streckenwerte wird mit der Anzahl der Reiseabschnitte
+multipliziert (Anzahl der Ziele plus eins). Bei aktivierter Hotelplanung werden
+die medianen Tagespreise je Unterkunft sowie deren Diskomfort- und CO2-Beiträge
+zunächst je Stadt, dann über die Städte medianisiert und mit der Reisedauer
+minus einem Tag multipliziert. So erhalten stark vertretene Strecken oder
+Städte nicht allein wegen ihrer Angebotszahl ein größeres Gewicht.
+Ist ein Median null, obwohl positive Beiträge existieren, wird stattdessen der
+größte beobachtete Beitrag verwendet. Nur bei einem vollständig nullwertigen
+Gesamtbeitrag wird der Divisor eins eingesetzt.
+
+Die Summe aus Transport- und Hotelreferenz ergibt die drei Skalen $s_i$.
+Die Bewertung bleibt $S(f)=\sum_i w_i(f_i/s_i)^2$; kleinere Werte sind besser.
+Es handelt sich um eine Normierung an typischen Reisebeiträgen, nicht um eine
+Min-Max-Normierung der gefundenen Front. Tatsächliche Übernachtungszahlen und
+Wartezeiten werden weiterhin bei der Bewertung jedes Reiseplans berechnet.
+Skalen und Gewichte bleiben für Fortschrittsbewertung und abschließende
+Empfehlung identisch und während eines Laufs unverändert. Sie beeinflussen
+weder Pareto-Dominanz noch Rekombination oder Mutation. Vergleichsläufe mit
+denselben Daten teilen dieselbe Skalierung; diese wird mit den Metriken gespeichert.
+Gemeinsame Kalenderfenster werden bei der Skalenberechnung zwischengespeichert,
+statt sie für jedes Angebot neu aufzubauen.
+
+Der Optimierer arbeitet ausschließlich genetisch: Ein Chromosom
+liefert genau einen bewerteten Reiseplan. Die Initialisierung erzeugt zufällige
+Routen, Übernachtungszahlen und Auswahlgene und bewertet jeden Kandidaten einmal.
+Sie führt weder gerichtete Mehrfachversuche noch Rückreiseverfeinerung oder
+eine Enumeration der Hotelkombinationen aus. Der gierige Transportdekoder
+wählt anhand der Gene aus zwischengespeicherten zeitlich zulässigen Verbindungen,
+ohne frühere Entscheidungen durch Tiefensuche zu reparieren. Anschließend
+übernehmen Selektion, Rekombination und Mutation die Verbesserung der Population.
+Die frühere hybride Auswertung einschließlich gerichteter Initialisierung,
+Dekoder-Knotenbudget, Rückreiseverfeinerung und Hotelkombinationsexpansion
+wurde entfernt; ein Auswertungsmodus muss nicht mehr gewählt werden.
+
+Bei aktivierter Hotelplanung besitzt jeder Zielort einen kontinuierlichen
+Hotelauswahlschlüssel in $[0,1]$. Dieser wählt genau eine Unterkunft aus den
+lokal nichtdominierten Angeboten für das tatsächliche Aufenthaltsintervall.
+Bei Rekombination und Routenmutation bleibt der Schlüssel an seine Stadt
+gebunden; Mutation kann ihn neu ziehen. Es gibt keine stadtübergreifende
+Kombinationsexpansion. Fehlende Angebote und überschrittene Ressourcen werden
+weiterhin durch dieselbe unabhängige Zulässigkeitsprüfung bewertet.
+
+Die Umstellung reduziert die Arbeit pro Kandidat statt die Initialisierung
+durch eine zusätzliche Zeitgrenze abzuschneiden. Bei Messungen mit 45.831
+gespeicherten Verbindungen, 158 Hotels und einer Population von 100 benötigte
+der Suchaufbau einschließlich Initialisierung für die Zufallsstartwerte
+11, 42 und 97 jeweils rund 4,6, 3,3 und 4,4 Sekunden. In Suchläufen mit einem
+Gesamtbudget von 30 Sekunden wurden die Generationen 52, 59 und 52 erreicht
+und jeweils über 5.000 Nachkommen ausgewertet. Alle drei Zielbestwerte
+verbesserten sich gegenüber Generation 0. Das Einlesen der Angebotscaches
+ist in diesen Suchzeiten nicht enthalten. Initiale Kandidaten und ausgewertete
+Nachkommen werden in den Laufmetriken getrennt gezählt.
+Ein zusätzlicher Lauf mit der damaligen Standardkonfiguration (Startwert 42,
+100 Individuen, 300 Generationen und 600 Sekunden Laufzeitbudget) beendete
+alle 300 Generationen nach rund 165,6 Sekunden; die Initialisierung benötigte
+4,7 Sekunden. Nach 100 initialen Kandidaten wurden 30.000 Nachkommen
+ausgewertet. Die Bestwerte für Kosten, Diskomfort und CO2 verbesserten sich
+dabei von 531,66 Euro, 368,4 Punkten und 146,73 kg auf 250,15 Euro,
+170,1 Punkte und 110,70 kg.
+
+Die Fortschrittsanzeige zeigt eine kompakte Tabelle mit Phase, Generation,
+Laufzeit und den bisherigen Bestwerten für Kosten, CO2 und Diskomfort.
+Änderungen beziehen sich auf die vorherige Anzeige. Nach abgeschlossenen
+Kandidatenauswertungen wird frühestens alle fünf Sekunden aktualisiert,
+auch während der Initialisierung; Phasenwechsel und Abschluss werden
+zusätzlich ausgegeben. Auf schmalen Terminals erscheinen die Werte untereinander.
+Noch fehlende Werte werden durch Striche dargestellt. Grundlage ist ein
+historisches Archiv zulässiger, nichtdominierter Reisepläne.
+Dieses Archiv ist von der begrenzten Zuchtpopulation getrennt;
+auch Alternativen, die bei der Überlebendenselektion entfallen, bleiben darin
+erhalten, solange sie nicht von anderen gefundenen Plänen dominiert werden.
+Die normale Konsolenausgabe verzichtet auf Suchdiagnostik und erläuternde
+Hinweise zur Modellrealität oder zum Alter der Angebote. Die abschließenden
+Reisepläne zeigen weiterhin Verbindungen, Unterkünfte und Zielwerte.
+
+Als Qualitätskennzahl wird das Hypervolumen des Archivs für drei zu
+minimierende Ziele exakt berechnet. Die Zielwerte werden durch feste Skalen
+von 2.000 Euro, 1.000 Diskomfortpunkten und 2.000 kg geteilt; der Referenzpunkt
+liegt in den ursprünglichen Einheiten bei 2.100 Euro, 10.000 Diskomfortpunkten
+und 2.100 kg. Diese konfigurierbaren Werte werden während eines Laufs nicht
+an die Front angepasst und müssen für Vergleichsläufe unverändert bleiben.
+Das Ergebnis ist ein Volumen in normierten Zieleinheiten, kein Prozentwert.
+Ein Archivpunkt außerhalb des Referenzbereichs führt zu einer ausdrücklichen
+Fehlermeldung statt zu einer stillschweigenden Änderung des Referenzpunkts.
+
+Zusätzlich werden die beste konfigurierte Kompromissbewertung, neue
+Archiveinträge, neue oder verbesserte Zielregionen sowie die Vielfalt der
+Zielmengen, Besuchsreihenfolgen und Abreisedaten intern erfasst. Eine neue
+Rasterzelle zählt nur dann als verbesserte Region, wenn keine Zelle des
+vorherigen Archivs bereits in allen Koordinaten mindestens gleich gut war.
+Die Rasterweite beträgt ein Prozent der festen Qualitätsskalen.
+Die Transportkennzahlen zählen pro Kandidat genau einen dekodierten Reiseplan.
+Als zulässig gilt er, wenn seine ausgewählten Verbindungen und Hotels
+gemeinsam alle Restriktionen erfüllen. Die Diagnostik
+unterscheidet verschiedene Eingabegenotypen von tatsächlich dekodierten
+Transportfolgen; deren erstmaliges Auftreten wird über den gesamten Lauf
+verfolgt. Auch unzulässige Kandidaten bei der Initialisierung und
+ausgewertete Immigranten gehen in die kumulierten Zähler ein. Das Archiv und
+die Population können hinsichtlich ihrer Transportvielfalt zusätzlich ohne
+Hotelvarianten ausgewertet werden.
+
+Für einen qualitätsbasierten Abbruch werden der Hypervolumenzuwachs und die
+Verbesserung der Kompromissbewertung über ein gleitendes Fenster von
+40 Generationen betrachtet. Ein Abbruch erfolgt nur, wenn beide absoluten
+Verbesserungen ihre konfigurierten Schwellen nicht überschreiten und bereits
+zu Beginn des Fensters eine zulässige Lösung vorlag. Die Schwellen bleiben
+voreingestellt ungesetzt; dadurch sind zunächst nur Laufzeit- und
+Generationsgrenze aktiv. Ihre Festlegung erfordert längere Referenzläufe mit
+mehreren Zufallsstartwerten. Die frühere Prüfung unveränderter Rasterzellen
+wird nicht mehr als Abbruchkriterium verwendet.
+
+Im Genotyp werden eine geordnete Teilmenge der möglichen Ziele, ganzzahlige
+Zielübernachtungen, ein Abreisedatum sowie Verkehrs-, Zeitfenster- und
+Optionspräferenzen und bei Hotelplanung Hotelauswahlschlüssel geführt.
+Damit können auch Verbindungen mit gleicher Abfahrtszeit, aber unterschiedlichen
+Preisen oder Fahrtdauern getrennt ausgewählt werden. Bei Rekombination und
+Routenmutation bleiben Aufenthalte an Ziele und Transportpräferenzen an
+gerichtete Übergänge gebunden. Die Mutation umfasst zusätzlich das Einfügen und
+Umkehren von Routenabschnitten, den Austausch optionaler Ziele sowie den Transfer
+einer Nacht zwischen Stopps.
+Das Abreisedatum wird aus einem der Elternteile übernommen und kann durch
+Mutation auf einen anderen zulässigen Tag verschoben werden. Die
+Initialisierung verteilt die Individuen möglichst gleichmäßig auf die
+möglichen Abreisetage.
+
+Eine zusätzliche optionale Mutation verändert die beiden
+Verbindungen vor und nach einem Stopp gemeinsam. Dabei werden Verkehrs- und
+Zeitfensterpräferenzen gekoppelt, Optionsschlüssel neu gezogen und gegebenenfalls
+der Abreisetag verschoben. Nach erfolgreicher Dekodierung werden die tatsächlich
+ausgewählten Verbindungen wieder in die Transportgene übertragen, damit auch
+bei nicht verfügbaren Verkehrs- oder Zeitfensterpräferenzen die tatsächliche
+Auswahl vererbt wird. Die gekoppelte Mutation bleibt zunächst deaktiviert;
+konservative Vorfilterung und Zwischenspeicherung bleiben aktiv.
+
+Für die zeitliche Zulässigkeit ersetzt der Prototyp den pauschalen Nachtversatz
+aus Abschnitt~\ref{subsec:dekodierung} durch konkrete, zeitzonenbezogene
+Abfahrts- und Ankunftszeitpunkte. Die Reisedauer bezeichnet nun eine exakte
+Anzahl von Kalendertagen einschließlich Abreise und Rückkehr. Acht Tage
+innerhalb des Zeitraums vom 10.\ bis zum 23.\ Dezember erlauben Abreisen
+zwischen dem 10.\ und dem 16.\ Dezember; die Rückkehr muss jeweils am achten
+Tag erfolgen. Zu- und Abgangszeiten werden dabei mitgerechnet und dürfen
+die gewählten Tagesgrenzen nicht überschreiten. Eine Rückkehr an einem
+früheren Tag ist nicht mehr zulässig. Fahrplan- und Hotelindizes bleiben
+auf den ersten Tag des gesamten Angebotszeitraums bezogen, sodass spätere
+Abreisen die zugehörigen späteren Angebote nutzen. Ankunftsdatum,
+Mindestaufenthalt und Rückkehrfrist werden gemeinsam geprüft. Eine erforderliche
+Zielübernachtung muss im voreingestellten Schlaffenster mindestens sechs Stunden
+Ruhe ermöglichen. Nachtfahrten werden anhand ihrer zeitlichen Überschneidung
+mit diesem Fenster bewertet, nicht allein anhand der Abfahrtsstunde.
+
+Der Transportdekoder folgt für eine feste Route und Nachtverteilung den
+genetischen Verkehrs-, Zeitfenster- und Optionspräferenzen. Fehlt eine zeitlich
+zulässige Fortsetzung, bleibt der Kandidat ausdrücklich unzulässig. Andere
+Verbindungsfolgen entstehen durch neue oder veränderte Gene, nicht durch
+zusätzliche Tiefensuche innerhalb einer Bewertung. Die exakte Reisedauer
+und die Ruhebedingungen werden nicht gelockert.
+
+Zusätzlich gelten nun zwei harte Präferenzrestriktionen:
+Jede einzelne angebotene Fernverbindung darf höchstens 24 Stunden dauern.
+Gemessen wird die Differenz zwischen planmäßiger Abfahrt und Ankunft in UTC,
+einschließlich aller Umstiege und Zwischenaufenthalte innerhalb des Angebots.
+Genau 24 Stunden sind erlaubt. Die Grenze gilt gleichermaßen für Bahn, Bus,
+Bahn-Bus-Kombinationen und Flüge, ohne Fernstrecken-Ausnahme. Zu- und Abgänge
+zählen nicht zu dieser Grenze, bleiben aber für Reisegrenzen, Ruhe und
+Zielaufenthalt relevant. Die Dauer aller Fahrten zusammen ist nicht begrenzt.
+Jedes Ziel muss während seines gesamten Aufenthalts mindestens neun verfügbare
+Stunden im konfigurierten lokalen Fenster, aktuell 09:00--20:00, erreichen; dies ist keine Garantie
+für neun Stunden Besichtigungszeit. Ein konfigurierter Wert null deaktiviert
+nur diese Tageszeitrestriktion. Die konfigurierten Budget- und Klimagrenzen werden
+bei erfolgloser Suche nicht gelockert. Die Abschlussprüfung berechnet die
+Zeitrestriktionen erneut aus den Verbindungen und vertraut keinen
+gespeicherten Zulässigkeitsmarkierungen oder manipulierten Aufenthaltswerten.
+
+Die konservative Vorfilterung vergleicht Transportangebote nur bei
+übereinstimmenden zeitlichen und weiteren modellierten
+Zulässigkeitseigenschaften, einschließlich Verkehrsmittel, Stationen und
+Zeitreserven. Nur strikt dominierte Angebote entfallen; identische Zielwerte
+unterschiedlicher Angebote bleiben erhalten. Ein höherer Preis oder höhere
+Emissionen allein rechtfertigen keine Entfernung einer Verbindung mit anderem
+Zeitverlauf. Zeitzonenbezogene Verbindungseigenschaften, zeitlich zulässige
+Optionsmengen werden lauflokal wiederverwendet. Statische Verbindungsmetadaten,
+UTC-Kalenderfenster liegen getrennt von dynamischen
+Anfragen vor; ihre Größe ist durch Fahrplan und Reisezeitraum begrenzt.
+Der dynamische LRU-Zwischenspeicher enthält höchstens 4.096 Anfragen.
+Wiederholte zeitliche Anfragen nutzen gemeinsame Optionsmengen.
+Unvollständige Pläne behalten ihre Restriktionsverletzungen für die Selektion.
+Bis zu 1.024 erfolgreiche vollständige Dekodierungen werden mit dem exakten
+Eingabegenotyp einschließlich ungerundeter kontinuierlicher Gene, Datum,
+Route, Nächten und Hotelgenen gespeichert. Die zurückgegebenen
+Transportdaten, Aufenthalte und kodierten Gene sind unabhängige Kopien.
+Die lokalen Hoteloptionen werden einmal je Suchlauf vorbereitet; es gibt
+keinen zusätzlichen Hotelkombinationscache. Gleiche Zielwerte unterschiedlicher
+Hotels bleiben getrennt erhalten. Laufzeitabbrüche werden weder als Unzulässigkeit
+gespeichert noch durch einen Cachetreffer übergangen. Nach
+Änderungen an Daten oder Modellparametern ist ein neuer Suchkontext erforderlich.
+
+Eine getrennt schaltbare Transportgruppen-Selektion verändert bewusst die
+gewöhnliche individuenbezogene NSGA-II-Auswahl. Vollständige zulässige Pläne
+werden anhand ihrer exakten Verbindungsfolge gruppiert, nicht anhand ihrer
+Zielwerte oder Hotels. Ein Turnier zieht zwei unterschiedliche Gruppen;
+deren Repräsentanten werden anhand von Restriktionsverletzung, Rang und
+Crowding mit zufälliger Auflösung gleicher Werte bestimmt. Viele Hotelvarianten
+erzeugen damit keine zusätzlichen Gruppentickets. Die Überlebendenselektion
+berücksichtigt zuerst einen Repräsentanten je Gruppe und erst danach weitere
+Hotelvarianten. Fehlen Gruppen, erfolgt höchstens eine begrenzte Auffüllung
+mit Immigranten unter derselben Frist. Unzulässige und unvollständige Pläne
+behalten ihre exakten Genotypunterschiede. Alle ausgewerteten Hotelvarianten
+werden vor dieser Auswahl dem historischen Archiv angeboten; Empfehlungen
+stammen weiterhin aus diesem Archiv.
+
+Budget- und Emissionsgrenzen werden durch zulässigkeitsbasierte Dominanz
+behandelt. Verletzungen werden zur Vergleichbarkeit normiert. Fehlende
+Verbindungen oder Unterkünfte ergeben ausdrücklich unzulässige Pläne und keine
+künstlichen Ersatzangebote. Eine separate Prüfung kontrolliert die dekodierten
+Verbindungen, Aufenthalte und Summen vor der Ausgabe erneut.
+
+Alle Optimierereinstellungen stehen nun in
+\texttt{src\textbackslash{}optimizer\textbackslash{}settings.toml}.
+Die Abschnitte für Suche und Zielgewichtung stehen zuerst: Populationsgröße,
+Generations- und Zeitlimit, Zufallsstartwert, Rekombinations- und Mutationsrate
+sowie \texttt{BALANCED\_SOLUTION\_WEIGHTS} im Abschnitt
+\texttt{objective\_balancing}. Manuelle Empfehlungsskalen entfallen;
+die separaten Hypervolumenparameter bleiben konfigurierbar.
+Die aktuelle Generationsgrenze beträgt 1.500; die dokumentierten älteren
+300-Generationen-Läufe behalten ihren damaligen Versuchsaufbau.
+Danach folgen deutlich getrennte Abschnitte für Zwischenspeicher, optionale
+genetische Operatoren, Qualitätsdiagnostik sowie Zeit- und Diskomfortmodell.
+Gekoppelte Mutation und Transportgruppenselektion sind nutzbare, aber
+voreingestellt deaktivierte genetische Optionen. Die gewöhnliche Mutationsrate
+gilt unabhängig für mehrere Gene und Operationen, nicht einmal pro Reiseplan.
+Empfehlungsgewichte verändern die Auswahl aus dem Archiv, nicht die Zucht.
+Reisevorgaben bleiben in \texttt{src\textbackslash{}config.py}, Referenzdaten
+und Zeitreserven in \texttt{src\textbackslash{}helpers\textbackslash{}assumptions.toml}.
+Die drei bisherigen Optimierer-TOMLs wurden zusammengeführt. Doppelte
+Schlüsselnamen über Abschnitte oder Dateien hinweg führen nun zu einem Fehler
+statt zu einer vom Ladepfad abhängigen stillen Überschreibung.
+
+Das Skript \texttt{src\textbackslash{}benchmark.py} vergleicht voreingestellt
+den konfigurierten genetischen Optimierer bei gleichen Zeitbudgets und
+mehreren Zufallsstartwerten. Optional lassen sich gekoppelte Mutation,
+Transportgruppenselektion oder deaktivierte Vorfilterung beziehungsweise
+Zwischenspeicher vergleichen. Budget, Klimagrenze und übriges Reisemodell
+bleiben unverändert; es gibt keine versteckten Vergleichsprofile mit anderen
+Problemgrenzen.
+Es verwendet ausschließlich validierte lokale Angebotscaches, deaktiviert
+Anbieterzugriffe und den qualitätsbasierten Abbruch und verändert keine
+Konfigurationsdatei. Die Reihenfolge der Varianten wird je Zufallsstartwert
+gemischt. Dateneinlesen liegt außerhalb des Suchbudgets, der Aufbau der
+laufabhängigen Suchstrukturen innerhalb; Abschlussarbeiten einschließlich
+Ergebnisprüfung können das Budget geringfügig überschreiten.
+
+Die JSON-Ausgabe enthält Konfiguration, Quell- und Angebotsprüfsummen,
+Verlauf, Zielbestwerte, Transportkennzahlen und Archivzusammenfassungen.
+Getrennt erfasst werden Datenladen, Suchaufbau, Initialisierung, erste
+Zulässigkeit und abschließende Prüfung.
+Kandidatenscans zählen die nach zeitlicher Filterung betrachteten Optionen
+des genetischen Dekoders. Laufzeitabbrüche werden ausdrücklich gezählt. Dauerablehnungen
+zählen einmalig die ungeeigneten Eingabeangebote, Tageszeitablehnungen die
+Optionen beim Aufbau zeitlicher Anfragen, nicht hypothetische Reisen.
+Ergebniswiederverwendung, tatsächliche Dekoderaufrufe, Cachebelegung und
+-verdrängung ergänzen die Zahl versuchter Genotypen. Transportneuheit pro
+Sekunde bezieht sich auf verschiedene zulässige Transporte seit Suchbeginn.
+Gruppenzahl und größter Gruppenanteil beschreiben die Zuchtpopulation.
+Mediane, Spannweiten und paarweise Unterschiede bleiben nach Variante getrennt.
+Ein optionaler Klimaschwellenwert dient ausschließlich der Ergebnisauswertung;
+der frühere Wert von 181,1 kg ist nicht mehr voreingestellt. Beispielhaft lässt
+sich der Vergleich mit
+\texttt{uv run python src\textbackslash{}benchmark.py}
+und den Argumenten
+\texttt{--seconds 60 --seeds 11 42 97 --output comparison.json}
+ausführen.
+Mit \texttt{--variants genetic no\_pruning no\_cache} lassen sich
+die Standardauswertung und Varianten ohne Vorfilterung oder Zwischenspeicher
+gegenüberstellen. Das Profil \texttt{no\_result\_reuse} deaktiviert nur die
+Wiederverwendung vollständiger Dekodierungen. \texttt{coordinated} setzt
+die gekoppelte Mutationsrate auf 0,2, \texttt{transport\_diversity} aktiviert
+die Transportgruppenselektion; alle übrigen Suchwerte bleiben konfiguriert.
+Mit \texttt{--population} lässt sich für alle
+Läufe einer Vergleichsserie dieselbe abweichende Populationsgröße festlegen.
+Dies ist insbesondere für kurze Pilotversuche sinnvoll, in denen die
+Initialisierung sonst das gesamte Zeitbudget verbraucht. Solche Ergebnisse
+müssen getrennt von Vergleichen mit der regulären Populationsgröße
+interpretiert werden.
+Änderungen des Reisemodells müssen ausdrücklich in der Konfiguration erfolgen
+und getrennt von reinen Suchparametervergleichen interpretiert werden.
+Das Profil \texttt{recommended} dient dagegen der Prüfung der regulär
+eingestellten Parameter.
+
+Bei aktivierter Hotelplanung zeigt die Ergebnistabelle abwechselnd eine
+Verbindung und den anschließenden Hotelaufenthalt. Hotelzeilen enthalten Name,
+lokales Check-in- und Check-out-Datum, Übernachtungsanzahl sowie Kosten und
+geschätzte Emissionen des gesamten Aufenthalts. Die ergänzenden Verkehrsdetails
+verweisen auf die Zeilennummern dieser gemeinsamen Tabelle.
+
+Ohne aktivierte Hotelplanung berücksichtigt das Kostenbudget ausschließlich
+Fernverkehrstickets. Unterkunft, Flughafenzubringer, lokaler Verkehr, optionales
+Gepäck und Aktivitäten sind nicht im Budget enthalten und werden als Ausschlüsse
+ausgewiesen. Für Zu- und Abgänge werden konfigurierbare Zeitreserven angesetzt;
+es handelt sich dabei nicht um verifizierte Anschlussverbindungen. Eine optionale
+Hotelplanung lädt Angebote über die Google-Hotels-Schnittstelle für jede
+Zielstadt und einzelne Nacht des Reisezeitraums. Die Ergebnisse werden als CSV
+gespeichert; separate JSON-Metadaten enthalten Suchparameter, Abrufzeitpunkt und
+Prüfsumme. Version~3 speichert zusätzlich Grundpreis, Steuern und Gebühren, den
+Gesamtpreis, die von der Hotel-Schnittstelle gelieferte CO$_2$-Schätzung je Nacht
+sowie früheste Check-in- und späteste Check-out-Zeit. Version~4 setzt eine
+verifizierte strukturierte Datumssuche voraus. Ältere Hotelcaches werden
+einmalig neu aufgebaut. Geänderte Zielstädte, Qualitätsfilter, Belegung oder Reisedaten
+lösen einen erneuten Abruf aus. Leere Suchergebnisse
+werden ebenfalls zwischengespeichert, fehlgeschlagene Abrufe dagegen nicht.
+Synthetische Ersatzangebote werden nicht erzeugt.
+
+Die Hoteldaten sind indikative Preise für ein Zimmer in Euro. Die Suchanfrage
+enthält die Zielstadt als Suchtext; Datum, Aufenthaltsdauer, Personenzahl und
+Währung werden im URL-Parameter \texttt{ts} als Base64url-kodierte
+Protobuf-Nachricht übertragen. Die undokumentierte Google-Schnittstelle kann
+sich ändern. Der zurückgelieferte Suchkontext muss Datum, Personenzahl und
+Währung bestätigen, auch bei leeren Ergebnissen. Einzelangebote mit fehlenden
+oder abweichenden Datumsangaben werden verworfen; bleiben ausschließlich
+unbrauchbare Angebote, gilt der Abruf als fehlgeschlagen und wird nicht als
+leeres Ergebnis gespeichert. Die Abfrage umfasst die gelieferte Ergebnisseite,
+nicht garantiert sämtliche verfügbaren Hotels. Nachtkosten und Preisgrenze
+verwenden den Gesamtpreis einschließlich ausgewiesener Steuern und Gebühren.
+Die Summe einzelner Nachtangebote garantiert weder
+die Verfügbarkeit eines durchgehenden Aufenthalts noch einen Endpreis inklusive
+aller Steuern und Gebühren. Fehlende Nächte bedeuten lediglich, dass kein
+nutzbares Angebot vorliegt. Hotelidentitäten werden bevorzugt über Google-Maps-
+Kennungen, ersatzweise über Eigenschaftskennungen
+zusammengeführt; Sterneklasse, Gästebewertung und Bewertungsanzahl werden getrennt
+gefiltert. Nicht klassifizierte Unterkünfte sind bei einer Mindestklasse über
+einem Stern separat zuschaltbar. Hostels und nicht klassifizierte Unterkünfte
+erhalten eigene Annahmen für den Diskomfort; eine Umweltzertifizierung
+wird nicht unterstellt. Zimmerart und Belegung müssen insbesondere bei
+Hostelangeboten vor einer Buchung geprüft werden.
+Die Hotel-Klimawirkung wird beim Laden unverändert aus dem Cache gelesen und
+während der Optimierung nicht neu berechnet; sie ist eine Benchmark-Schätzung der
+Schnittstelle (Sterneklasse bzw.\ Hostel), kein vom Hotel gemeldeter Messwert.
+Der Hoteldiskomfort bleibt eine lokal konfigurierbare Annahme.
+
+Die Wartezeit am Hotel wird mit den hotelspezifischen Zeiten bewertet, weil
+Gepäck- und Wartebelastung davon abhängen, wann ein Zimmer tatsächlich
+zugänglich ist: Liegt die Ankunft mehr als drei Stunden vor dem frühesten
+Check-in, wird jede weitere Stunde mit einem geringen Diskomfort belegt. Beim
+Check-out gilt eine einmalige Pauschale, wenn die Abfahrt mehr als eine Stunde
+nach der spätesten Check-out-Zeit liegt, da das Gepäck bis dahin im Hotel
+bleiben kann, man aber für die Abholung zurückkehren muss; fährt die Verbindung
+vor dem Check-out, entfällt die Pauschale. Fehlen Zeiten im Cache, gelten die
+Standardwerte der Konfiguration. Beim Dominanzvergleich der Hotelalternativen
+werden Check-in- und Check-out-Zeit als zusätzliche Kriterien geführt, damit
+kein Hotel mit günstigeren Zeiten fälschlich entfernt wird.
+
+Die Bodendaten kombinieren FlixBus- und FlixTrain-Angebote mit europäischen
+Bahnverbindungen des Transitous-basierten Bahnproviders. Dessen Fahrpreise sind
+Schätzungen; die API kennzeichnet diese getrennt von den Flix-Angebotspreisen.
+Der Transitcache (Schema 3) speichert die vollständigen API-Antwortobjekte
+einschließlich \texttt{co2\_kg} und der Schätzkennzeichen. Ältere Flix-only-Caches
+werden neu abgefragt. Die Transit-API schätzt die Emissionen beim Abruf;
+der Datenlader übernimmt den zurückgegebenen Wert und skaliert ihn einmalig
+auf die Personenzahl. Die Optimierung summiert nur diese gespeicherten Werte,
+ohne Emissionen aus Entfernung, Dauer oder Verkehrsmittel neu zu berechnen.
+Flugangebote werden mit mehreren Alternativen,
+Zeitstempeln und getrennten Flug- und Umsteigezeiten gespeichert.
+Neue Optimierer-Fluganfragen verwenden die konfigurierte maximale
+Verbindungsdauer, auf ganze Minuten aufgerundet, statt einer separaten
+12-Stunden-Grenze. Die lokale Prüfung bleibt sekundengenau. Die
+Abfragedauer wird in neuen Caches dokumentiert; bei älteren Caches gilt
+die ursprüngliche Suchabdeckung als unbekannt. Eine geänderte Dauergrenze
+löst keinen automatischen Neuabruf aus und kann nie abgefragte Angebote
+nicht nachträglich verfügbar machen. Allgemeine API-Aufrufer und
+Umstiegsbeschränkungen bleiben unverändert. Alle drei
+Angebotscaches bleiben ohne zeitliche Begrenzung gültig, solange die Suchparameter
+übereinstimmen und die gespeicherten Daten intakt sind. Abrufzeitpunkte dienen nur
+der Dokumentation und lösen keinen erneuten Abruf aus.
+
+Netzwerk-Zeitüberschreitungen und Verbindungsabbrüche bei Flugabfragen werden
+höchstens dreimal versucht, mit zwei beziehungsweise vier Sekunden Wartezeit
+vor den Wiederholungen. Verbindungsaufbau und Lesen verwenden Zeitlimits von
+zehn beziehungsweise 30 Sekunden. Nach ausgeschöpften Versuchen wird ein
+Fehler mit Strecke und Datum gemeldet; TLS-, HTTP- und Nutzdatenfehler
+werden nicht automatisch wiederholt. Fehlgeschlagene Abrufe ersetzen keine
+vorhandene vollständige Cachedatei.
+
+Die JSON-Nutzdaten der Flugschnittstelle werden unabhängig von nachgestellten
+JavaScript-Callback-Metadaten dekodiert. Explizite Anbieterfehler und
+mehrdeutige Nutzdaten werden nicht als leere Suchergebnisse gespeichert.
+
+Der Flugcache verwendet nun Version~3 mit dem verbindlichen Feld
+\texttt{co2\_kg} und der Quellenangabe Google Flights. Gespeichert wird der
+API-Wert \texttt{carbon.emission} für die vollständige angebotene Flugreise,
+von Gramm in Kilogramm umgerechnet: 417.000 Gramm ergeben 417 kg.
+Der typische Routenwert \texttt{typical\_on\_route} ist kein Ersatz dafür.
+Es gibt weder eine Schätzung aus Flugstunden noch einen zusätzlichen
+Luftfahrtmultiplikator. Zielfunktion, Ressourcenschranken und Ausgabe verwenden
+denselben Wert. Angebote ohne Emissionsangabe werden mit Warnung ausgelassen;
+ungültige numerische Angaben führen zu einem Fehler. Alte Flugcaches ohne
+diese Werte werden beim nächsten normalen Laden neu abgefragt, nicht
+nachträglich mit Schätzwerten ergänzt. Bis zu einem erfolgreichen Abruf
+bleibt die vorhandene Cachedatei unverändert. Offline-Vergleiche verweigern
+einen solchen Neuabruf und benötigen daher bereits erneuerte Caches.
+
+Die API-Emissionen bleiben Anbieterschätzungen, keine gemessenen Emissionen
+einer zukünftigen Reise. Boden- und Hotelwerte bleiben die bisherigen
+lokalen Schätzungen; Flughafenzubringer sind weiterhin nur zeitlich erfasst.
+Weder die Fahrplandaten noch diese Näherungen ersetzen eine Buchungsprüfung.

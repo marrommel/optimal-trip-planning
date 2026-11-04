@@ -29,3 +29,11 @@
 *.synctex(busy)
 *.synctex.gz
 !**/img/*.pdf
+
+# Generated hotel search cache and atomic-write staging files
+optimizer/hotel_quotes_v1.csv
+optimizer/hotel_quotes_v1.json
+optimizer/hotel_quotes_v1.*.tmp
+optimizer/hotel_quotes_v2.csv
+optimizer/hotel_quotes_v2.json
+optimizer/hotel_quotes_v2.*.tmp

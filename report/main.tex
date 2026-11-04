@@ -15,18 +15,10 @@
 % ===== Seitenränder =====
 \usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
 
-% ===== Literaturverzeichnis (Autor-Jahr-Stil) =====
+% ===== Literaturverzeichnis (IEEE-Stil) =====
 \usepackage[
   backend=biber,
-  style=authoryear,
-  sorting=nyt,
-  dashed=false,
-  maxcitenames=3,
-  maxbibnames=99,
-  uniquelist=false,
-  uniquename=false,
-  ibidtracker=false,
-  pagetracker=false,
+  style=ieee,
   natbib=true
 ]{biblatex}
 \addbibresource{bibliography.bib}
@@ -173,6 +165,7 @@ Verfassern.
 \input{sections/modellierung}
 \input{sections/loesungsverfahren}
 \input{sections/prototypische_umsetzung}
+\input{sections/evaluierung}
 \input{sections/fazit}
 
 % ===== LITERATURVERZEICHNIS =====

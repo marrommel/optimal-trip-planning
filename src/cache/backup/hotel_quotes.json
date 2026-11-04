@@ -1,0 +1,25 @@
+{
+  "schema_version": 3,
+  "cities": [
+    "London",
+    "Paris",
+    "Madrid",
+    "Barcelona",
+    "Rome"
+  ],
+  "travel_range": [
+    "2026-12-10",
+    "2026-12-23"
+  ],
+  "settings": {
+    "min_stars": 1,
+    "min_rating": 3.5,
+    "min_reviews": 30,
+    "max_price_per_night": 70.0,
+    "include_unstarred": false,
+    "adults": 1,
+    "currency": "EUR"
+  },
+  "fetched_at": "2026-11-03T07:24:01.463337Z",
+  "csv_sha256": "83dd916b88b4fb738f8e89649c059796f30141f3f5e6e429a5d40cb26912330f"
+}

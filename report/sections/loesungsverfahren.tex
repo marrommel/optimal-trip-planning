@@ -95,7 +95,7 @@ Verwendet wird daher ein Order Crossover. Dabei wird ein zusammenhängender Absc
 
 Für die übrigen Genabschnitte stellt sich die Frage, woran sie gebunden sind. Die Aufenthaltsdauer gehört inhaltlich zum Reiseziel und nicht zur Routenposition, denn wie lange sich ein Aufenthalt lohnt, hängt vom Ort ab. Sie wird deshalb gemeinsam mit dem Ziel vererbt, das sie beschreibt. Die Transportwahl gehört dagegen zum Übergang zwischen zwei Zielen, und dieser Übergang entsteht beim Order Crossover teilweise neu. Für neu gebildete Übergänge wird $t_i$ daher nicht vererbt, sondern auf eine belegte Klasse gesetzt und der weiteren Optimierung durch Mutation überlassen.
 
-Ob die Rekombination in diesem Verfahren überhaupt einen Beitrag leistet, ist offen. Sie ist dann wirksam, wenn die Eltern komplementäre Stärken besitzen, etwa wenn einer eine günstige Route und der andere eine geschickte Zeitaufteilung gefunden hat. Bei stark lokal geprägten Problemen kann eine rein mutationsbasierte Suche jedoch ebenso gute Ergebnisse liefern, da die Rekombination bestehende gute Teilstrukturen auch zerstören kann. Der Entwurf hält die Rekombination deshalb abschaltbar, sodass ihr Beitrag experimentell durch den Vergleich von Läufen mit und ohne sie bestimmt werden kann.
+Ob die Rekombination in diesem Verfahren überhaupt einen Beitrag leistet, ist offen. Sie ist dann wirksam, wenn die Eltern komplementäre Stärken besitzen, etwa wenn einer eine günstige Route und der andere eine geschickte Zeitaufteilung gefunden hat. Bei stark lokal geprägten Problemen kann eine rein mutationsbasierte Suche jedoch ebenso gute Ergebnisse liefern, da die Rekombination bestehende gute Teilstrukturen auch zerstören kann.
 
 \subsection{Selektion und Abbruch}
 \label{subsec:selektion}

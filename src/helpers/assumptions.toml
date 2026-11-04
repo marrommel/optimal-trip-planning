@@ -1,0 +1,43 @@
+[hotel_defaults]
+CHECK_IN_HOUR = 14.0               # Used only when the cached hotel quote has no check-in time
+CHECK_OUT_HOUR = 12.0              # Used only when the cached hotel quote has no check-out time
+HOTEL_REQUEST_DELAY_SECONDS = 1.0  # Pause between city/night requests on cache misses
+ALLOW_SYNTHETIC_HOTELS = false     # remove this setting
+
+[timing_allowances]                # Allowances, NOT verified transfers or quoted fares. Costs are excluded.
+FLIGHT_CHECK_IN_HOURS = 2.0
+FLIGHT_EXIT_HOURS = 1.0
+STATION_ACCESS_HOURS = 0.5
+STATION_EXIT_HOURS = 0.5
+
+[AIRPORT_ACCESS_HOURS]             # Hours from the city/home to each airport
+STR = 1.0
+FKB = 2.0
+FRA = 2.0
+MUC = 3.0
+CGN = 3.0
+HHN = 4.0
+LHR = 1.0
+LGW = 1.0
+STN = 2.0
+LTN = 2.0
+CDG = 1.5
+ORY = 1.0
+BVA = 2.0
+MAD = 1.0
+BCN = 1.0
+FCO = 1.5
+CIA = 1.0
+
+[CITY_TIMEZONES]
+Stuttgart = "Europe/Berlin"
+Frankfurt = "Europe/Berlin"
+Munich = "Europe/Berlin"
+Cologne = "Europe/Berlin"
+Berlin = "Europe/Berlin"
+Hamburg = "Europe/Berlin"
+London = "Europe/London"
+Paris = "Europe/Paris"
+Madrid = "Europe/Madrid"
+Barcelona = "Europe/Madrid"
+Rome = "Europe/Rome"
