@@ -10,7 +10,7 @@ from accommodation import HotelFrontiers
 from config import NUM_DESTINATIONS, DESTINATIONS
 from data_loader import CITIES, HOTELS_DB
 from decoder import MODES, TransportSearch, genotype_key, transport_key
-from models import Chromosome
+from models import Chromosome, Phenotype
 from objectives import evaluate, dominates
 from timing import departure_days, minimum_nights
 
@@ -45,14 +45,18 @@ def repair_nights(ind: Chromosome):
         ind.nights[random.choice(donors)] -= 1
 
 
-def init_population(size: int) -> list[Chromosome]:
+def init_population(size: int, *, greedy: bool = True) -> list[Chromosome]:
+    """Mix bounded greedy seeding with random plans; immigrants stay random."""
+    from baselines import greedy_seeds  # Deferred: baselines builds genes with set_edges.
     required = [index for index, name in CITIES.items() if name in config.MUST_VISIT_DESTINATIONS]
-    population = []
     available_starts = list(departure_days())
     random.shuffle(available_starts)
     starts = [available_starts[i % len(available_starts)] for i in range(size)]
     random.shuffle(starts)
-    for start_day in starts:
+    population = greedy_seeds(int(size * config.GREEDY_SEED_FRACTION)) if greedy else []
+    for ind, start_day in zip(population, starts):
+        ind.start_day = start_day
+    for start_day in starts[len(population):]:
         pool = [c for c in range(1, TOTAL_AVAILABLE_DESTINATIONS + 1) if c not in required]
         route = required + random.sample(pool, NUM_DESTINATIONS - len(required))
         random.shuffle(route)
@@ -68,6 +72,31 @@ def init_population(size: int) -> list[Chromosome]:
     return population
 
 
+def evaluate_candidate(ind: Chromosome, hotels: HotelFrontiers | None,
+                       search: TransportSearch, reuse_transport: Phenotype | None = None) -> Chromosome:
+    """Decode and score exactly one chromosome, including its hotel genes.
+
+    `reuse_transport` supplies an already decoded transport phenotype for moves
+    that cannot change transport: the result cache is keyed on the complete
+    genotype, hotel genes included, so a hotel-only neighbour would otherwise
+    pay for a full re-decode it cannot benefit from."""
+    original = clone(ind)
+    if reuse_transport is not None:
+        if not (config.OPTIMIZE_HOTELS and hotels is not None):
+            raise ValueError("Transport reuse applies only to hotel-gene moves")
+        ind.phenotype = hotels.select(reuse_transport, ind.hotel_choice)
+        evaluate(ind)
+    else:
+        transport = search.decode_and_encode(ind)
+        ind.phenotype = (hotels.select(transport, ind.hotel_choice)
+                         if config.OPTIMIZE_HOTELS and hotels is not None else transport)
+        evaluate(ind)
+        if ind.constraint_violation == 0:
+            search.remember(original, ind, transport)
+    search.record(original, ind)
+    return ind
+
+
 def evaluate_population(pop: list[Chromosome], hotels: HotelFrontiers | None = None,
                         search: TransportSearch | None = None,
                         on_evaluated: Callable[[list[Chromosome]], None] | None = None) -> None:
@@ -80,14 +109,7 @@ def evaluate_population(pop: list[Chromosome], hotels: HotelFrontiers | None = N
     for ind in pop:
         if search.expired() and evaluated:
             break
-        original = clone(ind)
-        transport = search.decode_and_encode(ind)
-        ind.phenotype = (hotels.select(transport, ind.hotel_choice)
-                         if config.OPTIMIZE_HOTELS and hotels is not None else transport)
-        evaluate(ind)
-        if ind.constraint_violation == 0:
-            search.remember(original, ind, transport)
-        search.record(original, ind)
+        evaluate_candidate(ind, hotels, search)
         evaluated.append(ind)
         if on_evaluated is not None:
             on_evaluated([ind])
@@ -363,7 +385,7 @@ def select_survivors(pop: list[Chromosome], size: int, hotels: HotelFrontiers | 
     unique = unique_individuals(pop)
     count = len(parent_groups(unique)) if config.TRANSPORT_GROUP_SELECTION else len(unique)
     if count < size and (search is None or not search.expired()):
-        immigrants = init_population(size - count)
+        immigrants = init_population(size - count, greedy=False)
         evaluate_population(immigrants, hotels, search, on_evaluated)
         unique = unique_individuals(unique + immigrants)
     if not unique:

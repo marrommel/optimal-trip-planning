@@ -31,10 +31,17 @@ TRANSPORT_RESULT_CACHE_SIZE = 1024 # LRU successful decodes; 0 disables reuse
 COORDINATED_MUTATION_RATE = 0.2    # Optional extra mutation of neighboring travel legs; [0, 1]
 TRANSPORT_GROUP_SELECTION = true # Phenotypic niching: select by decoded itinerary, not by hotel variant
 COMPLEMENTARY_PAIRING = false     # Choose the second parent to maximise objective-space distance.
+GREEDY_SEED_FRACTION = 0        # Share of the initial population built greedily; 0 disables.
+                                  # Capped at 0.25 to limit initialization bias; immigrants stay random.
+LOCAL_SEARCH_FRACTION = 0       # Best share of offspring refined by hill climbing; 0 disables
+LOCAL_SEARCH_MAX_STEPS = 3        # Accepted improvement steps per refined individual
+BOMB_STRENGTH = 0                 # Consecutive coarse mutations on stagnation; 0 disables local bombs
+BOMB_HV_MIN_GAIN = 0.0            # Hypervolume gain over the quality window that still counts as stagnant
 
 # ====================== ADVANCED: DIAGNOSTICS ===================
-# Fixed scales/reference make benchmark runs comparable. These do not affect
-# search unless BOTH optional early-stopping thresholds are explicitly enabled.
+# Fixed scales/reference make benchmark runs comparable. The window also
+# controls bomb detection/cooldown. With bombs disabled, optional early stopping
+# requires BOTH quality gain thresholds; with bombs enabled, plateaus trigger bombs.
 [quality_monitoring]
 QUALITY_WINDOW_GENERATIONS = 40
 QUALITY_SCALES = [2000.0, 1000.0, 2000.0]
@@ -97,3 +104,4 @@ HOTEL_HOSTEL_DISCOMFORT_PER_NIGHT = 12.0
 # Search  357/500  08:34        263.93      -2.00      108.7      +0.0        146.7      +0.0
 
 # seed31 Search  335/500  09:49        246.36      -7.01      108.7      +0.0        152.6      +0.0
+# seed 753 Done    393/500  10:00        228.51      +0.00      110.1      +0.0        144.0      +0.0

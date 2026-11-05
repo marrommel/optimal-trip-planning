@@ -17,11 +17,12 @@ from config import POPULATION_SIZE, MAX_GENERATIONS
 from data_loader import CITIES, HOTELS_DB, initialize_database, print_database_summary
 from decoder import TransportSearch
 from models import Chromosome
+import local_search
 from nsga2 import (initialize_population, evaluate_population, tournament_selection,
                                  crossover, mutate, select_survivors, unique_individuals, parent_groups,
-                                 complementary_partner)
+                                 complementary_partner, clone)
 from objectives import ObjectiveBalance, check_solution, objective_dominates, objective_values
-from progress import MutationSchedule, OffspringStats, ParetoArchive, QualityMonitor
+from progress import MutationSchedule, OffspringStats, ParetoArchive, QualityMonitor, bomb_schedule
 from timing import departure_days, elapsed_hours, minimum_nights, travel_window, trip_bounds
 
 
@@ -102,6 +103,20 @@ def validate_config():
         raise ValueError("Cache limits must be non-negative integers")
     if not 0 <= config.COORDINATED_MUTATION_RATE <= 1:
         raise ValueError("Coordinated mutation rate must be in [0, 1]")
+    for name in ("GREEDY_SEED_FRACTION", "LOCAL_SEARCH_FRACTION", "BOMB_HV_MIN_GAIN"):
+        value = getattr(config, name)
+        if type(value) not in (int, float) or not math.isfinite(value):
+            raise ValueError(f"{name} must be a finite number")
+    if (not math.isfinite(config.GREEDY_SEED_FRACTION) or not 0 <= config.GREEDY_SEED_FRACTION <= 0.25):
+        raise ValueError("GREEDY_SEED_FRACTION must lie in [0, 0.25] to limit initialization bias")
+    if not math.isfinite(config.LOCAL_SEARCH_FRACTION) or not 0 <= config.LOCAL_SEARCH_FRACTION <= 1:
+        raise ValueError("LOCAL_SEARCH_FRACTION must be in [0, 1]")
+    if type(config.LOCAL_SEARCH_MAX_STEPS) is not int or config.LOCAL_SEARCH_MAX_STEPS < 1:
+        raise ValueError("LOCAL_SEARCH_MAX_STEPS must be a positive integer")
+    if type(config.BOMB_STRENGTH) is not int or config.BOMB_STRENGTH < 0:
+        raise ValueError("BOMB_STRENGTH must be a non-negative integer; 0 disables local bombs")
+    if not math.isfinite(config.BOMB_HV_MIN_GAIN) or config.BOMB_HV_MIN_GAIN < 0:
+        raise ValueError("BOMB_HV_MIN_GAIN must be finite and non-negative")
     if any(type(value) is not bool for value in (
             config.PRUNE_EQUIVALENT_TRANSPORT, config.TRANSPORT_GROUP_SELECTION,
             config.COMPLEMENTARY_PAIRING)):
@@ -292,6 +307,11 @@ def optimize(metrics: dict | None = None, *, balance: ObjectiveBalance | None = 
     observations = []
     schedule = MutationSchedule()
     offspring_stats = None
+    local_refinements = 0
+    local_bombs = 0
+    local_search_candidates = 0
+    bomb_candidates = 0
+    last_bomb = 0
     def observe_population(generation: int) -> None:
         groups = parent_groups(pop)
         observations.append(dict(
@@ -302,6 +322,7 @@ def optimize(metrics: dict | None = None, *, balance: ObjectiveBalance | None = 
             feasible_routes=len({tuple(p.route) for p in pop if not p.constraint_violation}),
             mutation_rate=schedule.rate, mutation_scale=schedule.scale,
             success_ratio=schedule.success_ratio,
+            local_refinements=local_refinements, local_bombs=local_bombs,
             offspring_unique_feasible=offspring_stats.unique_feasible if offspring_stats else None,
             offspring_duplicate_complete=offspring_stats.duplicate_complete if offspring_stats else None,
             objective_minima=[min(p.objectives[i] for p in archive.front) for i in range(3)]
@@ -331,6 +352,8 @@ def optimize(metrics: dict | None = None, *, balance: ObjectiveBalance | None = 
         offspring = []
         groups = parent_groups(pop) if config.TRANSPORT_GROUP_SELECTION else None
         while len(offspring) < POPULATION_SIZE:
+            if search.expired():
+                break
             parent1 = tournament_selection(pop, groups)
             parent2 = (complementary_partner(parent1, pop, balance.scales, groups)
                        if config.COMPLEMENTARY_PAIRING else tournament_selection(pop, groups))
@@ -343,7 +366,10 @@ def optimize(metrics: dict | None = None, *, balance: ObjectiveBalance | None = 
             offspring.extend((c1, c2))
         offspring = offspring[:POPULATION_SIZE]
         before = search.generated
-        evaluate_population(offspring, hotels, search, record_candidates)
+        if not search.expired():
+            evaluate_population(offspring, hotels, search, record_candidates)
+        else:
+            offspring = []
         offspring_candidates += search.generated - before
         offspring_stats = OffspringStats.measure(offspring, POPULATION_SIZE)
         # Step control counts a Pareto improvement over the parent, the criterion
@@ -353,15 +379,57 @@ def optimize(metrics: dict | None = None, *, balance: ObjectiveBalance | None = 
         successes = sum(1 for c in trials if c.constraint_violation == 0
                         and objective_dominates(c.objectives, c.parent_objectives))
         schedule.observe(successes, len(trials))
+        # Lamarckian refinement: the improved chromosome itself is bred from. It
+        # runs after step control, which must measure what mutation produced.
+        before = search.generated
+        local_refinements += local_search.refine(offspring, search, hotels, balance,
+                                                 on_evaluated=record_candidates)
+        local_search_candidates += search.generated - before
         archive.update(offspring)
         pop = select_survivors(pop + offspring, POPULATION_SIZE, hotels, record_candidates, search)
         quality = monitor.observe(archive)
+        elapsed = monotonic() - started
+        runtime_limit = elapsed >= config.MAX_RUNTIME_SECONDS
+        # Second stage: once ordinary variation has stalled on a local minimum,
+        # bomb the population with coarse mutations and re-optimize the result.
+        # Both batches compete under NSGA-II; the archive retains historical elites.
+        bombed_now = (config.BOMB_STRENGTH > 0 and not runtime_limit and not search.expired()
+                      and quality.hv_gain is not None and quality.hv_gain <= config.BOMB_HV_MIN_GAIN
+                      and generation - last_bomb >= monitor.window)
+        if bombed_now:
+            coarse = bomb_schedule()
+            bombed = []
+            for parent in pop:
+                if search.expired():
+                    break
+                child = clone(parent)
+                for _ in range(config.BOMB_STRENGTH):
+                    if search.expired():
+                        break
+                    mutate(child, coarse)
+                if search.expired():
+                    break
+                batch = [child]
+                before = search.generated
+                evaluate_population(batch, hotels, search, record_candidates)
+                bomb_candidates += search.generated - before
+                before = search.generated
+                local_refinements += local_search.refine(
+                    batch, search, hotels, balance, fraction=1.0, on_evaluated=record_candidates)
+                local_search_candidates += search.generated - before
+                bombed.extend(batch)
+            archive.update(bombed)
+            pop = select_survivors(pop + bombed, POPULATION_SIZE, hotels, record_candidates, search)
+            quality = monitor.observe(archive, replace_current=True)
+            local_bombs += 1
+            last_bomb = generation
         observe_population(gen + 1)
         elapsed = monotonic() - started
         history.append((gen + 1, elapsed, quality.hypervolume, quality.compromise,
                         schedule.rate, schedule.success_ratio))
         runtime_limit = elapsed >= config.MAX_RUNTIME_SECONDS
-        stagnation_limit = quality.stop
+        # A plateau with bombs enabled is a restart signal, not a stop signal.
+        stagnation_limit = quality.stop and config.BOMB_STRENGTH == 0
         report_progress()
         monitor.reset_report_counts()
         if runtime_limit:
@@ -389,6 +457,7 @@ def optimize(metrics: dict | None = None, *, balance: ObjectiveBalance | None = 
             initialization_candidates=initialization_candidates, offspring_candidates=offspring_candidates,
             first_feasible_seconds=search.first_feasible_seconds,
             final_verification_seconds=monotonic() - verification_started,
+            search_seconds=verification_started - started,
             hypervolume=quality.hypervolume, compromise=quality.compromise,
             balanced_solution_scales=balance.scales, balanced_solution_weights=balance.weights,
             objective_minima=[min(p.objectives[i] for p in feasible_front) for i in range(3)] if feasible_front else None,
@@ -412,6 +481,8 @@ def optimize(metrics: dict | None = None, *, balance: ObjectiveBalance | None = 
             largest_parent_group_share=max(map(len, parent_groups(pop))) / len(pop),
             history=history,
             final_mutation_rate=schedule.rate, final_success_ratio=schedule.success_ratio,
+            local_refinements=local_refinements, local_bombs=local_bombs,
+            local_search_candidates=local_search_candidates, bomb_candidates=bomb_candidates,
             observations=observations,
             archive_by_start=dict(sorted(Counter(p.start_day for p in feasible_front).items())))
     return feasible_front

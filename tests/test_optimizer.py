@@ -567,6 +567,9 @@ class ProgressTests(unittest.TestCase):
                 stack.enter_context(patch.multiple(main, POPULATION_SIZE=2, MAX_GENERATIONS=26))
                 stack.enter_context(patch.multiple(
                     config, MAX_RUNTIME_SECONDS=10 if reason == "runtime" else 1000,
+                    # Local bombs deliberately postpone a plateau stop; this case
+                    # covers the plain stopping contract, not the two-stage search.
+                    BOMB_STRENGTH=0,
                     QUALITY_WINDOW_GENERATIONS=2 if reason == "stagnation" else 100,
                     QUALITY_HV_MIN_GAIN=0 if reason == "stagnation" else None,
                     QUALITY_COMPROMISE_MIN_GAIN=0 if reason == "stagnation" else None))

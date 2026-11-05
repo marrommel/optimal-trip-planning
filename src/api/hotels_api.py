@@ -279,7 +279,7 @@ def _parse_hotel_response(
             rating = 0.0
             reviews_count = 0
 
-        # 4. Check-in / Check-out Times (CORRECTED INDEX: 17)
+        # 4. Check-in / Check-out Times
         raw_check_in = _get(h, 2, 17, 0)
         raw_check_out = _get(h, 2, 17, 1)
         check_in_time = raw_check_in.replace("\u202f", " ") if isinstance(raw_check_in, str) else None

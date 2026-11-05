@@ -105,6 +105,22 @@ class MutationSchedule:
         return self.scale < 1.0
 
 
+def bomb_schedule() -> MutationSchedule:
+    """A deliberately coarse schedule for the second stage of the two-stage search.
+
+    Once the ordinary step has decayed to a local minimum, small changes only
+    rediscover the same basin. A bomb mutates at the configured maximum rate and
+    with `coarse` operators, so route inversions, night steps of two and the
+    coordinated multi-leg change are all available again; the offspring are then
+    re-optimized by local search."""
+    schedule = MutationSchedule()
+    schedule.rate = config.MUTATION_RATE_MAX
+    schedule.scale = max(config.MUTATION_RATE_MAX / config.MUTATION_RATE, 1.0) if config.MUTATION_RATE else 1.0
+    if schedule.scale <= 1.0:
+        schedule.scale = 1.0 + 1e-9
+    return schedule
+
+
 @dataclass(frozen=True)
 class OffspringStats:
     generated: int
@@ -170,7 +186,7 @@ class QualityMonitor:
         self.additions = 0
         self.improved_regions = 0
 
-    def observe(self, archive: ParetoArchive) -> QualitySnapshot:
+    def observe(self, archive: ParetoArchive, *, replace_current: bool = False) -> QualitySnapshot:
         if self.balance is None:
             raise ValueError("Quality observation requires a balance reference derived before search")
         points = {tuple(v / s for v, s in zip(p.objectives, self.scales)) for p in archive.front}
@@ -184,7 +200,10 @@ class QualityMonitor:
             for cell in regions - self.previous_regions)
         self.previous_regions = regions
         self.previous_keys = archive.keys.copy()
-        self.history.append((hv, best))
+        if replace_current and self.history:
+            self.history[-1] = (hv, best)
+        else:
+            self.history.append((hv, best))
         hv_gain = score_gain = None
         if len(self.history) == self.window + 1 and self.history[0][1] is not None and best is not None:
             hv_gain = max(0.0, hv - self.history[0][0])

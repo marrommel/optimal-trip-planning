@@ -5,6 +5,9 @@ Run from the repository root:
 
 Uses the configured trip and model without overriding budget or carbon limits.
 Only the selected search variants, population, seed and stopping limits vary.
+Compare B1/B4/B6(ii) using --variants genetic greedy_seed local_search ils.
+Use the same --seconds and seeds for every variant; extra local evaluations
+trade generations for refinement, not necessarily for better quality.
 """
 
 import sys
@@ -35,17 +38,28 @@ def variants() -> dict[str, dict]:
     current = {key: getattr(config, key) for key in (
         "COORDINATED_MUTATION_RATE", "TRANSPORT_GROUP_SELECTION", "COMPLEMENTARY_PAIRING",
         "PRUNE_EQUIVALENT_TRANSPORT", "TRANSPORT_CACHE_SIZE", "TRANSPORT_RESULT_CACHE_SIZE",
-        "MUTATION_RATE_MIN", "MUTATION_RATE_MAX", "STEP_GROWTH", "SUCCESS_TARGET")}
+        "MUTATION_RATE_MIN", "MUTATION_RATE_MAX", "STEP_GROWTH", "SUCCESS_TARGET",
+        "GREEDY_SEED_FRACTION", "LOCAL_SEARCH_FRACTION", "LOCAL_SEARCH_MAX_STEPS",
+        "BOMB_STRENGTH", "BOMB_HV_MIN_GAIN")}
+    # Every variant isolates one feature against a plain genetic baseline, so the
+    # reference stays a plain GA no matter what settings.toml enables by default.
+    plain = {**current, "GREEDY_SEED_FRACTION": 0.0, "LOCAL_SEARCH_FRACTION": 0.0,
+             "BOMB_STRENGTH": 0}
     return dict(
-        genetic=current,
-        coordinated={**current, "COORDINATED_MUTATION_RATE": 0.2},
-        complementary={**current, "COMPLEMENTARY_PAIRING": True},
-        transport_diversity={**current, "TRANSPORT_GROUP_SELECTION": True},
-        fixed_step={**current, "MUTATION_RATE_MIN": config.MUTATION_RATE,
+        genetic=plain,
+        coordinated={**plain, "COORDINATED_MUTATION_RATE": 0.2},
+        complementary={**plain, "COMPLEMENTARY_PAIRING": True},
+        transport_diversity={**plain, "TRANSPORT_GROUP_SELECTION": True},
+        fixed_step={**plain, "MUTATION_RATE_MIN": config.MUTATION_RATE,
                     "MUTATION_RATE_MAX": config.MUTATION_RATE},
-        no_pruning={**current, "PRUNE_EQUIVALENT_TRANSPORT": False},
-        no_cache={**current, "TRANSPORT_CACHE_SIZE": 0, "TRANSPORT_RESULT_CACHE_SIZE": 0},
-        no_result_reuse={**current, "TRANSPORT_RESULT_CACHE_SIZE": 0},
+        no_pruning={**plain, "PRUNE_EQUIVALENT_TRANSPORT": False},
+        no_cache={**plain, "TRANSPORT_CACHE_SIZE": 0, "TRANSPORT_RESULT_CACHE_SIZE": 0},
+        no_result_reuse={**plain, "TRANSPORT_RESULT_CACHE_SIZE": 0},
+        greedy_seed={**plain, "GREEDY_SEED_FRACTION": current["GREEDY_SEED_FRACTION"] or 0.2},
+        local_search={**plain, "LOCAL_SEARCH_FRACTION": current["LOCAL_SEARCH_FRACTION"] or 0.1},
+        ils={**plain, "GREEDY_SEED_FRACTION": current["GREEDY_SEED_FRACTION"] or 0.2,
+             "LOCAL_SEARCH_FRACTION": current["LOCAL_SEARCH_FRACTION"] or 0.1,
+             "BOMB_STRENGTH": current["BOMB_STRENGTH"] or 3},
     )
 
 
@@ -139,6 +153,8 @@ def summarize(runs: list[dict], names: list[str]) -> dict:
     fields = ("hypervolume", "compromise", "initialization_seconds", "first_feasible_seconds",
               "feasible_transports_per_second", "parent_group_count", "largest_parent_group_share",
               "candidate_scans", "complete_result_reuse", "runtime_cutoffs",
+              "local_refinements", "local_bombs", "generations", "search_seconds",
+              "local_search_candidates", "bomb_candidates",
               "final_mutation_rate", "final_success_ratio")
     summary = {}
     reference = {r["seed"]: r for r in runs if r["variant"] == names[0]}

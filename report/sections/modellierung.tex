@@ -4,21 +4,22 @@
 \subsection{Formalisierung des Planungsproblems}
 \label{subsec:formalisierung}
 
-Die Planung einer Mehrziel-Reise wird im Folgenden als kombinatorisches Optimierungsproblem aufgefasst. Gegeben ist eine Menge $Z = \{1, \dots, n\}$ von Reisezielen, die ausgehend von einem festen Startort $z_0$ jeweils genau einmal besucht werden sollen, bevor die Reise wieder an $z_0$ endet. Der Reisezeitraum umfasst $T$ Tage, innerhalb derer sich Aufenthalte und Ortswechsel verteilen.
+Die Mehrziel-Reiseplanung beschreibt ein kombinatorisches Optimierungsproblem. Gegeben sei eine Menge $Z = \{1, \dots, m\}$ möglicher Reiseziele, aus der $n \leq m$ Ziele zu wählen sind. Eine Teilmenge $Z_{\text{fix}} \subseteq Z$ definiert dabei Pflichtziele. Diese werden ausgehend vom Startort $z_0$ jeweils genau einmal besucht, bevor die Reise wieder an $z_0$ endet. Die Reisedauer umfasst genau $T$ aufeinanderfolgende Tage innerhalb eines festen Zeitraums $T_{\text{gesamt}}$.
 
-Tabelle~\ref{tab:eingangsgroessen} fasst die Größen zusammen, die als gegeben vorausgesetzt werden.
+Tabelle~\ref{tab:eingangsgroessen} fasst alle Eingangsgrößen zusammen:
 
-\begin{table}[htbp]
+\begin{table}[H]
   \centering
-  \caption{Eingangsgrößen des Planungsproblems}
-  \label{tab:eingangsgroessen}
   \begin{tabular}{@{}lp{10.5cm}@{}}
     \toprule
     Symbol & Bedeutung \\
     \midrule
-    $Z = \{1,\dots,n\}$ & Menge der zu besuchenden Reiseziele \\
+    $Z = \{1,\dots,m\}$ & Menge der auswählbaren Reiseziele \\
+    $n$ & Anzahl der tatsächlich zu besuchenden Ziele \\
+    $Z_{\text{fix}}$ & Teilmenge verpflichtend zu besuchender Ziele \\
     $z_0$ & Startort, an dem die Reise beginnt und endet \\
-    $T$ & Länge des Reisezeitraums in Tagen \\
+    $T$ & Länge der Reise in Tagen \\
+    $T_{\text{gesamt}}$ & Möglicher Reisezeitraum mit mindestens $T$ Tagen \\
     $d_{\min}(z)$ & Mindestaufenthaltsdauer am Ziel $z$ \\
     $V(a,b)$ & Verfügbare Verkehrsverbindungen für den Übergang von $a$ nach $b$ \\
     $H(z)$ & Vorausgewählte Hotels am Ziel $z$ \\
@@ -27,15 +28,17 @@ Tabelle~\ref{tab:eingangsgroessen} fasst die Größen zusammen, die als gegeben 
     $C_{\max}$ & CO\textsubscript{2}-Kontingent für die gesamte Reise \\
     \bottomrule
   \end{tabular}
+  \caption{Eingangsgrößen des Planungsproblems}
+  \label{tab:eingangsgroessen}
 \end{table}
 
-Drei dieser Größen bedürfen einer Erläuterung. Die Mindestaufenthaltsdauer $d_{\min}(z)$ bildet ab, dass sich ein Ziel unterhalb einer gewissen Verweildauer nicht sinnvoll erschließen lässt. Unter Berücksichtigung des Anreiseaufwands rechtfertigt sich ein Reiseziel daher erst ab beispeilsweise zwei Tagen Aufenthalt.
+Die Mindestaufenthaltsdauer $d_{\min}(z)$ bildet ab, dass sich ein Ziel unterhalb einer gewissen Verweildauer nicht sinnvoll erschließen lässt. Unter Berücksichtigung des Anreiseaufwands rechtfertigt sich ein Reiseziel daher erst ab beispeilsweise zwei Tagen Aufenthalt.
 
-Die Menge $V(a,b)$ beschreibt konkrete Verbindungen zwsichen zwei Zeiel a und b. Dabei werden Verkehrsmittel, Abfahrtszeitfenster, Fahrtdauer, Preis und CO\textsubscript{2}-Ausstoß pro Verbindung angegeben. Analog umfasst $H(z)$ eine Vorauswahl von Hotels je Ziel mit tagesabhängigen Übernachtungspreisen und einer Komfortbewertung.
+Die Menge $V(a,b)$ beschreibt konkrete Verbindungen zwsichen zwei Zielen $a$ und $b$. Dabei werden Verkehrsmittel, Abfahrtszeitfenster, Fahrtdauer, Preis und CO\textsubscript{2}-Ausstoß pro Verbindung angegeben. Analog umfasst $H(z)$ eine Vorauswahl von Hotels je Ziel mit tagesabhängigen Übernachtungspreisen, einer Komfortbewertung und Emissionsschätzung.
 
-Gesucht ist ein vollständiger Reiseplan, der Besuchsreihenfolge, Aufenthaltsdauer je Stopp, Transfer zwischen Stops und Hotel je Stopp festlegt und dabei die Zielgrößen Kosten, Komfort und CO\textsubscript{2}-Ausstoß bestmöglich ausbalanciert.
+Gesucht ist ein vollständiger Reiseplan, der Zielauswahl, Besuchsreihenfolge, Aufenthaltsdauer je Stopp, Transfer zwischen Stops und Hotel je Stopp festlegt und dabei die Zielgrößen Kosten, Komfort und CO\textsubscript{2}-Ausstoß bestmöglich ausbalanciert.
 
-Die Optimierung erfolgt mittles eines evolutionären Algorithmus innerhalb vorab bereitgestellter Optionen. Sämtliche Preis-, Emissions- und Verbindungsdaten werden daher im Vorfeld erhoben und als Nachschlagetabellen bereitgestellt.
+Die Optimierung erfolgt mittles eines evolutionären Algorithmus innerhalb begrenzter Optionen. Sämtliche Preis-, Emissions- und Verbindungsdaten werden daher im Vorfeld erhoben und als Nachschlagetabellen bereitgestellt.
 
 Naheliegend wäre, dieses Problem zu zerlegen und nacheinander zu lösen. Zuerst die Route, dann die Aufenthaltsdauern, zuletzt Transport und Unterkunft. Eine solche sequenzielle Behandlung scheitert jedoch an der wechselseitigen Abhängigkeit der Teilentscheidungen. Ein zusätzlicher Übernachtungstag am ersten Stopp verlegt jede weitere Fahrt und jede weitere Hotelnacht um einen Tag und verändert damit deren tagesabhängige Preise. Eine Route, die unter festen Aufenthaltsdauern optimal erscheint, kann bei veränderter Zeitaufteilung deutlich schlechter abschneiden. Die Entscheidungen müssen daher gemeinsam optimiert werden.
 
@@ -44,9 +47,9 @@ Naheliegend wäre, dieses Problem zu zerlegen und nacheinander zu lösen. Zuerst
 
 Die Wahl der Repräsentationsform (Genstring) legt fest, welche Mutations- und Rekombinationsoperatoren definierbar sind. Sie gilt als einer der wichtigsten Schritte beim Entwurf eines evolutionären Algorithmus \parencite[Vgl.][S.~49]{eibenSmithIntroductionEvolutionary2015} und ist damit die zentrale Modellierungsentscheidung dieser Arbeit.
 
-Ein Reiseplan wird als Tripel $G = (\pi, d, t)$ dargestellt, dessen Komponenten die drei frei zu wählenden Entscheidungsdimensionen abbilden:
+Ein Reiseplan wird als Tupel $G = (\pi, d, t, k, h)$ dargestellt, dessen Komponenten die frei zu wählenden Entscheidungsdimensionen abbilden:
 
-Die \textbf{Besuchsreihenfolge} $\pi = (\pi_1, \dots, \pi_n)$ ist eine Permutation der Zielindizes $\{1, \dots, n\}$. $\pi_i$ bezeichnet dasjenige Reiseziel, das an Position $i$ der Route besucht wird. Die Permutationseigenschaft stellt sicher, dass jedes Ziel genau einmal vorkommt, und schließt damit doppelte Besuche und Auslassungen bereits auf Repräsentationsebene aus.
+Die \textbf{Zielauswahl und Besuchsreihenfolge} $\pi = (\pi_1, \dots, \pi_n)$ ist eine injektive Folge über $Z$, also eine geordnete Auswahl von $n$ der $m$ Kandidatenziele. $\pi_i$ bezeichnet dasjenige Reiseziel, das an Position $i$ der Route besucht wird. Die Injektivität stellt sicher, dass kein Ziel mehrfach vorkommt, und schließt doppelte Besuche bereits auf Repräsentationsebene aus. Welche Ziele überhaupt angesteuert werden, ist damit Teil der Optimierung und keine Vorgabe.
 
 Die \textbf{Aufenthaltsdauer} $d = (d_1, \dots, d_n)$ gibt mit $d_i \in \mathbb{N}$ die Anzahl der Übernachtungen am Stopp $\pi_i$ an. Die Wahl ganzer Zahlen bildet ab, dass Hotelübernachtungen und Fahrpläne nur tageweise disponierbar sind. Eine kontinuierliche Modellierung hätte hier keine Entsprechung in der Anwendung.
 
@@ -54,41 +57,45 @@ Die \textbf{Transportwahl} $t = (t_1, \dots, t_{n+1})$ umfasst $n+1$ Einträge, 
 
 Die Transportwahl wird als Kombination aus Verkehrsmittel und Abfahrtszeitfenster dargestellt:
 \begin{equation}
-t_i \in M \times S, \qquad M = \{\text{Bahn}, \text{Bus}, \text{Flug}\}, \quad S = \{\text{Vormittag}, \text{Nachmittag}, \text{Nacht}\}
+t_i \in M \times S, \qquad M = \{\text{Bahn}, \text{Bus}, \text{Bahn+Bus}, \text{Flug}\}, \quad S = \{\text{Vormittag}, \text{Nachmittag}, \text{Nacht}\}
 \end{equation}
 
-Diese Diskretisierung folgt der Struktur der Entscheidung, wie sie eine reisende Person tatsächlich trifft. Zwischen zwei Zügen um 9:05 und um 9:40 Uhr besteht aus Planungssicht kein wesentlicher Unterschied, zwischen einem Vormittagszug und einem Nachtbus dagegen ein erheblicher. Ein Genstring, der jede einzelne Abfahrtszeit als eigenen Wert führte, würde dem Algorithmus vorwiegend bedeutungslose Variation anbieten. Die Zeitfenster-Kodierung sorgt dafür, dass benachbarte Genwerte auch anwendungsseitig benachbarte Lösungen bezeichnen, was Voraussetzung für die in Abschnitt~\ref{subsec:mutation} beschriebene Nachbarschaftsheuristik ist. Welche konkrete Verbindung innerhalb des gewählten Fensters gebucht wird, entscheidet die Dekodierfunktion (Abschnitt~\ref{subsec:dekodierung}).
+Diese Diskretisierung folgt der Struktur der Entscheidung, wie sie eine reisende Person tatsächlich trifft. Zwischen zwei Zügen um 9:05 und um 9:40 Uhr besteht aus Planungssicht kein wesentlicher Unterschied, zwischen einem Vormittagszug und einem Nachtbus dagegen ein erheblicher. Ein Genstring, der jede einzelne Abfahrtszeit als eigenen Wert führte, würde dem Algorithmus vorwiegend bedeutungslose Variation anbieten. Die Zeitfenster-Kodierung sorgt dafür, dass benachbarte Genwerte auch anwendungsseitig benachbarte Lösungen bezeichnen, was Voraussetzung für die in Abschnitt~\ref{subsec:mutation} beschriebene Nachbarschaftsheuristik ist.
+
+Die beiden \textbf{Auswahlschlüssel} $k = (k_1, \dots, k_{n+1})$ und $h = (h_1, \dots, h_n)$ mit $k_i, h_i \in [0,1]$ treffen die Feinauswahl innerhalb der so festgelegten Klassen. $k_i$ bestimmt, welches der verbleibenden Angebote der Klasse $t_i$ gebucht wird, $h_i$, welches Hotel am Stopp $\pi_i$ genommen wird. Beide greifen auf Mengen zu, deren Umfang erst bei der Dekodierung feststeht; ein Schlüssel in $[0,1]$ ist deshalb robuster als ein Index, da er unabhängig von der Mengengröße gültig bleibt. Abschnitt~\ref{subsec:dekodierung} begründet, warum diese beiden Entscheidungen im Genstring stehen und nicht dem Decoder überlassen werden.
 
 Tabelle~\ref{tab:entscheidungsvariablen} fasst die Entscheidungsvariablen zusammen.
 
-\begin{table}[htbp]
+\begin{table}[H]
   \centering
-  \caption{Entscheidungsvariablen des Genstrings}
-  \label{tab:entscheidungsvariablen}
   \begin{tabular}{@{}llll@{}}
     \toprule
     Variable & Bedeutung & Wertebereich & Länge \\
     \midrule
-    $\pi_i$ & Ziel an Routenposition $i$ & Permutation über $\{1,\dots,n\}$ & $n$ \\
+    $\pi_i$ & Ziel an Routenposition $i$ & injektive Folge über $Z$ & $n$ \\
     $d_i$   & Übernachtungen am Stopp $\pi_i$ & $d_i \in \mathbb{N}$, $d_i \geq d_{\min}(\pi_i)$ & $n$ \\
-    $t_i$   & Verkehrsmittel und Zeitfenster & $M \times S$, $|M \times S| = 9$ & $n+1$ \\
+    $t_i$   & Verkehrsmittel und Zeitfenster & $M \times S$, $|M \times S| = 12$ & $n+1$ \\
+    $k_i$   & Auswahl innerhalb der Klasse $t_i$ & $[0,1]$ & $n+1$ \\
+    $h_i$   & Hotelauswahl am Stopp $\pi_i$ & $[0,1]$ & $n$ \\
     \bottomrule
   \end{tabular}
+  \caption{Entscheidungsvariablen des Genstrings}
+  \label{tab:entscheidungsvariablen}
 \end{table}
 
-Der Genstring ist damit heterogen aufgebaut und vereint einen Permutationsabschnitt, einen ganzzahligen Abschnitt und einen kategorialen Abschnitt. Solche gemischten Repräsentationen gelten als die natürlichere Wahl, sobald sich die Bestandteile eines Problems nicht sinnvoll in eine einheitliche Form bringen lassen \parencite[Vgl.][S.~49]{eibenSmithIntroductionEvolutionary2015}.
+Der Genstring ist damit heterogen aufgebaut und vereint einen Auswahl- und Reihenfolgeabschnitt, einen ganzzahligen, einen kategorialen und einen reellwertigen Abschnitt. Solche gemischten Repräsentationen gelten als die natürlichere Wahl, sobald sich die Bestandteile eines Problems nicht sinnvoll in eine einheitliche Form bringen lassen \parencite[Vgl.][S.~49]{eibenSmithIntroductionEvolutionary2015}.
 
-Als durchgängiges Beispiel dient eine Reise mit $n = 4$ Zielen über $T = 14$ Tage. Die Ziele seien Paris (1), Berlin (2), Rom (3) und Barcelona (4). Der Genstring
+Als durchgängiges Beispiel dient eine Reise mit $n = 4$ Zielen über $T = 14$ Tage, ausgewählt aus einer Kandidatenmenge von $m = 6$ Städten. Darunter seien Paris (1), Berlin (2), Rom (3) und Barcelona (4). Der Genstring
 \begin{align*}
-G = \big(&(2,\, 1,\, 3,\, 4),\; (2,\, 3,\, 4,\, 5),\\
+G = \big(&(2,\, 1,\, 3,\, 4),\; (2,\, 3,\, 4,\, 4),\\
          &(\text{Bahn/Vm},\, \text{Bahn/Nm},\, \text{Flug/Vm},\, \text{Flug/Nm},\, \text{Flug/Vm})\big)
 \end{align*}
-kodiert eine Reise, die am Vormittag mit der Bahn nach Berlin führt, wo zwei Nächte verbracht werden. Es folgen Paris mit drei Nächten, erreicht über eine Nachmittagsverbindung der Bahn, anschließend Rom mit vier Nächten über einen Vormittagsflug und schließlich Barcelona mit fünf Nächten über einen Nachmittagsflug. Die Rückreise zum Startort erfolgt mit einem Vormittagsflug. Die Abkürzungen Vm und Nm stehen dabei für die Zeitfenster Vormittag und Nachmittag.
+kodiert eine Reise, die am Vormittag mit der Bahn nach Berlin führt, wo zwei Nächte verbracht werden. Es folgen Paris mit drei Nächten, erreicht über eine Nachmittagsverbindung der Bahn, anschließend Rom mit vier Nächten über einen Vormittagsflug und schließlich Barcelona mit vier Nächten über einen Nachmittagsflug. Die Rückreise zum Startort erfolgt mit einem Vormittagsflug. Die Abkürzungen Vm und Nm stehen dabei für die Zeitfenster Vormittag und Nachmittag. Die Schlüsselvektoren $k$ und $h$ sind der Lesbarkeit halber weggelassen.
 
 \subsection{Dekodierfunktion}
 \label{subsec:dekodierung}
 
-Der Genstring ist der Genotyp und enthält ausschließlich Indizes und Kennungen. Der Phänotyp ist der fertige Reiseplan mit Kalendertagen, gebuchten Verbindungen und namentlich benannten Hotels. Die Dekodierfunktion $D$ bildet den einen auf den anderen ab und ergänzt dabei alle Entscheidungen, die bewusst nicht kodiert wurden. Sie arbeitet deterministisch, sodass derselbe Genstring stets denselben Reiseplan und damit denselben Fitnesswert ergibt.
+Der Genstring ist der Genotyp und enthält ausschließlich Indizes, Kennungen und Auswahlschlüssel. Der Phänotyp ist der fertige Reiseplan mit Kalendertagen, gebuchten Verbindungen und namentlich benannten Hotels. Die Dekodierfunktion $D$ bildet den einen auf den anderen ab und löst dabei die Schlüssel gegen die tatsächlich verfügbaren Angebote auf. Sie arbeitet deterministisch, sodass derselbe Genstring stets denselben Reiseplan und damit dieselbe Bewertung ergibt.
 
 Die Dekodierung verläuft entlang der Route und führt einen Tageszähler mit. Der Ankunftstag $a_i$ am Stopp $\pi_i$ ergibt sich aus dem Abreisetag vom Vorgänger zuzüglich eines Versatzes, der vom gewählten Zeitfenster abhängt:
 \begin{equation}
@@ -96,28 +103,25 @@ a_i = a_{i-1} + d_{i-1} + \delta(t_i), \qquad
 \delta(t_i) = \begin{cases} 0 & \text{Vormittag oder Nachmittag} \\ 1 & \text{Nacht} \end{cases}
 \end{equation}
 
-Nachtverbindungen kommen demnach am Folgetag an und ersetzen dabei eine Übernachtung. Das bildet einen realen Zielkonflikt ab, denn ein Nachttransfer spart Hotelkosten und einen Reisetag, geht aber zulasten des Komforts.
+Nachtverbindungen kommen demnach am Folgetag an. Das bildet einen realen Zielkonflikt ab, denn ein Nachttransfer spart eine Hotelnacht und einen Reisetag, geht aber zulasten des Komforts.
 
-Anschließend werden die beiden ausgeklammerten Entscheidungen ergänzt. Für die Unterkunft wählt der Decoder unter den Hotels des Ziels dasjenige mit dem geringsten gewichteten Beitrag aus Übernachtungspreis, CO2-Ausstoß und Diskomfort (TODO: formel anpassen, co2 nicht berücksichtigt):
-\begin{equation}
-h_i = \argmin_{h \in H(\pi_i)} \Big( w_1 \sum_{\tau = a_i}^{a_i + d_i - 1} p_h(\tau) \;+\; w_2 \, u(h) \, d_i \Big)
-\end{equation}
+Anschließend löst der Decoder die beiden Auswahlschlüssel auf. Für den Stopp $\pi_i$ steht mit $a_i$ und $d_i$ der Belegungszeitraum fest, womit feststeht, welche Hotels aus $H(\pi_i)$ überhaupt verfügbar sind. Aus dieser Menge wird die bezüglich Übernachtungspreis, Diskomfort und CO\textsubscript{2}-Ausstoß nichtdominierte Teilmenge $H^\ast(\pi_i, a_i, d_i)$ gebildet, in die der Schlüssel $h_i$ indiziert. Analog legt $t_i$ die Klasse aus Verkehrsmittel und Zeitfenster fest, innerhalb derer alle zeitlich zulässigen Angebote aus $V(\pi_{i-1}, \pi_i)$ ebenfalls auf ihre nichtdominierte Teilmenge reduziert werden; aus dieser wählt $k_i$.
 
-Dabei bezeichnet $p_h(\tau)$ den Übernachtungspreis von Hotel $h$ am Tag $\tau$ und $u(h)$ den Diskomfort pro Nacht. Analog wählt der Decoder innerhalb der durch $t_i$ festgelegten Klasse aus Verkehrsmittel und Zeitfenster die konkrete Verbindung mit dem geringsten gewichteten Beitrag aus Preis, Reisediskomfort und Emissionen.
+Die Reduktion auf die nichtdominierten Angebote ist verlustfrei, und zwar aus einem strukturellen Grund. Die Zielgrößen setzen sich, wie Abschnitt~\ref{subsec:zielfunktion} zeigt, additiv aus den Beiträgen der einzelnen Stopps und Etappen zusammen. Die Wahl des Hotels am Stopp $\pi_i$ beeinflusst ausschließlich den Beitrag dieses Stopps. Sie verändert weder den Zeitplan noch die an anderen Stopps verfügbaren Optionen. Ein dominiertes Hotel kann deshalb nie Teil eines pareto-optimalen Gesamtplans sein, da es sich stets durch das dominierende ersetzen ließe, ohne eine Zielgröße zu verschlechtern.
 
-Diese Auslagerung ist verlustfrei, und zwar aus einem strukturellen Grund. Die Zielfunktion setzt sich, wie Abschnitt~\ref{subsec:zielfunktion} zeigt, additiv aus den Beiträgen der einzelnen Stopps und Etappen zusammen. Die Wahl des Hotels am Stopp $\pi_i$ beeinflusst ausschließlich den Beitrag dieses Stopps. Sie verändert weder den Zeitplan noch die Emissionen noch die an anderen Stopps verfügbaren Optionen. Bei gegebenem Genstring zerfällt die Hotelwahl damit in $n$ voneinander unabhängige Teilprobleme, deren jeweiliges Minimum unmittelbar ablesbar ist. Das stopweise Minimum ist folglich zugleich das globale Minimum, und ein evolutionärer Suchprozess über die Hotelindizes könnte kein besseres Ergebnis finden, sondern nur langsamer zum selben gelangen.
+Die Auswahl innerhalb der verbleibenden Menge lässt sich dagegen nicht an den Decoder auslagern. Da drei Zielgrößen gleichzeitig verfolgt werden, existiert je Stopp kein eindeutiges Minimum, sondern eine Abwägungsmenge, und welcher Punkt daraus genommen wird, verschiebt die Gesamtabwägung des Plans. Ein Decoder müsste diese Abwägung mit festen Gewichten vorwegnehmen und würde damit genau die Lösungsvielfalt unterdrücken, die Abschnitt~\ref{subsec:zielfunktion} gerade erzeugen soll. Deshalb stehen $k$ und $h$ im Genstring. Die Vorberechnung der nichtdominierten Mengen verkleinert den Suchraum dennoch erheblich, da der evolutionäre Aufwand nur noch auf echte Zielkonflikte entfällt.
 
-Für die Verbindungen gilt dasselbe Argument innerhalb einer Klasse, da das Zeitfenster den Ankunftstag bereits festlegt. Es gilt jedoch nicht für die Klasse selbst, denn Verkehrsmittel und Zeitfenster bestimmen über $\delta(t_i)$ den weiteren Zeitplan. Daher wird $t$ im Genstring berücksichtigt, während $h$ in der Dekodierung festgelegt wird.
+Für die Klassenwahl selbst gilt das Dominanzargument nicht, denn Verkehrsmittel und Zeitfenster bestimmen über $\delta(t_i)$ den weiteren Zeitplan und damit die an späteren Stopps verfügbaren Optionen. Sie bleibt daher eine eigene Entscheidungsdimension, während $k_i$ nur noch innerhalb der bereits festgelegten Klasse wirkt.
 
 \subsection{Zielfunktion}
 \label{subsec:zielfunktion}
 
-Die Zielfunktion objektiviert einen dekodierten Reiseplan, um Veränderungen durch Mutation oder Rekombination zu bewerten. Sie wird im Folgenden als Zielfunktion $F(G)$ geführt und minimiert, ein kleinerer Wert entspricht also einem besseren Reiseplan.
+Die Zielfunktion bewertet einen dekodierten Reiseplan, um Veränderungen durch Mutation oder Rekombination beurteilen zu können. Sie wird nicht zu einer einzelnen Zahl zusammengefasst, sondern als Vektor $F(G) = \big(K(G), D(G), C(G)\big)$ aus Kosten, Diskomfort und Emissionen geführt und komponentenweise minimiert, ein kleinerer Wert entspricht also einem besseren Reiseplan.
 
-Die drei Teilziele werden zunächst getrennt berechnet. Sei $v_i$ die vom Decoder gewählte Verbindung der Etappe $i$ und $h_i$ das Hotel am Stopp $\pi_i$. Mit $c(v)$, $e(v)$ und $u(v)$ für Preis, Emissionen und Diskomfort einer Verbindung gilt:
+Die drei Teilziele werden getrennt berechnet. Sei $v_i$ die vom Decoder gewählte Verbindung der Etappe $i$ und $h_i$ das Hotel am Stopp $\pi_i$. Mit $c(v)$, $e(v)$ und $u(v)$ für Preis, Emissionen und Diskomfort einer Verbindung gilt:
 \begin{align}
 K(G) &= \sum_{i=1}^{n+1} c(v_i) \;+\; \sum_{i=1}^{n} \sum_{\tau = a_i}^{a_i + d_i - 1} p_{h_i}(\tau) \\
-C(G) &= \sum_{i=1}^{n+1} e(v_i) \\
+C(G) &= \sum_{i=1}^{n+1} e(v_i) \;+\; \sum_{i=1}^{n} e(h_i)\, d_i \\
 D(G) &= \sum_{i=1}^{n+1} u(v_i) \;+\; \sum_{i=1}^{n} u(h_i)\, d_i
 \end{align}
 
@@ -126,33 +130,42 @@ Der Diskomfort einer Verbindung fasst mehrere Eigenschaften zusammen, die eine R
 u(v) = \lambda_1 \cdot \text{Fahrtdauer}(v) + \lambda_2 \cdot \text{Umstiege}(v) + \lambda_3 \cdot \mathbf{1}[\,v \text{ ist Nachtverbindung}\,]
 \end{equation}
 
-Die Zusammenführung der drei Teilziele erfolgt als gewichtete Summe. Dabei stellt sich ein Problem, das eine reine Gewichtung nicht löst: Die Teilziele werden in unterschiedlichen Einheiten gemessen, nämlich in Euro, in Kilogramm und in einer dimensionslosen Diskomfortpunktzahl. Eine Gewichtung von $w_1 = w_2 = w_3 = \tfrac{1}{3}$ wäre in dieser Form bedeutungslos, da sie faktisch von den Größenordnungen der Einheiten bestimmt würde. Die Teilziele werden deshalb zuvor normiert. Als Referenz dient der Idealpunkt, also der Vektor aus den Bestwerten, die jedes Teilziel für sich allein erreichen kann. Diese Bestwerte werden in der Vorverarbeitung greedy angenähert, indem je eine Reise erzeugt wird, die ausschließlich das betreffende Einzelziel optimiert:
+Die Zusammenführung der drei Teilziele erfolgt nicht über eine gewichtete Summe, sondern über die Pareto-Dominanz. Ein Plan $G$ dominiert einen Plan $G'$, wenn er in keiner der drei Zielgrößen schlechter und in mindestens einer echt besser ist:
 \begin{equation}
-F(G) = w_1 \frac{K(G)}{K_{\text{ref}}} + w_2 \frac{D(G)}{D_{\text{ref}}} + w_3 \frac{C(G)}{C_{\text{ref}}},
-\qquad w_1 + w_2 + w_3 = 1,\; w_j \geq 0
+G \prec G' \quad :\Longleftrightarrow \quad F_j(G) \leq F_j(G') \;\; \forall j \qquad\text{und}\qquad \exists\, j: F_j(G) < F_j(G')
 \end{equation}
 
-Die gewichtete Summe überführt das Mehrzielproblem in ein Einzielproblem. Dieses Vorgehen wird als Skalarisierung bezeichnet. Der Preis dafür ist, dass je Gewichtung nur eine einzelne Lösung entsteht und dass die Gewichte bereits festgelegt werden müssen, bevor bekannt ist, welche Lösungen überhaupt erreichbar sind \parencite[Vgl.][S.~196]{eibenSmithIntroductionEvolutionary2015}. Für die vorliegende Anwendung ist das vertretbar, denn die reisende Person benötigt am Ende genau einen Reiseplan und kann ihre Präferenz über die Gewichte ausdrücken. Alternativ ließe sich eine Paretofront bestimmen und der Person zur Auswahl vorlegen, was den Rechenaufwand erhöht und die Entscheidung verlagert statt sie zu treffen.
+Gesucht ist damit nicht ein einzelner Plan, sondern die Menge der nicht dominierten Pläne, die Paretofront. Eine Skalarisierung über feste Gewichte wäre die naheliegende Alternative, überführt das Mehrzielproblem jedoch in ein Einzielproblem und erzeugt je Gewichtung nur eine einzelne Lösung. Vor allem müssten die Gewichte festgelegt werden, bevor bekannt ist, welche Lösungen überhaupt erreichbar sind \parencite[Vgl.][S.~196]{eibenSmithIntroductionEvolutionary2015}. Die Paretofront verlagert die Entscheidung dagegen an das Ende des Verfahrens, wo die reisende Person die tatsächlich vorhandenen Zielkonflikte vor sich hat, etwa um zu beurteilen, ob eine Ersparnis von 40 Euro einen bestimmten Mehrausstoß rechtfertigt.
 
-Bemerkenswert an der obigen Form ist die additive Struktur. $F$ zerfällt in Beiträge einzelner Etappen und Stopps. Für die Bewertung mutierter Individuen bedeutet sie zudem, dass nicht immer der gesamte Plan neu berechnet werden muss. Eine Mutation auf $t_i$ innerhalb desselben Zeitfensters verändert nur den Beitrag einer einzigen Etappe. Eine Mutation auf $d_i$ verschiebt dagegen alle nachfolgenden Kalendertage und erzwingt damit die Neuberechnung des restlichen Plans.
+Damit die Front am Ende nutzbar bleibt, werden aus ihr vier Pläne hervorgehoben: je ein Bestwert für Kosten, Komfort und Emissionen sowie ein ausgewogener Kompromiss. Für Letzteren wird doch eine gewichtete Summe gebildet, nun aber erst auf der fertigen Front. Dabei stellt sich ein Problem, das eine reine Gewichtung nicht löst: Die Teilziele werden in unterschiedlichen Einheiten gemessen, nämlich in Euro, in Kilogramm und in einer dimensionslosen Diskomfortpunktzahl. Eine Gewichtung von $w_1 = w_2 = w_3 = \tfrac{1}{3}$ wäre in dieser Form bedeutungslos, da sie faktisch von den Größenordnungen der Einheiten bestimmt würde. Die Teilziele werden deshalb zuvor normiert. Als Referenz $F_j^{\text{ref}}$ dient die typische Größenordnung, die eine Reise des gegebenen Zuschnitts in der jeweiligen Zielgröße erreicht; sie wird in der Vorverarbeitung aus den erhobenen Verbindungs- und Hotelpreisen geschätzt und vor der Suche eingefroren, damit sie nicht von der sich entwickelnden Front abhängt:
+\begin{equation}
+S(G) = \sum_{j=1}^{3} w_j \left( \frac{F_j(G)}{F_j^{\text{ref}}} \right)^{2},
+\qquad w_j \geq 0
+\end{equation}
+
+Die quadratische Form bevorzugt dabei ausgeglichene Pläne gegenüber solchen, die eine Zielgröße zugunsten einer anderen stark überdehnen.
+
+Bemerkenswert an der obigen Form ist die additive Struktur. Jede Zielgröße zerfällt in Beiträge einzelner Etappen und Stopps. Für die Bewertung mutierter Individuen bedeutet sie zudem, dass nicht immer der gesamte Plan neu berechnet werden muss. Eine Mutation auf $k_i$ verändert nur den Beitrag einer einzigen Etappe. Eine Mutation auf $d_i$ verschiebt dagegen alle nachfolgenden Kalendertage und erzwingt damit die Neuberechnung des restlichen Plans.
 
 \subsection{Nebenbedingungen}
 \label{subsec:nebenbedingungen}
 
-Nebenbedingungen grenzen die zulässigen Reisepläne von den unzulässigen ab. Ein Teil von ihnen muss gar nicht eigens geprüft werden, weil die Repräsentation sie bereits ausschließt. Dass jedes Ziel genau einmal besucht wird, folgt unmittelbar aus der Permutationseigenschaft von $\pi$, und dass jeder Stopp ein Hotel erhält, aus der Konstruktion der Dekodierfunktion. Nebenbedingungen auf Repräsentationsebene aufzulösen ist der wirksamste Umgang mit ihnen, da unzulässige Lösungen so überhaupt nicht entstehen können.
+Nebenbedingungen grenzen die zulässigen Reisepläne von den unzulässigen ab. Ein Teil von ihnen muss gar nicht eigens geprüft werden, weil die Repräsentation sie bereits ausschließt. Dass kein Ziel doppelt besucht wird, folgt unmittelbar aus der Injektivität von $\pi$, und dass jeder Stopp ein Hotel erhält, aus der Konstruktion der Dekodierfunktion. Nebenbedingungen auf Repräsentationsebene aufzulösen ist der wirksamste Umgang mit ihnen, da unzulässige Lösungen so überhaupt nicht entstehen können. Dass alle Ziele aus $Z_{\text{fix}}$ enthalten sind, stellen die Operatoren her, indem sie ein fehlendes Pflichtziel nach jeder Veränderung an die Stelle eines optionalen setzen.
 
-Als harte Bedingungen verbleiben die Mindestaufenthaltsdauer und die Zulässigkeit von Flügen. Für Letztere genügt die reine Distanzgrenze nicht, da sie kurze Strecken mit schlechter Bahnanbindung ausschließt, auf denen ein Flug durchaus sinnvoll ist. Ein Flug ist daher zulässig, wenn die Entfernung eine Schwelle überschreitet oder die beste bodengebundene Alternative erheblich länger dauert:
+Als harte Bedingungen verbleiben die Reisedauer, die Mindestaufenthaltsdauer und die Zulässigkeit von Flügen. Für Letztere genügt die reine Distanzgrenze nicht, da sie kurze Strecken mit schlechter Bahnanbindung ausschließt, auf denen ein Flug durchaus sinnvoll ist. Ein Flug ist daher zulässig, wenn die Entfernung eine Schwelle überschreitet oder die beste bodengebundene Alternative erheblich länger dauert:
 \begin{equation}
 E(\pi_{i-1}, \pi_i) > 500\,\text{km} \quad\lor\quad \big( \vartheta_{\text{Boden}}(\pi_{i-1}, \pi_i) - \vartheta_{\text{Flug}}(\pi_{i-1}, \pi_i) \big) > \Delta\vartheta
 \end{equation}
 
 Dabei bezeichnet $\vartheta$ die jeweils kürzeste Reisezeit und $\Delta\vartheta$ einen Schwellwert von beispielsweise vier Stunden. Diese Bedingung wird nicht während der Optimierung geprüft, sondern beim Aufbau der Verbindungsmengen: Für Etappen, die sie verletzen, enthält $V(a,b)$ schlicht keine Flugverbindungen. Auch hier entsteht die Unzulässigkeit damit erst gar nicht. Kodiert ein Genstring dennoch eine leere Klasse aus Verkehrsmittel und Zeitfenster, etwa nach einer Mutation von $\pi$, so wird $t_i$ auf die nächstgelegene belegte Klasse zurückgeführt. Die Mindestaufenthaltsdauer wird analog behandelt, indem die Operatoren $d_i$ nach unten auf $d_{\min}(\pi_i)$ begrenzen.
 
-Anders verhält es sich mit den drei globalen Obergrenzen für Reisedauer, Budget und Emissionen. Sie werden als weiche Bedingungen über Straftermen abgebildet, die die Zielfunktion ergänzen:
+Die Reisedauer wird hart erzwungen. Der Reisezeitraum umfasst genau $T$ Kalendertage, die Abreise erfolgt am ersten und die Rückkehr am letzten dieser Tage, woraus sich $\sum_{i=1}^{n} d_i \leq T - 1$ ergibt. Auch diese Bedingung wird nicht nachträglich geprüft: Die Dekodierung betrachtet ausschließlich Verbindungen innerhalb dieses Fensters, sodass ein Plan, der es sprengt, schlicht nicht dekodierbar ist. Hinzu kommen zwei Bedingungen, die sicherstellen, dass ein Aufenthalt überhaupt nutzbar ist. Eine Übernachtung zählt nur dann als Nacht am Ziel, wenn sie eine zusammenhängende Ruhezeit innerhalb des lokalen Nachtfensters lässt, und ein Aufenthalt nur dann, wenn er eine Mindestzahl an Tagesstunden vor Ort lässt. Ein Nachttransfer spart damit zwar eine Hotelnacht, ersetzt aber keine Aufenthaltsnacht.
+
+Anders verhält es sich mit den beiden globalen Obergrenzen für Budget und Emissionen. Sie werden als weiche Bedingungen über Strafterme abgebildet, die relativ zur jeweiligen Grenze gemessen werden:
 \begin{equation}
-P(G) = \rho_T \max\!\big(0, \Theta(G) - T\big) + \rho_B \frac{\max\!\big(0, K(G) - B_{\max}\big)}{K_{\text{ref}}} + \rho_C \frac{\max\!\big(0, C(G) - C_{\max}\big)}{C_{\text{ref}}}
+P(G) = \rho_B \frac{\max\!\big(0, K(G) - B_{\max}\big)}{B_{\max}} + \rho_C \frac{\max\!\big(0, C(G) - C_{\max}\big)}{C_{\max}}
 \end{equation}
 
-Hier ist $\Theta(G)$ die Gesamtdauer der Reise einschließlich der Reisetage. Bewertet wird anschließend $F(G) + P(G)$. Die Strafterme sind auf dieselben Referenzwerte normiert wie die Teilziele, damit sie mit ihnen vergleichbar bleiben.
+$P(G)$ tritt dabei nicht zu den Zielgrößen hinzu, sondern wird ihnen vorgeschaltet. Zwei Pläne mit Verletzung werden allein über $P$ verglichen, ein zulässiger Plan geht jedem unzulässigen vor, und erst unter zulässigen Plänen entscheidet die Pareto-Dominanz. Die Normierung auf die jeweilige Grenze macht die beiden Überschreitungen untereinander vergleichbar, obwohl sie in verschiedenen Einheiten anfallen.
 
-Die Entscheidung gegen harte Grenzen ist bewusst getroffen. Würden Budget und CO\textsubscript{2}-Kontingent hart erzwungen, zerfiele der Suchraum in zulässige und unzulässige Bereiche, und der Algorithmus könnte nicht mehr durch eine leicht unzulässige Lösung hindurch zu einer besseren zulässigen gelangen. Ein Plan, der das Budget um wenige Euro überschreitet, wäre zudem schlagartig wertlos, obwohl er einem zulässigen Plan sehr ähnlich ist. Die Straftermen erhalten stattdessen die Richtungsinformation: Je weiter eine Lösung über der Grenze liegt, desto schlechter wird sie bewertet. Die Faktoren $\rho$ müssen dabei so groß gewählt werden, dass sich eine Überschreitung im Optimum nicht auszahlt, also größer als der maximal erzielbare Gewinn je Einheit Überschreitung. Fallen sie zu klein aus, liegt das Optimum der erweiterten Zielfunktion außerhalb des zulässigen Bereichs, fallen sie zu groß aus, nähert sich das Verhalten wieder dem einer harten Grenze an.
+Die Entscheidung gegen harte Grenzen ist bewusst getroffen. Würden Budget und CO\textsubscript{2}-Kontingent hart erzwungen, zerfiele der Suchraum in zulässige und unzulässige Bereiche, und der Algorithmus könnte nicht mehr durch eine leicht unzulässige Lösung hindurch zu einer besseren zulässigen gelangen. Ein Plan, der das Budget um wenige Euro überschreitet, wäre zudem schlagartig wertlos, obwohl er einem zulässigen Plan sehr ähnlich ist. Die Strafterme erhalten stattdessen die Richtungsinformation: Je weiter eine Lösung über der Grenze liegt, desto schlechter wird sie bewertet. Die Faktoren $\rho$ gewichten dabei nur, wie stark die beiden Überschreitungen untereinander zählen. Dass sich eine Überschreitung am Ende nicht auszahlt, stellt bereits der Vorrang zulässiger Pläne sicher, ohne dass $\rho$ gegen den maximal erzielbaren Gewinn kalibriert werden müsste.
