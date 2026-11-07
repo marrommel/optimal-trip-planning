@@ -1,0 +1,178 @@
+\section{Beispielausgabe der Optimierung}
+\label{app:beispielausgabe}
+
+Die nachfolgende Konsolenausgabe dokumentiert einen Optimierungslauf für eine zehntägige Reise ab Stuttgart im Zeitraum vom 01.\,02.\,2027 bis zum 15.\,02.\,2027. Es wurden drei von fünf möglichen Reisezielen (London, Paris, Madrid, Barcelona, Rom) ausgewählt mit einer Obergrenzen von 800\,EUR Budget und 350\,kg CO\textsubscript{2}. 
+
+\begin{tcolorbox}[
+  breakable,
+  enhanced,
+  colback=termbg,
+  colframe=termborder,
+  colupper=termfg,
+  before upper=\singlespacing,
+  arc=5pt,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=1pt, bottom=6pt
+]
+\begin{lstlisting}[style=terminalstyle]
+Trip planner | 10 days | 3 destinations
+Departure: 2027-02-01 to 2027-02-06
+Optimization | 500 generations | 600s | Change since previous update
+
+Stage   Gen      Elapsed    Best EUR     Change     CO2 kg    Change   Discomfort    Change
+-------------------------------------------------------------------------------------------
+Setup   000/500  00:00            --         --         --        --           --        --
+Init    000/500  00:05        468.58         --      149.7        --        311.9        --
+Search  001/500  00:06        468.58      +0.00      149.7      +0.0        311.9      +0.0
+Search  003/500  00:11        369.92     -98.66      134.6     -15.1        255.9     -56.0
+Search  005/500  00:16        369.92      +0.00      134.6      +0.0        239.2     -16.7
+Search  008/500  00:21        369.92      +0.00      128.1      -6.5        230.7      -8.4
+Search  011/500  00:26        366.88      -3.04      128.1      +0.0        229.8      -0.9
+Search  014/500  00:31        354.67     -12.21      128.1      -0.1        209.6     -20.2
+Search  018/500  00:36        335.49     -19.18      121.2      -6.9        202.8      -6.7
+Search  021/500  00:41        313.30     -22.19      118.2      -3.0        202.8      +0.0
+Search  024/500  00:46        282.42     -30.88      118.2      +0.0        201.8      -1.0
+Search  027/500  00:51        282.42      +0.00      110.7      -7.5        201.8      +0.0
+Search  030/500  00:56        282.39      -0.03      110.7      +0.0        197.2      -4.7
+Search  033/500  01:01        282.39      +0.00      110.7      +0.0        197.2      +0.0
+Search  036/500  01:06        282.39      +0.00      110.7      +0.0        196.0      -1.1
+Search  039/500  01:11        282.39      +0.00      110.7      +0.0        196.0      +0.0
+Search  042/500  01:16        282.39      +0.00      110.7      +0.0        196.0      +0.0
+Search  047/500  01:21        281.42      -0.97      110.7      +0.0        190.5      -5.5
+Search  050/500  01:26        281.42      +0.00      110.7      +0.0        185.8      -4.7
+Search  053/500  01:31        281.42      +0.00      110.7      +0.0        185.8      +0.0
+Search  057/500  01:36        281.42      +0.00      110.7      +0.0        185.8      +0.0
+Search  061/500  01:42        274.41      -7.01      110.7      +0.0        185.8      +0.0
+Search  065/500  01:47        274.41      +0.00      110.7      +0.0        185.8      +0.0
+Search  068/500  01:52        274.41      +0.00      110.4      -0.3        185.8      +0.0
+...
+Search  079/500  02:12        274.41      +0.00      110.4      +0.0        182.0      -3.8
+Search  082/500  02:17        274.41      +0.00      110.4      +0.0        182.0      +0.0
+Search  085/500  02:22        274.41      +0.00      110.4      +0.0        182.0      +0.0
+Search  087/500  02:27        274.41      +0.00      110.4      +0.0        176.5      -5.5
+...
+Search  115/500  03:24        274.38      -0.03      110.4      +0.0        176.5      +0.0
+Search  118/500  03:29        274.35      -0.03      110.4      +0.0        176.5      +0.0
+...
+Search  140/500  04:10        274.35      +0.00      110.4      +0.0        168.8      -7.6
+Search  142/500  04:15        274.35      +0.00      110.4      +0.0        168.8      +0.0
+Search  145/500  04:21        274.35      +0.00      110.4      +0.0        158.8     -10.0
+...
+Search  158/500  04:42        267.38      -6.97      110.4      +0.0        158.8      +0.0
+Search  161/500  04:47        267.38      +0.00      110.4      +0.0        158.8      +0.0
+Search  164/500  04:52        267.38      +0.00      110.4      +0.0        158.8      +0.0
+Search  166/500  04:57        231.60     -35.78      110.1      -0.3        158.8      +0.0
+...
+Search  178/500  05:17        229.60      -2.00      110.1      +0.0        158.8      +0.0
+...
+Search  195/500  05:52        229.57      -0.03      110.1      +0.0        158.8      +0.0
+Search  197/500  05:57        229.57      +0.00      110.1      +0.0        158.8      +0.0
+Search  199/500  06:02        229.57      +0.00      110.1      +0.0        158.8      +0.0
+Search  202/500  06:07        229.57      +0.00      110.1      +0.0        155.8      -3.1
+Search  204/500  06:12        229.27      -0.30      110.1      +0.0        155.8      +0.0
+...
+Search  275/500  08:35        229.27      +0.00      110.1      +0.0        152.4      -3.3
+...
+Search  291/500  09:06        228.51      -0.76      110.1      +0.0        152.4      +0.0
+...
+Search  301/500  09:27        228.51      +0.00      110.1      +0.0        150.0      -2.5
+...
+Done    322/500  10:00        228.51      +0.00      110.1      +0.0        150.0      +0.0
+Finished: runtime limit.
+
+
+RECOMMENDED ITINERARIES:
+
+
+
+Cost Optimum
+============
+Total Cost (transfer + accommodation): EUR 228.51 | Discomfort: 496.7 | CO2: 321.9 kg
+Trip dates: 2027-02-01 to 2027-02-10 (10 calendar days)
++----+-----------+-----------+------------------+------------------+--------+-------+-------------------------+----------+---------+
+| #  | From      | To        | Departs/Check-in | Arrives/Check-out| Dur.   | Type  | Operator / Hotel        | Cost EUR | CO2 kg  |
++====+===========+===========+==================+==================+========+=======+=========================+==========+=========+
+|  1 | Stuttgart | London    | 2027-02-01 22:40 | 2027-02-01 23:10 | 1h 30m | FLIGHT| Ryanair                 |    17.00 |   67.00 |
+|  2 | London    | London    | 2027-02-02       | 2027-02-04       | 2 nts  | HOTEL | London Kensington Park  |    36.34 |   15.00 |
+|  3 | London    | Barcelona | 2027-02-04 14:50 | 2027-02-04 18:00 | 2h 10m | FLIGHT| Ryanair                 |    30.00 |  101.00 |
+|  4 | Barcelona | Barcelona | 2027-02-04       | 2027-02-06       | 2 nts  | HOTEL | Inout Hostel            |    42.57 |   23.00 |
+|  5 | Barcelona | Paris     | 2027-02-06 20:35 | 2027-02-06 22:35 | 2h 00m | FLIGHT| Ryanair                 |    25.00 |   84.00 |
+|  6 | Paris     | Paris     | 2027-02-07       | 2027-02-09       | 2 nts  | HOTEL | St Christopher's Paris  |    41.62 |   15.00 |
+|  7 | Paris     | Stuttgart | 2027-02-09 21:00 | 2027-02-10 05:10 | 8h 10m | BUS   | FlixBus DACH GmbH       |    35.98 |   16.87 |
++----+-----------+-----------+------------------+------------------+--------+-------+-------------------------+----------+---------+
+Available daytime (local 09:00-20:00): London: 23.83h | Barcelona: 19.58h | Paris: 33.00h
+Travel details:
+  1. FKB -> STN                                 | Transfers: 0 | With allowances: 8h 30m
+  3. STN -> BCN                                 | Transfers: 0 | With allowances: 8h 10m
+  5. BCN -> BVA                                 | Transfers: 0 | With allowances: 8h 00m
+  7. Paris (Bercy Seine) -> Stuttgart Airport   | Transfers: 0 | With allowances: 9h 10m
+
+Comfort Optimum
+===============
+Total Cost (transfer + accommodation): EUR 664.17 | Discomfort: 150.0 | CO2: 253.5 kg
+Trip dates: 2027-02-01 to 2027-02-10 (10 calendar days)
++----+-----------+-----------+------------------+------------------+--------+-------+---------------------------+----------+---------+
+| #  | From      | To        | Departs/Check-in | Arrives/Check-out| Dur.   | Type  | Operator / Hotel          | Cost EUR | CO2 kg  |
++====+===========+===========+==================+==================+========+=======+===========================+==========+=========+
+|  1 | Stuttgart | London    | 2027-02-01 09:10 | 2027-02-01 15:30 | 6h 20m | TRAIN | SNCF VOYAGEURS / Eurostar |   138.13 |   12.74 |
+|  2 | London    | London    | 2027-02-01       | 2027-02-06       | 5 nts  | HOTEL | London Kensington Park    |    90.06 |   37.50 |
+|  3 | London    | Barcelona | 2027-02-06 14:30 | 2027-02-06 17:40 | 2h 10m | FLIGHT| Ryanair                   |    35.00 |  101.00 |
+|  4 | Barcelona | Barcelona | 2027-02-06       | 2027-02-08       | 2 nts  | HOTEL | Casa Gràcia               |    64.76 |   48.00 |
+|  5 | Barcelona | Paris     | 2027-02-08 09:26 | 2027-02-08 16:12 | 6h 46m | TRAIN | SNCF VOYAGEURS            |   142.15 |   14.53 |
+|  6 | Paris     | Paris     | 2027-02-08       | 2027-02-10       | 2 nts  | HOTEL | Hotel Madrigal            |    97.34 |   31.00 |
+|  7 | Paris     | Stuttgart | 2027-02-10 10:53 | 2027-02-10 14:14 | 3h 21m | TRAIN | SNCF VOYAGEURS            |    96.73 |    8.75 |
++----+-----------+-----------+------------------+------------------+--------+-------+---------------------------+----------+---------+
+Available daytime (local 09:00-20:00): London: 50.50h | Barcelona: 11.33h | Paris: 15.68h
+Travel details:
+  1. Stuttgart Hbf -> St-Pancras-International          | Transfers: 1 | With allowances: 7h 20m
+  3. STN -> BCN                                         | Transfers: 0 | With allowances: 8h 10m
+  5. Barcelone-Sants -> Paris Gare de Lyon Hall 1 - 2   | Transfers: 0 | With allowances: 7h 46m
+  7. Paris Est -> Stuttgart Hbf                         | Transfers: 0 | With allowances: 4h 21m
+
+Ecological Optimum
+==================
+Total Cost (transfer + accommodation): EUR 636.07 | Discomfort: 578.9 | CO2: 110.1 kg
+Trip dates: 2027-02-01 to 2027-02-10 (10 calendar days)
++----+-----------+-----------+------------------+------------------+--------+-------+---------------------------+----------+---------+
+| #  | From      | To        | Departs/Check-in | Arrives/Check-out| Dur.   | Type  | Operator / Hotel          | Cost EUR | CO2 kg  |
++====+===========+===========+==================+==================+========+=======+===========================+==========+=========+
+|  1 | Stuttgart | Barcelona | 2027-02-01 10:52 | 2027-02-01 21:32 | 10h 40m| TRAIN | SNCF VOYAGEURS / RER      |   173.95 |   17.30 |
+|  2 | Barcelona | Barcelona | 2027-02-01       | 2027-02-03       | 2 nts  | HOTEL | Safestay Barcelona Gothic |    40.80 |   15.00 |
+|  3 | Barcelona | London    | 2027-02-03 16:24 | 2027-02-04 09:30 | 17h 06m| TRAIN | SNCF VOYAGEURS / Eurostar |   194.56 |   19.93 |
+|  4 | London    | London    | 2027-02-04       | 2027-02-06       | 2 nts  | HOTEL | London Kensington Park    |    35.28 |   15.00 |
+|  5 | London    | Paris     | 2027-02-06 23:00 | 2027-02-07 12:45 | 12h 45m| BUS   | FlixBus France S.A.R.L.   |    29.47 |   11.60 |
+|  6 | Paris     | Paris     | 2027-02-07       | 2027-02-10       | 3 nts  | HOTEL | St Christopher's Paris    |    65.28 |   22.50 |
+|  7 | Paris     | Stuttgart | 2027-02-10 10:53 | 2027-02-10 14:14 | 3h 21m | TRAIN | SNCF VOYAGEURS            |    96.73 |    8.75 |
++----+-----------+-----------+------------------+------------------+--------+-------+---------------------------+----------+---------+
+Available daytime (local 09:00-20:00): Barcelona: 17.90h | London: 33.00h | Paris: 30.13h
+Travel details:
+  1. Stuttgart Hbf -> Barcelone-Sants                                   | Transfers: 2 | With allowances: 11h 40m
+  3. Barcelone-Sants -> St-Pancras-International                        | Transfers: 1 | With allowances: 18h 06m
+  5. London Victoria Coach Station -> Paris (Saint-Denis University)    | Transfers: 1 | With allowances: 13h 45m
+  7. Paris Est -> Stuttgart Hbf                                         | Transfers: 0 | With allowances: 4h 21m
+
+Balanced Optimum
+================
+Total Cost (transfer + accommodation): EUR 380.01 | Discomfort: 340.3 | CO2: 218.7 kg
+Trip dates: 2027-02-02 to 2027-02-11 (10 calendar days)
++----+-----------+-----------+------------------+------------------+--------+-------+-------------------------+----------+---------+
+| #  | From      | To        | Departs/Check-in | Arrives/Check-out| Dur.   | Type  | Operator / Hotel        | Cost EUR | CO2 kg  |
++====+===========+===========+==================+==================+========+=======+=========================+==========+=========+
+|  1 | Stuttgart | Rome      | 2027-02-02 06:00 | 2027-02-02 23:00 | 17h 00m| BUS   | FlixBus DACH GmbH       |    41.47 |   27.31 |
+|  2 | Rome      | Rome      | 2027-02-02       | 2027-02-04       | 2 nts  | HOTEL | Alessandro Palace & Bar |    52.77 |   15.00 |
+|  3 | Rome      | London    | 2027-02-04 11:55 | 2027-02-04 13:35 | 2h 40m | FLIGHT| Ryanair                 |    37.00 |  101.00 |
+|  4 | London    | London    | 2027-02-04       | 2027-02-09       | 5 nts  | HOTEL | London Kensington Park  |    90.20 |   37.50 |
+|  5 | London    | Paris     | 2027-02-09 09:01 | 2027-02-09 11:40 | 2h 39m | TRAIN | Eurostar / RER          |    75.27 |    6.02 |
+|  6 | Paris     | Paris     | 2027-02-09       | 2027-02-11       | 2 nts  | HOTEL | St Christopher's Paris  |    47.32 |   15.00 |
+|  7 | Paris     | Stuttgart | 2027-02-11 10:30 | 2027-02-11 19:20 | 8h 50m | BUS   | FlixBus DACH GmbH       |    35.98 |   16.87 |
++----+-----------+-----------+------------------+------------------+--------+-------+-------------------------+----------+---------+
+Available daytime (local 09:00-20:00): Rome: 11.00h | London: 47.42h | Paris: 19.83h
+Travel details:
+  1. Stuttgart Airport -> Rome Tiburtina Bus station    | Transfers: 1 | With allowances: 18h 00m
+  3. CIA -> STN                                         | Transfers: 0 | With allowances: 8h 40m
+  5. St-Pancras-International -> Saint-Michel Notre-Dame| Transfers: 1 | With allowances: 3h 39m
+  7. Paris (Bercy Seine) -> Stuttgart Airport           | Transfers: 0 | With allowances: 9h 50m
+\end{lstlisting}
+\end{tcolorbox}
+\captionof{lstlisting}{Optimierungsergebnis für eine Reise mit drei Zielen im Februar 2027}
+\label{lst:optimierung_output}

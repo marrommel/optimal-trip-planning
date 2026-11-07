@@ -1,13 +1,13 @@
 \section{Evaluierung}
 \label{sec:evaluierung}
 
-Der ausgewertete Lauf plant eine zehntägige Reise ab Stuttgart mit drei
-Zielen und Unterkünften. Nach 600 Sekunden endet die Suche in Generation~464
-von höchstens 500. Die vier Empfehlungen besuchen London, Barcelona und
-Paris vom 1.\ bis zum 10.\ Februar 2027 und bestehen die abschließende
-Prüfung der modellierten Nebenbedingungen. Die Bezeichnung \glqq Optimum\grqq{}
-meint dabei den jeweiligen Bestwert der gefundenen Alternativen, keinen
-Nachweis globaler Optimalität.
+Nachfolgend wird exemplarisch das in Anhang~\ref{app:beispielausgabe} dokumentierte Optimierungsergebnis für eine zehntägige Reise ab Stuttgart innerhalb des Zeitraums vom 1.\ bis zum 15.\ Februar 2027 mit drei verschiedenen Städten als Reisezielen und den zugehörigen Unterkünften ausgewertet. Dabei wurden Barcelona, London, Madrid, Paris und Rom als mögliche Reiseziele vorgegeben. Ein Budget von 800 Euro und eine Emissionsobergrenze von 350\,kg wurden festgelegt.
+
+Zur Optimierung stand eine Population von 300 Individuen über maximal 500 Generationen zur Verfügung. Neue Individuen wurden mit einer adaptiven Mutationsrate mit einem Initialwert von 15\,\%, einer Rate für koordinierte Mutation von 20\,\% sowie einer Rekombinationsrate von 80\,\% erzeugt.
+
+Die Optimierung endete nach 600 Sekunden in Generation 322. Das Kosten-, Komfort- und ökologische Optimum besuchen London, Barcelona und Paris vom 1.\ bis zum 10.\ Februar 2027. Der Kompromissplan besucht dagegen Rom, London und Paris vom 2.\ bis zum 11.\ Februar 2027. Alle ausgegebenen Reisepläne liegen damit im Anfangsbereich des definierten Zeitraums und berücksichtigen zusammengenommen alle Städte mit Ausnahme von Madrid. Ein separater Lauf mit Madrid als Pflichtreiseziel hat dabei ergeben, dass sowohl Hotels als auch Transportmöglichkeiten dort im betrachteten Zeitraum besonders ungünstig sind.
+
+Tabelle~\ref{tab:eval_empfehlungen} zeigt die Zielwerte der vier ausgegebenen Reisepläne am Ende der Optimierung:
 
 \begin{table}[H]
   \centering
@@ -17,61 +17,48 @@ Nachweis globaler Optimalität.
     Auswahl & Kosten in Euro & Diskomfort & CO$_2$ in kg \\
     \midrule
     Kostenoptimum     & 228,51 & 496,7 & 321,9 \\
-    Komfortoptimum    & 685,17 & 144,0 & 251,5 \\
+    Komfortoptimum    & 664,17 & 150,0 & 253,5 \\
     Ökologisches Optimum & 636,07 & 578,9 & 110,1 \\
-    Kompromiss        & 361,37 & 316,6 & 252,8 \\
+    Kompromiss        & 380,01 & 340,3 & 218,7 \\
     \bottomrule
   \end{tabular}
-  \caption{Empfehlungen des aktuellen Laufs; kleinere Zielwerte sind besser}
+  \caption{Ergebnis des betrachteten Laufs}
   \label{tab:eval_empfehlungen}
 \end{table}
 
-Gegenüber der ersten sichtbaren Ausgabe nach fünf Sekunden sinkt der
-Kostenbestwert von 468,58 auf 228,51 Euro um 51,2\,\%, der geringste
-Diskomfort von 311,9 auf 144,0 um 53,8\,\% und der Emissionsbestwert von
-149,7 auf 110,1 kg um 26,5\,\%. Diese spaltenweisen Minima gehören nicht
-notwendig zum selben Plan. Da Generation~0 keine Werte ausweist, ist dies
-kein Vergleich mit der reinen Zufallsstartpopulation oder einer separaten
-Zufallssuche. Frühe Fortschritte überwiegen, doch noch bei Generation~168
-fällt der Preis von 267,38 auf 231,60 Euro; der letzte sichtbare
-Komfortgewinn folgt erst bei Generation~341. Ein früher Plateauabbruch
-hätte daher Verbesserungen verpasst. Unveränderte Einzelminima belegen zudem
-keinen Stillstand der gesamten Paretofront.
+Im Vergleich zur initialen Population zu Beginn der Optimierung stellen die finalen Zielwerte deutliche Verbesserungen dar. Die Kosten sind von 468,58 auf 228,51 Euro um 51,2\,\% gesunken, der Diskomfort von 311,9 auf 150,0 um 51,9\,\% und die Emissionen von 149,7 auf 110,1\,kg um 26,5\,\%. Der Großteil dieser Fortschritte wurde bereits in einer frühen Phase der Optimierung erreicht, wobei die letzte Verbesserung dieser Einzeloptima in Generation 301 erfolgte. Unveränderte Einzelminima in den übrigen Generationen bedeuten jedoch nicht zwangsläufig, dass keine weitere Verbesserung erfolgt ist. Stattdessen können die anderen beiden Zielgrößen bei gleichbleibendem Einzelminimum weiter verbessert worden sein. Beispielsweise kann der Preis des emissionsärmsten Plans mit 110,1\,kg weiter gesunken sein.
 
-Die erwarteten Zielkonflikte sind deutlich: Das Kostenoptimum nutzt drei
-Flüge und einen Nachtbus, erreicht aber erheblich höheren Diskomfort und
-mehr Emissionen als das fast dreimal so teure Komfortoptimum. Dieses
-kombiniert drei Bahnfahrten mit einem Flug. Kurze Flugzeiten sind nicht
-automatisch komfortabel: Beim günstigsten Plan werden aus 1,5 Stunden
-Flugzeit nach London einschließlich Flughafenwegen und Abfertigungsreserven
-8,5 Stunden. Der Komfortplan benötigt auf dieser Etappe mit der Bahn
-einschließlich Reserven rund 7,3 Stunden und vermeidet späte Ankünfte.
-Die fehlenden Zubringerkosten können den Preisvorteil der Flüge allerdings
-überzeichnen.
+Tabelle~\ref{tab:eval_kostenoptimum} zeigt exemplarisch das Ergebnis der Optimierung für den kostengünstigsten Reiseplan:
 
-Das ökologische Optimum verzichtet vollständig auf Flüge, nicht jedoch
-auf Busse: Es nutzt drei Bahnverbindungen und einen Bus. Seine Emissionen
-liegen um 65,8\,\% unter denen des günstigsten Plans, also bei etwa einem
-Drittel. Nachtverbindungen verlagern einen Teil der Fahrt aus den
-Tagesstunden, erhöhen jedoch die Belastung: Mit 578,9 Punkten ist dies
-die unkomfortabelste Empfehlung. Die aufsummierte nutzbare Tageszeit
-beträgt 81,03 gegenüber 76,41 Stunden beim Kostenoptimum, ein moderater
-Vorteil von 4,62 Stunden. Diese verfügbaren Zeitfenster sind keine
-garantierten Besichtigungszeiten.
+\begin{table}[H] 
+\centering 
+\scriptsize 
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2} 
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llp{2.2cm}p{2.2cm}llp{2.6cm}rr@{}} 
+\toprule 
+Von & Nach & Abfahrt / Check-in & Ankunft / Check-out & Dauer & Art & Anbieter / Hotel & \shortstack{Kosten \\ in Euro} & \shortstack{CO$_2$ \\ in kg} \\ \midrule 
+Stuttgart & London & 01.02.2027\newline 22:40 & 01.02.2027\newline 23:10 & 1\,h 30\,min & Flug & Ryanair & 17,00 & 67,00 \\ \addlinespace 
+London & London & 02.02.2027 & 04.02.2027 & 2 Nächte & Hotel & London Kensington Park & 36,34 & 15,00 \\ \addlinespace 
+London & Barcelona & 04.02.2027\newline 14:50 & 04.02.2027\newline 18:00 & 2\,h 10\,min & Flug & Ryanair & 30,00 & 101,00 \\ \addlinespace 
+Barcelona & Barcelona & 04.02.2027 & 06.02.2027 & 2 Nächte & Hotel & Inout Hostel & 42,57 & 23,00 \\ \addlinespace 
+Barcelona & Paris & 06.02.2027\newline 20:35 & 06.02.2027\newline 22:35 & 2\,h 00\,min & Flug & Ryanair & 25,00 & 84,00 \\ \addlinespace 
+Paris & Paris & 07.02.2027 & 09.02.2027 & 2 Nächte & Hotel & St Christopher's Paris & 41,62 & 15,00 \\ \addlinespace 
+Paris & Stuttgart & 09.02.2027\newline 21:00 & 10.02.2027\newline 05:10 & 8\,h 10\,min & Bus & FlixBus DACH GmbH & 35,98 & 16,87 \\ \bottomrule
+\end{tabular}% 
+} 
+\caption{Plan mit niedrigsten Reisekosten}
+\label{tab:eval_kostenoptimum} 
+\end{table}
 
-Der Kompromiss kostet 132,86 Euro mehr als die günstigste Reise, reduziert
-dafür den Diskomfort um 36,3\,\% und die Emissionen um 21,5\,\%.
-Mit zwei Flügen, einer Bus- und einer Bahnfahrt vermittelt er zwischen
-Preis und Belastung, erreicht aber mit 70,29 Stunden weniger nutzbare
-Tageszeit. Die Auswahl hängt von Gewichten und Skalen ab; sie ist kein
-objektiv bester Plan für jede reisende Person.
+Das Kostenoptimum stimmt dabei mit der allgemeinen Intuition überein. Es werden überwiegend kostengünstige Flüge von einer Low-Cost-Fluggesellschaft wie Ryanair sowie ein Nachtbus von FlixBus genutzt. Der günstigste Reiseplan weist unter den vier Empfehlungen den zweitniedrigsten Komfort auf, denn trotz kurzer Flugzeiten kommt zusätzlicher Aufwand für die Anreise zum Flughafen sowie für Sicherheitskontrollen hinzu. Ebenso sind die Flugzeiten oftmals ungünstig. Neben dem niedrigeren Komfort fallen auch höhere Emissionen an als beim fast dreimal so teuren Komfortoptimum, welches
+ drei Bahnfahrten mit einem Flug kombiniert.
 
-Frühere Entwicklungsversuche motivierten Zwischenspeicher, ein historisches
-Pareto-Archiv und transportbezogene Vielfaltssicherung; zusätzliche
-Suchoperatoren zeigten dagegen nicht durchgehend Vorteile.
-Geänderte Reisedaten, Restriktionen und Emissionsmodelle verhindern einen
-direkten Vergleich historischer Bestwerte. Zur Beurteilung von Suchgüte
-und Hyperparametern sind Wiederholungen mit mehreren Zufallsstartwerten
-unter identischen Bedingungen erforderlich. Die Modellzulässigkeit
-garantiert zudem keine Buchbarkeit; Schätzpreise und Emissionsannahmen
-begrenzen die Übertragbarkeit.
+Das ökologische Optimum verzichtet vollständig auf Flüge und nutzt drei Bahnverbindungen und einen Bus. Seine Emissionen
+liegen um 65,8\,\% unter denen des günstigsten Plans, jedoch verringern viele Nachtverbindungen den Reisekomfort, welcher hier am niedrigsten ist. Dafür ist die aufsummierte nutzbare Tageszeit
+mit über 81 Stunden höher als bei allen anderen Plänen.
+
+Der über alle Zielgrößen hinweg ausgewogene Reiseplan kostet 151,50 Euro mehr als die günstigste Reise, reduziert
+dafür den Diskomfort um 31,5\,\% und die Emissionen um 32,1\,\%.
+Mit einem Flug, zwei Busfahrten und einer Bahnfahrt bietet er eine sinnvolle Mischung verschiedener Verkehrsmittel.

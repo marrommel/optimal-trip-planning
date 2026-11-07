@@ -2,56 +2,18 @@
 \label{sec:fazit}
 
 Die prototypische Umsetzung zeigt, dass die gemeinsame Modellierung von
-Zielauswahl, Reihenfolge, Aufenthaltsdauer, Transport und Unterkunft
-praktisch umsetzbar ist. Innerhalb des Zeitbudgets findet das evolutionäre
-Verfahren gültige Lösungen im Sinne der modellierten Nebenbedingungen
-und verbessert die beobachteten Zielbestwerte deutlich. Die resultierenden
+Zielauswahl, Reihenfolge, Aufenthaltsdauer, Transport und Unterkunft trotz eines großen Lösungsraums praktisch optimierbar ist. Innerhalb des Zeitbudgets findet der evolutionäre
+Algorithmus gültige Lösungen unter Einhaltung zahlreicher Nebenbedingungen
+und verbessert die beobachteten Zielwerte deutlich. Die resultierenden
 Reisepläne sind hinsichtlich ihres zeitlichen Ablaufs und ihrer
-Verkehrsmittelwahl plausibel. Damit ist die grundsätzliche Eignung des
-Ansatzes belegt, nicht jedoch seine globale Optimalität oder die
-uneingeschränkte Buchbarkeit der Empfehlungen.
+Verkehrsmittelwahl plausibel und bestätigen gängige Intuitionen, wie höhere Emissionen bei günstigen Reisen oder erhöhte Kosten für hohen Komfort.
 
-Die Ergebnisse zeigen die erwarteten Zielkonflikte: Niedrige Kosten gehen
-beim günstigsten Plan mit vielen Flügen, höheren Emissionen und stärkerer
-Reisebelastung einher. Der emissionsärmste Plan verzichtet auf Flüge,
-ist dafür deutlich teurer und wegen langer Verbindungen unkomfortabler.
-Den höchsten Preis erreicht allerdings der Komfortplan, nicht der
-ökologische Plan. Die Pareto-basierte Suche macht diese Unterschiede
-sichtbar, ohne bereits vorab eine einzige Präferenz festzuschreiben.
-Der nachgelagert ausgewählte Kompromiss bietet eine Entscheidungshilfe,
-bleibt jedoch von den gewählten Gewichten abhängig.
+Konkret gehen niedrige Kosten beim günstigsten Plan mit vielen Flügen, höheren Emissionen und reduziertem Komfort einher. Der emissionsärmste Plan verzichtet auf Flüge, ist dafür deutlich teurer und wegen langer Verbindungen unkomfortabler. Den höchsten Preis erreicht allerdings der Komfortplan, nicht der ökologische Plan. Zudem zeigt sich unter den gefundenen Lösungen, dass keine einzelne in allen Zielgrößen optimal ist.
 
-Die Grenzen liegen sowohl in der Suche als auch in der Datengrundlage.
-Ein einzelner Lauf erlaubt keine Aussage über die zuverlässige
-Wiederentdeckung guter Lösungen; hierfür sind wiederholte Vergleiche
-und Referenzverfahren für kleine Instanzen erforderlich.
-Aktualisierte Verfügbarkeiten, durchgehend buchbare Hotelaufenthalte,
-vollständig bepreiste Zubringer und belastbarere Emissionsdaten würden
-die praktische Aussagekraft erhöhen. Auch die vorgesehene
-Flugbeschränkung nach Entfernung oder Zeitvorteil bleibt umzusetzen.
+Die Pareto-basierte Optimierung macht die Zielkonflikte sichtbar und verdeutlicht, welche Konsequenzen aus einer einseitigen Fokussierung auf eine Zielgröße wie den Preis resultieren. Dies dient als Entscheidungshilfe für den Nutzer, indem verschiedene Extremlösungen gegenübergestellt werden und deutlich wird, wie viele Emissionen beispielsweise durch die Wahl teurerer Verbindungen eingespart werden könnten. Mit dem über alle Zielgrößen hinweg ausgewogenen Reiseplan wird dem Nutzer zudem ein Kompromiss vorgeschlagen.
 
-Ein weiterer Ausbauschritt wäre die Berücksichtigung von Verspätungen.
-Statt ausschließlich planmäßiger Zeiten könnten zufällige Verzögerungen
-mit anbieter- und verkehrsmittelspezifischen Wahrscheinlichkeiten und
-Dauern modelliert werden. Öffentliche Pünktlichkeitsstatistiken könnten
-Unterschiede zwischen deutschem Bahnverkehr, Flügen und FlixBus abbilden;
-eine höhere Zuverlässigkeit einzelner Anbieter dürfte dabei nicht
-pauschal vorausgesetzt werden, sondern müsste auf vergleichbaren
-Definitionen und Zeiträumen beruhen. Erwartete Wartezeiten und das Risiko
-verpasster Anschlüsse könnten die Komfortbewertung ergänzen und die
-Robustheit der Reisepläne sichtbar machen.
+Aufgrund der hohen Komplexität dieses Problems und der Vielzahl an Einflussfaktoren, die für eine realistische Modellierung berücksichtigt werden können, bietet diese Arbeit noch einige Ansatzpunkte zur Weiterentwicklung im Rahmen einer möglichen Studienarbeit. So könnten beispielsweise Verspätungswahrscheinlichkeiten je nach Verkehrsmittel berücksichtigt werden. Ebenso ließen sich saisonale Schwankungen oder Wetterbedingungen bei der Wahl des Reisezeitraums in Betracht ziehen.
 
-Soziale Auswirkungen ließen sich ohne zusätzliche Zielachse aufnehmen,
-indem der bisherige Diskomfort zu einer umfassenderen \glqq Belastung\grqq{}
-erweitert wird. Zur unveränderten Transportbewertung kämen je Aufenthalt
-ein orts- und datumsabhängiger Beitrag zur touristischen Belastung sowie
-ein ausdrücklich präferenzbasierter Zuschlag für Kettenunterkünfte hinzu.
-Letzterer würde die Bevorzugung unabhängiger Unterkünfte ausdrücken,
-nicht eine pauschal nachgewiesene Schädlichkeit von Hotelketten.
-Die Achse und ihre Empfehlung wären entsprechend als \glqq Belastung\grqq{}
-und \glqq Sozial-Komfort-Optimum\grqq{} zu kennzeichnen.
-Da damit persönliche Beanspruchung und externe soziale Wirkungen
-zusammengeführt würden, müssten Indikatoren, Skalen und Gewichte offen
-dokumentiert und konfigurierbar sein. Die Erweiterung wäre technisch
-überschaubar, ihre normative Abwägung jedoch eine bewusste
-Modellierungsentscheidung.
+Eine weitere wichtige Komponente, die hier keine Beachtung findet, sind soziale Auswirkungen. Die Vermeidung von Massentourismus oder die Bevorzugung lokal geführter Unterkünfte gegenüber Hotelketten könnten hier als Kriterien einfließen. Dazu könnten soziale Auswirkungen als vierte Zielgröße definiert werden. NSGA-II ist zwar nicht auf drei Zielgrößen beschränkt, bei einer Erweiterung wäre jedoch seine Leistungsfähigkeit erneut zu prüfen. Alternativ könnten Emissionen und soziale Auswirkungen in einer gemeinsamen Zielgröße zusammengeführt werden.
+
+Abschließend lässt sich festhalten, dass die prototypische Umsetzung bereits viele realitätsnahe Aspekte wie Anreisezeiten zu Flughäfen, Emissionen von Hotels, Schlafdauer und effektiv nutzbare Aufenthaltsdauer berücksichtigt. So können bereits jetzt Reisepläne gefunden werden, die praktisch sinnvoll anwendbar sind. Durch die Berücksichtigung weiterer Einflussfaktoren, die Integration einer verbesserten Datenbasis sowie zusätzlicher Zielgrößen lässt bietet diese Arbeit Potential für Weiterentwickelung.

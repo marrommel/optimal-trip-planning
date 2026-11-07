@@ -5,9 +5,6 @@ Run from the repository root:
 
 Uses the configured trip and model without overriding budget or carbon limits.
 Only the selected search variants, population, seed and stopping limits vary.
-Compare B1/B4/B6(ii) using --variants genetic greedy_seed local_search ils.
-Use the same --seconds and seeds for every variant; extra local evaluations
-trade generations for refinement, not necessarily for better quality.
 """
 
 import sys

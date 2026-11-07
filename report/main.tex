@@ -41,6 +41,29 @@
 \usepackage{caption}
 \usepackage{float}
 
+% ===== Code im Anhang =====
+\usepackage{xcolor}
+\usepackage[scaled=0.82]{beramono}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{listings, breakable}
+
+\definecolor{termbg}{HTML}{1E1F22}
+\definecolor{termfg}{HTML}{D4D4D4}
+\definecolor{termborder}{HTML}{393B40}
+
+% "Listing" in "Anhang" umbenennen
+\renewcommand{\lstlistingname}{Anhang}
+
+\lstdefinestyle{terminalstyle}{
+  basicstyle=\ttfamily\color{termfg}\fontsize{5.8pt}{7.8pt}\selectfont,
+  columns=fixed,
+  breaklines=false,
+  keepspaces=true,
+  showstringspaces=false,
+  literate={à}{{\`a}}1 {é}{{\'e}}1
+}
+
 % ===== Algorithmen (für die GA-Beschreibung) =====
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -175,5 +198,10 @@ Verfassern.
 \setcounter{page}{\value{romanpages}}
 \stepcounter{page}
 \printbibliography[title={Literaturverzeichnis}, heading=bibintoc]
+
+% ===== ANHANG =====
+\newpage
+\appendix
+\input{sections/anhang}
 
 \end{document}

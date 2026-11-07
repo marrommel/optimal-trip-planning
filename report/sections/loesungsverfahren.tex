@@ -4,9 +4,11 @@
 \subsection{Ablauf des genetischen Algorithmus}
 \label{subsec:ablauf}
 
-Das Verfahren folgt der generationsbasierten Grundform eines genetischen Algorithmus mit NSGA-II-basierter Mehrzielselektion. Eine Population von Genstrings wird bewertet, aus ihr werden Eltern ausgewählt, und aus diesen entstehen durch Rekombination und Mutation Nachkommen. Eltern und Nachkommen konkurrieren gemeinsam um die nächste Generation, wodurch die Population stets dieselbe Größe behält. Ein separates Archiv bewahrt die bisher gefundenen nichtdominierten zulässigen Reisepläne.
+Der in dieser Arbeit entworfene genetische Optimierer wurde nach dem Vorbild von NSGA-II (\textit{Non-dominated Sorting Genetic Algorithm II}) \cite{nsga2}, einem bewährten Standardverfahren für Mehrzielprobleme, umgesetzt. Da NSGA-II für Probleme mit bis zu drei Zielen entwickelt wurde, eignet es sich ideal für die hier betrachteten drei Zielgrößen Kosten, Diskomfort und CO\textsubscript{2}-Emissionen.
 
-Algorithmus~\ref{alg:ga} zeigt den Ablauf. Jede Bewertung setzt die Dekodierung nach Abschnitt~\ref{subsec:dekodierung} voraus. Zielvektor und Constraint-Verletzung werden getrennt bestimmt; zuerst entscheidet die geringere Verletzung, unter zulässigen Plänen die Pareto-Dominanz. Jede Bewertung aktualisiert zugleich das Archiv $A$, auch innerhalb optionaler Erweiterungen. Neue Suchschritte werden nur bei verbleibendem Zeitbudget begonnen; unbewertete Kandidaten werden verworfen.
+Algorithmus~\ref{alg:ga} zeigt vereinfacht den Ablauf des entworfenen genetischen Lösungsansatzes. Dabei wurden neben den wesentlichen Bestandteilen nach NSGA-II zusätzliche Mechanismen wie eine adaptive Mutationsstärke integriert:
+
+%Jede Bewertung setzt die Dekodierung nach Abschnitt~\ref{subsec:dekodierung} voraus. Zielvektor und Constraint-Verletzung werden getrennt bestimmt; zuerst entscheidet die geringere Verletzung, unter zulässigen Plänen die Pareto-Dominanz. Jede Bewertung aktualisiert zugleich das Archiv $A$, auch innerhalb optionaler Erweiterungen. Neue Suchschritte werden nur bei verbleibendem Zeitbudget begonnen; unbewertete Kandidaten werden verworfen.
 
 \begin{algorithm}[htbp]
   \caption{Genetischer Algorithmus zur Reiseplanung}
@@ -14,60 +16,56 @@ Algorithmus~\ref{alg:ga} zeigt den Ablauf. Jede Bewertung setzt die Dekodierung 
   \begin{algorithmic}[1]
     \Require Eingangsdaten, Populationsgröße $\mu$, Suchparameter und Abbruchgrenzen
     \State $A \gets \emptyset$
-    \State erzeuge Startpopulation $P$ aus $\mu$ Individuen
-    \State dekodiere und bewerte alle $G \in P$
+    \State Erzeuge Startpopulation $P$ aus $\mu$ Individuen
+    \State Dekodiere und bewerte alle $G \in P$
     \State $P \gets \operatorname{Umweltselektion}(P,\mu)$
     \While{kein Abbruchkriterium erfüllt}
       \State $Q \gets \emptyset$
       \While{$|Q| < \mu$ und Zeitbudget verbleibt}
-        \State wähle zwei Eltern aus $P$ durch Turnierselektion
-        \State rekombiniere, mutiere und repariere zwei Nachkommen
-        \State füge die Nachkommen bis zur Größe $\mu$ zu $Q$ hinzu
+        \State Wähle zwei Eltern aus $P$ durch Turnierselektion
+        \State Rekombiniere, mutiere und repariere zwei Nachkommen
+        \State Füge die Nachkommen bis zur Größe $\mu$ zu $Q$ hinzu
       \EndWhile
-      \State dekodiere und bewerte $Q$ innerhalb des Zeitbudgets
-      \State passe die Mutationsstärke anhand der Erfolgsquote an
-      \State verbessere optional einen Teil von $Q$ durch lokale Suche
+      \State Dekodiere und bewerte $Q$ innerhalb des Zeitbudgets
+      \State Passe die Mutationsstärke anhand der Erfolgsquote an
+      \State Verbessere optional einen Teil von $Q$ durch lokale Suche
       \State $P \gets \operatorname{Umweltselektion}(P \cup Q,\mu)$
-      \State bestimme den Qualitätsfortschritt des Archivs
-      \If{Störungen aktiviert und Stagnation nach Wartefenster}
-        \State erzeuge, bewerte und verbessere grob mutierte Kopien $R$ von $P$
-        \State $P \gets \operatorname{Umweltselektion}(P \cup R,\mu)$
-        \State aktualisiere Qualitätsfortschritt und Wartefenster
-      \EndIf
+      \State Bestimme den Qualitätsfortschritt des Archivs
     \EndWhile
-    \State verifiziere die Reisepläne in $A$
-    \State \Return $A$ mit hervorgehobenen Einzelziel- und Kompromisslösungen
+    \State Verifiziere die Reisepläne in $A$
+    \State \Return $A$ 
   \end{algorithmic}
 \end{algorithm}
 
-Die Startpopulation wird zufällig erzeugt, um den Lösungsraum breit abzudecken. Optional werden für B1 in der Benchmark-Variante \texttt{greedy\_seed} standardmäßig 20\,\% der Routen durch eine Nearest-Neighbor-Heuristik konstruiert; der Anteil ist auf 25\,\% begrenzt. Als Kantengewichte dienen Mediane aus höchstens 64 gleichmäßig verteilten Angebotsstichproben je Städtepaar. Die Seeds bevorzugen abwechselnd Kosten, Diskomfort, CO$_2$ oder eine normalisierte gewichtete Kombination. Pflichtziele bleiben berücksichtigt, während Nächte, Startdatum und weitere Gene randomisiert werden. Die Konstruktion dekodiert keine zusätzlichen Reisepläne und garantiert keine Zulässigkeit. Spätere Zufallsimmigranten werden nicht greedy konstruiert.
+[!!! - Ich finde die Formulierung etwas komisch. Fällt dir was Besseres ein? - !!!] Die Startpopulation wird zufällig erzeugt, um unterschiedliche Bereiche des Suchraums abzudecken. Optional lässt sich ein Teil dieser Population durch heuristisch erzeugte Greedy-Individuen ersetzen; diese Erweiterung ist derzeit deaktiviert. Die Greedy-Individuen werden über eine Nearest-Neighbor-Heuristik getrennt für Kosten, Diskomfort, CO\textsubscript{2}-Emissionen sowie eine gewichtete Kombination konstruiert. Als Kantengewichte dienen dabei die Mediane aus höchstens 64 gleichmäßig verteilten Angebotsstichproben je Städtepaar. Die Heuristik verzichtet jedoch auf eine vollständige Dekodierung und garantiert daher keine Zulässigkeit der Lösungen.
 
-Tabelle~\ref{tab:parameter} fasst die aktuell eingestellten Hauptparameter zusammen. Ihre geeigneten Werte lassen sich nicht analytisch bestimmen, sondern nur experimentell ermitteln.
+Tabelle~\ref{tab:parameter} fasst die Hauptparameter des genetischen Algorithmus inklusive experimentell ermittelter Werte zusammen:
 
 \begin{table}[htbp]
   \centering
-  \caption{Parameter des Verfahrens}
-  \label{tab:parameter}
   \begin{tabular}{@{}llp{6.5cm}@{}}
     \toprule
     Parameter & Wert & Bemerkung \\
     \midrule
-    Populationsgröße $\mu$ & 300 & Kompromiss aus Rechenzeit und Vielfalt \\
+    Populationsgröße $\mu$ & 300 & Bessere Ergebnisse als bei $\mu = 100$ \\
     Rekombinationsrate & 80\,\% & je Elternpaar \\
-    Mutationsrate & 15\,\%, adaptiv 2--40\,\% & je Gen beziehungsweise Operator \\
+    Mutationsrate & 15\,\%, adaptiv 2--40\,\% & je Genstring \\
     Erfolgsziel / Faktor & 2\,\% / 1,25 & adaptive Mutationssteuerung \\
-    Koordinierte Mutation & 20\,\% & zusätzliche Mehretappenänderung \\
+    Koordinierte Mutation & 20\,\% & Benachbarte Teile im Genstring \\
     Max. Generationen & 500 & feste Obergrenze \\
     Zeitbudget & 600 s & feste Obergrenze \\
-    Qualitätsfenster & 40 Generationen & Plateauabbruch derzeit deaktiviert \\
     \bottomrule
   \end{tabular}
+  \caption{Parameter des Verfahrens}
+  \label{tab:parameter}
 \end{table}
+
+Die Funktionsweise der adaptiven und der koordinierten Mutation wird in Abschnitt~\ref{subsec:mutation} genauer erläutert.
 
 \subsection{Mutation und Nachbarschaft}
 \label{subsec:mutation}
 
-Die Mutation erschließt neue Lösungen, und ihre Gestaltung entscheidet maßgeblich über die Güte des Verfahrens. Leitgedanke ist dabei der Begriff der Nachbarschaft: Kleine Änderungen sollen gute Teilstrukturen erhalten, größere Eingriffe dagegen andere Bereiche des Suchraums erschließen. Da der Genstring aus strukturell verschiedenen Abschnitten besteht, benötigt jeder von ihnen eigene Operatoren. Tabelle~\ref{tab:mutationen} gibt einen Überblick.
+Gezielte Veränderungen im Genstring fungieren als Mutation, um neue (bessere) Lösungen zu generieren. Ein Leitgedanke ist dabei der Begriff der Nachbarschaft. Kleine Änderungen sollen gute Teilstrukturen erhalten, größere Eingriffe dagegen neue Bereiche des Suchraums erschließen. Da der Genstring aus strukturell verschiedenen Abschnitten besteht, benötigt jeder von ihnen eigene Mutationsoperatoren. Tabelle~\ref{tab:mutationen} zeigt die verwendeten Operatoren:
 
 \begin{table}[htbp]
   \centering
@@ -75,59 +73,67 @@ Die Mutation erschließt neue Lösungen, und ihre Gestaltung entscheidet maßgeb
     \toprule
     Abschnitt & Operator & Wirkung \\
     \midrule
-    $\pi$ & Swap & vertauscht zwei Positionen, verändert bis zu vier Übergänge \\
-    $\pi$ & Insert & versetzt ein Ziel und verbindet die betroffenen Nachbarn neu \\
-    $\pi$ & Teilstring-Inversion & kehrt einen Abschnitt und dessen gerichtete Übergänge um \\
-    $\pi$ & Zielaustausch & ersetzt ein optionales Ziel durch ein bisher unbesuchtes \\
-    $d$ & Diskrete Mutation & verändert eine Aufenthaltsdauer um eine, grob auch zwei Nächte \\
-    $d$ & Tagestransfer & verschiebt eine Nacht von einem Stopp zu einem anderen \\
-    $t$ & Fenster-/Moduswahl & zieht beide Präferenzen unabhängig voneinander neu \\
-    $k,h$ & Schlüsselmutation & zieht die Verbindungs- beziehungsweise Hotelauswahl neu \\
+    $\pi$ & Swap & Vertauscht zwei Reiseziele, verändert bis zu vier Übergänge \\
+    $\pi$ & Move & Verschiebt ein Reiseziel und verbindet die betroffenen Nachbarn neu \\
+    $\pi$ & Teilstring-Inversion & Kehrt einen Reiseabschnitt und dessen gerichtete Übergänge um \\
+    $\pi$ & Zielaustausch & Ersetzt ein Reiseziel durch ein bisher unbesuchtes \\
+    $d$ & Diskrete Mutation & Verändert eine Aufenthaltsdauer um eine Nacht \\
+    $d$ & Tagestransfer & Verschiebt eine Nacht von einem Stopp zu einem anderen \\
+    $t$ & Transportwechsel & Zieht eine neue Kombination aus Verkehrsmittel und  Tageszeit\\
+        $v,h$ & Schlüsselmutation & Zieht eine neue Verbindungs- beziehungsweise Hotelauswahl \\
     \bottomrule
   \end{tabular}
   \caption{Mutationsoperatoren je Genabschnitt}
   \label{tab:mutationen}
 \end{table}
 
-Die drei Reihenfolgeoperatoren auf $\pi$ werden gleichwahrscheinlich gewählt. Eine Inversion verändert bei gerichteten Fahrplanverbindungen auch die inneren Übergänge und ist daher nicht grundsätzlich schonender als Swap oder Insert. Bei feiner Suche werden Insert und Inversion auf höchstens drei Positionen begrenzt. Ein separater Zielaustausch verändert die besuchte Teilmenge, ohne Pflichtziele zu entfernen. Nächte und Hotelgene bleiben bei Routenänderungen an ihre Städte, Transportgene an erhaltene gerichtete Kanten gebunden; neue Kanten erhalten zufällige Gene. Die Positionen werden zufällig gewählt. Eine Bevorzugung langer Übergänge wäre eine mögliche, bislang nicht eingesetzte Nachbarschaftsheuristik.
+Mit gleicher Wahrscheinlichkeit wird einer der drei Reihenfolgeoperatoren ausgewählt. Eine Inversion verändert bei gerichteten Fahrplanverbindungen auch die inneren Übergänge und ist daher nicht grundsätzlich schonender als Swap oder Move. Bei feiner Suche werden Move und Inversion auf höchstens drei Positionen begrenzt. Nächte und Hotelgene bleiben bei Routenänderungen an ihre Städte, Transportgene an erhaltene gerichtete Kanten gebunden; neue Kanten erhalten zufällige Gene. Die Positionen bei Reihenfolgemutationen werden zufällig gewählt.
 
-Auf $d$ wirkt ein gleichverteilt gezogener Schritt aus $\{-1,1\}$, bei grober Suche aus $\{-2,-1,1,2\}$. Der Tagestransfer ergänzt diesen Operator, indem er einem Stopp oberhalb seiner Mindestdauer eine Nacht nimmt und einem anderen eine gibt; die Summe der Nächte bleibt dabei unverändert. Anschließend werden die Mindestdauern hergestellt und überschüssige Nächte zufällig bei Stopps oberhalb ihres Minimums abgezogen, bis $\sum_i d_i \leq T-1$ gilt oder keine Kürzung mehr möglich ist. Dies garantiert noch keinen zeitlich zulässigen Reiseplan.
+Diskrete Mutationen verändern die Dauer $d$ um einen zufälligen Wert aus der Menge $\{-1,1\}$. Die Mutation durch Tagestransfer ergänzt diesen Operator, indem sie einem Reiseziel oberhalb der Mindestdauer eine Nacht nimmt und einem anderen eine gibt. Die Summe der Nächte insgesamt bleibt dabei unverändert.
 
-Auf $t$ werden Verkehrsmittel und Zeitfenster unabhängig mit der Mutationsrate gleichverteilt neu gewählt; auch beide können sich gleichzeitig ändern oder gleich bleiben. Die Schlüssel $k$ und $h$ werden unabhängig in $[0,1]$ neu gezogen. Auch das Startdatum kann innerhalb des erlaubten Fensters wechseln. Eine zusätzliche koordinierte Mutation setzt auf zwei, bei grober Suche drei benachbarten Etappen dieselbe neu gezogene Modus- und Fensterpräferenz, erneuert die Verbindungsschlüssel und verändert optional das Startdatum. Sie erlaubt bewusst gekoppelte, größere Eingriffe. Nicht erfüllbare Transportpräferenzen löst erst der Decoder durch Ersatzklassen auf und schreibt bei erfolgreicher Transportdekodierung die realisierte Wahl in den Genstring zurück.
+In der Transportklasse $t$ werden Verkehrsmittel und Zeitfenster unabhängig voneinander mit der Mutationsrate neu gewählt. Die Schlüssel $v$ und $h$ werden unabhängig in der Menge $[0,1]$ neu gezogen. Auch das Startdatum der Reise kann innerhalb des erlaubten Reisezeitraums wechseln. 
 
-Die Stärke der Mutation wird über die Erfolgsquote gesteuert, angelehnt an die Ein-Fünftel-Regel \parencite[Vgl.][S.~133]{eibenSmithIntroductionEvolutionary2015}. Erfolg bedeutet hier, dass ein zulässiger Nachkomme den zuerst gewählten Elternteil pareto-dominiert; nur Nachkommen eines zulässigen Vergleichselternteils zählen mit. Da dieses Kriterium strenger als eine skalare Verbesserung ist, beträgt die eingestellte Zielquote 2\,\% statt eines Fünftels. Oberhalb der Zielquote wird die Mutationsrate mit 1,25 multipliziert, andernfalls dividiert und auf 2--40\,\% begrenzt; ohne auswertbare Nachkommen bleibt sie unverändert. Oberhalb der Basisrate wird grob, darunter fein gesucht. Die Eingriffstiefe folgt damit dem Erfolg und nicht einem festen zeitlichen Absenkungsplan.
+Zusätzlich setzt eine koordinierte Mutation auf zwei benachbarten Reiseabschnitten dieselbe neu gezogene Modus- und Fensterpräferenz, erneuert die Verbindungsschlüssel und verändert optional das Startdatum. Sie erlaubt bewusst gekoppelte, größere Eingriffe. Nicht erfüllbare Reisepläne (fehlende Verbindungs- oder Hotelverfügbarkeit) behandelt erst der Decoder durch Ersatzklassen und schreibt diese in den Genstring zurück.
 
-
-\subsection{Lokale Suche und lokale Störungen}
-
-Für B4 verbessert eine optionale First-Improvement-Suche in der Benchmark-Variante \texttt{local\_search} standardmäßig die besten 10\,\% der bewerteten Nachkommen, geordnet nach Constraint-Verletzung und anschließend dem Kompromisswert. Die Nachbarschaft wird in fester Reihenfolge durchlaufen: benachbarte Hoteleinträge, einzelne Verkehrsmittel- und Zeitfensterwechsel, Nachttransfers, Startdatumsverschiebungen und Segmentumkehrungen. Günstig zu bewertende Hoteländerungen kommen damit zuerst. Nächte und Hotelgene bleiben an ihre Städte gebunden. Zunächst entscheidet Constraint-Dominanz; liefert diese keine Entscheidung, gewinnt der kleinere Kompromisswert. Diese skalare Ergänzung garantiert keine Erhaltung der Frontbreite. Deshalb werden auch nicht akzeptierte bewertete Nachbarn dem Archiv zugeführt.
-
-Nach höchstens drei akzeptierten Schritten, einer erfolglosen vollständigen Nachbarschaftssuche oder Ablauf des Zeitbudgets endet die Verbesserung. Sie ist Lamarckian: Der verbesserte Genstring wird für Selektion und spätere Vererbung verwendet. Die adaptive Mutationsregel wird vorher ausgewertet, damit sie nicht den Erfolg der lokalen Suche der Mutation zuschreibt. Hoteländerungen verwenden den bereits dekodierten Transport; andere Änderungen durchlaufen den memoisierten Dekodierer.
-
-Für B6(ii) löst ein stagnierendes Archiv-Hypervolumen über das konfigurierte Fenster optional eine zusätzliche Störungscharge aus. In der Benchmark-Variante \texttt{ils} werden Kopien der Population standardmäßig dreimal mit einer separaten groben Mutationskonfiguration verändert, anschließend einzeln bewertet und jeweils lokal nachoptimiert. Eltern und Störungsnachkommen konkurrieren gemeinsam um die nächste Population. Zwischen zwei Störungen liegt mindestens ein vollständiges Qualitätsfenster. Bei aktivierten Störungen beendet ein Plateau den Lauf nicht vorzeitig. Ein Plateau oder ein erreichtes Schrittlimit beweist allerdings kein lokales Minimum: Das Verfahren ist eine budgetierte Annäherung an die zweistufige Suche.
-
-Die vorhandenen relativen Budget- und CO$_2$-Strafen erlauben für B6(iii) die Bewertung unzulässiger Zwischenlösungen, ohne sie als zulässige Ergebnisse auszugeben. Constraint-Dominanz bevorzugt weiterhin zulässige Individuen; ein Übergang über unzulässige Regionen ist damit möglich, aber nicht garantiert.
-
-Die Varianten \texttt{genetic}, \texttt{greedy\_seed}, \texttt{local\_search} und \texttt{ils} werden mit denselben Seeds und demselben Suchzeitbudget verglichen; Letztere aktiviert alle drei Erweiterungen. In der aktuellen Grundkonfiguration sind Greedy-Seeding, lokale Suche und Störungen deaktiviert. Weitere Vergleichsvarianten untersuchen einzelne Operatoren und Beschleunigungen. Zusätzliche Nachbarschaftsbewertungen reduzieren typischerweise die Generationenzahl; Qualitätsgewinne werden anhand von Hypervolumen, Kompromisswert und Frontvielfalt beurteilt, nicht vorausgesetzt. Vor jeder Nachbarschaftsbewertung wird die Deadline geprüft. Laufende Bewertungen, Selektion und Verifikation sind jedoch nicht präemptiv; Such- und Verifikationszeit werden getrennt berichtet.
+Die Größe der Mutationsrate wird adaptiv über die Erfolgsquote gesteuert, welche angibt, wie groß der Anteil zulässiger Nachkommen ist, die ihren jeweiligen Elternteil Pareto-dominieren. Die eingestellte Zielquote liegt hier bei 2\,\% mit einem adaptiven Faktor von 1,25. Liegt die Erfolgsquote oberhalb dieser Zielquote, wird die Mutationsrate folglich um 25\,\% erhöht, andernfalls um 25\,\% gesenkt. Die Mutationsrate ist dabei auf einen Bereich von 2--40\,\% begrenzt.
 
 \subsection{Rekombination}
 \label{subsec:rekombination}
 
-Die Rekombination kann auf dem Auswahl- und Reihenfolgeabschnitt nicht in ihrer einfachen Form angewandt werden. Ein Ein-Punkt-Crossover, das Teile beider Eltern zusammensetzt, kann Ziele doppelt enthalten oder Pflichtziele auslassen. Der Nachkomme wäre kein gültiger Reiseplan.
+Rekombination kann auf dem verwendeten Genstring nicht in ihrer einfachen Form angewandt werden, denn ein simpler Ein-Punkt-Crossover kann zu einer Dopplung von Reisezielen oder zum Auslassen von Pflichtzielen führen. Solche Nachkommen wären keine gültigen Reisepläne mehr.
 
-Verwendet wird daher ein an Teilmengen angepasstes Order Crossover. Ein zusammenhängender Abschnitt des ersten Elternteils wird übernommen; die freien Positionen werden mit noch nicht enthaltenen Zielen in der Reihenfolge des zweiten aufgefüllt. Fehlende Pflichtziele ersetzen anschließend optionale Ziele. Der Nachkomme erbt damit Auswahl- und Reihenfolgeinformation. Beide Elternrichtungen erzeugen je ein Kind; ohne Rekombination werden die Eltern kopiert und anschließend dennoch mutiert.
+Verwendet wird daher ein an Teilmengen angepasstes Order Crossover. Ein zusammenhängender Abschnitt des ersten Elternteils wird übernommen und die fehlenden Positionen werden mit den noch nicht enthaltenen Zielen in der Reihenfolge des zweiten Elternteils aufgefüllt. Fehlende Pflichtziele werden zudem bevorzugt. So entsteht ein Nachkomme, der Teile von Auswahl- und Reihenfolgeinformation beider Eltern erbt.
 
-Für die übrigen Genabschnitte stellt sich die Frage, woran sie gebunden sind. Aufenthaltsdauer und Hotelwahl gehören zum Reiseziel, nicht zur Routenposition. Beide werden je Stadt gemeinsam von einem zufällig gewählten Elternteil übernommen, der diese Stadt besucht. Transportpräferenz und Verbindungsschlüssel gehören dagegen zur gerichteten Kante: Je erhaltener Kante wird zufällig unter den Eltern gewählt, die sie besitzen. Neue Kanten erhalten zufällige Gene, noch ohne Verfügbarkeitsgarantie. Das Startdatum stammt von einem zufällig gewählten Elternteil; abschließend werden die Nächte repariert.
+Auch die übrigen Bestandteile des Genstrings werden rekombiniert. Anders als bei der Reihenfolge der Reiseziele werden dabei jedoch keine zusammenhängenden Abschnitte übernommen. Stattdessen werden die Gene entsprechend ihrer Zuordnung zu Städten oder gerichteten Verbindungen aus beiden Eltern kombiniert.
 
-Ob die Rekombination einen Beitrag leistet, ist experimentell zu klären. Sie kann komplementäre Stärken verbinden, aber auch gute Teilstrukturen zerstören. Eine optionale, derzeit deaktivierte Partnerwahl fördert Komplementarität: Unter vier Turniersiegern wird der vom ersten Elternteil im normalisierten Zielraum am weitesten entfernte gewählt, bevorzugt aus den zulässigen Kandidaten.
+Aufenthaltsdauer und Hotelwahl gehören zum jeweiligen Reiseziel, nicht zu dessen Position in der Route. Für jede Stadt des Nachkommen wird daher zufällig ein Elternteil ausgewählt, der diese Stadt besucht. Von diesem werden Aufenthaltsdauer und Hotelwahl gemeinsam übernommen. Besucht nur ein Elternteil die Stadt, liefert dieser die beiden Werte. Auch das Startdatum der Reise wird zufällig von einem Elternteil übernommen.
+
+Das Transportmittel gehört dagegen zur gerichteten Verbindung zwischen zwei aufeinanderfolgenden Städten. Kommt diese Verbindung in mindestens einem Elternteil vor, werden das gewählte Transportmittel und das Zeitfenster von einem zufällig gewählten Elternteil übernommen. Entsteht durch die Rekombination eine Verbindung, die kein Elternteil besitzt, folgt eine zufällige Zuordnung.
+
+Diese Rekombinationsoperatoren garantieren jedoch keinen durchführbaren Reiseplan. Erst bei der anschließenden Dekodierung wird geprüft, ob die gewählten Verbindungen und Hotels verfügbar sind. Der Decoder greift, soweit möglich, auf verfügbare Alternativen zurück. Lässt sich kein durchführbarer Reiseplan erzeugen, ist der Nachkomme unzulässig.
 
 \subsection{Selektion und Abbruch}
 \label{subsec:selektion}
 
-Die Auswahl der Eltern erfolgt durch binäre Turniere. Die Population wird mittels Constraint-Dominanz in Fronten eingeteilt; der niedrigere Frontrang gewinnt, bei Gleichstand die größere Crowding-Distanz, danach entscheidet der Zufall. Die Crowding-Distanz misst normalisierte Nachbarabstände im Zielraum und bevorzugt dünn besetzte Bereiche; Randpunkte nichtkonstanter Zielgrößen erhalten unendliche Distanz. Anders als bei einer skalaren Ranggewichtung gibt es keine rangabhängig vorgegebene Auswahlwahrscheinlichkeit.
+Zur Reproduktion treten jeweils zwei zufällig gezogene Individuen gegeneinander an, und das bessere wird als Elternteil gewählt. Dafür wird die Population nach Constraint-Dominanz geordnet. Zulässige Pläne haben Vorrang vor unzulässigen. Unter zulässigen Plänen entscheidet die Pareto-Dominanz die Reihenfolge. Die so entstehenden Ranggruppen heißen Fronten. Zur ersten Front gehören alle Individuen, die von keinem anderen dominiert werden. Nimmt man diese heraus, bilden die anschließend nichtdominierten Individuen die zweite Front und so weiter. Im Turnier gewinnt das Individuum mit dem niedrigeren Frontrang.
 
-Zusätzlich ist phänotypisches Niching aktiviert. Zulässige Individuen mit identischem Transportplan bilden unabhängig von ihren Hotels eine Gruppe; die Turniere vergleichen deren beste Repräsentanten. Bei der Umweltselektion aus Eltern und Nachkommen werden ebenfalls zunächst Gruppenrepräsentanten berücksichtigt, danach weitere Individuen, jeweils nach Verletzung, Rang und Crowding-Distanz. Ohne Gruppierung werden die Fronten direkt aufgefüllt. Identische zulässige Reisepläne werden dedupliziert; bei unzulässigen zählt zusätzlich der Genotyp. Fehlen Gruppen beziehungsweise Individuen, werden Zufallsimmigranten bewertet; nötigenfalls sichern Kopien die Populationsgröße.
+Bei gleichem Rang entscheidet die Crowding-Distanz. Sie beschreibt, wie groß die Abweichung von den normierten Zielwerte anderen Lösungen in der gleichen Front ist. Das Individuum mit der größeren Distanz gewinnt, sodass weniger dicht besetzte Bereiche bevorzugt werden. Bei erneutem Gleichstand entscheidet der Zufall.
 
-Elitismus entsteht durch die gemeinsame Konkurrenz von Eltern und Nachkommen sowie das historische Pareto-Archiv, nicht durch eine feste Elitenzahl. Das Archiv behält jeden bislang nichtdominierten zulässigen Plan, bis ihn ein besserer dominiert. Dadurch verschlechtert sich sein Hypervolumen bei festem Referenzpunkt nicht, selbst wenn die Population einzelne Pläne verliert.
+Zusätzlich werden Individuen anhand ihres Phänotyps gruppiert. Zum Beispiel bilden Individuen mit identischem Transportplan aber unterschiedlicher Hotelwahl eine Gruppe. In den Turnieren werden jeweils die besten Repräsentanten einer Gruppen bestimmt. Bei der Selektion von Eltern und Nachkommen für die nächste Generation werden zunächst diese Gruppenrepräsentanten berücksichtigt. Freie Plätze werden anschließend mit weiteren Individuen nach Frontrang und Crowding-Distanz besetzt. Identische zulässige Reisepläne werden nur einmal berücksichtigt, während bei unzulässigen Plänen zusätzlich der Genotyp herangezogen wird, um Duplikate zu vermeiden.
 
-Die Optimierung endet nach spätestens 500 Generationen oder beim Erreichen des Suchzeitbudgets von 600 Sekunden. Optional greift ein Plateauabbruch, wenn über 40 Generationen sowohl der absolute Hypervolumengewinn als auch die Verbesserung des besten Kompromisswerts ihre Schwellen nicht überschreiten. Dieses Kriterium ist derzeit deaktiviert; bei aktivierten Störungen dient Stagnation stattdessen als Neustartimpuls. Abschließend werden Zeitplan, Nebenbedingungen und Zielwerte aller Archivpläne unabhängig nachgerechnet; Abweichungen führen zum Fehlerabbruch. Aus der verifizierten Front werden die drei Einzelzielbesten und der Kompromiss hervorgehoben. Wurde noch kein zulässiger Plan gefunden, wird dies gemeldet: Ein Zeitabbruch garantiert kein verwertbares Ergebnis.
+Druch Elitismus werden die bestien Iduvidueen innerhalb der Population erhalten. Dies wird nicht durch eine feste Elitenzahl sichergestellt, sondern durch ein historische Pareto-Archiv, das über alle Generatioen die bislang nichtdominierten zulässigen Plan speichert. Dadurch beleibe Eliten erhalten, selbst wenn die nächste Population einzelne Pläne verliert. Pläne aus dem Archiv werden am ende der Optimierung berücksichtigt.
+
+Die Optimierung endet nach spätestens 500 Generationen oder beim Erreichen des Suchzeitbudgets von 600 Sekunden. Abschließend werden Zeitplan, Nebenbedingungen und Zielwerte aller Pläne aus dem Archive unabhängig nachgerechnet und bei Abweichungen oder Unzulässigkeit entfernt. Aus der so verifizierten Front werden die besten Individuen der drei Einzelziele und der beste über alle Ziele gewichtete Kompromissplan ausgegeben.
+
+\subsection{Nicht zielführende Maßnahmen}
+
+Zusätzlich wurden folgende Maßnahmen umgesetzt, die keine nachweisbare Verbesserung erzielten:
+\begin{itemize}
+  \item Durch eine lokale Suche mittels Hill Climbing soll ein Teil der Nachkommen nach Mutation, Dekodierung und Bewertung durch kleine Änderungen in ihrer Nachbarschaft schrittweise verbessert werden.
+  \item Die Anwendung von Störungen (\textit{Bomben}) soll bei ausbleibendem Fortschritt durch große bzw. destruktive Veränderungen neue Bereiche des Suchraums erschließen.
+  \item Die Wahl komplementärer Partner bei der Rekombination soll Eltern mit unterschiedlichen Stärken kombinieren, um bessere Nachkommen zu erzeugen.
+\end{itemize}
+
+In den betrachteten Versuchen mit unterschiedlichen Zufalls-Seeds, Reisezeiträumen und Reisezielen boten diese Maßnahmen keinen erkennbaren Mehrwert. Bei jeder Maßnahme traten mindestens längere Laufzeiten durch zusätzlichen Rechenaufwand und/oder unveränderte bzw. schlechtere Optimierungsergebnisse. Daher werden sie im Rahmen dieser Arbeit nicht weiter evaluiert.
+
+Diese Maßnahmen sind jedoch Bestandteil der in Kapitel~\ref{sec:prototypische_umsetzung} beschriebenen prototypischen Implementierung und lediglich in den Konfigurationsdateien deaktiviert. Für Tests können sie aktiviert und genutzt werden.

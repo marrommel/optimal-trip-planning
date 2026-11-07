@@ -10,14 +10,14 @@ TOTAL_DAYS = 10                               # Exact calendar days; return on t
 # ========================= 2. DESTINATIONS =======================
 DESTINATIONS = ["London", "Paris", "Madrid", "Barcelona", "Rome"]
 NUM_DESTINATIONS = 3                          # Cities to visit (excluding start)
-MUST_VISIT_DESTINATIONS = ["Madrid"]          # Subset of DESTINATIONS
+MUST_VISIT_DESTINATIONS = []                  # Subset of DESTINATIONS
 MIN_DAYS_PER_CITY = 2                         # Minimum days per destination
 MIN_NIGHTS_BY_CITY = {}                       # Optional overrides, e.g. {"Rome": 3}
 MIN_USABLE_HOURS_PER_CITY = 9.0               # Hard minimum of daytime hours per stay
 
 # ========================= 3. LIMITS =============================
 MAX_BUDGET = 800.0                             # EUR
-MAX_CO2 = 800.0                               # kg
+MAX_CO2 = 350.0                               # kg
 MAX_TRANSFER_HOURS = 20.0                     # Per connection, including layovers
 
 # ========================= 4. HOTELS =============================

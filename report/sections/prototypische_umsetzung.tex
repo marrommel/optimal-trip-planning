@@ -1,59 +1,37 @@
 \section{Prototypische Umsetzung}
+\label{sec:prototypische_umsetzung}
 
-Der Prototyp setzt das beschriebene Verfahren als Python-Konsolenanwendung um.
-Das Projekt trennt Datenbeschaffung, Optimierung und gemeinsame Hilfsfunktionen
-in die Verzeichnisse \texttt{api}, \texttt{optimizer} und \texttt{helpers} unter
-\texttt{src}. \texttt{main.py} verbindet diese Teile und gibt die empfohlenen
-Reisepläne aus; \texttt{benchmark.py} ermöglicht Vergleichsläufe auf denselben
-gespeicherten Angeboten. Während der Optimierung erfolgen keine Anbieterabfragen.
+Eine prototypische Umsetzung wird als Python-Konsolenanwendung implementiert.
+Der Code gliedert sich in folgende Bestandteile:
 
-Die Problemvorgaben werden zentral in \texttt{config.py} festgelegt: Startort
+\begin{itemize}
+  \item \texttt{api}: Beschaffung einer Datenbasis von Angeboten für Flüge, Hotels sowie Bus- und Bahnverbindungen.
+  \item \texttt{cache}: Lokal gespeicherte Angebote, die bei passender Konfiguration für weitere Läufe wiederverwendet werden.
+  \item \texttt{optimizer}: Optimierungsverfahren, Dekodierung der Reisepläne, Bewertung der Zielgrößen und Auswahl geeigneter Unterkünfte.
+  \item \texttt{helpers}: Gemeinsame Datenmodelle und Hilfsfunktionen zum Laden der Daten und Einstellungen sowie zur Berechnung von Reise- und Aufenthaltszeiten.
+  
+\end{itemize}
+
+Das zu lösende Optimierungsproblem wird zentral in der Konfigurationsdatei \texttt{config.py} beschrieben. Dort werden unter anderem Startort
 und mögliche Abflughäfen, Reisezeitfenster und Reisedauer, Kandidaten- und
-Pflichtziele, Anzahl der besuchten Städte sowie Personenzahl. Hinzu kommen
-Mindestaufenthalte, nutzbare Tagesstunden und Obergrenzen für Budget, Emissionen
-und die Dauer einzelner Verbindungen. Die Unterkunftsplanung lässt sich über
-\texttt{OPTIMIZE\_HOTELS} ein- und ausschalten; bei deaktivierter Planung
-entfallen Hotelauswahl und sämtliche Unterkunftsbeiträge zur Bewertung,
-nicht jedoch die Aufenthaltsbedingungen. Bei aktivierter Planung begrenzen
-Sterneklasse, Gästebewertung, Bewertungsanzahl und Nachtpreis die Hotelauswahl.
-Suchparameter und Bewertungsgewichte stehen getrennt in \texttt{settings.toml},
-Zeitreserven und Ortsinformationen in \texttt{assumptions.toml}.
+Pflichtziele, Anzahl der zu besuchenden Städte sowie Personenzahl definiert. Hinzu kommen Mindestaufenthalte, eine Mindestanzahl nutzbarer Tagesstunden je Stadt und Obergrenzen für Budget, Emissionen und Verbindungsdauer.
 
-Die abstrakte Repräsentation wird als Python-Datenklasse mit Listen für
-Route, Nächte und Auswahlgene umgesetzt. Verkehrsmittel und Abfahrtszeitfenster
-werden getrennt gespeichert; das Fenster wird aus einer Stundenangabe
-abgeleitet. Zusätzlich wird der Abreisetag innerhalb des vorgegebenen
-Reisefensters mitoptimiert und als Tagesoffset gespeichert. Anders als beim
-vereinfachten Nachtversatz des Modells ergeben sich die Ankunftstage aus
-konkreten, zeitzonenbezogenen Fahrplanzeiten einschließlich Zu- und
-Abgangsreserven. Auch der Diskomfort wird verfeinert: Modus, Reisezeit,
-Schlafunterbrechungen, lange Fahrten und Wartezeiten am Hotel gehen ein.
+Auch kann die Unterkunftsplanung deaktiviert werden, um Hotels nicht bei der Optimierung zu berücksichtigen. Ist diese jedoch aktiv, können
+Sterneklasse, Gästebewertung, Bewertungsanzahl und ein maximaler Preis pro Nacht die Hotelauswahl beschränken.
 
-Der Decoder folgt den Transportpräferenzen ohne Rückwärtssuche; fehlt eine
-Fortsetzung, bleibt der Kandidat unzulässig. Bei nicht erfüllbaren Präferenzen
-hat zunächst das Verkehrsmittel, danach das Zeitfenster Vorrang.
-Abweichend von einer pauschalen Dominanzreduktion innerhalb einer Klasse
-werden Transportangebote nur bei übereinstimmenden Zeit- und
-Verbindungseigenschaften verglichen, da andere Ankunftszeiten spätere
-Aufenthalte verändern können. Bei Hotels werden zusätzlich Check-in- und
-Check-out-Zeiten berücksichtigt. Zwischenspeicher ersetzen eine allgemeine
-inkrementelle Neubewertung einzelner Etappen. Die im Modell vorgesehene
-Flugbeschränkung nach Entfernung oder Zeitvorteil ist noch nicht umgesetzt;
-die relative Budget- und Emissionsstrafe verwendet jeweils Gewicht eins,
-ergänzt um die Anzahl struktureller Verstöße.
+Ergänzend enthält \texttt{settings.toml} die Einstellungen des Suchverfahrens und der Komfortbewertung. Dazu gehören etwa Populationsgröße, Generationen- und Laufzeitlimit, Zufalls-Seed sowie Rekombinations- und Mutationsraten. Auch die Gewichtung zur Auswahl einer ausgewogenen Lösung ist hier festgelegt.
 
-Flug- und Hotelangebote stammen aus Schnittstellen zu Google Flights und
-Google Hotels, Bodenverbindungen aus Transitous sowie FlixBus und FlixTrain.
-Der Bahn- und Buszugriff ist im Prototyp auf unterstützte europäische Städte
-und Strecken bis 1.350\,km Luftlinie begrenzt.
-Wo verbindliche Fahrpreise fehlen, werden sie ersatzweise geschätzt:
-Der Transitous-Bahnprovider verwendet einen entfernungsabhängigen Näherungstarif,
-während Flix-Angebotspreise übernommen werden.
+Für die Komfortbewertung lassen sich hier ebenso die nutzbaren Tagesstunden, die bevorzugte Schlafenszeit und die erforderliche zusammenhängende Ruhezeit einstellen. In der aktuellen Konfiguration gelten beispielsweise 9--20 Uhr als nutzbare Tageszeit und 23--7 Uhr als Schlafenszeit, innerhalb derer mindestens sechs Stunden Ruhe erforderlich sind. Ein zusätzliches Nachtfenster von 1--5 Uhr kennzeichnet besonders ungünstige Reisezeiten. 
 
-Mangels verbindungsspezifischer Emissionsangaben werden die Bodenemissionen
-aus Entfernung und einem Faktor je Personenkilometer angenähert, entsprechend
-dem gebräuchlichen Bezug von Verkehrsemissionen auf die Verkehrsleistung
-\parencite[Vgl.][]{ubaEmissionsdaten}:
+Die Datei \texttt{assumptions.toml} bündelt ergänzende Modellannahmen. Hier werden unter anderem Standardzeiten für den Hotel-Check-in und -Check-out sowie zeitliche Reserven für die Anreise zum Flughafen, den Flug-Check-in odr den Zu- und Abgang an Bahnhöfen festgelegt. Die Zu- und Abgangsreserven bei Flughäfen und Bahnhöfen erweitern die reine Verbindungsdauer, stellen jedoch keine separaten Transfers dar.
+
+Der Diskomfort ergibt sich damit nicht allein aus der Fahrtdauer. Die gesamte Reisezeit einschließlich der Zu- und Abgangsreserven wird abhängig vom Verkehrsmittel bewertet. So wird eine Stunde im Bus stärker gewichtet als eine Stunde im Zug. Für Flüge kommt zusätzlich ein pauschaler Zuschlag hinzu. Weitere Beiträge entstehen durch Umstiege und besonders lange Reisen. Überschneidungen mit der nutzbaren Tageszeit, der bevorzugten Schlafenszeit und dem zusätzlichen Nachtfenster werden ebenso berücksichtigt. Eine Fahrt während der Schlafenszeit kann somit einen Nachtzuschlag verursachen. Bei Aufenthalten wird dagegen anhand der lokalen Ankunfts- und Abreisezeiten geprüft, ob genügend nutzbare Tagesstunden und zusammenhängende Ruhezeiten verbleiben.
+
+Bei aktivierter Unterkunftsplanung gehen außerdem Unterkunftsart und Sterneklasse mit einem Diskomfortwert je Nacht ein. Die Ankunft am Ziel wird mit der Check-in-Zeit und die anschließende Abreise mit der Check-out-Zeit verglichen. Für eine zu frühe Ankunft werden Wartezeiten nach einer einstellbaren Toleranzzeit stundenweise bewertet. Liegt die Abreise zu weit nach dem Check-out, fällt dagegen ein einmaliger Zuschlag an. Damit hängt die Komfortbewertung sowohl von den einzelnen Angeboten als auch von deren zeitlichem Zusammenspiel ab.
+
+Basierend auf den konfigurierten Parametern werden die zur Optimierung notwendigen Daten abgerufen, sofern keine passenden zwischengespeicherten Angebote vorliegen. Flug- und Hotelangebote stammen aus Zugriffen auf Google Flights und Google Hotels und liefern konkrete Preise und Angebotsdaten. Zug- und Busverbindungen sind mangels durchgehend kostenlos verfügbarer Preis- und Buchungsschnittstellen schwerer zugänglich. Daher werden einerseits Angebote von FlixBus und FlixTrain über eine kostenlos zugängliche Schnittstelle erhoben. Für weitere Zugverbindungen werden hingegen frei zugängliche Fahrplandaten über Transitous mit Preisschätzungen anhand von Entfernung und Zugkategorie herangezogen. Die Abdeckung mit Bahn- und Busangeboten ist dabei auf den europäischen Raum beschränkt.
+
+Auch Emissionsangaben werden für Hotels, Züge und Busse geschätzt, während für Flüge die vom Anbieter ausgewiesenen Emissionswerte übernommen werden. Diese sind ebenfalls keine exakten Messwerte des späteren Fluges. Emissionen für Bus und Bahn werden aus Entfernung und einem Faktor je Personenkilometer angenähert:
 \begin{equation}
   \widehat e(v)
   = N_{\mathrm{Reisende}}\,
@@ -63,22 +41,17 @@ dem gebräuchlichen Bezug von Verkehrsemissionen auf die Verkehrsleistung
   r(v)=
   \begin{cases}
     14 & \text{Bahn},\\
-    27 & \text{Bus oder Bahn+Bus}.
+    27 & \text{Bus}.
   \end{cases}
 \end{equation}
-Dabei ist $r$ in Gramm je Personenkilometer angegeben, das Ergebnis in
-Kilogramm. Der Umwegfaktor und die beiden Zahlenwerte sind vereinfachende
-Prototypannahmen, keine aus der zitierten Quelle übernommenen aktuellen
-Emissionsfaktoren. Für Hotels werden pauschale Nachtwerte nach Unterkunftsart
-und Sterneklasse mit der Übernachtungszahl multipliziert.
-Flugemissionen werden dagegen aus Google Flights übernommen; Angebote ohne
-Emissionswert werden ausgeschlossen, nicht nachgeschätzt.
+Dabei bezeichnet $s_{\mathrm{Luft}}(v)$ die Luftlinienentfernung zwischen den Städten und $r(v)$ den Emissionsfaktor in Gramm je Personenkilometer. Der Faktor $1{,}25$ dient als pauschale Annahme für die gegenüber der Luftlinie längere Strecke. Als Quellenansatz für die Emissionsfaktoren dienen die Verkehrsmittelvergleiche des Umweltbundesamtes [!!! Quelle ergänzen !!!].
 
-Die Ergebnisse sind Planungsvorschläge, keine buchbaren Gesamtangebote.
-Gespeicherte Preise können veralten; die Summe einzelner Hotelnachtangebote
-garantiert keine durchgehende Verfügbarkeit zum ausgewiesenen Gesamtpreis.
-Flughafenzubringer und sonstige lokale Wege werden nur über Zeitreserven
-berücksichtigt, nicht mit eigenen Kosten oder Emissionen; Aktivitäten und
-optionale Zusatzleistungen bleiben ebenfalls außerhalb der Bewertung.
-Die Schätzwerte dienen damit dem Vergleich von Alternativen, nicht einer
-vollständigen Kosten- oder Klimabilanz der tatsächlichen Reise.
+%Umweltbundesamt, TREMOD, Vergleich der durchschnittlichen Emissionen einzelner Verkehrsmittel im Personenverkehr. Bezugsjahr und genaue Abgrenzung für die angesetzten Werte von 14 bzw.\ 27 Gramm je Personenkilometer ergänzen; der Umwegfaktor ist eine eigene Modellannahme.}
+
+Für Hotels werden Emissionen aus Hotelcharakteristiken geschätzt und mit der Übernachtungszahl multipliziert. Dafür wird eine Heuristik verwendet, die je nach Unterkunftsart und Sterneklasse einen pauschalen Emissionswert pro Nacht ansetzt. Beispielsweise sind für ein Drei-Sterne-Hotel 15{,}5 und für ein Fünf-Sterne-Hotel 42 Kilogramm CO\textsubscript{2}-Äquivalente je Zimmernacht hinterlegt. Diese Werte entstammen dem Cornell Hotel Sustainability Benchmarking (CHSB) sowie der Hotel Carbon Measurement Initiative (HCMI).[!!! Quelle ergänzen !!!].
+
+%Quellenbeleg ergänzen: Cornell Hotel Sustainability Benchmarking (CHSB), Benchmarkdaten zu Emissionen je Zimmernacht; Hotel Carbon Measurement Initiative (HCMI), Berechnungsmethodik. Die konkrete Herkunft der hinterlegten Werte sowie ihre Zuordnung zu Sterneklassen und Hostels sind noch zu prüfen.}
+
+Unter Verwendung der erhobenen Datenbasis sowie aller Konfigurationen wird die Optimierung nach der in Abschnitt~\ref{sec:modellierung} beschriebenen Modellierung und dem in Abschnitt~\ref{sec:loesungsverfahren} erläuterten Lösungsverfahren durchgeführt. Dabei gibt die Implementierung für jede Generation die aktuell besten Werte für die drei Zielgrößen Kosten, Emissionen und Diskomfort aus. Nach Abschluss der Optimierung werden aus der gefundenen Pareto-Front vier Empfehlungen ausgewählt und tabellarisch ausgegeben. Jeweils eine hinsichtlich Kosten, Komfort und Emissionen beste Lösung sowie eine ausgewogene Kompromisslösung. Diese Empfehlungen müssen nicht vier verschiedene Reisepläne sein.
+
+Während der Entwicklung wurde zudem ein zusätzliches Skript (\texttt{benchmark.py}) verwendet, um eine Vielzahl von Vergleichsläufen mit unterschiedlichen Zufalls-Seeds und Konfigurationen auszuführen. So konnten Änderungen leichter evaluiert und die Auswirkungen implementierter Methoden bewertet werden.

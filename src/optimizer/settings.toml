@@ -3,7 +3,7 @@
 POPULATION_SIZE = 300             # Plans retained for breeding; larger is not always better
 MAX_GENERATIONS = 500            # Stop at this limit OR the runtime limit, whichever comes first
 MAX_RUNTIME_SECONDS = 600         # Search only; excludes loading and pre-search normalization
-RANDOM_SEED = 753 # 76                  # Repeatable runs; compare several seeds when tuning
+RANDOM_SEED = 753                  # Repeatable runs; compare several seeds when tuning
 CROSSOVER_RATE = 0.8
 MUTATION_RATE = 0.15              # Applied independently to genes/operators, not once per plan
 MUTATION_RATE_MIN = 0.02          # Lower clamp of the adaptive mutation rate
@@ -37,16 +37,6 @@ LOCAL_SEARCH_FRACTION = 0       # Best share of offspring refined by hill climbi
 LOCAL_SEARCH_MAX_STEPS = 3        # Accepted improvement steps per refined individual
 BOMB_STRENGTH = 0                 # Consecutive coarse mutations on stagnation; 0 disables local bombs
 BOMB_HV_MIN_GAIN = 0.0            # Hypervolume gain over the quality window that still counts as stagnant
-
-# ====================== ADVANCED: DIAGNOSTICS ===================
-# Fixed scales/reference make benchmark runs comparable. The window also
-# controls bomb detection/cooldown. With bombs disabled, optional early stopping
-# requires BOTH quality gain thresholds; with bombs enabled, plateaus trigger bombs.
-[quality_monitoring]
-QUALITY_WINDOW_GENERATIONS = 40
-QUALITY_SCALES = [2000.0, 1000.0, 2000.0]
-HYPERVOLUME_REFERENCE = [2100.0, 10000.0, 2100.0] # Must exceed every feasible objective value
-FRONT_PROGRESS_RESOLUTION = 0.01  # Grid in QUALITY_SCALES units; not a stopping threshold
 
 # ======================== MODEL: TIME WINDOWS ==================
 [time_windows]
@@ -100,8 +90,9 @@ HOTEL_HOSTEL_DISCOMFORT_PER_NIGHT = 12.0
 4 = 1.0
 5 = 0.0
 
-# Search  212/500  05:11        267.35      +0.00      110.1      +0.0        143.5      -7.2
-# Search  357/500  08:34        263.93      -2.00      108.7      +0.0        146.7      +0.0
-
-# seed31 Search  335/500  09:49        246.36      -7.01      108.7      +0.0        152.6      +0.0
-# seed 753 Done    393/500  10:00        228.51      +0.00      110.1      +0.0        144.0      +0.0
+# ====================== ONLY FOR DIAGNOSTICS (benchmark.py) ===================
+[quality_monitoring]
+QUALITY_WINDOW_GENERATIONS = 40
+QUALITY_SCALES = [2000.0, 1000.0, 2000.0]
+HYPERVOLUME_REFERENCE = [2100.0, 10000.0, 2100.0]
+FRONT_PROGRESS_RESOLUTION = 0.01
